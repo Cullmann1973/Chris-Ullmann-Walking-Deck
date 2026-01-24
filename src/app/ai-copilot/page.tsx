@@ -13,7 +13,7 @@ interface Message {
 const suggestedQueries = [
   "How did you save $16M at Leiner?",
   "Tell me about your military service.",
-  "What is your AI strategy?",
+  "Tell me about your family.",
   "What makes you a 'builder'?",
 ];
 
@@ -72,8 +72,18 @@ const getResponse = (query: string): string => {
   }
 
   // Family / Personal
-  if (q.includes("family") || q.includes("personal") || q.includes("wife") || q.includes("daughter")) {
-    return "I live in Melville, NY with my wife Leslie and our daughter Emilia (Emmi). Leslie and I operate as a true partnership—managing life, career, real estate, and family as a coordinated team. I'm also active in the Jewish Business Network (JBN) of Long Island, participating in executive roundtables and community initiatives. I believe business success should be a vehicle for community impact, which is why I'm involved in the JBN's Giving Pledge initiative.";
+  if (q.includes("family") || q.includes("personal") || q.includes("wife") || q.includes("daughter") || q.includes("leslie") || q.includes("bella") || q.includes("isabella") || q.includes("emmi") || q.includes("emilia")) {
+    return "Family is where I apply the same precision I bring to work. My wife Leslie is my true partner—we manage life, career, real estate, and family as a coordinated team. I have two daughters: Isabella 'Bella' (born 2009) lives in North Carolina, and being present for her despite the distance required turning logistics into a love language—managing Track Out schedules, unaccompanied minor flights, and maximizing every moment together. Emilia 'Emmi' (born 2019) attends the Long Island School for the Gifted. In 2024, Leslie and I established a home in Mililani, Hawaii—a sanctuary where the 'Builder' can rest. The Pacific chapter represents a strategic pivot toward balance.";
+  }
+
+  // Porsche / Automotive / Design Philosophy
+  if (q.includes("porsche") || q.includes("911") || q.includes("car") || q.includes("automotive") || q.includes("design philosophy")) {
+    return "The Porsche 911 isn't just a car to me—it's a design philosophy that mirrors my own values. Evolution over revolution: the 911 has been refined for 60 years without losing its essence. Engineering integrity without excess: every component serves a purpose. Performance with purpose: the GT3 is uncompromising and precise, connected to the driver in ways modern cars have abandoned. I drive a Tesla Model Y for practical family transport, but the 911 represents what I aspire to in my work: continuous refinement, purposeful design, and the pursuit of understanding as its own reward.";
+  }
+
+  // Community / JBN / Volunteering
+  if (q.includes("community") || q.includes("jbn") || q.includes("jewish") || q.includes("volunteer") || q.includes("mentor") || q.includes("mental health")) {
+    return "I believe business success should be a vehicle for community impact. I'm active in the Jewish Business Network (JBN) of Long Island, participating in executive roundtables and the Giving Pledge initiative. At work, I've championed mental health as a priority—launching Wellbeing and Employee Resource Groups because I recognize that true strength involves acknowledging and supporting psychological safety. As a disabled Gulf War veteran, I stay connected to the military community. And I mentor others, whether guiding newcomers through technical decisions or advocating for women in supply chain roles. The knowledge I've accumulated is meant to lift others up.";
   }
 
   // Default response

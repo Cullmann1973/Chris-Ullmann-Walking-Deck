@@ -12,12 +12,14 @@ import {
   X,
   Mail,
   Linkedin,
+  Heart,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "HOME", icon: Home, description: "The Premise" },
   { href: "/the-stack", label: "THE STACK", icon: Layers, description: "Career Layers" },
+  { href: "/beyond-work", label: "BEYOND WORK", icon: Heart, description: "Personal Life" },
   { href: "/ai-copilot", label: "ASK CHRIS", icon: Bot, description: "Digital Twin" },
 ];
 
