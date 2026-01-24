@@ -16,14 +16,14 @@ const lifeSections: LifeSection[] = [
   {
     id: "maker",
     title: "The Maker",
-    subtitle: "3D printing, carbon fiber, micro-manufacturing",
+    subtitle: "Self-taught engineering and digital fabrication",
     icon: Wrench,
     items: [
-      "Custom dashboard displays with real carbon fiber faces",
-      "Global supply chain management—sourcing from Shenzhen suppliers",
       "Self-taught: Fusion 360, 3D modeling, CAD design",
-      "E-commerce fulfillment, quality control, vendor management",
-      "3D printing (FDM & resin) for precision enclosures",
+      "3D printing (FDM & resin) for prototyping and production",
+      "Python scripting and automation for personal projects",
+      "Hardware integration and electronics tinkering",
+      "Continuous learner: from Air Force hydraulics to AI architectures",
     ],
     quote: "Every technical skill I have is self-taught. I don't consume technology—I master it.",
   },
@@ -84,7 +84,7 @@ export default function BeyondWorkPage() {
           <p className="text-lg text-muted-foreground max-w-2xl">
             The systems I build at home mirror the ones I build at work.
             Precision, purpose, and continuous improvement—whether it&apos;s a
-            carbon fiber enclosure or a cross-country custody schedule.
+            3D-printed prototype or a cross-country custody schedule.
           </p>
         </motion.div>
 

@@ -38,7 +38,7 @@ const getResponse = (query: string): string => {
 
   // Builder / Maker / 3D Printing
   if (q.includes("builder") || q.includes("maker") || q.includes("3d print") || q.includes("build") || q.includes("craftsman")) {
-    return "I call it the 'builder mindset'—the urge to construct and optimize that transcends any single role. Whether it's a supply chain governance model, a Python automation script, or a carbon fiber product, I'm driven to create. I run a micro-business designing and selling custom dashboards: 3D-printed enclosures, carbon fiber faces, full e-commerce and fulfillment. I taught myself 3D modeling (Fusion 360), 3D printing (FDM & resin), and hardware integration. This isn't just a hobby—it keeps my 'hands dirty' with real manufacturing, supply chain, and customer service. Every technical skill I have is self-taught.";
+    return "I call it the 'builder mindset'—the urge to construct and optimize that transcends any single role. Whether it's a supply chain governance model, a Python automation script, or a 3D-printed prototype, I'm driven to create. I taught myself 3D modeling (Fusion 360), 3D printing (FDM & resin), hardware integration, and Python scripting. This continuous learning keeps my 'hands dirty' with real making—the same curiosity that drove me to understand hydraulics in the Air Force now drives me to understand AI architectures. Every technical skill I have is self-taught.";
   }
 
   // Leadership / Philosophy
