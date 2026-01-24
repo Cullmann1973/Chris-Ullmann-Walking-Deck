@@ -44,7 +44,7 @@ export default function HomePage() {
               <p className="text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed">
                 From Air Force flight lines to Fortune 500 boardrooms, I&apos;ve operated
                 as a technician, scientist, quality leader, program manager, and now
-                AI strategist. That range isn&apos;t a winding career—it&apos;s what makes
+                AI strategist. That range isn&apos;t a winding career -it&apos;s what makes
                 me effective at connecting strategy to execution.
               </p>
 
@@ -186,7 +186,7 @@ export default function HomePage() {
             </div>
 
             <p className="text-sm text-muted-foreground mt-6">
-              Click any layer to see what I built there—and how it unlocked the next.
+              Click any layer to see what I built there -and how it unlocked the next.
             </p>
           </motion.div>
         </div>
@@ -212,12 +212,12 @@ export default function HomePage() {
               </p>
 
               <p className="text-lg text-foreground leading-relaxed">
-                When I present to the board, I&apos;m not abstracting—
+                When I present to the board, I&apos;m not abstracting -
                 <span className="text-primary">I&apos;m translating from systems I&apos;ve personally built.</span>
               </p>
 
               <p className="text-lg text-foreground leading-relaxed">
-                When I train teams on GenAI, I&apos;m not teaching theory—
+                When I train teams on GenAI, I&apos;m not teaching theory -
                 <span className="text-primary">I&apos;m showing them what I use every day.</span>
               </p>
             </div>

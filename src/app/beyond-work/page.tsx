@@ -25,7 +25,7 @@ const lifeSections: LifeSection[] = [
       "Hardware integration and electronics tinkering",
       "Continuous learner: from Air Force hydraulics to AI architectures",
     ],
-    quote: "Every technical skill I have is self-taught. I don't consume technology—I master it.",
+    quote: "Every technical skill I have is self-taught. I don't consume technology -I master it.",
   },
   {
     id: "family",
@@ -33,12 +33,12 @@ const lifeSections: LifeSection[] = [
     subtitle: "Building across geographies",
     icon: Heart,
     items: [
-      "Leslie—partner and co-pilot in adventure, shared love of travel",
-      "Isabella 'Bella' (2009)—NC-based, logistics turned into a love language",
-      "Emilia 'Emmi' (2019)—Long Island School for the Gifted",
-      "Hawaii chapter—Mililani sanctuary, a strategic pivot toward balance",
+      "Leslie -partner and co-pilot in adventure, shared love of travel",
+      "Isabella 'Bella' (2009) -NC-based, logistics turned into a love language",
+      "Emilia 'Emmi' (2019) -Long Island School for the Gifted",
+      "Hawaii chapter -Mililani sanctuary, a strategic pivot toward balance",
     ],
-    quote: "Parenting across distances required turning logistics into a triumph—and a bond.",
+    quote: "Parenting across distances required turning logistics into a triumph -and a bond.",
   },
   {
     id: "philosophy",
@@ -46,7 +46,7 @@ const lifeSections: LifeSection[] = [
     subtitle: "Porsche 911 as design inspiration",
     icon: Car,
     items: [
-      "Evolution over revolution—refine, don't replace",
+      "Evolution over revolution -refine, don't replace",
       "Engineering integrity without excess",
       "Performance with purpose, not performance for show",
       "The 911 GT3: uncompromising, precise, connected",
@@ -59,10 +59,10 @@ const lifeSections: LifeSection[] = [
     subtitle: "People first, always",
     icon: Users,
     items: [
-      "Jewish Business Network (JBN) of Long Island—executive roundtables",
-      "Mental Health Champion—launched Wellbeing & ERG programs",
-      "Veterans advocacy—connected to service as a disabled Gulf War veteran",
-      "Mentorship—using accumulated knowledge to lift others up",
+      "Jewish Business Network (JBN) of Long Island -executive roundtables",
+      "Mental Health Champion -launched Wellbeing & ERG programs",
+      "Veterans advocacy -connected to service as a disabled Gulf War veteran",
+      "Mentorship -using accumulated knowledge to lift others up",
     ],
     quote: "Business success should be a vehicle for community impact.",
   },
@@ -83,7 +83,7 @@ export default function BeyondWorkPage() {
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             The systems I build at home mirror the ones I build at work.
-            Precision, purpose, and continuous improvement—whether it&apos;s a
+            Precision, purpose, and continuous improvement -whether it&apos;s a
             3D-printed prototype or a cross-country custody schedule.
           </p>
         </motion.div>
@@ -171,7 +171,7 @@ export default function BeyondWorkPage() {
                 establishing a home in Hawaii. Mililani is a planned community in
                 Central Oahu known for its orderly, suburban atmosphere and lush
                 greenery. It&apos;s a choice that reflects a desire for community and
-                tranquility—a sanctuary where the &ldquo;Builder&rdquo; can rest.
+                tranquility -a sanctuary where the &ldquo;Builder&rdquo; can rest.
               </p>
 
               <div className="flex items-center gap-6 text-sm">

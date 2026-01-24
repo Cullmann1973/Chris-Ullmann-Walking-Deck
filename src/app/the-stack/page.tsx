@@ -21,10 +21,10 @@ const stackLayers: StackLayer[] = [
     period: "2024–Present",
     role: "Executive Director, PMO & Strategy, The Estée Lauder Companies",
     context:
-      "Leading the integration of Generative AI into North America operations. Not advising from the sidelines—directly piloting and scaling AI capabilities across the supply chain.",
+      "Leading the integration of Generative AI into North America operations. Not advising from the sidelines -directly piloting and scaling AI capabilities across the supply chain.",
     whatIBuilt: [
       "20+ GenAI use cases: SOP automation, real-time KPI dashboards, predictive line diagnostics",
-      "AI Core Tech Team enablement program—trained 600+ employees",
+      "AI Core Tech Team enablement program -trained 600+ employees",
       "Fusion Teams model: 3 power users → 100+ practitioners",
       "Stanford AI certification (XFM110): Transformers, LLMs, Chain-of-Thought, HELM framework",
     ],
@@ -40,7 +40,7 @@ const stackLayers: StackLayer[] = [
       "Managed a $49M budget within ELC's global restructuring initiative. Responsible for 'Runway Transformation' and the Integrated Manufacturing Transformation roadmap ($500M+).",
     whatIBuilt: [
       "Delivered 170% ROI on committed benefits ($29M committed vs. significantly higher realized)",
-      "Engineering Tech Center—a sandbox for testing new manufacturing technologies",
+      "Engineering Tech Center -a sandbox for testing new manufacturing technologies",
       "Supply chain resilience playbook during COVID-19 disruptions",
       "Cross-functional governance model connecting strategy to floor execution",
     ],
@@ -54,11 +54,11 @@ const stackLayers: StackLayer[] = [
     period: "2015–2018",
     role: "Executive Director, Quality Assurance, The Estée Lauder Companies",
     context:
-      "Modernized the largest regulated cosmetic manufacturing facility in ELC's network (Melville, NY). Quality wasn't just compliance—it was a cash flow lever.",
+      "Modernized the largest regulated cosmetic manufacturing facility in ELC's network (Melville, NY). Quality wasn't just compliance -it was a cash flow lever.",
     whatIBuilt: [
       "Lab testing turnaround: 12 days → 2.7 days",
       "$3.75M monthly inventory freed (≈$45M annualized)",
-      "Kotter's 8-Step Change Model implementation—grassroots CI program",
+      "Kotter's 8-Step Change Model implementation -grassroots CI program",
       "$1M saved in 90 days through frontline empowerment",
     ],
     whatItUnlocked:
@@ -79,7 +79,7 @@ const stackLayers: StackLayer[] = [
       "SAP QM implementations and tech transfer validations across multiple sites",
     ],
     whatItUnlocked:
-      "Deep operational credibility. When I talk about 'the floor,' I'm not abstracting—I've run batch records, validated equipment, and negotiated with FDA inspectors.",
+      "Deep operational credibility. When I talk about 'the floor,' I'm not abstracting -I've run batch records, validated equipment, and negotiated with FDA inspectors.",
     keyMetric: "$16M → $200K",
   },
   {
@@ -90,13 +90,13 @@ const stackLayers: StackLayer[] = [
     context:
       "The foundation that everything else built upon. Military discipline plus scientific literacy created a rare 'technical biologist' profile.",
     whatIBuilt: [
-      "USAF: Aerospace Ground Equipment maintenance—24/7 ops, zero-defect mentality",
+      "USAF: Aerospace Ground Equipment maintenance -24/7 ops, zero-defect mentality",
       "Operation Provide Comfort II: Combat support, earned 2 Achievement Medals",
-      "Queens College: B.S. Biology—bridged electromechanical skills with life sciences",
+      "Queens College: B.S. Biology -bridged electromechanical skills with life sciences",
       "Dual literacy: Can talk bacterial growth with scientists AND HVAC systems with engineers",
     ],
     whatItUnlocked:
-      "A permanent operating system: SOPs, preventative maintenance, precision under pressure. The military doesn't tolerate 'good enough'—that standard followed me into every civilian role.",
+      "A permanent operating system: SOPs, preventative maintenance, precision under pressure. The military doesn't tolerate 'good enough' -that standard followed me into every civilian role.",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function TheStackPage() {
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             Each layer represents a phase of building. Click any layer to see what I
-            constructed there—and how skills from lower layers enabled success at
+            constructed there -and how skills from lower layers enabled success at
             higher ones.
           </p>
         </motion.div>
