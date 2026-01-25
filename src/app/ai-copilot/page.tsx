@@ -372,10 +372,10 @@ export default function AICopilotPage() {
                   className={`max-w-[80%] rounded-xl p-4 ${
                     message.role === "user"
                       ? "bg-primary text-primary-foreground"
-                      : "glass-card"
+                      : "bg-card border border-border shadow-sm"
                   }`}
                 >
-                  <p className="text-sm leading-relaxed">{message.content}</p>
+                  <p className={`text-sm leading-relaxed ${message.role === "assistant" ? "text-foreground" : ""}`}>{message.content}</p>
                 </div>
                 {message.role === "user" && (
                   <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
@@ -396,9 +396,9 @@ export default function AICopilotPage() {
               <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0">
                 <Bot className="w-5 h-5 text-primary" />
               </div>
-              <div className="glass-card rounded-xl p-4 max-w-[80%]">
+              <div className="bg-card border border-border shadow-sm rounded-xl p-4 max-w-[80%]">
                 {streamingContent ? (
-                  <p className="text-sm leading-relaxed whitespace-pre-wrap">{streamingContent}<span className="animate-pulse">|</span></p>
+                  <p className="text-sm leading-relaxed whitespace-pre-wrap text-foreground">{streamingContent}<span className="animate-pulse">|</span></p>
                 ) : (
                   <div className="flex gap-1">
                     <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "0ms" }} />
