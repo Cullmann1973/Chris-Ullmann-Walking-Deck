@@ -38,6 +38,15 @@ const agentDemos = [
     borderColor: "border-amber-500/30",
   },
   {
+    id: "plant-perfect",
+    name: "Plant Perfect",
+    description: "HAL 9000-themed manufacturing KPI dashboard for operational reviews, OEE analysis, and plant strategy planning.",
+    status: "live" as const,
+    demoUrl: "https://cc-plant-perfect.vercel.app",
+    color: "from-red-500/20 to-rose-500/20",
+    borderColor: "border-red-500/30",
+  },
+  {
     id: "consumer-pulse",
     name: "Consumer Pulse",
     description: "Voice of Customer translator that uncovers product quality signals hidden in consumer feedback.",
