@@ -39,7 +39,7 @@ export default function BeyondWorkPage() {
 
             <div className="prose prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan. Together we&apos;re raising Emilia (Emmi), who at five already attends the Long Island School for the Gifted and reminds me daily that curiosity is hereditary.
+                Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan. Together we&apos;re raising Emilia (Emmi), who attends the Long Island School for the Gifted and reminds me daily that curiosity is hereditary.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-6">

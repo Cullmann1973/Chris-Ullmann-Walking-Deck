@@ -103,7 +103,7 @@ const getResponse = (query: string): string => {
 
   // ROI / Results / Metrics
   if (q.includes("roi") || q.includes("result") || q.includes("metric") || q.includes("achieve") || q.includes("impact")) {
-    return "I measure success in hard numbers: $16M→$200K quarantine inventory reduction at Leiner. 12→2.7 days lab turnaround at ELC (freeing $45M annually). 170% ROI on a $49M transformation initiative. 60% reduction in supplier quality incidents at Coty. 600+ employees trained in AI enablement. $1M saved in 90 days through grassroots improvement. 20+ GenAI use cases piloted. I've learned that the best way to earn trust for the next initiative is to deliver measurable results on the current one.";
+    return "I measure success in hard numbers: $16M→$200K quarantine inventory reduction at Leiner. 12→2.7 days lab turnaround at ELC (releasing over $30M annually in working capital). 170% ROI on a $49M transformation initiative. 60% reduction in supplier quality incidents at Coty. 600+ employees trained in AI enablement. $1M saved in 90 days through grassroots improvement. 20+ GenAI use cases piloted. I've learned that the best way to earn trust for the next initiative is to deliver measurable results on the current one.";
   }
 
   // Hawaii / Real Estate / Investment

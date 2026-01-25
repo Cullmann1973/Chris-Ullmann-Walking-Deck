@@ -57,13 +57,13 @@ const stackLayers: StackLayer[] = [
       "Modernized the largest regulated cosmetic manufacturing facility in ELC's network (Melville, NY). Quality wasn't just compliance -it was a cash flow lever.",
     whatIBuilt: [
       "Lab testing turnaround: 12 days → 2.7 days",
-      "$3.75M monthly inventory freed (≈$45M annualized)",
+      "Released $30-35M annually in inventory working capital",
       "Kotter's 8-Step Change Model implementation -grassroots CI program",
       "$1M saved in 90 days through frontline empowerment",
     ],
     whatItUnlocked:
       "Demonstrated that Quality can be a business driver, not a cost center. Earned the trust to move into Program Management.",
-    keyMetric: "$45M unlocked",
+    keyMetric: "$30M+ released",
   },
   {
     id: "manufacturing",

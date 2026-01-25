@@ -250,7 +250,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
-                { value: "$45M", label: "Annual cash flow unlocked" },
+                { value: "$30M+", label: "Annual working capital released" },
                 { value: "170%", label: "ROI on $49M initiative" },
                 { value: "600+", label: "Employees trained in AI" },
                 { value: "20+", label: "GenAI use cases piloted" },
