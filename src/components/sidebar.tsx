@@ -150,7 +150,7 @@ export function Sidebar() {
               Email
             </a>
             <a
-              href="https://linkedin.com/in/christopherullmann"
+              href="https://www.linkedin.com/in/chrisullmann/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors text-sm"

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, Send, User, Sparkles, Terminal } from "lucide-react";
+import { Bot, Send, User, Sparkles, Terminal, ExternalLink, Cpu } from "lucide-react";
 
 interface Message {
   id: string;
@@ -15,6 +15,46 @@ const suggestedQueries = [
   "Tell me about your military service.",
   "Tell me about your family.",
   "What makes you a 'builder'?",
+];
+
+// Agent demos data
+const agentDemos = [
+  {
+    id: "ella",
+    name: "ELLA",
+    description: "Line assistant for manufacturing operations. Helps operators with setups, troubleshooting, and SOPs.",
+    status: "live" as const,
+    demoUrl: "https://ella-demo-lni6jjbh0-chris-ullmanns-projects.vercel.app/",
+    color: "from-pink-500/20 to-rose-500/20",
+    borderColor: "border-pink-500/30",
+  },
+  {
+    id: "gold-nugget",
+    name: "Gold Nugget",
+    description: "Benchmarking engine that identifies Golden SKUs and closes performance gaps using the Gold Standard method.",
+    status: "coming-soon" as const,
+    demoUrl: null,
+    color: "from-amber-500/20 to-yellow-500/20",
+    borderColor: "border-amber-500/30",
+  },
+  {
+    id: "consumer-pulse",
+    name: "Consumer Pulse",
+    description: "Voice of Customer translator that uncovers product quality signals hidden in consumer feedback.",
+    status: "coming-soon" as const,
+    demoUrl: null,
+    color: "from-emerald-500/20 to-green-500/20",
+    borderColor: "border-emerald-500/30",
+  },
+  {
+    id: "slide-maestro",
+    name: "Slide Maestro",
+    description: "Presentation generator that turns ideas into polished slides in minutes.",
+    status: "coming-soon" as const,
+    demoUrl: null,
+    color: "from-purple-500/20 to-violet-500/20",
+    borderColor: "border-purple-500/30",
+  },
 ];
 
 // Enhanced responses based on the full biography
@@ -48,7 +88,7 @@ const getResponse = (query: string): string => {
 
   // Estée Lauder / ELC / Current Role
   if (q.includes("estee") || q.includes("elc") || q.includes("lauder") || q.includes("current") || q.includes("beauty")) {
-    return "I joined The Estée Lauder Companies in 2015 and currently serve as Executive Director, PMO, Strategy & Transformation for North America. My journey here started in Quality Assurance, where I reduced lab testing turnaround from 12 days to 2.7 days -freeing $3.75 million monthly in inventory. I then led 'Leading Beauty Forward,' managing a $49M budget and delivering 170% ROI. Now I'm focused on integrating GenAI into our operations. ELC is the global leader in prestige beauty, and I'm helping architect its transition into the Fourth Industrial Revolution -bridging our industrial heritage with cutting-edge AI capabilities.";
+    return "I joined The Estée Lauder Companies in 2015 and currently serve as Executive Director, PMO, Strategy & Transformation for North America. My journey here started in Quality Assurance, where I reduced lab testing turnaround from 12 days to 2.7 days, releasing over $30 million annually in inventory working capital. I then led 'Leading Beauty Forward,' managing a $49M budget and delivering 170% ROI. Now I'm focused on integrating GenAI into our operations. ELC is the global leader in prestige beauty, and I'm helping architect its transition into the Fourth Industrial Revolution -bridging our industrial heritage with cutting-edge AI capabilities.";
   }
 
   // Education / Biology / Queens College
@@ -151,6 +191,60 @@ export default function AICopilotPage() {
             <p className="text-muted-foreground">
               Ask Chris&apos;s digital twin about his experience, philosophy, and achievements.
             </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Agent Demos Section */}
+      <div className="px-6 py-8 lg:px-12 border-b border-border bg-muted/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <div className="flex items-center gap-2 mb-4">
+              <Cpu className="w-5 h-5 text-primary" />
+              <h2 className="text-lg font-semibold text-foreground">AI Agents I&apos;ve Built</h2>
+            </div>
+            <p className="text-sm text-muted-foreground mb-6">
+              Production AI systems designed to solve real manufacturing challenges.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {agentDemos.map((agent) => (
+                <motion.div
+                  key={agent.id}
+                  whileHover={{ scale: 1.02 }}
+                  className={`relative p-4 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} backdrop-blur-sm`}
+                >
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="font-semibold text-foreground">{agent.name}</h3>
+                    {agent.status === "live" ? (
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                        Live Demo
+                      </span>
+                    ) : (
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">{agent.description}</p>
+                  {agent.demoUrl ? (
+                    <a
+                      href={agent.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                    >
+                      Try Demo <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  ) : (
+                    <span className="text-sm text-muted-foreground/60">Demo in development</span>
+                  )}
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>
