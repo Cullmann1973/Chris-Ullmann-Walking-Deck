@@ -458,8 +458,8 @@ export default function AICopilotPage() {
             </button>
           </form>
 
-          <p className="text-xs text-muted-foreground text-center mt-3 font-mono">
-            Powered by Chris&apos;s Digital Twin • Responses based on documented experience
+          <p className="text-xs text-muted-foreground text-center mt-3">
+            Not a generic chatbot. This AI was built by Chris, grounded in verified career data using modern LLM architecture.
           </p>
         </div>
       </div>
