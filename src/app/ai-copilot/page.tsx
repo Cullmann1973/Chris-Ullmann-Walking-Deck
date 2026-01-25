@@ -134,6 +134,8 @@ export default function AICopilotPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  const [streamingContent, setStreamingContent] = useState("");
+  const [useAI, setUseAI] = useState(true); // Toggle between AI and fallback
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -142,7 +144,7 @@ export default function AICopilotPage() {
 
   useEffect(() => {
     scrollToBottom();
-  }, [messages]);
+  }, [messages, streamingContent]);
 
   const handleSubmit = async (query: string) => {
     if (!query.trim()) return;
@@ -156,8 +158,71 @@ export default function AICopilotPage() {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsTyping(true);
+    setStreamingContent("");
 
-    // Simulate AI response delay
+    // Try AI-powered response first
+    if (useAI) {
+      try {
+        const response = await fetch("/api/ask-chris", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            messages: [...messages, userMessage].map((m) => ({
+              role: m.role,
+              content: m.content,
+            })),
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error("API request failed");
+        }
+
+        const reader = response.body?.getReader();
+        const decoder = new TextDecoder();
+        let fullContent = "";
+
+        if (reader) {
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            const chunk = decoder.decode(value);
+            const lines = chunk.split("\n");
+
+            for (const line of lines) {
+              if (line.startsWith("data: ") && line !== "data: [DONE]") {
+                try {
+                  const data = JSON.parse(line.slice(6));
+                  if (data.text) {
+                    fullContent += data.text;
+                    setStreamingContent(fullContent);
+                  }
+                } catch {
+                  // Skip invalid JSON
+                }
+              }
+            }
+          }
+        }
+
+        // Add completed message
+        const assistantMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: fullContent || "I apologize, I could not generate a response. Please try again.",
+        };
+        setMessages((prev) => [...prev, assistantMessage]);
+        setStreamingContent("");
+        setIsTyping(false);
+        return;
+      } catch (error) {
+        console.error("AI response error:", error);
+        // Fall back to hardcoded responses
+      }
+    }
+
+    // Fallback to hardcoded responses
     setTimeout(() => {
       const response = getResponse(query);
       const assistantMessage: Message = {
@@ -321,7 +386,7 @@ export default function AICopilotPage() {
             ))}
           </AnimatePresence>
 
-          {/* Typing Indicator */}
+          {/* Typing Indicator / Streaming Content */}
           {isTyping && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -331,12 +396,16 @@ export default function AICopilotPage() {
               <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0">
                 <Bot className="w-5 h-5 text-primary" />
               </div>
-              <div className="glass-card rounded-xl p-4">
-                <div className="flex gap-1">
-                  <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "0ms" }} />
-                  <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "150ms" }} />
-                  <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "300ms" }} />
-                </div>
+              <div className="glass-card rounded-xl p-4 max-w-[80%]">
+                {streamingContent ? (
+                  <p className="text-sm leading-relaxed whitespace-pre-wrap">{streamingContent}<span className="animate-pulse">|</span></p>
+                ) : (
+                  <div className="flex gap-1">
+                    <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "0ms" }} />
+                    <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "150ms" }} />
+                    <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "300ms" }} />
+                  </div>
+                )}
               </div>
             </motion.div>
           )}
