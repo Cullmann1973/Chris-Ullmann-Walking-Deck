@@ -237,23 +237,27 @@ export default function AICopilotPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <div className="px-6 pt-20 pb-6 lg:px-12 border-b border-border">
-        <div className="max-w-3xl mx-auto">
+      {/* Header - Bold and Eye-Catching */}
+      <div className="px-6 pt-20 pb-10 lg:px-12 bg-gradient-to-br from-primary/20 via-primary/10 to-accent/10 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div className="max-w-3xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 mb-6">
-              <Bot className="w-4 h-4 text-primary" />
-              <span className="text-xs font-mono tracking-wider text-primary uppercase">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-primary bg-primary/20 mb-6 shadow-lg shadow-primary/20">
+              <Bot className="w-5 h-5 text-primary" />
+              <span className="text-sm font-bold tracking-wider text-primary uppercase">
                 Digital Twin Interface
               </span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
               AI Co-Pilot
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-foreground/80 text-xl font-medium">
               Ask Chris&apos;s digital twin about his experience, philosophy, and achievements.
             </p>
           </motion.div>
@@ -261,18 +265,20 @@ export default function AICopilotPage() {
       </div>
 
       {/* Agent Demos Section */}
-      <div className="px-6 py-8 lg:px-12 border-b border-border bg-muted/30">
+      <div className="px-6 py-10 lg:px-12 border-y-2 border-primary/20 bg-gradient-to-r from-muted/50 via-muted/30 to-muted/50">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <div className="flex items-center gap-2 mb-4">
-              <Cpu className="w-5 h-5 text-primary" />
-              <h2 className="text-lg font-semibold text-foreground">AI Agents I&apos;ve Built</h2>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-xl bg-primary/15 border-2 border-primary/30 flex items-center justify-center">
+                <Cpu className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="text-xl font-bold text-foreground">AI Agents I&apos;ve Built</h2>
             </div>
-            <p className="text-sm text-muted-foreground mb-6">
+            <p className="text-sm text-muted-foreground mb-6 ml-13">
               Production AI systems designed to solve real manufacturing challenges.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -315,8 +321,27 @@ export default function AICopilotPage() {
       </div>
 
       {/* Chat Area */}
-      <div className="flex-1 overflow-y-auto px-6 py-6 lg:px-12 bg-muted/30">
-        <div className="max-w-3xl mx-auto space-y-6 bg-background rounded-2xl border border-border shadow-sm p-6">
+      <div className="flex-1 overflow-y-auto px-6 py-8 lg:px-12 bg-gradient-to-b from-muted/50 to-muted/20">
+        <div className="max-w-3xl mx-auto">
+          {/* Chat Container with bold styling */}
+          <div className="bg-background rounded-2xl border-2 border-primary/20 shadow-xl shadow-primary/10 overflow-hidden">
+            {/* Chat Header */}
+            <div className="bg-gradient-to-r from-primary to-primary/80 px-6 py-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                <Bot className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-white">Ask Chris</h3>
+                <p className="text-xs text-white/70">AI-powered digital twin</p>
+              </div>
+              <div className="ml-auto flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span className="text-xs text-white/70">Online</span>
+              </div>
+            </div>
+
+            {/* Chat Messages Area */}
+            <div className="p-6 space-y-6 min-h-[400px]">
           {/* Welcome Message */}
           {messages.length === 0 && (
             <motion.div
@@ -335,17 +360,22 @@ export default function AICopilotPage() {
                 achievements, or leadership philosophy.
               </p>
 
-              {/* Suggested Queries */}
+              {/* Suggested Queries - Bold and Interactive */}
               <div className="flex flex-wrap justify-center gap-3">
-                {suggestedQueries.map((query) => (
-                  <button
+                {suggestedQueries.map((query, index) => (
+                  <motion.button
                     key={query}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => handleSubmit(query)}
-                    className="px-4 py-2 rounded-lg bg-card border border-border text-sm text-foreground hover:border-primary/30 hover:bg-primary/5 transition-colors shadow-sm"
+                    className="px-5 py-3 rounded-xl bg-gradient-to-br from-primary/15 to-primary/5 border-2 border-primary/40 text-sm font-medium text-foreground hover:border-primary hover:from-primary/25 hover:to-primary/10 transition-all shadow-md hover:shadow-lg hover:shadow-primary/20"
                   >
-                    <Sparkles className="w-3 h-3 inline mr-2 text-primary" />
+                    <Sparkles className="w-4 h-4 inline mr-2 text-primary" />
                     {query}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
             </motion.div>
@@ -411,56 +441,59 @@ export default function AICopilotPage() {
           )}
 
           <div ref={messagesEndRef} />
-        </div>
-      </div>
+            </div>
 
-      {/* Input Area */}
-      <div className="border-t border-border px-6 py-4 lg:px-12">
-        <div className="max-w-3xl mx-auto">
-          {/* Suggested Queries (when in conversation) */}
-          {messages.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-4">
-              {suggestedQueries.map((query) => (
+            {/* Input Area - Inside Container */}
+            <div className="border-t border-border bg-muted/30 px-6 py-4">
+              {/* Suggested Queries (when in conversation) */}
+              {messages.length > 0 && (
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {suggestedQueries.map((query) => (
+                    <button
+                      key={query}
+                      onClick={() => handleSubmit(query)}
+                      className="px-3 py-1.5 rounded-full text-xs font-mono bg-background text-foreground border border-border hover:border-primary/50 hover:bg-primary/5 transition-colors"
+                    >
+                      {query}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Input */}
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  handleSubmit(input);
+                }}
+                className="flex gap-3"
+              >
+                <div className="flex-1 relative">
+                  <input
+                    type="text"
+                    value={input}
+                    onChange={(e) => setInput(e.target.value)}
+                    placeholder="Ask a question..."
+                    className="w-full px-4 py-3 rounded-xl bg-background border-2 border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm"
+                  />
+                </div>
                 <button
-                  key={query}
-                  onClick={() => handleSubmit(query)}
-                  className="px-3 py-1.5 rounded-full text-xs font-mono bg-muted text-muted-foreground hover:text-foreground border border-transparent hover:border-border transition-colors"
+                  type="submit"
+                  disabled={!input.trim() || isTyping}
+                  className="px-5 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-medium"
                 >
-                  {query}
+                  <Send className="w-5 h-5" />
                 </button>
-              ))}
+              </form>
             </div>
-          )}
 
-          {/* Input */}
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleSubmit(input);
-            }}
-            className="flex gap-3"
-          >
-            <div className="flex-1 relative">
-              <input
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask a question..."
-                className="w-full px-4 py-3 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary font-mono text-sm"
-              />
+            {/* Footer */}
+            <div className="bg-muted/50 px-6 py-3 text-center">
+              <p className="text-xs text-muted-foreground">
+                Not a generic chatbot. This AI was built by Chris, grounded in verified career data using modern LLM architecture.
+              </p>
             </div>
-            <button
-              type="submit"
-              disabled={!input.trim() || isTyping}
-              className="px-4 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <Send className="w-5 h-5" />
-            </button>
-          </form>
-
-          <p className="text-xs text-muted-foreground text-center mt-3">
-            Not a generic chatbot. This AI was built by Chris, grounded in verified career data using modern LLM architecture.
-          </p>
+          </div>
         </div>
       </div>
     </div>
