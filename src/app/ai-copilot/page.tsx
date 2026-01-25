@@ -315,8 +315,8 @@ export default function AICopilotPage() {
       </div>
 
       {/* Chat Area */}
-      <div className="flex-1 overflow-y-auto px-6 py-6 lg:px-12">
-        <div className="max-w-3xl mx-auto space-y-6">
+      <div className="flex-1 overflow-y-auto px-6 py-6 lg:px-12 bg-muted/30">
+        <div className="max-w-3xl mx-auto space-y-6 bg-background rounded-2xl border border-border shadow-sm p-6">
           {/* Welcome Message */}
           {messages.length === 0 && (
             <motion.div
@@ -341,7 +341,7 @@ export default function AICopilotPage() {
                   <button
                     key={query}
                     onClick={() => handleSubmit(query)}
-                    className="px-4 py-2 rounded-lg glass-card text-sm text-muted-foreground hover:text-foreground hover:border-primary/30 transition-colors"
+                    className="px-4 py-2 rounded-lg bg-card border border-border text-sm text-foreground hover:border-primary/30 hover:bg-primary/5 transition-colors shadow-sm"
                   >
                     <Sparkles className="w-3 h-3 inline mr-2 text-primary" />
                     {query}
