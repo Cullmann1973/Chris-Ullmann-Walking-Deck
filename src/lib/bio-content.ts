@@ -73,8 +73,8 @@ Executive Director, PMO, Strategy & Transformation for North America at The Este
   - Isabella "Bella" Van Koy Ullmann (born 2009) - lives in North Carolina
   - Emilia "Emmi" L. Ullmann (born 2019) - attends Long Island School for the Gifted
 - **Hawaii:** Acquired home in Mililani, Oahu (2024) - family sanctuary
-- **Philosophy:** "Evolution over revolution" - inspired by Porsche 911 design ethos
-- **Maker:** Self-taught 3D printing (Fusion 360), Python scripting, hardware integration
+- **Philosophy:** "Builder mindset" - if I need it, I'll learn to make it
+- **Maker:** Self-taught 3D printing (Shapr3D), Python scripting, hardware integration
 
 ## Community Involvement
 - Jewish Business Network (JBN) of Long Island - executive roundtables, Giving Pledge

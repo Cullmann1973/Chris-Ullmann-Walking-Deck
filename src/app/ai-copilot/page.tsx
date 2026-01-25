@@ -78,7 +78,7 @@ const getResponse = (query: string): string => {
 
   // Builder / Maker / 3D Printing
   if (q.includes("builder") || q.includes("maker") || q.includes("3d print") || q.includes("build") || q.includes("craftsman")) {
-    return "I call it the 'builder mindset' -the urge to construct and optimize that transcends any single role. Whether it's a supply chain governance model, a Python automation script, or a 3D-printed prototype, I'm driven to create. I taught myself 3D modeling (Fusion 360), 3D printing (FDM & resin), hardware integration, and Python scripting. This continuous learning keeps my 'hands dirty' with real making -the same curiosity that drove me to understand hydraulics in the Air Force now drives me to understand AI architectures. Every technical skill I have is self-taught.";
+    return "I call it the 'builder mindset' -the urge to construct and optimize that transcends any single role. Whether it's a supply chain governance model, a Python automation script, or a 3D-printed prototype, I'm driven to create. I taught myself 3D modeling (Shapr3D), 3D printing (FDM & resin), hardware integration, and Python scripting. This continuous learning keeps my 'hands dirty' with real making -the same curiosity that drove me to understand hydraulics in the Air Force now drives me to understand AI architectures. Every technical skill I have is self-taught.";
   }
 
   // Leadership / Philosophy
@@ -116,9 +116,9 @@ const getResponse = (query: string): string => {
     return "Family is where I apply the same precision I bring to work. My wife Leslie is my true partner -we manage life, career, real estate, and family as a coordinated team. I have two daughters: Isabella 'Bella' (born 2009) lives in North Carolina, and being present for her despite the distance required turning logistics into a love language -managing Track Out schedules, unaccompanied minor flights, and maximizing every moment together. Emilia 'Emmi' (born 2019) attends the Long Island School for the Gifted. In 2024, Leslie and I established a home in Mililani, Hawaii -a sanctuary where the 'Builder' can rest. The Pacific chapter represents a strategic pivot toward balance.";
   }
 
-  // Porsche / Automotive / Design Philosophy
-  if (q.includes("porsche") || q.includes("911") || q.includes("car") || q.includes("automotive") || q.includes("design philosophy")) {
-    return "The Porsche 911 isn't just a car to me -it's a design philosophy that mirrors my own values. Evolution over revolution: the 911 has been refined for 60 years without losing its essence. Engineering integrity without excess: every component serves a purpose. Performance with purpose: the GT3 is uncompromising and precise, connected to the driver in ways modern cars have abandoned. I drive a Tesla Model Y for practical family transport, but the 911 represents what I aspire to in my work: continuous refinement, purposeful design, and the pursuit of understanding as its own reward.";
+  // Maker / Design Philosophy / Building
+  if (q.includes("maker") || q.includes("bench") || q.includes("design philosophy") || q.includes("why") || q.includes("tinkering") || q.includes("prototype")) {
+    return "I build things at every level, not metaphorically: physically. My workbench has a 3D printer running Shapr3D designs, Python scripts automating processes, and hardware prototypes in various states of completion. Every skill I have is self-taught, driven by a simple rule: if I need it, I'll learn to make it. That same instinct applies to my professional work. The governance frameworks, AI agents, and transformation roadmaps I create are just different materials on a different bench. Most executives either strategize or operate. I do both because I never stopped being a maker.";
   }
 
   // Community / JBN / Volunteering

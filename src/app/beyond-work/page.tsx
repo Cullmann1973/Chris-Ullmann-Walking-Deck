@@ -85,7 +85,7 @@ export default function BeyondWorkPage() {
 
             <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
-                I can&apos;t seem to stop tinkering. My garage has a 3D printer (FDM and resin), Fusion 360 running on a workstation, and an ever-growing collection of half-finished projects. I taught myself CAD the same way I taught myself everything else: by needing to solve a problem and refusing to pay someone else to solve it.
+                I can&apos;t seem to stop tinkering. My garage has a 3D printer (FDM and resin), Shapr3D running on my iPad, and an ever-growing collection of half-finished projects. I taught myself CAD the same way I taught myself everything else: by needing to solve a problem and refusing to pay someone else to solve it.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -98,25 +98,25 @@ export default function BeyondWorkPage() {
             </div>
           </motion.section>
 
-          {/* Porsche Philosophy */}
+          {/* The Maker's Bench */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-serif text-amber-100 mb-6">The 911 Philosophy</h2>
+            <h2 className="text-2xl font-serif text-amber-100 mb-6">The Maker&apos;s Bench</h2>
 
             <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
-                People ask why I&apos;m drawn to the Porsche 911, specifically the GT3. It&apos;s not about speed or status. It&apos;s about philosophy.
+                I build things at every level. Not metaphorically: physically. My workbench has a 3D printer running Shapr3D designs, Python scripts automating processes, and hardware prototypes in various states of completion. Every skill I have is self-taught, driven by a simple rule: if I need it, I&apos;ll learn to make it.
               </p>
 
               <p className="text-muted-foreground leading-relaxed mb-6">
-                The 911 has been refined for 60 years without ever being replaced. Evolution over revolution. Each generation builds on what came before, improving without discarding. That&apos;s how I try to work: don&apos;t tear it down, make it better.
+                That same instinct applies to my professional work. The governance frameworks, AI agents, and transformation roadmaps I create are just different materials on a different bench. The approach is identical: understand the problem deeply, prototype solutions, iterate until it works.
               </p>
 
               <p className="text-muted-foreground leading-relaxed">
-                Engineering integrity without excess. Performance with purpose. Nothing on a GT3 exists for show; everything earns its place. That&apos;s the standard I hold myself to. If something doesn&apos;t serve a function, it doesn&apos;t belong.
+                Most executives either strategize or operate. I do both because I never stopped being a maker. Whether it&apos;s a $500M transformation roadmap or a custom 3D-printed bracket, the satisfaction comes from the same place: something that didn&apos;t exist now does, and it solves a real problem.
               </p>
             </div>
           </motion.section>
