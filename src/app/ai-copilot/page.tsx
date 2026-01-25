@@ -67,9 +67,9 @@ const agentDemos = [
   {
     id: "slide-maestro",
     name: "Slide Maestro",
-    description: "Presentation generator that turns ideas into polished slides in minutes.",
-    status: "coming-soon" as const,
-    demoUrl: null,
+    description: "AI presentation co-pilot that transforms ideas into polished slides in minutes.",
+    status: "live" as const,
+    demoUrl: "https://cc-slide-maestro.vercel.app",
     color: "from-purple-500/20 to-violet-500/20",
     borderColor: "border-purple-500/30",
   },
