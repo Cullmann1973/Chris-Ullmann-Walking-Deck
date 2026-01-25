@@ -6,8 +6,8 @@ import Link from "next/link";
 export default function BeyondWorkPage() {
   return (
     <div className="min-h-screen">
-      {/* Clean header with subtle gradient */}
-      <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+      {/* Warm gradient header - breaks from the dark industrial theme */}
+      <div className="bg-gradient-to-b from-amber-950/20 via-background to-background">
         <div className="px-6 pt-20 pb-12 lg:px-12">
           <div className="max-w-3xl mx-auto">
             <motion.div
@@ -17,7 +17,7 @@ export default function BeyondWorkPage() {
               <h1 className="text-3xl md:text-4xl font-serif font-normal tracking-tight text-foreground mb-6">
                 Beyond Work
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-xl text-amber-200/80 leading-relaxed">
                 The professional pages tell you what I&apos;ve built. This one tells you why I build.
               </p>
             </motion.div>
@@ -35,9 +35,9 @@ export default function BeyondWorkPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-serif text-foreground mb-6">Leslie and the Girls</h2>
+            <h2 className="text-2xl font-serif text-amber-100 mb-6">Leslie and the Girls</h2>
 
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan. Together we&apos;re raising Emilia (Emmi), who at five already attends the Long Island School for the Gifted and reminds me daily that curiosity is hereditary.
               </p>
@@ -58,9 +58,9 @@ export default function BeyondWorkPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-serif text-foreground mb-6">The Hawaii Chapter</h2>
+            <h2 className="text-2xl font-serif text-amber-100 mb-6">The Hawaii Chapter</h2>
 
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
                 In late 2024, Leslie and I made a decision that surprised some people: we bought a home in Mililani, on Oahu. Not as a vacation property, but as a sanctuary. A place where the &quot;Builder&quot; can stop building for a while.
               </p>
@@ -81,9 +81,9 @@ export default function BeyondWorkPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-serif text-foreground mb-6">Still Building Things</h2>
+            <h2 className="text-2xl font-serif text-amber-100 mb-6">Still Building Things</h2>
 
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
                 I can&apos;t seem to stop tinkering. My garage has a 3D printer (FDM and resin), Shapr3D running on my iPad, and an ever-growing collection of half-finished projects. I taught myself CAD the same way I taught myself everything else: by needing to solve a problem and refusing to pay someone else to solve it.
               </p>
@@ -104,9 +104,9 @@ export default function BeyondWorkPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-serif text-foreground mb-6">The Maker&apos;s Bench</h2>
+            <h2 className="text-2xl font-serif text-amber-100 mb-6">The Maker&apos;s Bench</h2>
 
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
                 I build things at every level. Not metaphorically: physically. My workbench has a 3D printer running Shapr3D designs, Python scripts automating processes, and hardware prototypes in various states of completion. Every skill I have is self-taught, driven by a simple rule: if I need it, I&apos;ll learn to make it.
               </p>
@@ -127,9 +127,9 @@ export default function BeyondWorkPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-serif text-foreground mb-6">Giving Back</h2>
+            <h2 className="text-2xl font-serif text-amber-100 mb-6">Giving Back</h2>
 
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-muted-foreground leading-relaxed mb-6">
                 I&apos;m active in the Jewish Business Network of Long Island, where I participate in executive roundtables and community giving initiatives. At work, I&apos;ve championed mental health programs and launched Wellbeing ERGs because I&apos;ve seen what happens when people don&apos;t have support systems.
               </p>
@@ -149,9 +149,9 @@ export default function BeyondWorkPage() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-8 border-t border-border"
+            className="pt-8 border-t border-amber-900/30"
           >
-            <p className="text-lg text-primary/80 italic leading-relaxed text-center max-w-2xl mx-auto">
+            <p className="text-lg text-amber-200/70 italic leading-relaxed text-center max-w-2xl mx-auto">
               &quot;The pursuit of understanding is its own reward.&quot;
             </p>
           </motion.section>
@@ -168,7 +168,7 @@ export default function BeyondWorkPage() {
             </p>
             <Link
               href="/ai-copilot"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-amber-900/50 text-amber-100 font-medium hover:bg-amber-900/70 transition-colors border border-amber-800/50"
             >
               Ask Me Anything
             </Link>

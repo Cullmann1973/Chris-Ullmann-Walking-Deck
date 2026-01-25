@@ -44,87 +44,105 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  /* Custom Industrial Digital Colors */
+  /* Bright Accent Colors */
   --color-gauge-amber: var(--gauge-amber);
   --color-gauge-blue: var(--gauge-blue);
   --color-gauge-green: var(--gauge-green);
 }
 
-/* Industrial Digital Dark Theme - SpaceX Dashboard meets Porsche 911 */
+/* Clean Bright Theme - Inspired by Apple + Apossible */
 :root {
-  --radius: 0.375rem;
-  --background: oklch(0.11 0.005 250);
-  --foreground: oklch(0.93 0.01 250);
-  --card: oklch(0.14 0.008 250);
-  --card-foreground: oklch(0.93 0.01 250);
-  --popover: oklch(0.14 0.008 250);
-  --popover-foreground: oklch(0.93 0.01 250);
-  --primary: oklch(0.75 0.15 55);
-  --primary-foreground: oklch(0.12 0.005 250);
-  --secondary: oklch(0.20 0.01 250);
-  --secondary-foreground: oklch(0.85 0.01 250);
-  --muted: oklch(0.18 0.01 250);
-  --muted-foreground: oklch(0.60 0.01 250);
-  --accent: oklch(0.65 0.18 230);
-  --accent-foreground: oklch(0.98 0.01 250);
-  --destructive: oklch(0.60 0.22 25);
-  --border: oklch(0.25 0.01 250);
-  --input: oklch(0.20 0.01 250);
-  --ring: oklch(0.75 0.15 55);
-  --chart-1: oklch(0.75 0.15 55);
-  --chart-2: oklch(0.65 0.18 230);
-  --chart-3: oklch(0.70 0.20 145);
-  --chart-4: oklch(0.65 0.15 280);
-  --chart-5: oklch(0.70 0.18 25);
-  --sidebar: oklch(0.09 0.005 250);
-  --sidebar-foreground: oklch(0.75 0.01 250);
-  --sidebar-primary: oklch(0.75 0.15 55);
-  --sidebar-primary-foreground: oklch(0.12 0.005 250);
-  --sidebar-accent: oklch(0.16 0.01 250);
-  --sidebar-accent-foreground: oklch(0.93 0.01 250);
-  --sidebar-border: oklch(0.22 0.01 250);
-  --sidebar-ring: oklch(0.75 0.15 55);
-  /* Gauge Colors - Industrial Instrumentation */
-  --gauge-amber: oklch(0.78 0.16 65);
-  --gauge-blue: oklch(0.65 0.18 230);
-  --gauge-green: oklch(0.72 0.19 145);
+  --radius: 0.625rem;
+  /* Backgrounds - Clean whites */
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.13 0.02 250);
+
+  /* Cards - Subtle warm white */
+  --card: oklch(0.99 0.002 90);
+  --card-foreground: oklch(0.13 0.02 250);
+
+  /* Popovers */
+  --popover: oklch(0.995 0 0);
+  --popover-foreground: oklch(0.13 0.02 250);
+
+  /* Primary - Vibrant Teal/Cyan (Apple-inspired) */
+  --primary: oklch(0.55 0.2 220);
+  --primary-foreground: oklch(0.995 0 0);
+
+  /* Secondary - Soft gray */
+  --secondary: oklch(0.96 0.005 250);
+  --secondary-foreground: oklch(0.25 0.02 250);
+
+  /* Muted - Light gray */
+  --muted: oklch(0.96 0.005 250);
+  --muted-foreground: oklch(0.45 0.02 250);
+
+  /* Accent - Coral/Salmon (MAC-inspired warmth) */
+  --accent: oklch(0.70 0.18 25);
+  --accent-foreground: oklch(0.995 0 0);
+
+  /* Destructive */
+  --destructive: oklch(0.55 0.22 25);
+
+  /* Borders - Very subtle */
+  --border: oklch(0.92 0.005 250);
+  --input: oklch(0.96 0.005 250);
+  --ring: oklch(0.55 0.2 220);
+
+  /* Charts - Vibrant palette */
+  --chart-1: oklch(0.55 0.2 220);
+  --chart-2: oklch(0.70 0.18 25);
+  --chart-3: oklch(0.65 0.2 145);
+  --chart-4: oklch(0.60 0.18 280);
+  --chart-5: oklch(0.70 0.16 65);
+
+  /* Sidebar - Clean white with subtle distinction */
+  --sidebar: oklch(0.985 0.002 90);
+  --sidebar-foreground: oklch(0.35 0.02 250);
+  --sidebar-primary: oklch(0.55 0.2 220);
+  --sidebar-primary-foreground: oklch(0.995 0 0);
+  --sidebar-accent: oklch(0.97 0.01 220);
+  --sidebar-accent-foreground: oklch(0.13 0.02 250);
+  --sidebar-border: oklch(0.93 0.005 250);
+  --sidebar-ring: oklch(0.55 0.2 220);
+
+  /* Accent colors for highlights */
+  --gauge-amber: oklch(0.75 0.16 65);
+  --gauge-blue: oklch(0.55 0.2 220);
+  --gauge-green: oklch(0.65 0.2 145);
 }
 
+/* Dark mode - optional, keeping for flexibility */
 .dark {
-  --background: oklch(0.11 0.005 250);
+  --background: oklch(0.12 0.01 250);
   --foreground: oklch(0.93 0.01 250);
-  --card: oklch(0.14 0.008 250);
+  --card: oklch(0.15 0.01 250);
   --card-foreground: oklch(0.93 0.01 250);
-  --popover: oklch(0.14 0.008 250);
+  --popover: oklch(0.15 0.01 250);
   --popover-foreground: oklch(0.93 0.01 250);
-  --primary: oklch(0.75 0.15 55);
-  --primary-foreground: oklch(0.12 0.005 250);
-  --secondary: oklch(0.20 0.01 250);
+  --primary: oklch(0.65 0.2 220);
+  --primary-foreground: oklch(0.12 0.01 250);
+  --secondary: oklch(0.22 0.01 250);
   --secondary-foreground: oklch(0.85 0.01 250);
-  --muted: oklch(0.18 0.01 250);
+  --muted: oklch(0.20 0.01 250);
   --muted-foreground: oklch(0.60 0.01 250);
-  --accent: oklch(0.65 0.18 230);
-  --accent-foreground: oklch(0.98 0.01 250);
+  --accent: oklch(0.70 0.18 25);
+  --accent-foreground: oklch(0.12 0.01 250);
   --destructive: oklch(0.60 0.22 25);
-  --border: oklch(0.25 0.01 250);
-  --input: oklch(0.20 0.01 250);
-  --ring: oklch(0.75 0.15 55);
-  --chart-1: oklch(0.75 0.15 55);
-  --chart-2: oklch(0.65 0.18 230);
-  --chart-3: oklch(0.70 0.20 145);
-  --chart-4: oklch(0.65 0.15 280);
-  --chart-5: oklch(0.70 0.18 25);
-  --sidebar: oklch(0.09 0.005 250);
+  --border: oklch(0.28 0.01 250);
+  --input: oklch(0.22 0.01 250);
+  --ring: oklch(0.65 0.2 220);
+  --sidebar: oklch(0.10 0.01 250);
   --sidebar-foreground: oklch(0.75 0.01 250);
-  --sidebar-primary: oklch(0.75 0.15 55);
-  --sidebar-primary-foreground: oklch(0.12 0.005 250);
-  --sidebar-accent: oklch(0.16 0.01 250);
+  --sidebar-primary: oklch(0.65 0.2 220);
+  --sidebar-primary-foreground: oklch(0.12 0.01 250);
+  --sidebar-accent: oklch(0.18 0.01 250);
   --sidebar-accent-foreground: oklch(0.93 0.01 250);
-  --sidebar-border: oklch(0.22 0.01 250);
-  --sidebar-ring: oklch(0.75 0.15 55);
+  --sidebar-border: oklch(0.25 0.01 250);
+  --sidebar-ring: oklch(0.65 0.2 220);
   --gauge-amber: oklch(0.78 0.16 65);
-  --gauge-blue: oklch(0.65 0.18 230);
-  --gauge-green: oklch(0.72 0.19 145);
+  --gauge-blue: oklch(0.65 0.2 220);
+  --gauge-green: oklch(0.70 0.2 145);
 }
 
 @layer base {
@@ -133,47 +151,94 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
-/* Scanline effect for HUD feel */
-.scanlines::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.03) 2px,
-    rgba(0, 0, 0, 0.03) 4px
-  );
-  pointer-events: none;
-  z-index: 10;
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Glow effects */
-.glow-amber {
-  box-shadow: 0 0 20px oklch(0.78 0.16 65 / 0.3);
+/* Custom scrollbar - subtle */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.glow-blue {
-  box-shadow: 0 0 20px oklch(0.65 0.18 230 / 0.3);
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-/* Glass morphism card */
+::-webkit-scrollbar-thumb {
+  background: oklch(0.85 0.01 250);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.75 0.01 250);
+}
+
+/* Glass morphism card - light version */
 .glass-card {
-  background: oklch(0.14 0.008 250 / 0.8);
+  background: oklch(0.995 0 0 / 0.8);
   backdrop-filter: blur(12px);
-  border: 1px solid oklch(0.25 0.01 250 / 0.5);
+  border: 1px solid oklch(0.92 0.005 250);
+  box-shadow: 0 1px 3px oklch(0.5 0 0 / 0.05);
 }
 
-/* Monospace gauge numbers */
+/* Subtle hover glow */
+.glow-primary {
+  box-shadow: 0 0 20px oklch(0.55 0.2 220 / 0.15);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px oklch(0.70 0.18 25 / 0.15);
+}
+
+/* Keep gauge numbers monospace */
 .gauge-number {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
+}
+
+/* Clean card hover effect */
+.card-hover {
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px oklch(0.5 0 0 / 0.08);
+}
+
+/* Section dividers - subtle */
+.section-divider {
+  border-top: 1px solid oklch(0.92 0.005 250);
+}
+
+/* Typography enhancements */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Link underline animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: oklch(0.55 0.2 220);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
 }
