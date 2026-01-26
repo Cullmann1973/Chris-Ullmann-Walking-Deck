@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap, ScrollTrigger } from "../gsap-provider";
 
 const sections = [
@@ -31,6 +32,7 @@ const sections = [
 
 export function BeyondSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -52,6 +54,35 @@ export function BeyondSection() {
           },
         }
       );
+
+      // Portrait image reveal
+      gsap.fromTo(
+        imageRef.current,
+        { scale: 1.1, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+
+      // Parallax effect on image
+      gsap.to(".beyond-portrait-img", {
+        yPercent: 15,
+        ease: "none",
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+      });
 
       // Content blocks stagger
       gsap.fromTo(
@@ -95,9 +126,9 @@ export function BeyondSection() {
   return (
     <section ref={sectionRef} id="beyond" className="bg-dark-alt relative">
       <div className="section-padding">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Section header */}
-          <div className="beyond-title mb-16">
+          <div className="beyond-title mb-16 max-w-3xl">
             <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
               Beyond Work
             </span>
@@ -109,8 +140,24 @@ export function BeyondSection() {
             </p>
           </div>
 
+          {/* Full-width portrait image */}
+          <div
+            ref={imageRef}
+            className="relative w-full h-[60vh] md:h-[70vh] mb-20 rounded-xl overflow-hidden"
+          >
+            <Image
+              src="/portrait-walking.jpg"
+              alt="Christopher Ullmann walking in New York City"
+              fill
+              className="beyond-portrait-img object-cover object-center"
+              priority
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent" />
+          </div>
+
           {/* Content blocks */}
-          <div className="beyond-content space-y-16">
+          <div className="beyond-content space-y-16 max-w-3xl mx-auto">
             {sections.map((section) => (
               <div key={section.title} className="beyond-block">
                 <h3 className="text-2xl font-serif text-foreground mb-6">
@@ -128,7 +175,7 @@ export function BeyondSection() {
           </div>
 
           {/* Quote */}
-          <div className="beyond-quote mt-20 pt-12 border-t border-border text-center">
+          <div className="beyond-quote mt-20 pt-12 border-t border-border text-center max-w-3xl mx-auto">
             <p className="text-2xl md:text-3xl font-serif text-primary/80 italic max-w-2xl mx-auto">
               &quot;The pursuit of understanding is its own reward.&quot;
             </p>
