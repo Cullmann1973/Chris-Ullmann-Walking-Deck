@@ -135,7 +135,7 @@ export function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 className="hero-headline absolute bottom-32 left-8 md:left-16 lg:left-24 right-8 max-w-3xl text-2xl md:text-3xl lg:text-4xl font-serif text-foreground leading-snug opacity-0">
+          <h1 className="hero-headline absolute bottom-24 md:bottom-32 left-4 md:left-16 lg:left-24 right-4 md:right-8 max-w-3xl text-xl md:text-3xl lg:text-4xl font-serif text-foreground leading-snug opacity-0">
             Most transformation leaders know{" "}
             <span className="text-muted-foreground">strategy</span> or{" "}
             <span className="text-muted-foreground">operations</span>.
@@ -144,7 +144,7 @@ export function HeroSection() {
           </h1>
 
           {/* Subtitle */}
-          <p className="hero-subtitle absolute bottom-16 left-8 md:left-16 lg:left-24 text-sm md:text-base text-muted-foreground opacity-0">
+          <p className="hero-subtitle absolute bottom-12 md:bottom-16 left-4 md:left-16 lg:left-24 right-4 text-xs md:text-base text-muted-foreground opacity-0">
             Christopher Ullmann
             <span className="mx-3 text-border">|</span>
             Executive Director, AI Transformation

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
+import { RolesRevealSection } from "@/components/sections/roles-reveal-section";
 import { StackSection } from "@/components/sections/stack-section";
 import { BeyondSection } from "@/components/sections/beyond-section";
 import { AISection } from "@/components/sections/ai-section";
@@ -13,6 +14,7 @@ import { ScrollTrigger } from "@/components/gsap-provider";
 const sections = [
   { id: "hero", name: "Christopher Ullmann" },
   { id: "about", name: "About" },
+  { id: "roles", name: "Roles" },
   { id: "stack", name: "The Stack" },
   { id: "beyond", name: "Beyond Work" },
   { id: "ai", name: "Ask Chris" },
@@ -69,6 +71,7 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <AboutSection />
+        <RolesRevealSection />
         <StackSection />
         <BeyondSection />
         <AISection />

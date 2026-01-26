@@ -132,7 +132,7 @@ export function AboutSection() {
       {/* Large "About" title - flies in from right */}
       <h2
         ref={titleRef}
-        className="absolute top-16 md:top-20 lg:top-24 right-8 md:right-16 lg:right-24 text-5xl md:text-7xl lg:text-8xl font-serif text-foreground/40 pointer-events-none select-none"
+        className="absolute top-16 md:top-20 lg:top-24 right-4 md:right-16 lg:right-24 text-4xl md:text-7xl lg:text-8xl font-serif text-foreground/40 pointer-events-none select-none"
       >
         About
       </h2>
@@ -165,7 +165,7 @@ export function AboutSection() {
                 {expertiseWords.map((word, index) => (
                   <div
                     key={word}
-                    className={`expertise-word-${index} text-3xl md:text-4xl lg:text-5xl font-serif ${
+                    className={`expertise-word-${index} text-2xl md:text-4xl lg:text-5xl font-serif ${
                       index === expertiseWords.length - 1
                         ? "text-primary"
                         : "text-foreground"
