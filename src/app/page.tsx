@@ -14,8 +14,8 @@ const stackLayers = [
 ];
 
 export default function HomePage() {
-  // Set to true once you add a headshot image to /public/headshot.jpg
-  const hasHeadshot = false;
+  // Headshot image at /public/headshot.png
+  const hasHeadshot = true;
 
   return (
     <div className="min-h-screen">
@@ -76,7 +76,7 @@ export default function HomePage() {
               <div className="relative w-48 h-48 lg:w-56 lg:h-56 mx-auto lg:mx-0">
                 {hasHeadshot ? (
                   <Image
-                    src="/headshot.jpg"
+                    src="/headshot.png"
                     alt="Christopher Ullmann"
                     fill
                     className="object-cover rounded-2xl"
