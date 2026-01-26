@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { RolesRevealSection } from "@/components/sections/roles-reveal-section";
+import { WhyIBuildSection } from "@/components/sections/why-i-build-section";
 import { StackSection } from "@/components/sections/stack-section";
 import { BeyondSection } from "@/components/sections/beyond-section";
 import { AISection } from "@/components/sections/ai-section";
@@ -15,6 +16,7 @@ const sections = [
   { id: "hero", name: "Christopher Ullmann" },
   { id: "about", name: "About" },
   { id: "roles", name: "Roles" },
+  { id: "why-i-build", name: "Why I Build" },
   { id: "stack", name: "The Stack" },
   { id: "beyond", name: "Beyond Work" },
   { id: "ai", name: "Ask Chris" },
@@ -72,6 +74,7 @@ export default function HomePage() {
         <HeroSection />
         <AboutSection />
         <RolesRevealSection />
+        <WhyIBuildSection />
         <StackSection />
         <BeyondSection />
         <AISection />
