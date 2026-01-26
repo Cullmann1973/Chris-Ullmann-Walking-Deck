@@ -5,69 +5,84 @@ import { gsap, ScrollTrigger } from "../gsap-provider";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const initialsRef = useRef<HTMLDivElement>(null);
-  const headlineRef = useRef<HTMLHeadingElement>(null);
-  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!sectionRef.current || !initialsRef.current) return;
+    if (!sectionRef.current || !containerRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Set initials visible immediately
-      gsap.set(".initials-letter", { y: 0, opacity: 1 });
+      // Set initial state - C visible, U hidden (will reveal on scroll)
+      gsap.set(".letter-c", { opacity: 1, y: 0 });
+      gsap.set(".letter-u", { clipPath: "inset(100% 0 0 0)" });
 
-      // Gentle entrance animation for initials (scale up slightly)
-      gsap.fromTo(
-        ".initials-letter",
-        { scale: 0.9 },
+      // Timeline for the hero animation tied to scroll
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=200%",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
+
+      // Phase 1: Reveal the U (draw up from bottom)
+      tl.to(".letter-u", {
+        clipPath: "inset(0% 0 0 0)",
+        duration: 0.4,
+        ease: "none",
+      });
+
+      // Phase 2: Shrink both letters and move to top-left
+      tl.to(
+        ".initials-container",
         {
-          scale: 1,
-          duration: 1,
-          stagger: 0.1,
-          ease: "power2.out",
-        }
+          scale: 0.15,
+          x: "-40vw",
+          y: "-35vh",
+          duration: 0.6,
+          ease: "none",
+        },
+        "+=0.1"
       );
 
-      // Headline animation
-      gsap.fromTo(
-        headlineRef.current,
-        { y: 30, opacity: 0 },
+      // Phase 3: Fade out the letters as we exit hero
+      tl.to(
+        ".initials-container",
         {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          delay: 0.4,
-        }
+          opacity: 0,
+          duration: 0.2,
+          ease: "none",
+        },
+        "-=0.1"
+      );
+
+      // Headline animation - fade in then out
+      tl.fromTo(
+        ".hero-headline",
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.2, ease: "none" },
+        0.3
+      );
+      tl.to(
+        ".hero-headline",
+        { opacity: 0, y: -20, duration: 0.2, ease: "none" },
+        0.7
       );
 
       // Subtitle animation
-      gsap.fromTo(
-        subtitleRef.current,
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-          delay: 0.7,
-        }
+      tl.fromTo(
+        ".hero-subtitle",
+        { opacity: 0 },
+        { opacity: 1, duration: 0.15, ease: "none" },
+        0.35
       );
-
-      // Scroll-triggered parallax for initials (fade out as you scroll)
-      ScrollTrigger.create({
-        trigger: sectionRef.current,
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-        onUpdate: (self) => {
-          const progress = self.progress;
-          gsap.set(".initials-letter", {
-            y: -100 * progress,
-            opacity: 1 - progress * 0.8,
-          });
-        },
-      });
+      tl.to(
+        ".hero-subtitle",
+        { opacity: 0, duration: 0.15, ease: "none" },
+        0.7
+      );
     }, sectionRef);
 
     return () => ctx.revert();
@@ -77,30 +92,29 @@ export function HeroSection() {
     <section
       ref={sectionRef}
       id="hero"
-      className="section-full bg-dark relative overflow-hidden"
+      className="h-screen bg-dark relative overflow-hidden"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
 
-      <div className="section-padding flex flex-col items-center justify-center min-h-screen">
-        {/* CU Initials */}
-        <div
-          ref={initialsRef}
-          className="flex items-center justify-center gap-2 md:gap-4 mb-12 md:mb-16"
-        >
-          <span className="initials-letter initials text-[6rem] md:text-[10rem] lg:text-[14rem] text-foreground">
-            C
-          </span>
-          <span className="initials-letter initials text-[6rem] md:text-[10rem] lg:text-[14rem] text-primary">
-            U
-          </span>
+      <div
+        ref={containerRef}
+        className="h-full flex flex-col justify-center px-8 md:px-16 lg:px-24"
+      >
+        {/* CU Initials - LEFT aligned like marchanslin */}
+        <div className="initials-container origin-top-left">
+          <div className="flex items-end gap-0">
+            <span className="letter-c initials text-[35vh] md:text-[45vh] lg:text-[55vh] text-foreground leading-none">
+              C
+            </span>
+            <span className="letter-u initials text-[35vh] md:text-[45vh] lg:text-[55vh] text-primary leading-none">
+              U
+            </span>
+          </div>
         </div>
 
-        {/* Main headline */}
-        <h1
-          ref={headlineRef}
-          className="max-w-4xl text-center text-2xl md:text-3xl lg:text-4xl font-serif text-foreground leading-snug"
-        >
+        {/* Headline - appears during scroll */}
+        <h1 className="hero-headline absolute bottom-32 left-8 md:left-16 lg:left-24 right-8 max-w-3xl text-2xl md:text-3xl lg:text-4xl font-serif text-foreground leading-snug opacity-0">
           Most transformation leaders know{" "}
           <span className="text-muted-foreground">strategy</span> or{" "}
           <span className="text-muted-foreground">operations</span>.
@@ -109,14 +123,29 @@ export function HeroSection() {
         </h1>
 
         {/* Subtitle */}
-        <p
-          ref={subtitleRef}
-          className="mt-8 text-center text-sm md:text-base text-muted-foreground max-w-xl"
-        >
+        <p className="hero-subtitle absolute bottom-16 left-8 md:left-16 lg:left-24 text-sm md:text-base text-muted-foreground opacity-0">
           Christopher Ullmann
           <span className="mx-3 text-border">|</span>
           Executive Director, AI Transformation
         </p>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 right-8 flex flex-col items-center gap-2 text-muted-foreground">
+        <span className="text-xs font-mono tracking-wider uppercase">Scroll</span>
+        <svg
+          className="w-4 h-4 animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
       </div>
     </section>
   );

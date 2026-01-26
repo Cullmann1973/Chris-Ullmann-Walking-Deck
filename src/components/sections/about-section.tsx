@@ -21,6 +21,7 @@ const stats = [
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const wordsRef = useRef<HTMLDivElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
@@ -30,6 +31,23 @@ export function AboutSection() {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
+      // Large "About" title flies in from right (scrubbed to scroll)
+      gsap.fromTo(
+        titleRef.current,
+        { x: "100vw", opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 80%",
+            end: "top 20%",
+            scrub: 1,
+          },
+        }
+      );
+
       // Photo reveal
       gsap.fromTo(
         photoRef.current,
@@ -37,67 +55,66 @@ export function AboutSection() {
         {
           scale: 1,
           opacity: 1,
-          duration: 1.2,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: photoRef.current,
-            start: "top 80%",
-            end: "top 40%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
+            end: "top 50%",
+            scrub: 1,
           },
         }
       );
 
-      // Expertise words stagger
-      gsap.fromTo(
-        ".expertise-word",
-        { y: 60, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: wordsRef.current,
-            start: "top 80%",
-            end: "top 40%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
+      // Expertise words fly in from right, staggered
+      expertiseWords.forEach((_, index) => {
+        gsap.fromTo(
+          `.expertise-word-${index}`,
+          { x: "50vw", opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: wordsRef.current,
+              start: `top ${85 - index * 5}%`,
+              end: `top ${55 - index * 5}%`,
+              scrub: 1,
+            },
+          }
+        );
+      });
 
       // Content reveal
       gsap.fromTo(
         contentRef.current,
-        { y: 40, opacity: 0 },
+        { y: 60, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: contentRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
+            start: "top 90%",
+            end: "top 60%",
+            scrub: 1,
           },
         }
       );
 
-      // Stats counter animation
+      // Stats animation
       gsap.fromTo(
         ".stat-item",
-        { y: 30, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.6,
           stagger: 0.1,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: statsRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse",
+            start: "top 90%",
+            end: "top 60%",
+            scrub: 1,
           },
         }
       );
@@ -110,17 +127,18 @@ export function AboutSection() {
     <section
       ref={sectionRef}
       id="about"
-      className="bg-dark-alt relative"
+      className="bg-dark-alt relative min-h-screen"
     >
-      <div className="section-padding">
-        <div className="max-w-6xl mx-auto">
-          {/* Section label */}
-          <div className="mb-12">
-            <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
-              About
-            </span>
-          </div>
+      {/* Large "About" title - flies in from right */}
+      <h2
+        ref={titleRef}
+        className="absolute top-24 right-8 md:right-16 lg:right-24 text-6xl md:text-8xl lg:text-9xl font-serif text-foreground/10 pointer-events-none"
+      >
+        About
+      </h2>
 
+      <div className="section-padding pt-32">
+        <div className="max-w-6xl mx-auto">
           {/* Main content grid */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left column - Photo and words */}
@@ -142,12 +160,12 @@ export function AboutSection() {
                 </div>
               </div>
 
-              {/* Expertise words */}
+              {/* Expertise words - fly in from right */}
               <div ref={wordsRef} className="space-y-2">
                 {expertiseWords.map((word, index) => (
                   <div
                     key={word}
-                    className={`expertise-word text-3xl md:text-4xl lg:text-5xl font-serif ${
+                    className={`expertise-word-${index} text-3xl md:text-4xl lg:text-5xl font-serif ${
                       index === expertiseWords.length - 1
                         ? "text-primary"
                         : "text-foreground"
@@ -162,9 +180,9 @@ export function AboutSection() {
             {/* Right column - Content */}
             <div ref={contentRef} className="space-y-8 lg:pt-12">
               <div className="content-card p-8">
-                <h2 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
+                <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
                   From Air Force flight lines to Fortune 500 boardrooms
-                </h2>
+                </h3>
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>

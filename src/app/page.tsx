@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { Header } from "@/components/header";
-import { ScrollIndicator } from "@/components/scroll-indicator";
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { StackSection } from "@/components/sections/stack-section";
@@ -12,7 +11,7 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { ScrollTrigger } from "@/components/gsap-provider";
 
 const sections = [
-  { id: "hero", name: "Home" },
+  { id: "hero", name: "Christopher Ullmann" },
   { id: "about", name: "About" },
   { id: "stack", name: "The Stack" },
   { id: "beyond", name: "Beyond Work" },
@@ -21,8 +20,7 @@ const sections = [
 ];
 
 export default function HomePage() {
-  const [currentSection, setCurrentSection] = useState("Home");
-  const mainRef = useRef<HTMLElement>(null);
+  const [currentSection, setCurrentSection] = useState("Christopher Ullmann");
 
   useEffect(() => {
     // Set up scroll-based section tracking
@@ -35,13 +33,13 @@ export default function HomePage() {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
               setCurrentSection(name);
             }
           });
         },
         {
-          threshold: [0.3, 0.5, 0.7],
+          threshold: [0.2, 0.5],
           rootMargin: "-10% 0px -10% 0px",
         }
       );
@@ -67,9 +65,8 @@ export default function HomePage() {
   return (
     <>
       <Header currentSection={currentSection} />
-      <ScrollIndicator />
 
-      <main ref={mainRef}>
+      <main>
         <HeroSection />
         <AboutSection />
         <StackSection />
