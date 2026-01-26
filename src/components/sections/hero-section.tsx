@@ -10,11 +10,13 @@ export function HeroSection() {
   useEffect(() => {
     if (!sectionRef.current || !containerRef.current) return;
 
+    // Set mini-CU initial state (outside context since it's outside section)
+    gsap.set(".mini-cu", { opacity: 0 });
+
     const ctx = gsap.context(() => {
       // Set initial state - C visible, U hidden (will reveal on scroll)
       gsap.set(".letter-c", { opacity: 1, y: 0 });
       gsap.set(".letter-u", { clipPath: "inset(100% 0 0 0)" });
-      gsap.set(".mini-cu", { opacity: 0 });
 
       // Timeline for the hero animation tied to scroll
       const tl = gsap.timeline({
@@ -51,17 +53,6 @@ export function HeroSection() {
         }
       );
 
-      // Mini-CU fades in as large CU shrinks (starts at same time)
-      tl.to(
-        ".mini-cu",
-        {
-          opacity: 1,
-          duration: 0.2,
-          ease: "none",
-        },
-        "-=0.25"
-      );
-
       // Headline animation - fade in after CU shrinks (at 50%), out at 85%
       tl.fromTo(
         ".hero-headline",
@@ -89,7 +80,30 @@ export function HeroSection() {
       );
     }, sectionRef);
 
-    return () => ctx.revert();
+    // Separate ScrollTrigger for mini-CU (outside context since element is outside section)
+    const miniCuTrigger = ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: "top top",
+      end: "+=300%",
+      scrub: 1.5,
+      onUpdate: (self) => {
+        // Fade in mini-CU between 35% and 50% of scroll progress
+        const progress = self.progress;
+        if (progress >= 0.35 && progress <= 0.5) {
+          const fadeProgress = (progress - 0.35) / 0.15;
+          gsap.set(".mini-cu", { opacity: fadeProgress });
+        } else if (progress > 0.5) {
+          gsap.set(".mini-cu", { opacity: 1 });
+        } else {
+          gsap.set(".mini-cu", { opacity: 0 });
+        }
+      },
+    });
+
+    return () => {
+      ctx.revert();
+      miniCuTrigger.kill();
+    };
   }, []);
 
   return (
