@@ -111,10 +111,10 @@ export default function HomePage() {
                   Current Role
                 </p>
                 <p className="text-foreground font-medium">
-                  Executive Director, PMO & Strategy
+                  Executive Director, AI Transformation
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  The Estée Lauder Companies • North America
+                  Manufacturing PMO • Supply Chain • The Estée Lauder Companies
                 </p>
               </div>
               <div className="flex items-center gap-2">

@@ -5,7 +5,7 @@ export const bioContent = `
 # Christopher C. Ullmann - Verified Biography
 
 ## Current Role
-Executive Director, PMO, Strategy & Transformation for North America at The Estee Lauder Companies (Feb 2024 - Present)
+Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The Estée Lauder Companies (Feb 2024 - Present)
 - Governs portfolio of ~60 projects with $100M+ annual investment
 - Pioneering GenAI integration into manufacturing operations
 - Created "Strategy to Action" operating rhythm

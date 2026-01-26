@@ -19,7 +19,7 @@ const stackLayers: StackLayer[] = [
     id: "strategy",
     title: "Strategy & AI",
     period: "2024–Present",
-    role: "Executive Director, PMO & Strategy, The Estée Lauder Companies",
+    role: "Executive Director, AI Transformation & Manufacturing PMO, The Estée Lauder Companies",
     context:
       "Leading the integration of Generative AI into North America operations. Not advising from the sidelines -directly piloting and scaling AI capabilities across the supply chain.",
     whatIBuilt: [
