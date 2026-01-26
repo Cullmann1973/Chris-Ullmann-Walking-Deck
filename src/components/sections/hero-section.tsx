@@ -13,56 +13,59 @@ export function HeroSection() {
     if (!sectionRef.current || !initialsRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Initial animation for the CU letters
+      // Set initials visible immediately
+      gsap.set(".initials-letter", { y: 0, opacity: 1 });
+
+      // Gentle entrance animation for initials (scale up slightly)
       gsap.fromTo(
         ".initials-letter",
-        { y: 100, opacity: 0 },
+        { scale: 0.9 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 1.2,
-          stagger: 0.15,
-          ease: "power3.out",
-          delay: 0.3,
+          scale: 1,
+          duration: 1,
+          stagger: 0.1,
+          ease: "power2.out",
         }
       );
 
       // Headline animation
       gsap.fromTo(
         headlineRef.current,
-        { y: 40, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 1,
           ease: "power2.out",
-          delay: 0.8,
+          delay: 0.4,
         }
       );
 
       // Subtitle animation
       gsap.fromTo(
         subtitleRef.current,
-        { y: 30, opacity: 0 },
+        { y: 20, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.8,
           ease: "power2.out",
-          delay: 1.1,
+          delay: 0.7,
         }
       );
 
-      // Scroll-triggered parallax for initials
-      gsap.to(".initials-letter", {
-        y: -80,
-        opacity: 0.3,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
+      // Scroll-triggered parallax for initials (fade out as you scroll)
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          gsap.set(".initials-letter", {
+            y: -100 * progress,
+            opacity: 1 - progress * 0.8,
+          });
         },
       });
     }, sectionRef);
