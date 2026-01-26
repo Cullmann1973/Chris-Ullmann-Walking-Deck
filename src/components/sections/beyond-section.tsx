@@ -27,14 +27,6 @@ const sections = [
       "That's probably the through-line of my whole life: I don't consume technology, I master it.",
     ],
   },
-  {
-    title: "Giving Back",
-    content: [
-      "I'm active in the Jewish Business Network of Long Island, where I participate in executive roundtables and community giving initiatives. At work, I've championed mental health programs and launched Wellbeing ERGs.",
-      "I'm a disabled Gulf War veteran, which keeps me connected to veterans advocacy. Service doesn't end when you take off the uniform.",
-      "Business success should be a vehicle for community impact, not the destination.",
-    ],
-  },
 ];
 
 export function BeyondSection() {
