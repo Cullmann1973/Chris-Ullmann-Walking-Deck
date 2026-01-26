@@ -39,12 +39,13 @@ export function HeroSection() {
       tl.to({}, { duration: 0.1 });
 
       // Phase 2: Shrink both letters and move to top-left corner - stays visible like marchanslin
+      // Less horizontal movement since initials already start near left edge
       tl.to(
         ".initials-container",
         {
-          scale: 0.08,
-          x: "-42vw",
-          y: "-42vh",
+          scale: 0.1,
+          x: "-5vw",
+          y: "-35vh",
           duration: 0.3,
           ease: "none",
         }
