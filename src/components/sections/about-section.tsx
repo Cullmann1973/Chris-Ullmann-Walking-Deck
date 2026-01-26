@@ -136,7 +136,7 @@ export function AboutSection() {
                     src="/headshot.png"
                     alt="Christopher Ullmann"
                     fill
-                    className="object-cover"
+                    className="object-cover photo-treatment"
                     priority
                   />
                 </div>

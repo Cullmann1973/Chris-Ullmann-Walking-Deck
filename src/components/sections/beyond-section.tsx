@@ -149,7 +149,7 @@ export function BeyondSection() {
               src="/portrait-walking.jpg"
               alt="Christopher Ullmann walking in New York City"
               fill
-              className="beyond-portrait-img object-cover object-center"
+              className="beyond-portrait-img object-cover object-center photo-treatment"
               priority
             />
             {/* Gradient overlay */}

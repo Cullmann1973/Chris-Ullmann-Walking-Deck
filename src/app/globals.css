@@ -232,6 +232,16 @@ html {
   opacity: 0;
 }
 
+/* Photo treatment - grayscale for consistency */
+.photo-treatment {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.photo-treatment:hover {
+  filter: grayscale(50%);
+}
+
 /* Initials styling */
 .initials {
   font-family: var(--font-cormorant), 'Cormorant Garamond', serif;
