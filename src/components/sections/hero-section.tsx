@@ -40,12 +40,12 @@ export function HeroSection() {
       // Pause to appreciate full CU
       tl.to({}, { duration: 0.1 });
 
-      // Phase 2: Shrink CU and move UP (not left!), fade out
+      // Phase 2: Shrink CU and move to top-left corner, stay visible
       tl.to(".initials-container", {
-        scale: 0.08,
-        x: 0,         // NO horizontal movement - stays on left side
-        y: "-40vh",   // Move up toward top
-        opacity: 0,   // Fade out
+        scale: 0.15,      // Slightly larger final size
+        x: "-5vw",        // Slight adjustment to align with mini-CU position
+        y: "-35vh",       // Move up toward top
+        opacity: 1,       // STAY VISIBLE (mini-CU takes over after)
         duration: 0.3,
         ease: "none",
       });
@@ -81,18 +81,15 @@ export function HeroSection() {
     const miniCuTrigger = ScrollTrigger.create({
       trigger: sectionRef.current,
       start: "top top",
-      end: "+=300%",
-      scrub: 1.5,
+      end: "bottom top",
+      scrub: 1,
       onUpdate: (self) => {
         const progress = self.progress;
-        // Fade in mini-CU between 35% and 50%
-        if (progress >= 0.35 && progress <= 0.5) {
-          const fadeProgress = (progress - 0.35) / 0.15;
-          gsap.set(".mini-cu", { opacity: fadeProgress });
-        } else if (progress > 0.5) {
-          gsap.set(".mini-cu", { opacity: 1 });
+        // Fade in mini-CU when animation is 80% complete
+        if (progress > 0.8) {
+          gsap.to(".mini-cu", { opacity: 1, duration: 0.3 });
         } else {
-          gsap.set(".mini-cu", { opacity: 0 });
+          gsap.to(".mini-cu", { opacity: 0, duration: 0.3 });
         }
       },
     });
@@ -106,9 +103,12 @@ export function HeroSection() {
   return (
     <>
       {/* Fixed mini-CU that stays visible - OUTSIDE section */}
-      <div className="mini-cu fixed top-4 left-6 md:left-8 z-50 pointer-events-none opacity-0">
-        <span className="initials text-3xl md:text-4xl text-foreground">C</span>
-        <span className="initials text-3xl md:text-4xl text-primary">U</span>
+      <div
+        className="mini-cu fixed top-20 left-6 md:left-8 z-50 pointer-events-none opacity-0"
+        style={{ mixBlendMode: 'difference' }}
+      >
+        <span className="initials text-4xl text-white">C</span>
+        <span className="initials text-4xl text-primary">U</span>
       </div>
 
       <section
