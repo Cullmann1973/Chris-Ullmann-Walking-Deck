@@ -16,72 +16,64 @@ export function HeroSection() {
       gsap.set(".letter-u", { clipPath: "inset(100% 0 0 0)" });
 
       // Timeline for the hero animation tied to scroll
+      // Longer scroll distance for more gradual animation
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%",
-          scrub: 1,
+          end: "+=300%",
+          scrub: 1.5,
           pin: true,
           anticipatePin: 1,
         },
       });
 
-      // Phase 1: Reveal the U (draw up from bottom)
+      // Phase 1: Reveal the U (draw up from bottom) - 0% to 25%
       tl.to(".letter-u", {
         clipPath: "inset(0% 0 0 0)",
-        duration: 0.4,
+        duration: 0.25,
         ease: "none",
       });
 
-      // Phase 2: Shrink both letters and move to top-left
+      // Small pause to appreciate the full CU
+      tl.to({}, { duration: 0.1 });
+
+      // Phase 2: Shrink both letters and move to top-left corner - stays visible like marchanslin
       tl.to(
         ".initials-container",
         {
-          scale: 0.15,
-          x: "-40vw",
-          y: "-35vh",
-          duration: 0.6,
+          scale: 0.08,
+          x: "-42vw",
+          y: "-42vh",
+          duration: 0.3,
           ease: "none",
-        },
-        "+=0.1"
+        }
       );
 
-      // Phase 3: Fade out the letters as we exit hero
-      tl.to(
-        ".initials-container",
-        {
-          opacity: 0,
-          duration: 0.2,
-          ease: "none",
-        },
-        "-=0.1"
-      );
-
-      // Headline animation - fade in then out
+      // Headline animation - fade in after CU shrinks (at 50%), out at 85%
       tl.fromTo(
         ".hero-headline",
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.2, ease: "none" },
-        0.3
+        { opacity: 1, y: 0, duration: 0.15, ease: "none" },
+        0.5
       );
       tl.to(
         ".hero-headline",
-        { opacity: 0, y: -20, duration: 0.2, ease: "none" },
-        0.7
+        { opacity: 0, y: -20, duration: 0.1, ease: "none" },
+        0.85
       );
 
-      // Subtitle animation
+      // Subtitle animation - slightly after headline
       tl.fromTo(
         ".hero-subtitle",
         { opacity: 0 },
-        { opacity: 1, duration: 0.15, ease: "none" },
-        0.35
+        { opacity: 1, duration: 0.1, ease: "none" },
+        0.55
       );
       tl.to(
         ".hero-subtitle",
-        { opacity: 0, duration: 0.15, ease: "none" },
-        0.7
+        { opacity: 0, duration: 0.1, ease: "none" },
+        0.85
       );
     }, sectionRef);
 
