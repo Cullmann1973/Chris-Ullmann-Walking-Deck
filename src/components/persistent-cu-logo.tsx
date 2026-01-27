@@ -13,17 +13,28 @@ export function PersistentCULogo() {
     // Start hidden
     gsap.set(logo, { opacity: 0 });
 
-    // Create ScrollTrigger to show logo after hero section scrolls away
-    // The hero section is pinned, so we check when it's scrolled past
+    // Seamless handoff: Fade in as hero CU reaches this position
+    // Hero CU starts fading at 85% progress, so we fade in starting at 85%
     const heroTrigger = ScrollTrigger.create({
       trigger: "#hero",
       start: "top top",
       end: "+=200%", // Match hero pin duration
+      onUpdate: (self) => {
+        const progress = self.progress;
+        // Start fading in at 85% progress, fully visible by 100%
+        if (progress >= 0.85) {
+          const fadeProgress = (progress - 0.85) / 0.15; // 0 to 1 over last 15%
+          gsap.set(logo, { opacity: fadeProgress });
+        } else {
+          gsap.set(logo, { opacity: 0 });
+        }
+      },
       onLeave: () => {
-        gsap.to(logo, { opacity: 1, duration: 0.5, ease: "power2.out" });
+        // Ensure fully visible when hero section is completely scrolled past
+        gsap.to(logo, { opacity: 1, duration: 0.2, ease: "power2.out" });
       },
       onEnterBack: () => {
-        gsap.to(logo, { opacity: 0, duration: 0.3, ease: "power2.in" });
+        // Will be controlled by onUpdate when scrolling back
       },
     });
 

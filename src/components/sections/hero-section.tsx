@@ -237,7 +237,8 @@ export function HeroSection() {
       });
 
       // ========================================
-      // SCROLL-TRIGGERED: Shrink CU on scroll
+      // SCROLL-TRIGGERED: CU slides to left-center position
+      // Seamless handoff to persistent CU at the end
       // ========================================
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -249,16 +250,26 @@ export function HeroSection() {
           const progress = self.progress;
 
           if (progress > 0) {
-            // Shrink and move CU to top-left as user scrolls
+            // Calculate the final scale to match persistent CU
+            // Hero CU: ~180px, Persistent CU: ~100px at lg = 0.55 scale
+            const finalScale = 0.55;
+            const currentScale = 1 - progress * (1 - finalScale);
+
+            // Move CU to left-center position (matching persistent CU)
+            // Final position: left ~32px from edge, vertically centered
+            // From center, that's about -45vw horizontally, 0 vertically
+            const targetX = -45; // vw units from center
+
+            // CU moves to left-center, staying vertically centered
             gsap.to(".letters-container", {
-              scale: Math.max(0.15, 1 - progress * 0.85),
-              x: -progress * 35 + "vw",
-              y: -progress * 35 + "vh",
-              opacity: Math.max(0.3, 1 - progress * 0.7),
+              scale: Math.max(finalScale, currentScale),
+              x: progress * targetX + "vw",
+              y: 0, // Stay vertically centered
+              opacity: progress < 0.85 ? 1 : Math.max(0, 1 - (progress - 0.85) * 6.67), // Fade out in last 15%
               duration: 0.1,
             });
 
-            // Fade out hero content
+            // Fade out hero content faster
             gsap.to(".hero-content", {
               opacity: Math.max(0, 1 - progress * 2.5),
               y: -progress * 80,
