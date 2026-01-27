@@ -3,11 +3,7 @@
 import { useState, useEffect } from "react";
 import { MenuOverlay } from "./menu-overlay";
 
-interface HeaderProps {
-  currentSection?: string;
-}
-
-export function Header({ currentSection = "Home" }: HeaderProps) {
+export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -42,19 +38,12 @@ export function Header({ currentSection = "Home" }: HeaderProps) {
         }`}
       >
         <div className="flex items-center justify-between px-6 md:px-12 h-16">
-          {/* Section indicator */}
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
-              {currentSection}
-            </span>
-          </div>
-
-          {/* Logo / Name - center (hidden on small screens) */}
+          {/* Name with styled U */}
           <a
             href="#hero"
-            className="hidden md:block absolute left-1/2 -translate-x-1/2 text-sm font-medium tracking-wider text-foreground hover:text-primary transition-colors"
+            className="text-sm font-mono tracking-wider text-foreground hover:text-foreground/80 transition-colors uppercase"
           >
-            CU
+            Christopher <span className="text-primary">U</span>llmann
           </a>
 
           {/* Menu button */}

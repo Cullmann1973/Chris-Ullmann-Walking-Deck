@@ -321,9 +321,14 @@ export function AISection() {
                 >
                   <div className="flex items-start justify-between mb-2">
                     <h4 className="font-semibold text-foreground">{agent.name}</h4>
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                    <a
+                      href={agent.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30 transition-colors"
+                    >
                       Live
-                    </span>
+                    </a>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
                     {agent.description}

@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Header } from "@/components/header";
+import { PersistentCULogo } from "@/components/persistent-cu-logo";
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { RolesRevealSection } from "@/components/sections/roles-reveal-section";
@@ -12,51 +13,7 @@ import { AISection } from "@/components/sections/ai-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { ScrollTrigger } from "@/components/gsap-provider";
 
-const sections = [
-  { id: "hero", name: "Christopher Ullmann" },
-  { id: "about", name: "About" },
-  { id: "roles", name: "Roles" },
-  { id: "why-i-build", name: "Why I Build" },
-  { id: "stack", name: "The Stack" },
-  { id: "beyond", name: "Beyond Work" },
-  { id: "ai", name: "Ask Chris" },
-  { id: "contact", name: "Contact" },
-];
-
 export default function HomePage() {
-  const [currentSection, setCurrentSection] = useState("Christopher Ullmann");
-
-  useEffect(() => {
-    // Set up scroll-based section tracking
-    const observers: IntersectionObserver[] = [];
-
-    sections.forEach(({ id, name }) => {
-      const element = document.getElementById(id);
-      if (!element) return;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
-              setCurrentSection(name);
-            }
-          });
-        },
-        {
-          threshold: [0.2, 0.5],
-          rootMargin: "-10% 0px -10% 0px",
-        }
-      );
-
-      observer.observe(element);
-      observers.push(observer);
-    });
-
-    return () => {
-      observers.forEach((obs) => obs.disconnect());
-    };
-  }, []);
-
   // Refresh ScrollTrigger after initial render
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -68,7 +25,8 @@ export default function HomePage() {
 
   return (
     <>
-      <Header currentSection={currentSection} />
+      <Header />
+      <PersistentCULogo />
 
       <main>
         <HeroSection />

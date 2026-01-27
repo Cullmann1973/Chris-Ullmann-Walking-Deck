@@ -3,31 +3,48 @@
 import { useRef, useEffect } from "react";
 import { gsap, ScrollTrigger } from "../gsap-provider";
 
-interface ContentItem {
+interface StackLayer {
   title: string;
-  content: string;
+  period: string;
+  role: string;
+  description: string;
 }
 
-const contentItems: ContentItem[] = [
+const stackLayers: StackLayer[] = [
   {
     title: "Strategy",
-    content:
-      "I build strategies that translate vision into action. From market entry to digital transformation, I focus on what matters most: creating sustainable competitive advantage.",
+    period: "2024-Present",
+    role: "Executive Director, AI Transformation",
+    description:
+      "Leading the integration of Generative AI into North America operations. Not advising from the sidelines: directly piloting and scaling AI capabilities across the supply chain.",
+  },
+  {
+    title: "Programs",
+    period: "2018-2024",
+    role: "Program Director, Leading Beauty Forward",
+    description:
+      "Delivered 170% ROI on enterprise transformation initiative. Built cross-functional teams and scalable frameworks.",
+  },
+  {
+    title: "Quality",
+    period: "2015-2018",
+    role: "Executive Director, Quality Assurance",
+    description:
+      "Released $30M+ through quality systems transformation. Built the foundation for operational excellence.",
   },
   {
     title: "Operations",
-    content:
-      "I build operational excellence through process optimization, technology integration, and team empowerment. Every system should work for the people using it.",
+    period: "2002-2015",
+    role: "Manufacturing & Operations Leadership",
+    description:
+      "Scaled operations from $16M facility to enterprise-wide impact. Built from the floor up.",
   },
   {
-    title: "Growth",
-    content:
-      "I build sustainable growth engines that scale with your ambitions while maintaining quality and culture. Growth should never come at the cost of what makes you great.",
-  },
-  {
-    title: "Teams",
-    content:
-      "I build high-performing teams by identifying talent, fostering collaboration, and creating environments where people thrive and do their best work.",
+    title: "Foundation",
+    period: "1992-2002",
+    role: "USAF Veteran + B.S. Biology",
+    description:
+      "Technical precision and systematic thinking. The foundation everything else is built on.",
   },
 ];
 
@@ -35,21 +52,20 @@ export function WhyIBuildSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const boxContentRef = useRef<HTMLDivElement>(null);
-  const logoRef = useRef<HTMLDivElement>(null);
   const titleRefs = useRef<(HTMLDivElement | null)[]>([]);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const sectionTitleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
     const box = boxRef.current;
     const boxContent = boxContentRef.current;
-    const logo = logoRef.current;
-    if (!section || !box || !boxContent || !logo) return;
+    if (!section || !box || !boxContent) return;
 
     const ctx = gsap.context(() => {
       // Total scroll distance for entire animation
-      const totalScrollLength = "400%";
+      // INCREASED to 1000% for VERY slow, premium feel
+      // This means 10x viewport height of scrolling for the entire section
+      const totalScrollLength = "1000%";
 
       // Pin the section
       ScrollTrigger.create({
@@ -57,65 +73,58 @@ export function WhyIBuildSection() {
         start: "top top",
         end: `+=${totalScrollLength}`,
         pin: true,
-        scrub: 1,
+        scrub: 2.5, // Higher scrub for very smooth feel
       });
 
-      // PHASE 1: Fade out box content (0% - 15%)
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: `+=${totalScrollLength}`,
-            scrub: 1,
-          },
-        })
-        .to(
-          boxContent,
-          {
-            opacity: 0,
-            duration: 0.15,
-          },
-          0
-        );
+      // Create a single master timeline for all animations
+      const masterTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: `+=${totalScrollLength}`,
+          scrub: 3, // Very high scrub value for slow, deliberate response
+        },
+      });
 
-      // PHASE 2: Box morph animation (15% - 50%)
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: `+=${totalScrollLength}`,
-            scrub: 1,
-          },
-        })
-        // Rotate and scale up
+      // PHASE 1: Fade out box content FIRST (0% - 5%)
+      // Content fades out BEFORE any box rotation
+      masterTL.to(
+        boxContent,
+        {
+          opacity: 0,
+          duration: 0.05,
+          ease: "power2.out",
+        },
+        0
+      );
+
+      // PHASE 2: Box morph animation (6% - 20%)
+      // Box starts rotating AFTER content is gone
+      // Compressed to give more room for rotating titles
+      masterTL
         .to(
           box,
           {
             rotation: 45,
             scale: 1.5,
             borderRadius: "40%",
-            filter: "blur(0px)",
             boxShadow: "0 0 100px 50px rgba(0,0,0,0.5)",
-            duration: 0.15,
+            duration: 0.05,
             ease: "power2.inOut",
           },
-          0.15
+          0.06
         )
-        // Continue rotation and scale to fill screen
         .to(
           box,
           {
             rotation: 30,
             scale: 4,
             borderRadius: "30%",
-            duration: 0.15,
+            duration: 0.05,
             ease: "power2.inOut",
           },
-          0.3
+          0.11
         )
-        // Final expansion to fill viewport
         .to(
           box,
           {
@@ -123,130 +132,110 @@ export function WhyIBuildSection() {
             scale: 10,
             borderRadius: "0%",
             boxShadow: "none",
-            duration: 0.1,
+            duration: 0.05,
             ease: "power2.out",
           },
-          0.45
+          0.16
         );
 
-      // PHASE 2b: Show logo as box morphs (40% - 55%)
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: `+=${totalScrollLength}`,
-            scrub: 1,
-          },
-        })
-        .set(logo, { opacity: 0 })
-        .to(
-          logo,
-          {
-            opacity: 1,
-            duration: 0.1,
-            ease: "power2.out",
-          },
-          0.45
-        );
+      // PHASE 3: Rotating titles - ONE AT A TIME (22% - 98%)
+      // MASSIVE scroll range for each title - users can read comfortably
+      const titlesStartProgress = 0.22;
+      const titlesEndProgress = 0.98;
+      const titlesRange = titlesEndProgress - titlesStartProgress; // 0.76 = 76% of scroll
+      const perTitleRange = titlesRange / stackLayers.length; // ~0.152 per title (15.2% of scroll each)
 
-      // PHASE 3: Rotating titles (55% - 100%)
-      const titlesStartProgress = 0.55;
-      const titlesEndProgress = 1.0;
-      const titlesRange = titlesEndProgress - titlesStartProgress;
-      const perTitleRange = titlesRange / contentItems.length;
+      // Set initial state for ALL titles (hidden, rotated down)
+      titleRefs.current.forEach((titleEl) => {
+        if (titleEl) {
+          gsap.set(titleEl, { rotationZ: 45, opacity: 0, y: 50 });
+        }
+      });
+      contentRefs.current.forEach((contentEl) => {
+        if (contentEl) {
+          gsap.set(contentEl, { opacity: 0, y: 20 });
+        }
+      });
 
-      contentItems.forEach((_, index) => {
+      // Animate each title in sequence
+      stackLayers.forEach((_, index) => {
         const titleEl = titleRefs.current[index];
         const contentEl = contentRefs.current[index];
         if (!titleEl || !contentEl) return;
 
+        // Calculate this title's dedicated scroll range
+        // Divide into: enter (15%), hold (70%), exit (15%)
+        // VERY long hold phase = maximum reading time
         const itemStart = titlesStartProgress + index * perTitleRange;
-        const itemMid = itemStart + perTitleRange * 0.5;
+        const enterEnd = itemStart + perTitleRange * 0.15; // End of rotate-in phase (15%)
+        const holdEnd = itemStart + perTitleRange * 0.85; // End of hold phase (70% hold)
         const itemEnd = itemStart + perTitleRange;
 
-        // Title rotation animation
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: section,
-              start: "top top",
-              end: `+=${totalScrollLength}`,
-              scrub: 1,
-            },
-          })
-          // Start: rotated and transparent, coming from right
-          .set(titleEl, {
-            rotationZ: 45,
-            opacity: 0,
-            x: 200,
-          })
-          // Rotate in and become visible
-          .to(
-            titleEl,
-            {
-              rotationZ: 0,
-              opacity: 1,
-              x: 0,
-              ease: "power2.out",
-            },
-            itemStart
-          )
-          // Hold position
-          .to(
-            titleEl,
-            {
-              rotationZ: 0,
-              opacity: 1,
-            },
-            itemMid - 0.02
-          )
-          // Rotate out
-          .to(
-            titleEl,
-            {
-              rotationZ: -45,
-              opacity: 0,
-              x: -200,
-              ease: "power2.in",
-            },
-            itemEnd - 0.05
-          );
-
-        // Content text fade
-        gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: section,
-              start: "top top",
-              end: `+=${totalScrollLength}`,
-              scrub: 1,
-            },
-          })
-          .set(contentEl, { opacity: 0, y: 30 })
-          .to(contentEl, { opacity: 1, y: 0 }, itemStart + 0.02)
-          .to(contentEl, { opacity: 1 }, itemMid)
-          .to(contentEl, { opacity: 0, y: -30 }, itemEnd - 0.05);
-      });
-
-      // Update section title during rotating titles
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: `+=${totalScrollLength}`,
-          scrub: 1,
-          onUpdate: (self) => {
-            if (sectionTitleRef.current) {
-              if (self.progress < 0.55) {
-                sectionTitleRef.current.textContent = "Why I Build";
-              } else {
-                sectionTitleRef.current.textContent = "Spectrum";
-              }
-            }
+        // Title: Rotate IN (45° → 0°) with smooth ease
+        masterTL.to(
+          titleEl,
+          {
+            rotationZ: 0,
+            opacity: 1,
+            y: 0,
+            duration: perTitleRange * 0.15,
+            ease: "power2.out",
           },
-        },
+          itemStart
+        );
+
+        // Title: HOLD at exactly 0° - explicit keyframe to ensure horizontal
+        // This is the main reading phase - takes 70% of the title's scroll range
+        masterTL.to(
+          titleEl,
+          {
+            rotationZ: 0,
+            opacity: 1,
+            y: 0,
+            duration: perTitleRange * 0.70,
+            ease: "none",
+          },
+          enterEnd
+        );
+
+        // Title: Rotate OUT (0° → -45°) with smooth ease
+        masterTL.to(
+          titleEl,
+          {
+            rotationZ: -45,
+            opacity: 0,
+            y: -100,
+            duration: perTitleRange * 0.15,
+            ease: "power2.in",
+          },
+          holdEnd
+        );
+
+        // Content: Fade in after title reaches horizontal
+        masterTL.to(
+          contentEl,
+          {
+            opacity: 1,
+            y: 0,
+            duration: perTitleRange * 0.12,
+            ease: "power2.out",
+          },
+          enterEnd + perTitleRange * 0.01 // Slight delay after title settles
+        );
+
+        // Content: Fade out slightly before title exits
+        masterTL.to(
+          contentEl,
+          {
+            opacity: 0,
+            y: -40,
+            duration: perTitleRange * 0.12,
+            ease: "power2.in",
+          },
+          holdEnd - perTitleRange * 0.03 // Start fading slightly before title exits
+        );
       });
+
     }, section);
 
     return () => ctx.revert();
@@ -258,80 +247,86 @@ export function WhyIBuildSection() {
       id="why-i-build"
       className="relative min-h-screen bg-dark overflow-hidden"
     >
-      {/* Section title - top left */}
-      <div
-        ref={sectionTitleRef}
-        className="absolute top-8 left-4 md:left-8 text-lg md:text-xl text-foreground/60 z-20 font-mono uppercase tracking-wider"
-      >
-        Why I Build
-      </div>
-
-      {/* Morphing box */}
+      {/* Morphing box - ONLY the visual box, no content inside */}
       <div
         ref={boxRef}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                    w-[90vw] max-w-[500px] h-[400px] md:h-[500px] bg-dark-alt rounded-2xl z-10
-                   flex flex-col justify-between p-6 md:p-10 border border-border/20"
+                   border border-border/20"
         style={{ transformOrigin: "center center" }}
-      >
-        {/* Box content - fades out first */}
-        <div ref={boxContentRef}>
-          <h3 className="text-lg md:text-xl font-semibold text-primary mb-6 md:mb-8">
-            My Approach
-          </h3>
-          <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
-            I am a versatile professional. I can adapt easily, am open to change
-            and to new ideas. At the same time, I trust my principles and
-            values, follow my path and have performed well under pressure. I am
-            honest and straight forward, enjoy collaboration, and try to bring
-            out the best in everyone I work with.
-          </p>
-        </div>
-      </div>
+      />
 
-      {/* Logo - appears during morph, stays fixed */}
+      {/* Box content - SEPARATE from box, positioned over it */}
+      {/* This allows content to fade out without rotating with the box */}
       <div
-        ref={logoRef}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 opacity-0"
+        ref={boxContentRef}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                   w-[90vw] max-w-[500px] h-[400px] md:h-[500px] z-15
+                   flex flex-col justify-start p-6 md:p-10 pointer-events-none"
       >
-        <span className="text-[80px] md:text-[120px] font-serif text-foreground leading-none">
-          C
-        </span>
-        <span className="text-[80px] md:text-[120px] font-serif text-primary leading-none">
-          U
-        </span>
+        <h3 className="text-lg md:text-xl font-semibold text-primary mb-6 md:mb-8">
+          My Approach
+        </h3>
+        <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
+          I am a versatile professional. I can adapt easily, am open to change
+          and to new ideas. At the same time, I trust my principles and values,
+          follow my path and have performed well under pressure. I am honest and
+          straight forward, enjoy collaboration, and try to bring out the best
+          in everyone I work with.
+        </p>
       </div>
 
-      {/* Rotating titles container */}
-      <div className="absolute left-[120px] md:left-[250px] top-1/2 -translate-y-1/2 z-30">
-        {contentItems.map((item, index) => (
+      {/* Rotating titles - positioned to the right of where persistent CU logo sits */}
+      {/* Reduced font sizes to prevent overlap with content on right */}
+      <div className="absolute left-[90px] md:left-[160px] lg:left-[200px] top-1/2 -translate-y-1/2 z-30">
+        {stackLayers.map((item, index) => (
           <div
             key={item.title}
             ref={(el) => {
               titleRefs.current[index] = el;
             }}
-            className="absolute whitespace-nowrap opacity-0"
-            style={{ transformOrigin: "left center" }}
+            className="absolute left-0 whitespace-nowrap"
+            style={{
+              transformOrigin: "left center",
+              top: "50%",
+              transform: "translateY(-50%)",
+            }}
           >
-            <span className="text-[60px] md:text-[100px] lg:text-[140px] font-serif text-foreground">
+            {/* Reduced from 140px to 100px on lg, adjusted others proportionally */}
+            <span className="text-[48px] md:text-[72px] lg:text-[100px] xl:text-[120px] font-serif text-foreground leading-none">
               {item.title}
             </span>
           </div>
         ))}
       </div>
 
-      {/* Content text - right side */}
-      <div className="absolute right-4 md:right-8 lg:right-16 top-1/2 -translate-y-1/2 max-w-[280px] md:max-w-md z-30">
-        {contentItems.map((item, index) => (
+      {/* Content text - positioned on right side with safe distance from title */}
+      {/* Moved further right and given explicit max-width to prevent collision */}
+      <div
+        className="absolute top-1/2 -translate-y-1/2 z-30"
+        style={{
+          right: "4%",
+          width: "min(320px, 28vw)",
+          maxWidth: "320px",
+        }}
+      >
+        {stackLayers.map((item, index) => (
           <div
             key={`content-${item.title}`}
             ref={(el) => {
               contentRefs.current[index] = el;
             }}
-            className="absolute inset-0 opacity-0"
+            className="absolute inset-0"
+            style={{ transform: "translateY(-50%)" }}
           >
-            <p className="text-sm md:text-lg lg:text-xl text-foreground/80 leading-relaxed">
-              {item.content}
+            <p className="text-xs md:text-sm text-primary mb-2 uppercase tracking-wider">
+              {item.period}
+            </p>
+            <h4 className="text-sm md:text-base lg:text-lg font-medium text-foreground mb-2 md:mb-3">
+              {item.role}
+            </h4>
+            <p className="text-xs md:text-sm lg:text-base text-foreground/70 leading-relaxed">
+              {item.description}
             </p>
           </div>
         ))}
