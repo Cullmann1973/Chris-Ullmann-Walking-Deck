@@ -23,8 +23,7 @@ const agentDemos = [
     name: "ELLA",
     description:
       "Line assistant for manufacturing operations. Helps operators with setups, troubleshooting, and SOPs.",
-    demoUrl:
-      "https://ella-demo-lni6jjbh0-chris-ullmanns-projects.vercel.app/",
+    demoUrl: "https://ella-dark.vercel.app",
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",
   },
