@@ -244,7 +244,7 @@ export function StackSection() {
 
                   <div className="flex items-center gap-4 ml-4">
                     {layer.keyMetric && (
-                      <span className="hidden sm:block text-lg font-bold text-primary gauge-number">
+                      <span className="text-sm sm:text-lg font-bold text-primary gauge-number">
                         {layer.keyMetric}
                       </span>
                     )}
