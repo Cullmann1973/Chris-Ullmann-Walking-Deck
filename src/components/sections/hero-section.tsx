@@ -8,7 +8,7 @@ const metrics = [
   { value: "$16M → $200K", label: "inventory turnaround" },
   { value: "12 → 2.7 days", label: "cycle time reduction" },
   { value: "170% ROI", label: "$49M initiative" },
-  { value: "600+ trained", label: "AI enablement" },
+  { value: "1,000+ trained", label: "AI enablement" },
 ];
 
 export function HeroSection() {
