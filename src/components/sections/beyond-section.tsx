@@ -8,6 +8,7 @@ const sections = [
     id: "family",
     title: "Leslie and the Girls",
     photoLabel: "Photo: Family",
+    image: "", // Add family photo path here
     content: [
       "Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan. Together we're raising Emilia (Emmi), who attends the Long Island School for the Gifted and reminds me daily that curiosity is hereditary.",
       "And then there's Isabella (Bella), my daughter in North Carolina. She was born in 2009, and our story has been one of distance, determination, and a lot of unaccompanied minor flights. When you can't be there every day, you learn to show up in other ways.",
@@ -20,6 +21,7 @@ const sections = [
     id: "hawaii",
     title: "The Hawaii Chapter",
     photoLabel: "Photo: Hawaii",
+    image: "", // Add Hawaii photo path here
     content: [
       "In late 2024, Leslie and I made a decision that surprised some people: we bought a home in Mililani, on Oahu. Not as a vacation property. As a sanctuary.",
       "After decades of high-velocity work, rebuilding systems while they're running, managing hundreds of millions in capital, driving transformations that never slow down... having a place designed for stillness feels less like luxury and more like necessary infrastructure.",
@@ -30,6 +32,7 @@ const sections = [
     id: "why-i-build",
     title: "Why I Build",
     photoLabel: "Photo: Workshop",
+    image: "", // Add workshop photo path here
     content: [
       "I've never been satisfied just using tools. I need to understand how they work, then make them work better.",
       "The Air Force gave me hydraulics, pneumatics, and a zero-defect mentality. Queens College gave me biology and chemistry. Everything since then has been self-taught: Python scripting, hardware integration, AI architecture. At 50+, I enrolled in Stanford's Generative AI program. Not because I had to. Because I wanted to understand the technology I was deploying at enterprise scale.",
@@ -273,12 +276,20 @@ export function BeyondSection() {
                     index % 2 === 1 ? "lg:order-2" : ""
                   }`}
                 >
-                  {/* Placeholder styling */}
-                  <div className="absolute inset-0 bg-[#1a1a1a] border border-border/30 rounded-xl flex items-center justify-center">
-                    <span className="text-muted-foreground/40 text-sm font-mono">
-                      {section.photoLabel}
-                    </span>
-                  </div>
+                  {/* Photo or placeholder */}
+                  {section.image ? (
+                    <img 
+                      src={section.image} 
+                      alt={section.title}
+                      className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-[#1a1a1a] border border-border/30 rounded-xl flex items-center justify-center">
+                      <span className="text-muted-foreground/40 text-sm font-mono">
+                        {section.photoLabel}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Content */}
