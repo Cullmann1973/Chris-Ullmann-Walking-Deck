@@ -19,11 +19,11 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
   - Co-authored $500M+ Integrated Manufacturing Transformation roadmap
   - Led "Runway" enterprise New Product Launch platform ($16.1M initiative)
   - Achieved $1.4M run rate savings from automation/cobots
-  - $7M destruction cost avoidance, $2.5M utilities savings
+  - $7M destruction cost avoidance
 
 - **Executive Director, Quality Assurance** (2015-2018)
   - Reduced lab testing turnaround from 12 days to 2.7 days
-  - Released over $30 million annually in inventory working capital
+  - Achieved $3.75M annual inventory savings
   - Achieved 90% reduction in audit observations
   - Launched grassroots CI program generating $1M savings in 90 days
 
@@ -60,7 +60,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 ## AI & Digital Transformation
 - Piloting 20+ GenAI use cases at ELC
-- Trained 600+ employees through "AI Core Tech Team" enablement program
+- Trained 1,000+ people through "AI Core Tech Team" enablement program
 - Created AI tools including:
   - "Plant Perfect" - OEE analytics companion
   - "Ella" - Virtual shop-floor assistant
