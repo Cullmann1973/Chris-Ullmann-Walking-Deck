@@ -28,7 +28,7 @@ const sections = [
   },
   {
     id: "why-i-build",
-    title: "Why I Build",
+    title: "The Drive",
     photoLabel: "Photo: Workshop",
     image: "", // Add workshop photo path here
     content: [
@@ -249,7 +249,7 @@ export function BeyondSection() {
               Beyond Work
             </span>
             <h2 className="text-section font-serif text-foreground mt-4 relative inline-block">
-              Why I build
+              The Drive
               <span className="main-title-underline absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left" />
             </h2>
             <p className="text-xl text-muted-foreground mt-6">
