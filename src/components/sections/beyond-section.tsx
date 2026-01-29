@@ -10,12 +10,10 @@ const sections = [
     photoLabel: "Photo: Family",
     image: "", // Add family photo path here
     content: [
-      "Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan. Together we're raising Emilia (Emmi), who attends the Long Island School for the Gifted and reminds me daily that curiosity is hereditary.",
-      "And then there's Isabella (Bella), my daughter in North Carolina. She was born in 2009, and our story has been one of distance, determination, and a lot of unaccompanied minor flights. When you can't be there every day, you learn to show up in other ways.",
+      "Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan.",
+      "Together we're raising two daughters who remind me daily that curiosity is hereditary. Watching them learn, question, and build things mirrors the same drive that's defined my own career.",
     ],
-    pullQuote: "Presence doesn't require proximity.",
-    afterQuote:
-      "Parenting across geographies isn't what I imagined. But it taught me something I use every day at work: you can lead, support, and connect from a distance if you're intentional about it.",
+    pullQuote: "Family is the foundation everything else builds on.",
   },
   {
     id: "hawaii",
