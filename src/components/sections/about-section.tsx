@@ -13,9 +13,9 @@ const expertiseWords = [
 ];
 
 const stats = [
-  { value: "$30M+", label: "Annual working capital released" },
+  { value: "$3.75M", label: "Annual inventory savings" },
   { value: "170%", label: "ROI on $49M initiative" },
-  { value: "600+", label: "Employees trained in AI" },
+  { value: "1,000+", label: "People trained in AI" },
   { value: "20+", label: "GenAI use cases piloted" },
 ];
 
