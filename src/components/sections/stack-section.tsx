@@ -190,15 +190,14 @@ export function StackSection() {
           {/* Section header */}
           <div className="stack-title mb-12">
             <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
-              The Stack
+              The Journey
             </span>
             <h2 className="text-section font-serif text-foreground mt-4">
-              Built at every layer
+              From floor to boardroom
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl">
-              Each layer represents a phase of building. Click any layer to see what
-              I constructed there, and how skills from lower layers enabled success
-              at higher ones.
+              Each chapter taught me a new language. Quality, operations, programs, strategy, AI — 
+              fluency in each one unlocked the next transformation.
             </p>
           </div>
 
