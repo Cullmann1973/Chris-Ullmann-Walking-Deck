@@ -70,8 +70,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 ## Personal
 - **Wife:** Leslie M. Ullmann - partner in life, career, and real estate management
 - **Daughters:**
-  - Isabella "Bella" Van Koy Ullmann (born 2009) - lives in North Carolina
-  - Emilia "Emmi" L. Ullmann (born 2019) - attends Long Island School for the Gifted
+  - Two daughters who inspire curiosity and remind him why he builds
 - **Hawaii:** Acquired home in Mililani, Oahu (2024) - family sanctuary
 - **Philosophy:** "Builder mindset" - if I need it, I'll learn to make it
 - **Maker:** Self-taught 3D printing (Shapr3D), Python scripting, hardware integration
