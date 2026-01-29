@@ -25,8 +25,7 @@ const stackLayers: StackLayer[] = [
       "Leading the integration of Generative AI into North America operations. Not advising from the sidelines: directly piloting and scaling AI capabilities across the supply chain.",
     whatIBuilt: [
       "20+ GenAI use cases: SOP automation, real-time KPI dashboards, predictive line diagnostics",
-      "AI Core Tech Team enablement program: trained 600+ employees",
-      "Fusion Teams model: 3 power users → 100+ practitioners",
+      "AI Core Tech Team enablement program: trained 1,000+ people",
       "Stanford AI certification (XFM110): Transformers, LLMs, Chain-of-Thought, HELM framework",
     ],
     whatItUnlocked:
@@ -58,13 +57,13 @@ const stackLayers: StackLayer[] = [
       "Modernized the largest regulated cosmetic manufacturing facility in ELC's network (Melville, NY). Quality wasn't just compliance: it was a cash flow lever.",
     whatIBuilt: [
       "Lab testing turnaround: 12 days → 2.7 days",
-      "Released $30-35M annually in inventory working capital",
+      "$3.75M annual inventory savings",
       "Kotter's 8-Step Change Model implementation: grassroots CI program",
       "$1M saved in 90 days through frontline empowerment",
     ],
     whatItUnlocked:
       "Demonstrated that Quality can be a business driver, not a cost center. Earned the trust to move into Program Management.",
-    keyMetric: "$30M+ released",
+    keyMetric: "$3.75M savings",
   },
   {
     id: "manufacturing",
