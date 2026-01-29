@@ -30,7 +30,7 @@ const stackLayers: StackLayer[] = [
     period: "2015-2018",
     role: "Executive Director, Quality Assurance",
     description:
-      "Released $30M+ through quality systems transformation. Built the foundation for operational excellence.",
+      "$3.75M annual savings through quality systems transformation. Built the foundation for operational excellence.",
   },
   {
     title: "Operations",
