@@ -11,9 +11,9 @@ const sections = [
     image: "", // Add family photo path here
     content: [
       "Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan.",
-      "Together we're raising two daughters who remind me daily that curiosity is hereditary. Watching them learn, question, and build things mirrors the same drive that's defined my own career.",
+      "Together we're raising two daughters who keep me grounded. After decades of transformations, deadlines, and high-stakes decisions, family is where I remember why any of it matters.",
     ],
-    pullQuote: "Family is the foundation everything else builds on.",
+    pullQuote: "Balance isn't a goal. It's a practice.",
   },
   {
     id: "hawaii",
