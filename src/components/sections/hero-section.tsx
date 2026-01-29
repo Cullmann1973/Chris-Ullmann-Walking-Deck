@@ -329,7 +329,7 @@ export function HeroSection() {
           {/* Tagline */}
           <h1 className="text-lg md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed mb-8 md:mb-12">
             <span className="tagline-line-1 block mb-2">
-              Most transformation leaders know{" "}
+              Most leaders speak{" "}
               <span className="tagline-strategy text-foreground/60">
                 strategy
               </span>
@@ -340,7 +340,7 @@ export function HeroSection() {
               <span className="tagline-period">.</span>
             </span>
             <span className="tagline-resolution block text-primary font-medium">
-              I&apos;ve built at every layer.
+              I translate between both — and deliver transformation.
             </span>
           </h1>
 
