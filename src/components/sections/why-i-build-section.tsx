@@ -23,21 +23,21 @@ const stackLayers: StackLayer[] = [
     period: "2018-2024",
     role: "Program Director, Leading Beauty Forward",
     description:
-      "Delivered 170% ROI on enterprise transformation initiative. Built cross-functional teams and scalable frameworks.",
+      "Delivered 170% ROI on enterprise transformation initiative. Translated strategy into scalable frameworks that teams could execute.",
   },
   {
     title: "Quality",
     period: "2015-2018",
     role: "Executive Director, Quality Assurance",
     description:
-      "$3.75M annual savings through quality systems transformation. Built the foundation for operational excellence.",
+      "$3.75M annual savings through quality systems transformation. Transformed quality from cost center to competitive advantage.",
   },
   {
     title: "Operations",
     period: "2002-2015",
     role: "Manufacturing & Operations Leadership",
     description:
-      "Scaled operations from $16M facility to enterprise-wide impact. Built from the floor up.",
+      "Scaled operations from $16M facility to enterprise-wide impact. Learned the language of the floor — and never forgot it.",
   },
   {
     title: "Foundation",
