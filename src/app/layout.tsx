@@ -21,24 +21,33 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Christopher Ullmann | Strategy & Transformation",
+  title: "Christopher Ullmann | AI Transformation Leader",
   description:
-    "Most transformation leaders know strategy or operations. I've built at every layer.",
+    "Executive Director leading AI transformation at The Estée Lauder Companies. 25+ years bridging strategy and operations, from Air Force flight lines to Fortune 500 boardrooms.",
   keywords: [
     "Christopher Ullmann",
-    "Strategy",
+    "AI Transformation",
     "Digital Transformation",
-    "GenAI",
-    "AI Strategy",
-    "Manufacturing",
+    "GenAI Strategy",
+    "Manufacturing Excellence",
+    "Supply Chain",
     "Leadership",
+    "Estée Lauder",
+    "Stanford AI",
   ],
   authors: [{ name: "Christopher Ullmann" }],
   openGraph: {
-    title: "Christopher Ullmann | Strategy & Transformation",
+    title: "Christopher Ullmann | AI Transformation Leader",
     description:
-      "Most transformation leaders know strategy or operations. I've built at every layer.",
+      "Executive Director leading AI transformation at The Estée Lauder Companies. 25+ years bridging strategy and operations.",
     type: "website",
+    url: "https://ullmann-blueprint.vercel.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Christopher Ullmann | AI Transformation Leader",
+    description:
+      "Executive Director leading AI transformation at The Estée Lauder Companies.",
   },
 };
 

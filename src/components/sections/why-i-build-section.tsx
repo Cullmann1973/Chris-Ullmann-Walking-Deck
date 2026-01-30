@@ -63,9 +63,8 @@ export function WhyIBuildSection() {
 
     const ctx = gsap.context(() => {
       // Total scroll distance for entire animation
-      // INCREASED to 1000% for VERY slow, premium feel
-      // This means 10x viewport height of scrolling for the entire section
-      const totalScrollLength = "1000%";
+      // Reduced to 600% for better pacing - still premium but not tedious
+      const totalScrollLength = "600%";
 
       // Pin the section
       ScrollTrigger.create({
@@ -276,9 +275,8 @@ export function WhyIBuildSection() {
         </p>
       </div>
 
-      {/* Rotating titles - positioned to the right of where persistent CU logo sits */}
-      {/* Reduced font sizes to prevent overlap with content on right */}
-      <div className="absolute left-[90px] md:left-[160px] lg:left-[200px] top-1/2 -translate-y-1/2 z-30">
+      {/* Rotating titles - positioned to avoid persistent CU logo */}
+      <div className="absolute left-4 sm:left-[90px] md:left-[140px] lg:left-[180px] top-1/2 -translate-y-1/2 z-30">
         {stackLayers.map((item, index) => (
           <div
             key={item.title}
@@ -292,21 +290,18 @@ export function WhyIBuildSection() {
               transform: "translateY(-50%)",
             }}
           >
-            {/* Reduced from 140px to 100px on lg, adjusted others proportionally */}
-            <span className="text-[48px] md:text-[72px] lg:text-[100px] xl:text-[120px] font-serif text-foreground leading-none">
+            <span className="text-[36px] sm:text-[48px] md:text-[64px] lg:text-[88px] xl:text-[110px] font-serif text-foreground leading-none">
               {item.title}
             </span>
           </div>
         ))}
       </div>
 
-      {/* Content text - positioned on right side with safe distance from title */}
-      {/* Moved further right and given explicit max-width to prevent collision */}
+      {/* Content text - positioned on right side, hidden on small screens */}
       <div
-        className="absolute top-1/2 -translate-y-1/2 z-30"
+        className="hidden sm:block absolute top-1/2 -translate-y-1/2 z-30 right-4 sm:right-6 md:right-8 lg:right-12"
         style={{
-          right: "4%",
-          width: "min(320px, 28vw)",
+          width: "min(280px, 30vw)",
           maxWidth: "320px",
         }}
       >
@@ -319,10 +314,10 @@ export function WhyIBuildSection() {
             className="absolute inset-0"
             style={{ transform: "translateY(-50%)" }}
           >
-            <p className="text-xs md:text-sm text-primary mb-2 uppercase tracking-wider">
+            <p className="text-xs md:text-sm text-primary mb-1 sm:mb-2 uppercase tracking-wider font-mono">
               {item.period}
             </p>
-            <h4 className="text-sm md:text-base lg:text-lg font-medium text-foreground mb-2 md:mb-3">
+            <h4 className="text-sm md:text-base lg:text-lg font-medium text-foreground mb-1.5 sm:mb-2 md:mb-3 leading-snug">
               {item.role}
             </h4>
             <p className="text-xs md:text-sm lg:text-base text-foreground/70 leading-relaxed">

@@ -54,21 +54,21 @@ export function ContactSection() {
             </p>
 
             {/* Contact links */}
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-16">
               <a
                 href="mailto:c.ullmann@yahoo.com"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
+                className="btn-primary inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
               >
-                <Mail className="w-4 h-4" />
+                <Mail className="w-5 h-5" />
                 c.ullmann@yahoo.com
               </a>
               <a
                 href="https://www.linkedin.com/in/chrisullmann/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-secondary transition-colors"
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl border-2 border-border text-foreground font-medium hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
               >
-                <Linkedin className="w-4 h-4" />
+                <Linkedin className="w-5 h-5" />
                 LinkedIn
               </a>
             </div>

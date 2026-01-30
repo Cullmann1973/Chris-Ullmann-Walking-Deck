@@ -44,7 +44,7 @@ export function HeroSection() {
       });
 
       // ----------------------------------------
-      // PHASE 1: "C" Construction (0-3 seconds) [was 0-4s]
+      // PHASE 1: "C" Construction (0-2 seconds)
       // C constructs in place - fades in and scales to full
       // ----------------------------------------
       introTL.to(
@@ -52,29 +52,29 @@ export function HeroSection() {
         {
           opacity: 1,
           scale: 1,
-          duration: 2.625, // was 3.5 * 0.75
-          ease: "power2.out",
+          duration: 1.8,
+          ease: "power3.out",
         },
-        0.375 // was 0.5 * 0.75
+        0.2
       );
 
       // ----------------------------------------
-      // PHASE 2: "U" Construction (3-6 seconds) [was 4-8s]
-      // U constructs IN PLACE - same effect as C, no flying
+      // PHASE 2: "U" Construction (1.5-3.5 seconds)
+      // U constructs IN PLACE - overlapping with C for smoother feel
       // ----------------------------------------
       introTL.to(
         ".letter-u",
         {
           opacity: 1,
           scale: 1,
-          duration: 2.625, // was 3.5 * 0.75
-          ease: "power2.out",
+          duration: 1.8,
+          ease: "power3.out",
         },
-        3 // was 4 * 0.75
+        1.5 // Start earlier, overlapping with C
       );
 
       // ----------------------------------------
-      // PHASE 3: Tagline with Tension (6-9 seconds) [was 8-12s]
+      // PHASE 3: Tagline with Tension (3-5 seconds)
       // ----------------------------------------
       // "Most transformation leaders know" fades in
       introTL.to(
@@ -82,10 +82,10 @@ export function HeroSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 1.125, // was 1.5 * 0.75
+          duration: 0.9,
           ease: "power2.out",
         },
-        6 // was 8 * 0.75
+        3.2
       );
 
       // "strategy" appears
@@ -93,10 +93,10 @@ export function HeroSection() {
         ".tagline-strategy",
         {
           opacity: 0.6,
-          duration: 0.75, // was 1 * 0.75
+          duration: 0.5,
           ease: "power2.out",
         },
-        6.75 // was 9 * 0.75
+        3.8
       );
 
       // "or" appears
@@ -104,10 +104,10 @@ export function HeroSection() {
         ".tagline-or",
         {
           opacity: 1,
-          duration: 0.6, // was 0.8 * 0.75
+          duration: 0.4,
           ease: "power2.out",
         },
-        7.125 // was 9.5 * 0.75
+        4.0
       );
 
       // "operations" appears
@@ -115,10 +115,10 @@ export function HeroSection() {
         ".tagline-operations",
         {
           opacity: 0.6,
-          duration: 0.75, // was 1 * 0.75
+          duration: 0.5,
           ease: "power2.out",
         },
-        7.5 // was 10 * 0.75
+        4.2
       );
 
       // Period appears
@@ -126,75 +126,74 @@ export function HeroSection() {
         ".tagline-period",
         {
           opacity: 1,
-          duration: 0.375, // was 0.5 * 0.75
+          duration: 0.3,
           ease: "power2.out",
         },
-        7.875 // was 10.5 * 0.75
+        4.4
       );
 
-      // Slow flicker on "strategy" (0.75 second per cycle) [was 1s]
+      // Subtle emphasis on "strategy" and "operations"
       introTL.to(
         ".tagline-strategy",
         {
           opacity: 1,
-          duration: 0.75, // was 1 * 0.75
-          repeat: 2,
+          duration: 0.6,
+          repeat: 1,
           yoyo: true,
           ease: "sine.inOut",
         },
-        7.5 // was 10 * 0.75
+        4.5
       );
 
-      // Slow flicker on "operations" (0.75 second per cycle) [was 1s]
       introTL.to(
         ".tagline-operations",
         {
           opacity: 1,
-          duration: 0.75, // was 1 * 0.75
-          repeat: 2,
+          duration: 0.6,
+          repeat: 1,
           yoyo: true,
           ease: "sine.inOut",
         },
-        7.875 // was 10.5 * 0.75
+        4.6
       );
 
       // ----------------------------------------
-      // PHASE 4: Resolution (9-11.25 seconds) [was 12-15s]
+      // PHASE 4: Resolution (5.5-6.5 seconds)
       // ----------------------------------------
-      // "I've built at every layer." fades in
+      // "I translate between both" fades in
       introTL.to(
         ".tagline-resolution",
         {
           opacity: 1,
           y: 0,
-          duration: 1.125, // was 1.5 * 0.75
+          duration: 0.9,
           ease: "power2.out",
         },
-        9.375 // was 12.5 * 0.75
+        5.8
       );
 
-      // Stop flickering - both words become solid white
+      // Both words become solid
       introTL.to(
         ".tagline-strategy",
         {
           opacity: 1,
-          duration: 0.6, // was 0.8 * 0.75
+          duration: 0.4,
           ease: "power2.out",
         },
-        9.75 // was 13 * 0.75
+        6.0
       );
       introTL.to(
         ".tagline-operations",
         {
           opacity: 1,
-          duration: 0.6, // was 0.8 * 0.75
+          duration: 0.4,
           ease: "power2.out",
         },
-        9.75 // was 13 * 0.75
+        6.0
       );
 
       // ----------------------------------------
-      // PHASE 5: Ticker & Scroll Indicator (11.25-13.5 seconds) [was 15-18s]
+      // PHASE 5: Ticker & Scroll Indicator (6.5-8 seconds)
       // ----------------------------------------
       // Metrics ticker fades in
       introTL.to(
@@ -202,10 +201,10 @@ export function HeroSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 1.125, // was 1.5 * 0.75
+          duration: 0.8,
           ease: "power2.out",
         },
-        11.25 // was 15 * 0.75
+        6.8
       );
 
       // Scroll indicator fades in
@@ -213,10 +212,10 @@ export function HeroSection() {
         ".scroll-indicator",
         {
           opacity: 1,
-          duration: 1.125, // was 1.5 * 0.75
+          duration: 0.8,
           ease: "power2.out",
         },
-        12 // was 16 * 0.75
+        7.2
       );
 
       // ========================================
@@ -283,13 +282,13 @@ export function HeroSection() {
     return () => ctx.revert();
   }, []);
 
-  // Metrics ticker cycling - every 2.25 seconds (was 3s * 0.75)
+  // Metrics ticker cycling - every 3 seconds for comfortable reading
   useEffect(() => {
     if (!animationComplete) return;
 
     const interval = setInterval(() => {
       setCurrentMetric((prev) => (prev + 1) % metrics.length);
-    }, 2250);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [animationComplete]);
@@ -346,28 +345,35 @@ export function HeroSection() {
 
           {/* Metrics Ticker */}
           <div className="metrics-ticker">
-            <div className="flex flex-col items-center gap-2">
-              <div className="flex items-baseline gap-3 h-12">
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex items-baseline gap-3 h-14 overflow-hidden">
                 <span
-                  className="text-2xl md:text-4xl font-mono text-primary font-bold transition-all duration-500"
-                  key={currentMetric}
+                  className="text-2xl md:text-4xl font-mono text-primary font-bold animate-fade-in"
+                  key={`value-${currentMetric}`}
+                  style={{ animation: "fadeSlideIn 0.5s ease-out forwards" }}
                 >
                   {metrics[currentMetric].value}
                 </span>
-                <span className="text-sm md:text-base text-muted-foreground transition-all duration-500">
+                <span 
+                  className="text-sm md:text-base text-muted-foreground"
+                  key={`label-${currentMetric}`}
+                  style={{ animation: "fadeSlideIn 0.5s ease-out 0.1s forwards", opacity: 0 }}
+                >
                   {metrics[currentMetric].label}
                 </span>
               </div>
               {/* Ticker dots */}
-              <div className="flex gap-2 mt-2">
+              <div className="flex gap-2">
                 {metrics.map((_, i) => (
-                  <div
+                  <button
                     key={i}
-                    className={`h-1.5 rounded-full transition-all duration-375 ${
+                    onClick={() => setCurrentMetric(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer hover:bg-primary/60 ${
                       i === currentMetric
                         ? "bg-primary w-6"
                         : "bg-muted-foreground/30 w-1.5"
                     }`}
+                    aria-label={`View metric ${i + 1}`}
                   />
                 ))}
               </div>

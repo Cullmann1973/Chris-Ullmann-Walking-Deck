@@ -3,7 +3,17 @@
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "../gsap-provider";
 
-const sections = [
+interface BeyondSection {
+  id: string;
+  title: string;
+  photoLabel: string;
+  image: string;
+  content: string[];
+  pullQuote?: string;
+  afterQuote?: string;
+}
+
+const sections: BeyondSection[] = [
   {
     id: "family",
     title: "Leslie and the Girls",
@@ -138,81 +148,75 @@ export function BeyondSection() {
         );
 
         // Pull quote animation (if exists)
-        gsap.fromTo(
-          `${sectionEl} .pull-quote`,
-          { y: 20, opacity: 0, scale: 0.98 },
-          {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: `${sectionEl} .pull-quote`,
-              start: "top 90%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-
-        // After-quote paragraph (if exists)
-        gsap.fromTo(
-          `${sectionEl} .after-quote`,
-          { y: 20, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.6,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: `${sectionEl} .after-quote`,
-              start: "top 90%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-
-        // Photo placeholder animation - Apple-style scale + fade
-        if (photoEl) {
-          // Initial photo reveal
+        const pullQuoteEl = document.querySelector(`${sectionEl} .pull-quote`);
+        if (pullQuoteEl) {
           gsap.fromTo(
-            photoEl,
-            { scale: 0.85, opacity: 0 },
+            pullQuoteEl,
+            { y: 20, opacity: 0, scale: 0.98 },
             {
-              scale: 1,
+              y: 0,
               opacity: 1,
-              duration: 1,
+              scale: 1,
+              duration: 0.8,
               ease: "power2.out",
               scrollTrigger: {
-                trigger: photoEl,
+                trigger: pullQuoteEl,
                 start: "top 90%",
                 toggleActions: "play none none reverse",
               },
             }
           );
+        }
 
-          // Parallax scroll effect
+        // After-quote paragraph (if exists)
+        const afterQuoteEl = document.querySelector(`${sectionEl} .after-quote`);
+        if (afterQuoteEl) {
+          gsap.fromTo(
+            afterQuoteEl,
+            { y: 20, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 0.6,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: afterQuoteEl,
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+        }
+
+        // Photo placeholder animation - Apple-style scale + fade
+        if (photoEl) {
+          // Initial photo reveal with subtle animation
+          gsap.fromTo(
+            photoEl,
+            { scale: 0.92, opacity: 0, y: 30 },
+            {
+              scale: 1,
+              opacity: 1,
+              y: 0,
+              duration: 1.2,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: photoEl,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+            }
+          );
+
+          // Gentle parallax scroll effect
           gsap.to(photoEl, {
-            yPercent: 10,
+            yPercent: 8,
             ease: "none",
             scrollTrigger: {
               trigger: photoEl,
               start: "top bottom",
               end: "bottom top",
-              scrub: 1.5,
-            },
-          });
-
-          // Scale down and fade out as we scroll past (Apple-style)
-          gsap.to(photoEl, {
-            scale: 0.85,
-            opacity: 0,
-            ease: "power2.in",
-            scrollTrigger: {
-              trigger: photoEl,
-              start: "bottom 60%",
-              end: "bottom 20%",
-              scrub: 1.5,
+              scrub: 2,
             },
           });
         }

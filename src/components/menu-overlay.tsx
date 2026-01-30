@@ -112,7 +112,7 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
               }}
               href={item.href}
               onClick={(e) => handleNavClick(e, item.href)}
-              className="text-4xl md:text-6xl lg:text-7xl font-serif text-foreground hover:text-primary transition-colors duration-300"
+              className="text-4xl md:text-6xl lg:text-7xl font-serif text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
             >
               {item.label}
             </a>

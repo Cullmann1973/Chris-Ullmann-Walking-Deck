@@ -316,7 +316,7 @@ export function AISection() {
               {agentDemos.map((agent) => (
                 <div
                   key={agent.id}
-                  className={`agent-card relative p-5 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-transform hover:scale-[1.02]`}
+                  className={`agent-card relative p-5 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20`}
                 >
                   <div className="flex items-start justify-between mb-2">
                     <h4 className="font-semibold text-foreground">{agent.name}</h4>
