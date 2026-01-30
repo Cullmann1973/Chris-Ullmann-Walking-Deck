@@ -22,10 +22,8 @@ export function HeroSection() {
     const ctx = gsap.context(() => {
       // ========================================
       // INITIAL STATES - Everything hidden
-      // Both letters start in position, just invisible
+      // CU letters are now handled by UnifiedCULogo
       // ========================================
-      gsap.set(".letter-c", { opacity: 0, scale: 0.95 });
-      gsap.set(".letter-u", { opacity: 0, scale: 0.95 }); // NO y offset - stays in place
       gsap.set(".tagline-line-1", { opacity: 0, y: 20 });
       gsap.set(".tagline-strategy", { opacity: 0 });
       gsap.set(".tagline-or", { opacity: 0 });
@@ -36,47 +34,18 @@ export function HeroSection() {
       gsap.set(".scroll-indicator", { opacity: 0 });
 
       // ========================================
-      // MASTER TIMELINE - 25% faster (0.75x timing)
-      // Original: ~18 seconds, Now: ~13.5 seconds
+      // MASTER TIMELINE
+      // CU animation timing handled by UnifiedCULogo
       // ========================================
       const introTL = gsap.timeline({
         onComplete: () => setAnimationComplete(true),
       });
 
       // ----------------------------------------
-      // PHASE 1: "C" Construction (0-2 seconds)
-      // C constructs in place - fades in and scales to full
+      // PHASE 1: Tagline with Tension
+      // Starts after CU letters are visible (~3s)
       // ----------------------------------------
-      introTL.to(
-        ".letter-c",
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1.8,
-          ease: "power3.out",
-        },
-        0.2
-      );
-
-      // ----------------------------------------
-      // PHASE 2: "U" Construction (1.5-3.5 seconds)
-      // U constructs IN PLACE - overlapping with C for smoother feel
-      // ----------------------------------------
-      introTL.to(
-        ".letter-u",
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 1.8,
-          ease: "power3.out",
-        },
-        1.5 // Start earlier, overlapping with C
-      );
-
-      // ----------------------------------------
-      // PHASE 3: Tagline with Tension (3-5 seconds)
-      // ----------------------------------------
-      // "Most transformation leaders know" fades in
+      // "Most leaders speak" fades in
       introTL.to(
         ".tagline-line-1",
         {
@@ -236,8 +205,8 @@ export function HeroSection() {
       });
 
       // ========================================
-      // SCROLL-TRIGGERED: CU slides to left-center position
-      // Seamless handoff to persistent CU at the end
+      // SCROLL-TRIGGERED: Fade out hero content
+      // CU animation is handled by UnifiedCULogo
       // ========================================
       ScrollTrigger.create({
         trigger: sectionRef.current,
@@ -249,26 +218,7 @@ export function HeroSection() {
           const progress = self.progress;
 
           if (progress > 0) {
-            // Calculate the final scale to match persistent CU
-            // Hero CU: ~180px, Persistent CU: ~100px at lg = 0.55 scale
-            const finalScale = 0.55;
-            const currentScale = 1 - progress * (1 - finalScale);
-
-            // Move CU to left-center position (matching persistent CU)
-            // Final position: left ~32px from edge, vertically centered
-            // From center, that's about -45vw horizontally, 0 vertically
-            const targetX = -45; // vw units from center
-
-            // CU moves to left-center, staying vertically centered
-            gsap.to(".letters-container", {
-              scale: Math.max(finalScale, currentScale),
-              x: progress * targetX + "vw",
-              y: 0, // Stay vertically centered
-              opacity: progress < 0.85 ? 1 : Math.max(0, 1 - (progress - 0.85) * 6.67), // Fade out in last 15%
-              duration: 0.1,
-            });
-
-            // Fade out hero content faster
+            // Fade out hero content as user scrolls
             gsap.to(".hero-content", {
               opacity: Math.max(0, 1 - progress * 2.5),
               y: -progress * 80,
@@ -303,25 +253,8 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
 
       <div className="h-full flex flex-col justify-center items-center px-8 md:px-16 lg:px-24">
-        {/* CU Letters - CLEAN, NO SHADOWS - 10% LARGER */}
-        <div className="letters-container origin-center mb-8 md:mb-12">
-          <div className="flex items-end">
-            {/* Letter C - Clean, solid white - 10% larger */}
-            <span
-              className="letter-c font-serif text-foreground leading-none select-none"
-              style={{ fontSize: "clamp(110px, 24.2vh, 198px)" }}
-            >
-              C
-            </span>
-            {/* Letter U - Clean, solid cyan - 10% larger */}
-            <span
-              className="letter-u font-serif text-primary leading-none select-none"
-              style={{ fontSize: "clamp(110px, 24.2vh, 198px)" }}
-            >
-              U
-            </span>
-          </div>
-        </div>
+        {/* Spacer for CU letters (now handled by UnifiedCULogo) */}
+        <div className="mb-8 md:mb-12" style={{ height: "clamp(110px, 24.2vh, 198px)" }} />
 
         {/* Hero Content - Below the letters with proper spacing */}
         <div className="hero-content text-center max-w-3xl">

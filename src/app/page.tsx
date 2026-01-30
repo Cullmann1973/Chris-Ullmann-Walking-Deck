@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { Header } from "@/components/header";
-import { PersistentCULogo } from "@/components/persistent-cu-logo";
+import { UnifiedCULogo } from "@/components/unified-cu-logo";
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { RolesRevealSection } from "@/components/sections/roles-reveal-section";
@@ -26,7 +26,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <PersistentCULogo />
+      <UnifiedCULogo />
 
       <main>
         <HeroSection />
