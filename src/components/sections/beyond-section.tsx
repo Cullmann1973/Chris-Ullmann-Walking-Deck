@@ -33,7 +33,7 @@ const sections: BeyondSection[] = [
     content: [
       "In late 2024, Leslie and I made a decision that surprised some people: we bought a home in Mililani, on Oahu. Not as a vacation property. As a sanctuary.",
       "After decades of high-velocity work, rebuilding systems while they're running, managing hundreds of millions in capital, driving transformations that never slow down... having a place designed for stillness feels less like luxury and more like necessary infrastructure.",
-      "Turns out the Builder needs a place where he's not building anything.",
+      "Turns out even the Translator needs a place where nothing needs translating.",
     ],
   },
   {

@@ -14,7 +14,7 @@ const suggestedQueries = [
   "How did you save $16M at Leiner?",
   "Tell me about your military service.",
   "Tell me about your family.",
-  "What makes you a 'builder'?",
+  "What makes you a 'translator'?",
 ];
 
 const agentDemos = [
@@ -107,19 +107,19 @@ const getResponse = (query: string): string => {
     q.includes("bella") ||
     q.includes("emmi")
   ) {
-    return "Family is where I apply the same precision I bring to work. My wife Leslie is my true partner: we manage life, career, real estate, and family as a coordinated team. I have two daughters: Isabella 'Bella' (born 2009) lives in North Carolina, and being present for her despite the distance required turning logistics into a love language. Emilia 'Emmi' (born 2019) attends the Long Island School for the Gifted. In 2024, Leslie and I established a home in Mililani, Hawaii, a sanctuary where the 'Builder' can rest.";
+    return "Family is where I apply the same precision I bring to work. My wife Leslie is my true partner: we manage life, career, real estate, and family as a coordinated team. I have two daughters: Isabella 'Bella' (born 2009) lives in North Carolina, and being present for her despite the distance required turning logistics into a love language. Emilia 'Emmi' (born 2019) attends the Long Island School for the Gifted. In 2024, Leslie and I established a home in Mililani, Hawaii, a sanctuary where the constant translation between worlds can pause.";
   }
 
   if (
-    q.includes("builder") ||
-    q.includes("maker") ||
-    q.includes("3d print") ||
-    q.includes("build")
+    q.includes("translator") ||
+    q.includes("translate") ||
+    q.includes("bridge") ||
+    q.includes("connect")
   ) {
-    return "I call it the 'builder mindset': the urge to construct and optimize that transcends any single role. Whether it's a supply chain governance model, a Python automation script, or a 3D-printed prototype, I'm driven to create. I taught myself 3D modeling (Shapr3D), 3D printing (FDM & resin), hardware integration, and Python scripting. This continuous learning keeps my 'hands dirty' with real making. Every technical skill I have is self-taught.";
+    return "I call it the 'translator mindset': the ability to speak both strategy and operations fluently, and to move seamlessly between worlds. When I'm in a boardroom, I'm not abstracting: I'm translating from systems I've personally built on the floor. When I'm with operators, I can connect their daily work to enterprise objectives. That dual fluency, from Air Force technician to Fortune 500 executive, is what makes transformation actually happen. I don't just plan change: I translate it into action.";
   }
 
-  return "My career bridges industrial discipline with digital innovation. From Air Force avionics to Fortune 500 quality leadership to GenAI strategy, I've spent 25+ years building systems that deliver measurable results. I'm a builder at heart, whether it's a $500M transformation roadmap or a 3D-printed prototype. What specific aspect of my experience would you like to explore?";
+  return "My career bridges industrial discipline with digital innovation. From Air Force avionics to Fortune 500 quality leadership to GenAI strategy, I've spent 25+ years translating between strategy and execution. I'm a translator at heart: connecting boardroom objectives to shop floor reality, turning complexity into clarity. What specific aspect of my experience would you like to explore?";
 };
 
 export function AISection() {
