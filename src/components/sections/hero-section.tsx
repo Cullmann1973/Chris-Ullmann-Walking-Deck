@@ -295,17 +295,19 @@ export function HeroSection() {
                   {metrics[currentMetric].label}
                 </span>
               </div>
-              {/* Ticker dots - tiny on mobile */}
-              <div className="flex gap-0.5 md:gap-2">
+              {/* Ticker dots - tiny on mobile, inline styles to guarantee sizing */}
+              <div className="flex gap-1 md:gap-2 ticker-dots">
                 {metrics.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrentMetric(i)}
-                    className={`rounded-full transition-all duration-300 cursor-pointer hover:bg-primary/60 ${
-                      i === currentMetric
-                        ? "bg-primary h-1 w-3 md:h-1.5 md:w-6"
-                        : "bg-muted-foreground/30 h-1 w-1 md:h-1.5 md:w-1.5"
+                    className={`rounded-full transition-all duration-300 cursor-pointer ${
+                      i === currentMetric ? "bg-primary" : "bg-muted-foreground/30"
                     }`}
+                    style={{
+                      height: '4px',
+                      width: i === currentMetric ? '14px' : '4px',
+                    }}
                     aria-label={`View metric ${i + 1}`}
                   />
                 ))}
