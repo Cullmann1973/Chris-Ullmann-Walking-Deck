@@ -259,7 +259,7 @@ export function HeroSection() {
         {/* Hero Content - Below the letters with proper spacing */}
         <div className="hero-content text-center max-w-3xl">
           {/* Tagline */}
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed mb-6 md:mb-12">
+          <h1 className="text-[1.375rem] md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line-1 block mb-2">
               Most leaders speak{" "}
               <span className="tagline-strategy text-foreground/60">
@@ -272,7 +272,7 @@ export function HeroSection() {
               <span className="tagline-period">.</span>
             </span>
             <span className="tagline-resolution block text-primary font-medium">
-              I translate between both, and deliver transformation.
+              I translate between both.
             </span>
           </h1>
 
@@ -296,15 +296,15 @@ export function HeroSection() {
                 </span>
               </div>
               {/* Ticker dots */}
-              <div className="flex gap-1.5 md:gap-2">
+              <div className="flex gap-1 md:gap-2">
                 {metrics.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrentMetric(i)}
-                    className={`h-1 md:h-1.5 rounded-full transition-all duration-300 cursor-pointer hover:bg-primary/60 ${
+                    className={`h-[3px] md:h-1.5 rounded-full transition-all duration-300 cursor-pointer hover:bg-primary/60 ${
                       i === currentMetric
-                        ? "bg-primary w-4 md:w-6"
-                        : "bg-muted-foreground/30 w-1 md:w-1.5"
+                        ? "bg-primary w-2.5 md:w-6"
+                        : "bg-muted-foreground/30 w-[3px] md:w-1.5"
                     }`}
                     aria-label={`View metric ${i + 1}`}
                   />
