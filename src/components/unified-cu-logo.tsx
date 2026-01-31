@@ -71,36 +71,39 @@ export function UnifiedCULogo() {
       }, 1.5);
 
       // ========================================
-      // SCROLL ANIMATION: Center → Left + Scale down
+      // SCROLL ANIMATION: Center → Top-left + Scale down 60%
       // ========================================
       ScrollTrigger.create({
         trigger: "#hero",
         start: "top top",
-        end: "+=200%",
-        scrub: 2,
+        end: "+=100%", // Faster animation (was 200%)
+        scrub: 1, // More responsive (was 2)
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Scale: 1 → 0.55 (matching final size)
+          // Scale: 1 → 0.4 (shrink by 60%)
           const startScale = 1;
-          const endScale = 0.55;
+          const endScale = 0.4;
           const currentScale = startScale - progress * (startScale - endScale);
 
-          // Position: center → left edge
-          // Start: left 50%, xPercent -50 (centered)
-          // End: left 32px, xPercent 0 (left-anchored)
+          // Horizontal: center → far left
           const startLeft = 50; // percent
-          const endLeft = 2; // percent (roughly 32px on most screens)
+          const endLeft = 2; // percent (far left)
           const currentLeft = startLeft - progress * (startLeft - endLeft);
 
           const startXPercent = -50;
           const endXPercent = 0;
           const currentXPercent = startXPercent - progress * (startXPercent - endXPercent);
 
-          // Top stays at 50% (vertically centered)
+          // Vertical: 33% → 12% (slide up to 6/8ths from top)
+          const startTop = 33;
+          const endTop = 12;
+          const currentTop = startTop - progress * (startTop - endTop);
+
           gsap.set(logo, {
             scale: currentScale,
             left: `${currentLeft}%`,
+            top: `${currentTop}%`,
             xPercent: currentXPercent,
           });
         },
