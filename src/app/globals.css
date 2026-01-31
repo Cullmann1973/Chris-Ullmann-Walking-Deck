@@ -350,3 +350,17 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
+
+/* Force tiny ticker dots on mobile */
+@media (max-width: 767px) {
+  .ticker-dots button {
+    height: 2px !important;
+    width: 2px !important;
+    min-height: 2px !important;
+    min-width: 2px !important;
+  }
+  .ticker-dots button.bg-primary {
+    width: 10px !important;
+  }
+}
