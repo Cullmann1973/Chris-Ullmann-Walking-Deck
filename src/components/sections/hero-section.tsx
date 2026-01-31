@@ -254,7 +254,7 @@ export function HeroSection() {
 
       <div className="h-full flex flex-col justify-center items-center px-8 md:px-16 lg:px-24">
         {/* Spacer for CU letters (now handled by UnifiedCULogo) */}
-        <div className="mb-8 md:mb-12" style={{ height: "clamp(110px, 24.2vh, 198px)" }} />
+        <div className="mb-4 md:mb-6" style={{ height: "clamp(80px, 18vh, 150px)" }} />
 
         {/* Hero Content - Below the letters with proper spacing */}
         <div className="hero-content text-center max-w-3xl">

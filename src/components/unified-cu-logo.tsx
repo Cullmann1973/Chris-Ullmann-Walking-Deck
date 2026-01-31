@@ -27,7 +27,7 @@ export function UnifiedCULogo() {
 
     const ctx = gsap.context(() => {
       // ========================================
-      // INITIAL STATE: Centered on screen, large
+      // INITIAL STATE: Upper-center on screen, large
       // ========================================
       gsap.set(logo, {
         opacity: 0,
@@ -35,7 +35,7 @@ export function UnifiedCULogo() {
         xPercent: -50,
         yPercent: -50,
         left: "50%",
-        top: "50%",
+        top: "38%",
       });
 
       gsap.set(".unified-letter-c", { opacity: 0, scale: 0.95 });
@@ -136,7 +136,7 @@ export function UnifiedCULogo() {
       ref={logoRef}
       className="fixed z-50 pointer-events-none"
       style={{
-        top: "50%",
+        top: "38%",
         left: "50%",
         transform: "translate(-50%, -50%)",
       }}
