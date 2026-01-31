@@ -57,18 +57,24 @@ export function HeroSection() {
         3.2
       );
 
-      // "strategy" - rapid photographer flashes then stays on
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.8);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.82);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.84);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.86);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.88);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.9);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.92);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.94);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.96);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.98);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.05 }, 4.0); // stays on
+      // "strategy" - varied photographer flashes over ~2 secs then stays on
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.03 }, 3.5);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.05 }, 3.53);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.7);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.08 }, 3.72);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.04 }, 3.95);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.03 }, 3.99);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 4.15);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.06 }, 4.17);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.03 }, 4.35);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.04 }, 4.38);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 4.55);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.03 }, 4.57);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.05 }, 4.7);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 4.75);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.03 }, 4.9);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.04 }, 4.93);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.08 }, 5.1); // stays on
 
       // "or" appears
       introTL.to(
@@ -78,21 +84,27 @@ export function HeroSection() {
           duration: 0.2,
           ease: "power2.out",
         },
-        4.1
+        5.2
       );
 
-      // "operations" - rapid photographer flashes then stays on
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.2);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.22);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.24);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.26);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.28);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.3);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.32);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.34);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.36);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.38);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.05 }, 4.4); // stays on
+      // "operations" - varied photographer flashes over ~2 secs then stays on
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 5.3);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.06 }, 5.32);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.04 }, 5.5);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 5.54);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 5.7);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.07 }, 5.72);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 5.95);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.04 }, 5.98);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.05 }, 6.15);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 6.2);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 6.4);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.05 }, 6.43);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 6.6);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.04 }, 6.62);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 6.8);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 6.83);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.08 }, 7.0); // stays on
 
       // Period appears
       introTL.to(
@@ -102,11 +114,11 @@ export function HeroSection() {
           duration: 0.2,
           ease: "power2.out",
         },
-        4.5
+        7.1
       );
 
       // ----------------------------------------
-      // PHASE 4: Resolution (5.5-6.5 seconds)
+      // PHASE 4: Resolution
       // ----------------------------------------
       // "I translate between both" fades in
       introTL.to(
@@ -117,31 +129,31 @@ export function HeroSection() {
           duration: 0.9,
           ease: "power2.out",
         },
-        5.8
+        7.4
       );
 
-      // Both words become solid
+      // Ensure words stay solid (flash effect already set them to 1)
       introTL.to(
         ".tagline-strategy",
         {
           opacity: 1,
-          duration: 0.4,
+          duration: 0.1,
           ease: "power2.out",
         },
-        6.0
+        7.5
       );
       introTL.to(
         ".tagline-operations",
         {
           opacity: 1,
-          duration: 0.4,
+          duration: 0.1,
           ease: "power2.out",
         },
-        6.0
+        7.5
       );
 
       // ----------------------------------------
-      // PHASE 5: Ticker & Scroll Indicator (6.5-8 seconds)
+      // PHASE 5: Ticker & Scroll Indicator
       // ----------------------------------------
       // Metrics ticker fades in
       introTL.to(
@@ -152,7 +164,7 @@ export function HeroSection() {
           duration: 0.8,
           ease: "power2.out",
         },
-        6.8
+        8.5
       );
 
       // Scroll indicator fades in
@@ -163,7 +175,7 @@ export function HeroSection() {
           duration: 0.8,
           ease: "power2.out",
         },
-        7.2
+        9.0
       );
 
       // ========================================
