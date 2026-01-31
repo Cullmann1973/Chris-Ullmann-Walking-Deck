@@ -57,34 +57,42 @@ export function HeroSection() {
         3.2
       );
 
-      // "strategy" - faulty light flicker then stays on
-      introTL.to(".tagline-strategy", { opacity: 0.4, duration: 0.05 }, 3.8);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.03 }, 3.85);
-      introTL.to(".tagline-strategy", { opacity: 0.7, duration: 0.04 }, 3.88);
-      introTL.to(".tagline-strategy", { opacity: 0.1, duration: 0.03 }, 3.92);
-      introTL.to(".tagline-strategy", { opacity: 0.5, duration: 0.04 }, 3.95);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.99);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.06, ease: "power2.out" }, 4.01);
+      // "strategy" - rapid photographer flashes then stays on
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.8);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.82);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.84);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.86);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.88);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.9);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.92);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.94);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.96);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.98);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.05 }, 4.0); // stays on
 
       // "or" appears
       introTL.to(
         ".tagline-or",
         {
           opacity: 1,
-          duration: 0.3,
+          duration: 0.2,
           ease: "power2.out",
         },
         4.1
       );
 
-      // "operations" - faulty light flicker then stays on
-      introTL.to(".tagline-operations", { opacity: 0.3, duration: 0.04 }, 4.2);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 4.24);
-      introTL.to(".tagline-operations", { opacity: 0.6, duration: 0.05 }, 4.27);
-      introTL.to(".tagline-operations", { opacity: 0.1, duration: 0.03 }, 4.32);
-      introTL.to(".tagline-operations", { opacity: 0.8, duration: 0.04 }, 4.35);
-      introTL.to(".tagline-operations", { opacity: 0.2, duration: 0.02 }, 4.39);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.06, ease: "power2.out" }, 4.41);
+      // "operations" - rapid photographer flashes then stays on
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.2);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.22);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.24);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.26);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.28);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.3);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.32);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.34);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.36);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.38);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.05 }, 4.4); // stays on
 
       // Period appears
       introTL.to(
