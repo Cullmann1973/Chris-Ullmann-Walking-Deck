@@ -76,7 +76,26 @@ export function HeroSection() {
       introTL.to(".tagline-strategy", { opacity: 0, duration: 0.04 }, 4.93);
       introTL.to(".tagline-strategy", { opacity: 1, duration: 0.08 }, 5.1); // stays on
 
-      // "or" appears
+      // "operations" - starts 0.5s after strategy, varied flashes over ~2 secs
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.0);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.06 }, 4.02);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.04 }, 4.2);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 4.24);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.4);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.07 }, 4.42);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 4.65);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.04 }, 4.68);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.05 }, 4.85);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.9);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 5.1);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.05 }, 5.13);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 5.3);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.04 }, 5.32);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 5.5);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 5.53);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.08 }, 5.7); // stays on
+
+      // "or" appears after both words are lit
       introTL.to(
         ".tagline-or",
         {
@@ -84,27 +103,8 @@ export function HeroSection() {
           duration: 0.2,
           ease: "power2.out",
         },
-        5.2
+        5.3
       );
-
-      // "operations" - varied photographer flashes over ~2 secs then stays on
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 5.3);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.06 }, 5.32);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.04 }, 5.5);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 5.54);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 5.7);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.07 }, 5.72);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 5.95);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.04 }, 5.98);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.05 }, 6.15);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 6.2);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 6.4);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.05 }, 6.43);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 6.6);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.04 }, 6.62);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 6.8);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 6.83);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.08 }, 7.0); // stays on
 
       // Period appears
       introTL.to(
@@ -114,7 +114,7 @@ export function HeroSection() {
           duration: 0.2,
           ease: "power2.out",
         },
-        7.1
+        5.8
       );
 
       // ----------------------------------------
@@ -129,7 +129,7 @@ export function HeroSection() {
           duration: 0.9,
           ease: "power2.out",
         },
-        7.4
+        6.0
       );
 
       // Ensure words stay solid (flash effect already set them to 1)
@@ -140,7 +140,7 @@ export function HeroSection() {
           duration: 0.1,
           ease: "power2.out",
         },
-        7.5
+        6.1
       );
       introTL.to(
         ".tagline-operations",
@@ -149,7 +149,7 @@ export function HeroSection() {
           duration: 0.1,
           ease: "power2.out",
         },
-        7.5
+        6.1
       );
 
       // ----------------------------------------
@@ -164,7 +164,7 @@ export function HeroSection() {
           duration: 0.8,
           ease: "power2.out",
         },
-        8.5
+        7.0
       );
 
       // Scroll indicator fades in
@@ -175,7 +175,7 @@ export function HeroSection() {
           duration: 0.8,
           ease: "power2.out",
         },
-        9.0
+        7.5
       );
 
       // ========================================
