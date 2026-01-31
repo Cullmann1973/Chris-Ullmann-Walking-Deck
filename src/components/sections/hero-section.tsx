@@ -272,7 +272,7 @@ export function HeroSection() {
               <span className="tagline-period">.</span>
             </span>
             <span className="tagline-resolution block text-primary font-medium">
-              I translate between both — and deliver transformation.
+              I translate between both, and deliver transformation.
             </span>
           </h1>
 

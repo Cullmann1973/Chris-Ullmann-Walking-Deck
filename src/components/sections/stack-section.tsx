@@ -196,7 +196,7 @@ export function StackSection() {
               From floor to boardroom
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl">
-              Each chapter taught me a new language. Quality, operations, programs, strategy, AI — 
+              Each chapter taught me a new language. Quality, operations, programs, strategy, AI: 
               fluency in each one unlocked the next transformation.
             </p>
           </div>

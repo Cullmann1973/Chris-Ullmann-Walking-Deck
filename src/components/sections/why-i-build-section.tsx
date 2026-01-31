@@ -37,7 +37,7 @@ const stackLayers: StackLayer[] = [
     period: "2002-2015",
     role: "Manufacturing & Operations Leadership",
     description:
-      "Scaled operations from $16M facility to enterprise-wide impact. Learned the language of the floor — and never forgot it.",
+      "Scaled operations from $16M facility to enterprise-wide impact. Learned the language of the floor, and never forgot it.",
   },
   {
     title: "Foundation",
