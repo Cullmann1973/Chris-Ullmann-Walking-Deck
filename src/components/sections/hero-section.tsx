@@ -260,19 +260,19 @@ export function HeroSection() {
         {/* Hero Content - Below the letters with proper spacing */}
         <div className="hero-content text-center max-w-3xl">
           {/* Tagline */}
-          <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed mb-6 md:mb-12">
+          <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl font-serif text-foreground/50 leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line-1 block mb-2">
               Most leaders speak{" "}
-              <span className="tagline-strategy text-foreground/60">
+              <span className="tagline-strategy text-foreground">
                 strategy
               </span>
               <span className="tagline-or"> or </span>
-              <span className="tagline-operations text-primary/80">
+              <span className="tagline-operations text-primary">
                 operations
               </span>
               <span className="tagline-period">.</span>
             </span>
-            <span className="tagline-resolution block text-primary font-medium">
+            <span className="tagline-resolution block text-primary/70 font-medium">
               I translate between both.
             </span>
           </h1>
