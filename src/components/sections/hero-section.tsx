@@ -57,73 +57,44 @@ export function HeroSection() {
         3.2
       );
 
-      // "strategy" appears
-      introTL.to(
-        ".tagline-strategy",
-        {
-          opacity: 0.6,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        3.8
-      );
+      // "strategy" - faulty light flicker then stays on
+      introTL.to(".tagline-strategy", { opacity: 0.4, duration: 0.05 }, 3.8);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.03 }, 3.85);
+      introTL.to(".tagline-strategy", { opacity: 0.7, duration: 0.04 }, 3.88);
+      introTL.to(".tagline-strategy", { opacity: 0.1, duration: 0.03 }, 3.92);
+      introTL.to(".tagline-strategy", { opacity: 0.5, duration: 0.04 }, 3.95);
+      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 3.99);
+      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.06, ease: "power2.out" }, 4.01);
 
       // "or" appears
       introTL.to(
         ".tagline-or",
         {
           opacity: 1,
-          duration: 0.4,
+          duration: 0.3,
           ease: "power2.out",
         },
-        4.0
+        4.1
       );
 
-      // "operations" appears
-      introTL.to(
-        ".tagline-operations",
-        {
-          opacity: 0.6,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        4.2
-      );
+      // "operations" - faulty light flicker then stays on
+      introTL.to(".tagline-operations", { opacity: 0.3, duration: 0.04 }, 4.2);
+      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 4.24);
+      introTL.to(".tagline-operations", { opacity: 0.6, duration: 0.05 }, 4.27);
+      introTL.to(".tagline-operations", { opacity: 0.1, duration: 0.03 }, 4.32);
+      introTL.to(".tagline-operations", { opacity: 0.8, duration: 0.04 }, 4.35);
+      introTL.to(".tagline-operations", { opacity: 0.2, duration: 0.02 }, 4.39);
+      introTL.to(".tagline-operations", { opacity: 1, duration: 0.06, ease: "power2.out" }, 4.41);
 
       // Period appears
       introTL.to(
         ".tagline-period",
         {
           opacity: 1,
-          duration: 0.3,
+          duration: 0.2,
           ease: "power2.out",
         },
-        4.4
-      );
-
-      // Subtle emphasis on "strategy" and "operations"
-      introTL.to(
-        ".tagline-strategy",
-        {
-          opacity: 1,
-          duration: 0.6,
-          repeat: 1,
-          yoyo: true,
-          ease: "sine.inOut",
-        },
         4.5
-      );
-
-      introTL.to(
-        ".tagline-operations",
-        {
-          opacity: 1,
-          duration: 0.6,
-          repeat: 1,
-          yoyo: true,
-          ease: "sine.inOut",
-        },
-        4.6
       );
 
       // ----------------------------------------
