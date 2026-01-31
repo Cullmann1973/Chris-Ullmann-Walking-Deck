@@ -58,10 +58,10 @@ export function HeroSection() {
       );
 
       // "strategy" - varied photographer flashes over ~2 secs then stays on
-      // VERY bright flash = pure white + intense glow
-      const flashOn = { opacity: 1, color: "#ffffff", textShadow: "0 0 15px #fff, 0 0 30px #fff, 0 0 45px #fff, 0 0 60px #00bcd4" };
+      // Match CU brightness - pure white like the "C"
+      const flashOn = { opacity: 1, color: "#ffffff", textShadow: "0 0 20px #fff, 0 0 40px #fff" };
       const flashOff = { opacity: 0, color: "#ffffff", textShadow: "none" };
-      const stayOn = { opacity: 1, color: "#ffffff", textShadow: "0 0 5px rgba(255,255,255,0.5)" };
+      const stayOn = { opacity: 1, color: "#ffffff", textShadow: "none" };
       
       introTL.to(".tagline-strategy", { ...flashOn, duration: 0.03 }, 3.5);
       introTL.to(".tagline-strategy", { ...flashOff, duration: 0.05 }, 3.53);
@@ -82,10 +82,10 @@ export function HeroSection() {
       introTL.to(".tagline-strategy", { ...stayOn, duration: 0.08 }, 5.1); // stays on, normal color
 
       // "operations" - starts 0.5s after strategy, varied flashes over ~2 secs
-      // VERY bright flash = intense cyan + strong glow
-      const opFlashOn = { opacity: 1, color: "#4DF0FF", textShadow: "0 0 15px #4DF0FF, 0 0 30px #4DF0FF, 0 0 45px #00bcd4, 0 0 60px #00bcd4" };
-      const opFlashOff = { opacity: 0, color: "#4DF0FF", textShadow: "none" };
-      const opStayOn = { opacity: 1, color: "#4DF0FF", textShadow: "0 0 5px rgba(77,240,255,0.5)" };
+      // Match CU brightness - exact primary cyan like the "U"
+      const opFlashOn = { opacity: 1, color: "#00bcd4", textShadow: "0 0 20px #00bcd4, 0 0 40px #00bcd4" };
+      const opFlashOff = { opacity: 0, color: "#00bcd4", textShadow: "none" };
+      const opStayOn = { opacity: 1, color: "#00bcd4", textShadow: "none" };
       
       introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.02 }, 4.0);
       introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.06 }, 4.02);
