@@ -58,42 +58,51 @@ export function HeroSection() {
       );
 
       // "strategy" - varied photographer flashes over ~2 secs then stays on
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.03 }, 3.5);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.05 }, 3.53);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 3.7);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.08 }, 3.72);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.04 }, 3.95);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.03 }, 3.99);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 4.15);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.06 }, 4.17);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.03 }, 4.35);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.04 }, 4.38);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.02 }, 4.55);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.03 }, 4.57);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.05 }, 4.7);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.02 }, 4.75);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.03 }, 4.9);
-      introTL.to(".tagline-strategy", { opacity: 0, duration: 0.04 }, 4.93);
-      introTL.to(".tagline-strategy", { opacity: 1, duration: 0.08 }, 5.1); // stays on
+      // Bright flash = white color + glow
+      const flashOn = { opacity: 1, color: "#ffffff", textShadow: "0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00bcd4" };
+      const flashOff = { opacity: 0, color: "rgba(255,255,255,0.6)", textShadow: "none" };
+      const stayOn = { opacity: 1, color: "rgba(255,255,255,0.6)", textShadow: "none" };
+      
+      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.03 }, 3.5);
+      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.05 }, 3.53);
+      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.02 }, 3.7);
+      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.08 }, 3.72);
+      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.04 }, 3.95);
+      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.03 }, 3.99);
+      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.02 }, 4.15);
+      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.06 }, 4.17);
+      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.03 }, 4.35);
+      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.04 }, 4.38);
+      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.02 }, 4.55);
+      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.03 }, 4.57);
+      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.05 }, 4.7);
+      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.02 }, 4.75);
+      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.03 }, 4.9);
+      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.04 }, 4.93);
+      introTL.to(".tagline-strategy", { ...stayOn, duration: 0.08 }, 5.1); // stays on, normal color
 
       // "operations" - starts 0.5s after strategy, varied flashes over ~2 secs
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.0);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.06 }, 4.02);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.04 }, 4.2);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 4.24);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 4.4);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.07 }, 4.42);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 4.65);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.04 }, 4.68);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.05 }, 4.85);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.02 }, 4.9);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 5.1);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.05 }, 5.13);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.02 }, 5.3);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.04 }, 5.32);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.03 }, 5.5);
-      introTL.to(".tagline-operations", { opacity: 0, duration: 0.03 }, 5.53);
-      introTL.to(".tagline-operations", { opacity: 1, duration: 0.08 }, 5.7); // stays on
+      const opFlashOn = { opacity: 1, color: "#00bcd4", textShadow: "0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4" };
+      const opFlashOff = { opacity: 0, color: "rgba(0,188,212,0.8)", textShadow: "none" };
+      const opStayOn = { opacity: 1, color: "rgba(0,188,212,0.8)", textShadow: "none" };
+      
+      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.02 }, 4.0);
+      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.06 }, 4.02);
+      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.04 }, 4.2);
+      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.03 }, 4.24);
+      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.02 }, 4.4);
+      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.07 }, 4.42);
+      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.03 }, 4.65);
+      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.04 }, 4.68);
+      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.05 }, 4.85);
+      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.02 }, 4.9);
+      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.03 }, 5.1);
+      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.05 }, 5.13);
+      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.02 }, 5.3);
+      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.04 }, 5.32);
+      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.03 }, 5.5);
+      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.03 }, 5.53);
+      introTL.to(".tagline-operations", { ...opStayOn, duration: 0.08 }, 5.7); // stays on, normal color
 
       // "or" appears after both words are lit
       introTL.to(

@@ -364,3 +364,10 @@ body {
     width: 10px !important;
   }
 }
+
+/* Bright flash effect for tagline words */
+.tagline-strategy.flashing,
+.tagline-operations.flashing {
+  color: #fff !important;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary), 0 0 40px var(--primary) !important;
+}
