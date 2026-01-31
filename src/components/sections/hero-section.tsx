@@ -259,7 +259,7 @@ export function HeroSection() {
         {/* Hero Content - Below the letters with proper spacing */}
         <div className="hero-content text-center max-w-3xl">
           {/* Tagline */}
-          <h1 className="text-lg md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed mb-8 md:mb-12">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-serif text-foreground leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line-1 block mb-2">
               Most leaders speak{" "}
               <span className="tagline-strategy text-foreground/60">
@@ -278,17 +278,17 @@ export function HeroSection() {
 
           {/* Metrics Ticker */}
           <div className="metrics-ticker">
-            <div className="flex flex-col items-center gap-3">
-              <div className="flex items-baseline gap-3 h-14 overflow-hidden">
+            <div className="flex flex-col items-center gap-2 md:gap-3">
+              <div className="flex items-baseline gap-2 md:gap-3 h-10 md:h-14 overflow-hidden">
                 <span
-                  className="text-2xl md:text-4xl font-mono text-primary font-bold animate-fade-in"
+                  className="text-lg md:text-4xl font-mono text-primary font-bold animate-fade-in"
                   key={`value-${currentMetric}`}
                   style={{ animation: "fadeSlideIn 0.5s ease-out forwards" }}
                 >
                   {metrics[currentMetric].value}
                 </span>
                 <span 
-                  className="text-sm md:text-base text-muted-foreground"
+                  className="text-xs md:text-base text-muted-foreground"
                   key={`label-${currentMetric}`}
                   style={{ animation: "fadeSlideIn 0.5s ease-out 0.1s forwards", opacity: 0 }}
                 >
@@ -296,15 +296,15 @@ export function HeroSection() {
                 </span>
               </div>
               {/* Ticker dots */}
-              <div className="flex gap-2">
+              <div className="flex gap-1.5 md:gap-2">
                 {metrics.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrentMetric(i)}
-                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer hover:bg-primary/60 ${
+                    className={`h-1 md:h-1.5 rounded-full transition-all duration-300 cursor-pointer hover:bg-primary/60 ${
                       i === currentMetric
-                        ? "bg-primary w-6"
-                        : "bg-muted-foreground/30 w-1.5"
+                        ? "bg-primary w-4 md:w-6"
+                        : "bg-muted-foreground/30 w-1 md:w-1.5"
                     }`}
                     aria-label={`View metric ${i + 1}`}
                   />
