@@ -86,11 +86,21 @@ export function UnifiedCULogo() {
           const endScale = 0.25;
           const currentScale = startScale - progress * (startScale - endScale);
 
-          // Horizontal: center → far left
+          // Match header padding: px-6 (24px) on mobile, px-12 (48px) on md+
+          const isMobile = window.innerWidth < 768;
+          const headerPadding = isMobile ? 24 : 48;
+          
+          // Convert to percentage of viewport width for animation
+          const viewportWidth = window.innerWidth;
+          const endLeftPx = headerPadding;
+          const endLeftPercent = (endLeftPx / viewportWidth) * 100;
+          
+          // Horizontal: center (50%) → aligned with header text
           const startLeft = 50;
-          const endLeft = 4; // slight padding from edge
+          const endLeft = endLeftPercent;
           const currentLeft = startLeft - progress * (startLeft - endLeft);
 
+          // xPercent: -50 (centered) → 0 (left-aligned)
           const startXPercent = -50;
           const endXPercent = 0;
           const currentXPercent = startXPercent - progress * (startXPercent - endXPercent);
