@@ -25,10 +25,9 @@ export function HeroSection() {
       // CU letters are now handled by UnifiedCULogo
       // ========================================
       gsap.set(".tagline-line-1", { opacity: 0, y: 20 });
-      gsap.set(".tagline-strategy", { opacity: 0 });
-      gsap.set(".tagline-or", { opacity: 0 });
-      gsap.set(".tagline-operations", { opacity: 0 });
-      gsap.set(".tagline-period", { opacity: 0 });
+      gsap.set(".tagline-business", { opacity: 0 });
+      gsap.set(".tagline-ai", { opacity: 0 });
+      gsap.set(".tagline-bridge", { opacity: 0 });
       gsap.set(".tagline-resolution", { opacity: 0, y: 20 });
       gsap.set(".metrics-ticker", { opacity: 0, y: 15 });
       gsap.set(".scroll-indicator", { opacity: 0 });
@@ -57,80 +56,73 @@ export function HeroSection() {
         3.2
       );
 
-      // "strategy" - varied photographer flashes over ~2 secs then stays on
-      // Match CU brightness - pure white like the "C"
-      const flashOn = { opacity: 1, color: "#ffffff", textShadow: "0 0 20px #fff, 0 0 40px #fff" };
-      const flashOff = { opacity: 0, color: "#ffffff", textShadow: "none" };
-      const stayOn = { opacity: 1, color: "#ffffff", textShadow: "none" };
+      // Flash effect styles
+      const whiteFlashOn = { opacity: 1, color: "#ffffff", textShadow: "0 0 20px #fff, 0 0 40px #fff" };
+      const whiteFlashOff = { opacity: 0, color: "#ffffff", textShadow: "none" };
+      const whiteStayOn = { opacity: 1, color: "#ffffff", textShadow: "none" };
       
-      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.03 }, 3.5);
-      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.05 }, 3.53);
-      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.02 }, 3.7);
-      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.08 }, 3.72);
-      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.04 }, 3.95);
-      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.03 }, 3.99);
-      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.02 }, 4.15);
-      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.06 }, 4.17);
-      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.03 }, 4.35);
-      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.04 }, 4.38);
-      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.02 }, 4.55);
-      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.03 }, 4.57);
-      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.05 }, 4.7);
-      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.02 }, 4.75);
-      introTL.to(".tagline-strategy", { ...flashOn, duration: 0.03 }, 4.9);
-      introTL.to(".tagline-strategy", { ...flashOff, duration: 0.04 }, 4.93);
-      introTL.to(".tagline-strategy", { ...stayOn, duration: 0.08 }, 5.1); // stays on, normal color
+      const cyanFlashOn = { opacity: 1, color: "#00bcd4", textShadow: "0 0 20px #00bcd4, 0 0 40px #00bcd4" };
+      const cyanFlashOff = { opacity: 0, color: "#00bcd4", textShadow: "none" };
+      const cyanStayOn = { opacity: 1, color: "#00bcd4", textShadow: "none" };
 
-      // "operations" - starts 0.5s after strategy, varied flashes over ~2 secs
-      // Match CU brightness - exact primary cyan like the "U"
-      const opFlashOn = { opacity: 1, color: "#00bcd4", textShadow: "0 0 20px #00bcd4, 0 0 40px #00bcd4" };
-      const opFlashOff = { opacity: 0, color: "#00bcd4", textShadow: "none" };
-      const opStayOn = { opacity: 1, color: "#00bcd4", textShadow: "none" };
-      
-      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.02 }, 4.0);
-      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.06 }, 4.02);
-      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.04 }, 4.2);
-      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.03 }, 4.24);
-      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.02 }, 4.4);
-      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.07 }, 4.42);
-      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.03 }, 4.65);
-      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.04 }, 4.68);
-      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.05 }, 4.85);
-      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.02 }, 4.9);
-      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.03 }, 5.1);
-      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.05 }, 5.13);
-      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.02 }, 5.3);
-      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.04 }, 5.32);
-      introTL.to(".tagline-operations", { ...opFlashOn, duration: 0.03 }, 5.5);
-      introTL.to(".tagline-operations", { ...opFlashOff, duration: 0.03 }, 5.53);
-      introTL.to(".tagline-operations", { ...opStayOn, duration: 0.08 }, 5.7); // stays on, normal color
+      // "Business" - varied photographer flashes over ~2 secs
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 3.5);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.05 }, 3.53);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 3.7);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.08 }, 3.72);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.04 }, 3.95);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.03 }, 3.99);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 4.15);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.06 }, 4.17);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 4.35);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.04 }, 4.38);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 4.55);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.03 }, 4.57);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.05 }, 4.7);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.02 }, 4.75);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 4.9);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.04 }, 4.93);
+      introTL.to(".tagline-business", { ...whiteStayOn, duration: 0.08 }, 5.1);
 
-      // "or" appears after both words are lit
-      introTL.to(
-        ".tagline-or",
-        {
-          opacity: 1,
-          duration: 0.2,
-          ease: "power2.out",
-        },
-        5.3
-      );
+      // "AI" - starts 0.5s after Business
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.0);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.06 }, 4.02);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.04 }, 4.2);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 4.24);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.4);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.07 }, 4.42);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 4.65);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 4.68);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.05 }, 4.85);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.02 }, 4.9);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 5.1);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.05 }, 5.13);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 5.3);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 5.32);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 5.5);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 5.53);
+      introTL.to(".tagline-ai", { ...cyanStayOn, duration: 0.08 }, 5.7);
 
-      // Period appears
-      introTL.to(
-        ".tagline-period",
-        {
-          opacity: 1,
-          duration: 0.2,
-          ease: "power2.out",
-        },
-        5.8
-      );
+      // "bridge" - starts with resolution line
+      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.02 }, 6.2);
+      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.05 }, 6.22);
+      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.03 }, 6.35);
+      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.06 }, 6.38);
+      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.02 }, 6.55);
+      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.04 }, 6.57);
+      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.04 }, 6.75);
+      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.03 }, 6.79);
+      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.02 }, 6.95);
+      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.05 }, 6.97);
+      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.03 }, 7.15);
+      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.04 }, 7.18);
+      introTL.to(".tagline-bridge", { ...cyanStayOn, duration: 0.08 }, 7.4);
 
       // ----------------------------------------
       // PHASE 4: Resolution
       // ----------------------------------------
       // "I translate between both" fades in
+      // "I'm the bridge between" line fades in (bridge flashes separately)
       introTL.to(
         ".tagline-resolution",
         {
@@ -140,26 +132,6 @@ export function HeroSection() {
           ease: "power2.out",
         },
         6.0
-      );
-
-      // Ensure words stay solid (flash effect already set them to 1)
-      introTL.to(
-        ".tagline-strategy",
-        {
-          opacity: 1,
-          duration: 0.1,
-          ease: "power2.out",
-        },
-        6.1
-      );
-      introTL.to(
-        ".tagline-operations",
-        {
-          opacity: 1,
-          duration: 0.1,
-          ease: "power2.out",
-        },
-        6.1
       );
 
       // ----------------------------------------
@@ -174,7 +146,7 @@ export function HeroSection() {
           duration: 0.8,
           ease: "power2.out",
         },
-        7.0
+        7.8
       );
 
       // Scroll indicator fades in
@@ -185,7 +157,7 @@ export function HeroSection() {
           duration: 0.8,
           ease: "power2.out",
         },
-        7.5
+        8.3
       );
 
       // ========================================
@@ -262,18 +234,15 @@ export function HeroSection() {
           {/* Tagline */}
           <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl font-serif text-foreground/50 leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line-1 block mb-2">
-              Most leaders speak{" "}
-              <span className="tagline-strategy text-foreground">
-                strategy
-              </span>
-              <span className="tagline-or"> or </span>
-              <span className="tagline-operations text-primary">
-                operations
-              </span>
-              <span className="tagline-period">.</span>
+              <span className="tagline-business text-foreground">Business</span>{" "}
+              challenges.{" "}
+              <span className="tagline-ai text-primary">AI</span>{" "}
+              possibilities.
             </span>
-            <span className="tagline-resolution block text-primary/70 font-medium">
-              I translate between both.
+            <span className="tagline-resolution block text-foreground/50 font-medium">
+              I'm the{" "}
+              <span className="tagline-bridge text-primary">bridge</span>{" "}
+              between.
             </span>
           </h1>
 
