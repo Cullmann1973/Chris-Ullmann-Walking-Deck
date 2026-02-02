@@ -342,7 +342,7 @@ export function HeroSection() {
       </div>
 
       {/* Digital Twin Teaser - Bottom right */}
-      <div className="absolute bottom-8 right-8 flex items-center gap-2 text-muted-foreground/60 hover:text-muted-foreground transition-colors">
+      <div className="absolute bottom-8 right-8 flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
         <span className="relative flex h-2 w-2">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>

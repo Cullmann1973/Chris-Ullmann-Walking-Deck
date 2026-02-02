@@ -287,7 +287,7 @@ export function BeyondSection() {
                     />
                   ) : (
                     <div className="absolute inset-0 bg-[#1a1a1a] border border-border/30 rounded-xl flex items-center justify-center">
-                      <span className="text-muted-foreground/40 text-sm font-mono">
+                      <span className="text-muted-foreground/70 text-sm font-mono">
                         {section.photoLabel}
                       </span>
                     </div>
