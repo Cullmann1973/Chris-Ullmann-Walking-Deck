@@ -8,7 +8,7 @@ const metrics = [
   { value: "$16M → $200K", label: "inventory turnaround" },
   { value: "12 → 2.7 days", label: "cycle time reduction" },
   { value: "170% ROI", label: "$49M initiative" },
-  { value: "1,000+ trained", label: "AI enablement" },
+  { value: "1,000+ engaged", label: "AI enablement" },
 ];
 
 export function HeroSection() {
@@ -28,6 +28,8 @@ export function HeroSection() {
       gsap.set(".tagline-business", { opacity: 0 });
       gsap.set(".tagline-ai", { opacity: 0 });
       gsap.set(".tagline-bridge", { opacity: 0 });
+      gsap.set(".bridge-left", { x: -20, opacity: 0 });
+      gsap.set(".bridge-right", { x: 20, opacity: 0 });
       gsap.set(".tagline-resolution", { opacity: 0, y: 20 });
       gsap.set(".metrics-ticker", { opacity: 0, y: 15 });
       gsap.set(".scroll-indicator", { opacity: 0 });
@@ -103,20 +105,47 @@ export function HeroSection() {
       introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 5.53);
       introTL.to(".tagline-ai", { ...cyanStayOn, duration: 0.08 }, 5.7);
 
-      // "bridge" - starts with resolution line
-      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.02 }, 6.2);
-      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.05 }, 6.22);
-      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.03 }, 6.35);
-      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.06 }, 6.38);
-      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.02 }, 6.55);
-      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.04 }, 6.57);
-      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.04 }, 6.75);
-      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.03 }, 6.79);
-      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.02 }, 6.95);
-      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.05 }, 6.97);
-      introTL.to(".tagline-bridge", { ...cyanFlashOn, duration: 0.03 }, 7.15);
-      introTL.to(".tagline-bridge", { ...cyanFlashOff, duration: 0.04 }, 7.18);
-      introTL.to(".tagline-bridge", { ...cyanStayOn, duration: 0.08 }, 7.4);
+      // "bridge" - bridge construction animation (two sides meet in middle)
+      // Make container visible first
+      introTL.to(".tagline-bridge", { opacity: 1, duration: 0.01 }, 6.2);
+      
+      // Left side (BRI) slides in from left with glow
+      introTL.to(".bridge-left", { 
+        x: 0, 
+        opacity: 1, 
+        duration: 0.5, 
+        ease: "power2.out",
+        textShadow: "0 0 10px #00bcd4"
+      }, 6.2);
+      
+      // Right side (DGE) slides in from right with glow
+      introTL.to(".bridge-right", { 
+        x: 0, 
+        opacity: 1, 
+        duration: 0.5, 
+        ease: "power2.out",
+        textShadow: "0 0 10px #00bcd4"
+      }, 6.2);
+      
+      // Connection flash when they meet - bright glow pulse
+      introTL.to(".tagline-bridge", { 
+        textShadow: "0 0 30px #00bcd4, 0 0 60px #00bcd4",
+        duration: 0.15,
+        ease: "power2.in"
+      }, 6.7);
+      
+      // Settle to subtle glow
+      introTL.to(".tagline-bridge", { 
+        textShadow: "none",
+        duration: 0.4,
+        ease: "power2.out"
+      }, 6.85);
+      
+      // Remove individual glows
+      introTL.to([".bridge-left", ".bridge-right"], {
+        textShadow: "none",
+        duration: 0.3
+      }, 6.85);
 
       // ----------------------------------------
       // PHASE 4: Resolution
@@ -241,7 +270,10 @@ export function HeroSection() {
             </span>
             <span className="tagline-resolution block text-foreground/50 font-medium">
               I'm the{" "}
-              <span className="tagline-bridge text-primary">bridge</span>{" "}
+              <span className="tagline-bridge text-primary inline-flex">
+                <span className="bridge-left">BRI</span>
+                <span className="bridge-right">DGE</span>
+              </span>{" "}
               between.
             </span>
           </h1>
