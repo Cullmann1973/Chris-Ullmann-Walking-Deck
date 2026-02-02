@@ -14,8 +14,17 @@ import { ContactSection } from "@/components/sections/contact-section";
 import { ScrollTrigger } from "@/components/gsap-provider";
 
 export default function HomePage() {
-  // Refresh ScrollTrigger after initial render
+  // Force scroll to top on page load/refresh and replay animations
   useEffect(() => {
+    // Disable browser's automatic scroll restoration
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
+    
+    // Scroll to top immediately
+    window.scrollTo(0, 0);
+    
+    // Refresh ScrollTrigger after initial render
     const timeout = setTimeout(() => {
       ScrollTrigger.refresh();
     }, 100);
