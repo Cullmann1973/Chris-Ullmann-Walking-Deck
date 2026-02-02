@@ -24,12 +24,21 @@ export default function HomePage() {
     // Scroll to top immediately
     window.scrollTo(0, 0);
     
+    // Also scroll to top before page unloads (so browser doesn't save scroll position)
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    
     // Refresh ScrollTrigger after initial render
     const timeout = setTimeout(() => {
       ScrollTrigger.refresh();
     }, 100);
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, []);
 
   return (
