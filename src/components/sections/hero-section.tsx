@@ -261,14 +261,14 @@ export function HeroSection() {
         {/* Hero Content - Below the letters with proper spacing */}
         <div className="hero-content text-center max-w-3xl">
           {/* Tagline */}
-          <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl font-serif text-foreground/50 leading-relaxed mb-6 md:mb-12">
+          <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl font-serif text-foreground/80 leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line-1 block mb-2">
               <span className="tagline-business text-foreground">Business</span>{" "}
               challenges.{" "}
               <span className="tagline-ai text-primary">AI</span>{" "}
               possibilities.
             </span>
-            <span className="tagline-resolution block text-foreground/50 font-medium">
+            <span className="tagline-resolution block text-foreground/80 font-medium">
               I'm the{" "}
               <span className="tagline-bridge text-primary inline-flex">
                 <span className="bridge-left">BRI</span>
