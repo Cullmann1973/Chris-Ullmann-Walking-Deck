@@ -65,7 +65,10 @@ export default function RootLayout({
               if (history.scrollRestoration) {
                 history.scrollRestoration = 'manual';
               }
-              window.scrollTo(0, 0);
+              // Only scroll to top if no hash in URL (allow #ai etc to work)
+              if (!window.location.hash) {
+                window.scrollTo(0, 0);
+              }
             `,
           }}
         />

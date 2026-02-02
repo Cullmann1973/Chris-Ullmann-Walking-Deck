@@ -21,12 +21,17 @@ export default function HomePage() {
       history.scrollRestoration = "manual";
     }
     
-    // Scroll to top immediately
-    window.scrollTo(0, 0);
+    // Only scroll to top if no hash in URL (allow #ai etc to work)
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
     
     // Also scroll to top before page unloads (so browser doesn't save scroll position)
+    // But only if not navigating to a hash
     const handleBeforeUnload = () => {
-      window.scrollTo(0, 0);
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
     };
     window.addEventListener("beforeunload", handleBeforeUnload);
     

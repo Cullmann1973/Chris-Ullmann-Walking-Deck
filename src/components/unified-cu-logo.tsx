@@ -71,7 +71,7 @@ export function UnifiedCULogo() {
       }, 1.5);
 
       // ========================================
-      // SCROLL ANIMATION: Center → Under header, tiny
+      // SCROLL ANIMATION: Center → Header center, small
       // ========================================
       ScrollTrigger.create({
         trigger: "#hero",
@@ -81,33 +81,22 @@ export function UnifiedCULogo() {
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Scale: 1 → 0.25 (shrink to fit under header)
+          // Scale: 1 → 0.2 (shrink to fit in header)
           const startScale = 1;
-          const endScale = 0.25;
+          const endScale = 0.2;
           const currentScale = startScale - progress * (startScale - endScale);
 
-          // Match header padding: px-6 (24px) on mobile, px-12 (48px) on md+
-          const isMobile = window.innerWidth < 768;
-          const headerPadding = isMobile ? 24 : 48;
-          
-          // Convert to percentage of viewport width for animation
-          const viewportWidth = window.innerWidth;
-          const endLeftPx = headerPadding;
-          const endLeftPercent = (endLeftPx / viewportWidth) * 100;
-          
-          // Horizontal: center (50%) → aligned with header text
+          // Horizontal: stay centered at 50%
           const startLeft = 50;
-          const endLeft = endLeftPercent;
+          const endLeft = 50;
           const currentLeft = startLeft - progress * (startLeft - endLeft);
 
-          // xPercent: -50 (centered) → 0 (left-aligned)
-          const startXPercent = -50;
-          const endXPercent = 0;
-          const currentXPercent = startXPercent - progress * (startXPercent - endXPercent);
+          // xPercent: stay at -50 (centered)
+          const currentXPercent = -50;
 
-          // Vertical: 33% → 6% (tuck right under header)
+          // Vertical: 33% → 4% (center in header bar)
           const startTop = 33;
-          const endTop = 6;
+          const endTop = 4;
           const currentTop = startTop - progress * (startTop - endTop);
 
           gsap.set(logo, {
