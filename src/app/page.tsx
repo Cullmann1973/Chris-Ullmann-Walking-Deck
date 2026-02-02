@@ -21,27 +21,36 @@ export default function HomePage() {
       history.scrollRestoration = "manual";
     }
     
-    // Only scroll to top if no hash in URL (allow #ai etc to work)
-    if (!window.location.hash) {
+    // Check for hash in URL
+    const hash = window.location.hash;
+    
+    if (hash) {
+      // If there's a hash, scroll to that element after a short delay
+      const timeout = setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "instant" });
+        }
+      }, 100);
+      return () => clearTimeout(timeout);
+    } else {
+      // No hash - scroll to top for fresh start
       window.scrollTo(0, 0);
     }
     
     // Also scroll to top before page unloads (so browser doesn't save scroll position)
-    // But only if not navigating to a hash
     const handleBeforeUnload = () => {
-      if (!window.location.hash) {
-        window.scrollTo(0, 0);
-      }
+      window.scrollTo(0, 0);
     };
     window.addEventListener("beforeunload", handleBeforeUnload);
     
     // Refresh ScrollTrigger after initial render
-    const timeout = setTimeout(() => {
+    const refreshTimeout = setTimeout(() => {
       ScrollTrigger.refresh();
     }, 100);
 
     return () => {
-      clearTimeout(timeout);
+      clearTimeout(refreshTimeout);
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
