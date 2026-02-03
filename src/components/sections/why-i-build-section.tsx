@@ -297,11 +297,13 @@ export function WhyIBuildSection() {
         ))}
       </div>
 
-      {/* Content text - positioned on right side, hidden on small screens */}
+      {/* Content text - positioned on right side, or below title on mobile */}
       <div
-        className="hidden sm:block absolute top-1/2 -translate-y-1/2 z-30 right-4 sm:right-6 md:right-8 lg:right-12"
+        className="absolute z-30 
+                   bottom-[15%] left-4 right-4
+                   sm:bottom-auto sm:left-auto sm:top-1/2 sm:-translate-y-1/2 sm:right-4 md:right-8 lg:right-12"
         style={{
-          width: "min(280px, 30vw)",
+          width: "auto",
           maxWidth: "320px",
         }}
       >
