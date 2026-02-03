@@ -213,7 +213,7 @@ export function HeroSection() {
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top",
-        end: "+=100%",
+        end: "+=150%",
         pin: true,
         scrub: 2,
         onUpdate: (self) => {
@@ -320,7 +320,7 @@ export function HeroSection() {
       </div>
 
       {/* SCROLL Indicator - Bright, visible, with animations */}
-      <div className="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
+      <div className="scroll-indicator absolute bottom-20 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3">
         <span className="text-xs font-mono tracking-widest uppercase text-primary animate-pulse">
           Scroll
         </span>
