@@ -213,7 +213,7 @@ export function HeroSection() {
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top",
-        end: "+=200%",
+        end: "+=100%",
         pin: true,
         scrub: 2,
         onUpdate: (self) => {
