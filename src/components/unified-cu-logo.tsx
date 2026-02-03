@@ -71,7 +71,9 @@ export function UnifiedCULogo() {
       }, 1.5);
 
       // ========================================
-      // SCROLL ANIMATION: Center → Header center, small (STAYS CENTERED)
+      // SCROLL ANIMATION: Center → Header position
+      // Desktop: stays centered
+      // Mobile: moves to RIGHT to avoid overlapping name
       // ========================================
       ScrollTrigger.create({
         trigger: "#hero",
@@ -80,18 +82,20 @@ export function UnifiedCULogo() {
         scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
+          const isMobile = window.innerWidth < 768;
 
           // Scale: 1 → 0.2 (shrink to fit in header)
           const startScale = 1;
           const endScale = 0.2;
           const currentScale = startScale - progress * (startScale - endScale);
 
-          // Horizontal: stay centered at 50%
+          // Horizontal position
           const startLeft = 50;
-          const endLeft = 50;
-          const currentLeft = startLeft - progress * (startLeft - endLeft);
+          // On mobile: end at 85% (right side), on desktop: stay centered at 50%
+          const endLeft = isMobile ? 85 : 50;
+          const currentLeft = startLeft + progress * (endLeft - startLeft);
 
-          // xPercent: stay at -50 (centered)
+          // xPercent: -50 (centered on position)
           const currentXPercent = -50;
 
           // Vertical: 33% → 4% (center in header bar)
@@ -136,7 +140,7 @@ export function UnifiedCULogo() {
   return (
     <div
       ref={logoRef}
-      className="fixed z-50 pointer-events-none hidden md:block"
+      className="fixed z-50 pointer-events-none"
       style={{
         top: "33%",
         left: "50%",
