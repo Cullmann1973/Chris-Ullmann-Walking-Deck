@@ -300,7 +300,7 @@ export function WhyIBuildSection() {
       {/* Content text - positioned on right side, or below title on mobile */}
       <div
         className="absolute z-30 
-                   bottom-[15%] left-4 right-4
+                   bottom-[22%] left-4 right-4
                    sm:bottom-auto sm:left-auto sm:top-1/2 sm:-translate-y-1/2 sm:right-4 md:right-8 lg:right-12"
         style={{
           width: "auto",
