@@ -136,7 +136,7 @@ export function UnifiedCULogo() {
   return (
     <div
       ref={logoRef}
-      className="fixed z-50 pointer-events-none"
+      className="fixed z-50 pointer-events-none hidden md:block"
       style={{
         top: "33%",
         left: "50%",
