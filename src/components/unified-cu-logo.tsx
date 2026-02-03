@@ -71,8 +71,24 @@ export function UnifiedCULogo() {
       }, 1.5);
 
       // ========================================
-      // SCROLL ANIMATION: Center → Header center, small
+      // SCROLL ANIMATION: Center → Header LEFT, small, STAY FIXED
+      // Uses GSAP's x/y for reliable animation
       // ========================================
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      
+      // Calculate the X offset needed to move from center to left
+      // Start: centered at 50% with xPercent=-50 (visually centered)
+      // End: small logo pinned 24px from left edge
+      // At scale 0.18, logo is ~40px wide, so center of scaled logo should be at ~44px
+      const startCenterX = vw / 2;
+      const endCenterX = 44;
+      const totalXOffset = endCenterX - startCenterX; // negative, moves left
+      
+      const startCenterY = vh * 0.33;
+      const endCenterY = 24;
+      const totalYOffset = endCenterY - startCenterY; // negative, moves up
+
       ScrollTrigger.create({
         trigger: "#hero",
         start: "top top",
@@ -81,29 +97,17 @@ export function UnifiedCULogo() {
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Scale: 1 → 0.2 (shrink to fit in header)
-          const startScale = 1;
-          const endScale = 0.2;
-          const currentScale = startScale - progress * (startScale - endScale);
+          // Scale: 1 → 0.18
+          const currentScale = 1 - progress * (1 - 0.18);
 
-          // Horizontal: stay centered at 50%
-          const startLeft = 50;
-          const endLeft = 50;
-          const currentLeft = startLeft - progress * (startLeft - endLeft);
-
-          // xPercent: stay at -50 (centered)
-          const currentXPercent = -50;
-
-          // Vertical: 33% → 4% (center in header bar)
-          const startTop = 33;
-          const endTop = 4;
-          const currentTop = startTop - progress * (startTop - endTop);
+          // Move using x/y offsets (more reliable than changing left/top)
+          const currentX = progress * totalXOffset;
+          const currentY = progress * totalYOffset;
 
           gsap.set(logo, {
             scale: currentScale,
-            left: `${currentLeft}%`,
-            top: `${currentTop}%`,
-            xPercent: currentXPercent,
+            x: currentX,
+            y: currentY,
           });
         },
       });
