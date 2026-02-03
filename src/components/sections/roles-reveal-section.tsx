@@ -60,7 +60,7 @@ export function RolesRevealSection() {
     >
       <div
         ref={boxRef}
-        className="bg-dark-alt border border-border/20 rounded-lg p-6 md:p-8 lg:p-12 max-w-2xl w-full"
+        className="bg-dark-alt border border-primary/30 rounded-lg p-6 md:p-8 lg:p-12 max-w-2xl w-full"
       >
         {/* Title */}
         <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-8 md:mb-12">

@@ -251,7 +251,7 @@ export function WhyIBuildSection() {
         ref={boxRef}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
                    w-[90vw] max-w-[500px] h-[400px] md:h-[500px] bg-dark-alt rounded-2xl z-10
-                   border border-border/20"
+                   border border-primary/30"
         style={{ transformOrigin: "center center" }}
       />
 
