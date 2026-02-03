@@ -21,7 +21,7 @@ const sections: BeyondSection[] = [
     image: "", // Add family photo path here
     content: [
       "Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan.",
-      "Together we're raising two daughters who keep me grounded. After decades of transformations, deadlines, and high-stakes decisions, family is where I remember why any of it matters.",
+      "I have two daughters who keep me grounded. After decades of transformations, deadlines, and high-stakes decisions, family is where I remember why any of it matters.",
     ],
     pullQuote: "Balance isn't a goal. It's a practice.",
   },
