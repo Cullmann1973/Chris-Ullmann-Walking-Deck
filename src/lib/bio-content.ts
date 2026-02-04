@@ -159,6 +159,29 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
    - Standardized digital recordkeeping
    - Sustained lab cycle-time velocity improvements
 
+### How the $3.75M Annual Savings Were Generated
+
+1. **Eliminated Excess Inventory Carry Costs**
+   - Products sat dramatically less time in Quality Hold
+   - Faster release to service = less WIP and finished goods trapped in QC
+   - Lower average inventory = lower capital burden + reduced storage costs
+   - Classic Lean: shorten lead time → inventory collapses proportionally → cash freed
+
+2. **Removed Waste Within Lab Processes**
+   - Eliminated redundant waits, rework loops, excessive sample handling, long queues
+   - Reduced labor hours on unnecessary retesting
+   - Lowered consumables usage and administrative overhead in OOS management
+
+3. **Slashed OOS Investigations (>80% Reduction)**
+   - Cleaner data, fewer invalid OOS results, faster issue resolution
+   - Reduced QC labor, QA investigation time, re-sampling costs
+   - Less material scrap tied to testing-induced delays
+
+4. **Enabled Faster Flow → Higher Throughput Without Added Cost**
+   - QC handled more batches with same headcount
+   - Manufacturing experienced fewer bottlenecks waiting for release
+   - Gained "speed capacity" without new investment
+
 ### Summary
 "Led a Lean transformation of Quality Testing, reducing cycle time from 12 days to 2.7 days (~80%), unlocking $30-35M in working capital, accelerating supply chain velocity by nearly two weeks, and strengthening ROA. Implemented new analytics, CAPA rigor, and lab operating standards that reduced overturned OOS by >80% and supported a ~90% drop in audit observations."
 `;
