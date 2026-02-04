@@ -21,37 +21,44 @@ export default function HomePage() {
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
-    
-    // Check for hash in URL
-    const hash = window.location.hash;
-    
-    if (hash) {
-      // If there's a hash, scroll to that element after a short delay
-      const timeout = setTimeout(() => {
-        const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "instant" });
-        }
-      }, 100);
-      return () => clearTimeout(timeout);
-    } else {
-      // No hash - scroll to top for fresh start
+
+    // Immediate scroll to top (catches most browsers)
+    window.scrollTo(0, 0);
+
+    // Delayed scroll to top (catches mobile Safari which restores scroll after paint)
+    const scrollTimer1 = setTimeout(() => window.scrollTo(0, 0), 0);
+    const scrollTimer2 = setTimeout(() => window.scrollTo(0, 0), 50);
+    const scrollTimer3 = setTimeout(() => {
       window.scrollTo(0, 0);
-    }
-    
-    // Also scroll to top before page unloads (so browser doesn't save scroll position)
+      // Refresh ScrollTrigger after everything has settled
+      ScrollTrigger.refresh();
+    }, 150);
+
+    // Handle bfcache (back-forward cache) on mobile Safari
+    const handlePageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) {
+        window.scrollTo(0, 0);
+        ScrollTrigger.refresh();
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+
+    // Scroll to top before page unloads
     const handleBeforeUnload = () => {
       window.scrollTo(0, 0);
     };
     window.addEventListener("beforeunload", handleBeforeUnload);
-    
-    // Refresh ScrollTrigger after initial render
-    const refreshTimeout = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
+
+    // Clear any hash from URL on load (prevents scroll-to-anchor on refresh)
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname);
+    }
 
     return () => {
-      clearTimeout(refreshTimeout);
+      clearTimeout(scrollTimer1);
+      clearTimeout(scrollTimer2);
+      clearTimeout(scrollTimer3);
+      window.removeEventListener("pageshow", handlePageShow);
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, []);
