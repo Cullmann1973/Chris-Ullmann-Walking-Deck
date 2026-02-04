@@ -13,7 +13,7 @@ const menuItems = [
   { label: "About", href: "#about" },
   { label: "The Stack", href: "#stack" },
   { label: "Beyond Work", href: "#beyond" },
-  { label: "Ask Chris", href: "#ai" },
+  { label: "Meet My AI", href: "#ai" },
 ];
 
 export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {

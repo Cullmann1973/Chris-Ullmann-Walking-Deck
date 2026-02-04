@@ -341,7 +341,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Digital Twin Teaser - Bottom right - Links to Ask Chris section */}
+      {/* Digital Twin Teaser - Bottom right - Links to Meet My AI section */}
       <a 
         href="#ai" 
         className="absolute bottom-8 right-4 sm:right-8 flex items-center gap-2 
@@ -354,7 +354,7 @@ export function HeroSection() {
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
         </span>
         <span className="text-xs font-mono tracking-wide text-primary">
-          Ask Chris →
+          Meet My AI →
         </span>
       </a>
     </section>

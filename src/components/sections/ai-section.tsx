@@ -302,7 +302,7 @@ export function AISection() {
           {/* Section header */}
           <div className="ai-title mb-12">
             <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
-              Ask Chris
+              Meet My AI
             </span>
             <h2 className="text-section font-serif text-foreground mt-4">
               Digital Twin
@@ -365,7 +365,7 @@ export function AISection() {
                 <Bot className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-white">Ask Chris</h3>
+                <h3 className="font-semibold text-white">Meet My AI</h3>
                 <p className="text-xs text-white/70">AI-powered digital twin</p>
               </div>
               <div className="ml-auto flex items-center gap-2">

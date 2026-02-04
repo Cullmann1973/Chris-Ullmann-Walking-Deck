@@ -1,5 +1,5 @@
 // Verified biography content for Chris Ullmann's digital twin
-// This content is used as context for the Claude-powered "Ask Chris" feature
+// This content is used as context for the Claude-powered "Meet My AI" feature
 
 export const bioContent = `
 # Christopher C. Ullmann - Verified Biography

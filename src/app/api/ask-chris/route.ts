@@ -96,7 +96,7 @@ export async function POST(req: Request) {
       },
     });
   } catch (error) {
-    console.error("Ask Chris API error:", error);
+    console.error("Meet My AI API error:", error);
     return new Response(
       JSON.stringify({ error: "Failed to generate response" }),
       { status: 500, headers: { "Content-Type": "application/json" } }
