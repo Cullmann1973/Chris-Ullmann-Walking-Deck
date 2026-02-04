@@ -107,7 +107,7 @@ const getResponse = (query: string): string => {
     q.includes("bella") ||
     q.includes("emmi")
   ) {
-    return "Family is where I apply the same precision I bring to work. My wife Leslie is my true partner: we manage life, career, real estate, and family as a coordinated team. I have two daughters: Isabella 'Bella' (born 2009) lives in North Carolina, and being present for her despite the distance required turning logistics into a love language. Emilia 'Emmi' (born 2019) attends the Long Island School for the Gifted. In 2024, Leslie and I established a home in Mililani, Hawaii, a sanctuary where the constant translation between worlds can pause.";
+    return "Family is where I apply the same precision I bring to work. My wife Leslie is my true partner: we manage life, career, and family as a coordinated team. I have two daughters who inspire curiosity and remind me why I build. Leslie and I also have a home in Hawaii, a sanctuary where the constant translation between worlds can pause.";
   }
 
   if (
