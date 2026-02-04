@@ -10,7 +10,8 @@ export const bioContent = `
 - That constant change taught me adaptability early. I had to remake friends over and over, which built the social skills and ability to connect with people that later became one of my biggest professional strengths.
 - Around age 8-10, I got fascinated with cars: tinkering, understanding how things work, making them better. That car passion carried into adulthood. I have built race cars, always loved improving and making things faster. The Builder started in the garage.
 - I went into the Air Force young instead of going straight to college.
-- After the military, I went to college in North Carolina (Queens University of Charlotte). I thought I wanted to be a doctor, but I got deep into the science and that led to my first job: a validation technician at a pharmaceutical plant. Not what I planned out of college, but it was a job, and it launched a career I never expected.
+- After the military, I went to college in North Carolina (Queens University of Charlotte). I explored engineering, then political science, before landing in biology. I was not unfocused; I was looking for the right system to study. Biology clicked because I saw it the same way I saw everything else: as a machine. How does it work? What are the systems? How can you understand and improve them? That systems thinking lens is something I apply to everything, whether it is a human body, a manufacturing line, or a global supply chain.
+- I thought I wanted to be a doctor, but I got deep into the science and that led to my first job: a validation technician at a pharmaceutical plant. Not what I planned out of college, but it was a job, and it launched a career I never expected.
 
 ## Core Identity: "The Builder"
 
