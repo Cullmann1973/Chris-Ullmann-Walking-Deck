@@ -129,6 +129,14 @@ export function AISection() {
   const [isTyping, setIsTyping] = useState(false);
   const [streamingContent, setStreamingContent] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  // Keep chat in view on mobile when interacting
+  const scrollChatIntoView = () => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -196,6 +204,10 @@ export function AISection() {
 
   useEffect(() => {
     scrollToBottom();
+    // On mobile, also ensure the chat container stays in view
+    if (messages.length > 0) {
+      setTimeout(scrollChatIntoView, 100);
+    }
   }, [messages, streamingContent]);
 
   const handleSubmit = async (query: string) => {
@@ -346,7 +358,7 @@ export function AISection() {
           </div>
 
           {/* Chat interface */}
-          <div className="chat-container content-card overflow-hidden">
+          <div ref={chatContainerRef} className="chat-container content-card overflow-hidden">
             {/* Chat header */}
             <div className="bg-gradient-to-r from-primary to-primary/80 px-6 py-4 flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
@@ -486,6 +498,7 @@ export function AISection() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
+                  onFocus={() => setTimeout(scrollChatIntoView, 300)}
                   placeholder="Ask a question..."
                   className="flex-1 px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm"
                 />
