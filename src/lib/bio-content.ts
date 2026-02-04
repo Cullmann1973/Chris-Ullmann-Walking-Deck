@@ -119,6 +119,48 @@ From the 6-month update, exceeded business case targets:
 
 ### Summary
 "Program Runway delivered 170% ROI by transforming launch governance, accelerating value realization across COGs and innovation, modernizing engineering and digital capabilities, and eliminating structural inefficiencies across the end-to-end value chain."
+
+## Deep Dive: Lab Cycle Time Transformation
+
+Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
+
+### Business Impact
+
+1. **Massive Working Capital Release**
+   - Released $30-35M in annual inventory working capital
+   - Products spent far less time waiting on testing in Quality Hold
+
+2. **Accelerated Supply Chain Velocity**
+   - Finished goods reached DCs nearly two weeks faster
+   - Created measurable competitive advantage for trend response (e.g., TikTok-driven spikes)
+
+3. **Improved Return on Assets (ROA)**
+   - Less capital tied up in WIP and inventory carry costs
+   - Materially improved ROA by shrinking the Quality Hold window
+
+4. **Lean Operating Model Shift**
+   - $3.75M annual inventory savings
+   - Reduced overturned lab OOS by >80%
+   - Contributed to ~90% reduction in audit observations at the site
+
+### How It Was Done
+
+1. **Lean Redesign of Testing Workflow**
+   - Streamlined handoffs and queue times
+   - Removed non-value-added administrative steps
+   - Standardized method execution and analysis flow
+
+2. **Embedded Metrics, Trending & CAPA Discipline**
+   - Built and deployed new trending systems and CAPA governance
+   - Reduced overturned OOS investigations by >80% (cleaner, more capable lab processes)
+
+3. **Strengthened Quality Systems**
+   - Micro risk reduction programs
+   - Standardized digital recordkeeping
+   - Sustained lab cycle-time velocity improvements
+
+### Summary
+"Led a Lean transformation of Quality Testing, reducing cycle time from 12 days to 2.7 days (~80%), unlocking $30-35M in working capital, accelerating supply chain velocity by nearly two weeks, and strengthening ROA. Implemented new analytics, CAPA rigor, and lab operating standards that reduced overturned OOS by >80% and supported a ~90% drop in audit observations."
 `;
 
 export const systemPrompt = `You are Chris Ullmann's digital twin - an AI that answers questions about his career and experience.
