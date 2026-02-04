@@ -27,21 +27,35 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
   - Achieved 90% reduction in audit observations
   - Launched grassroots CI program generating $1M savings in 90 days
 
-### Coty Inc. (2010-2015)
-- Director, Quality Assurance
-- Led Phoenix to Sanford facility transfer, part of transformation featured in Harvard Business Review
-- Delivered $39M first-year savings, 400 measurable "wins" in 300 days
-- Reduced supplier quality incidents by 60%
-- Cut non-moving inventory from $1.5M to under $200K
+### Coty Inc. (2011-2015)
 
-### EI Pharmaceutical (2008-2010)
-- Manager, Quality Assurance & Validation
+**Director, Quality Assurance | Phoenix, AZ and Sanford, NC (2013-2015)**
+- Quality and compliance lead for the Phoenix to Sanford manufacturing consolidation, delivering $39M in first-year savings while maintaining service and full regulatory compliance
+- Workstream owner for both sending and receiving sites: built and executed ramp-down and ramp-up plans spanning staffing, equipment, documents, tools, and standards
+- Directed equipment and process validation including IQ, OQ, and PQ execution
+- Led transition of quality management systems into SAP QM at the receiving site, maintaining regulatory readiness throughout the change
+- Maintained QVC and e-commerce quality certifications and validated OTC product manufacturing in receiving facilities during heavy program cycles
+- Led QVC kitting corrective actions and process improvements using RCPS, closing labeling gaps with zero additional rejects after changes
+- Led Quality workstream for the Del Laboratories nail lacquer integration, planning for new technology introduction and absorbing significant additional volume
+- Treated consolidation as a capability transfer: moving formulas, management systems (QMS and SAP QM), and the human operating model (skills, standards, routines) so the receiving site could sustain qualification requirements and regulated compliance from day one
+- Led pre-work modernization at Sanford to create capacity: upgraded fragrance operation, retail security clamshell packaging, and seasonal kitting operations
+- Leading Bold Change (Kotter) facilitator; drove employee-led savings generating several million dollars and improved morale
+
+**QA Manager / Senior Manager, QA Operations and QC Laboratories | Sanford, NC (2011-2013)**
+- Implemented GMP and QMS systems; reduced supplier quality incidents by 60%
+- Cut non-moving inventory from $1.5M to under $200K and reduced days on hand from 260 to under 30 through lean inventory controls and daily management
+- Built the operational foundation that enabled the subsequent consolidation success
+
+### Harmony Labs / EI Pharmaceutical (2008-2011)
+- Manager, Quality Assurance & Validation, Charlotte, NC
 - Led transformation from cosmetic to pharmaceutical manufacturing (GMP)
 - Primary FDA liaison for site regulatory compliance
+- FDA/USP compliance, validation leadership, OTC and Rx product lines
 
-### Leiner Health Products (2002-2007)
-- Master Planner III, Change Management Lead, Quality Supervisor
+### Leiner Health Products (2003-2007)
+- Master Planner III, Change Management Lead, Quality Supervisor, Validation Technician
 - Reduced quarantine inventory from $16M to under $200K
+- Managed distressed inventory across 5 U.S. plants
 - Managed teams of 20-40 QA inspectors
 
 ## Military Service
@@ -185,6 +199,40 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
 ### Summary
 "Led a Lean transformation of Quality Testing, reducing cycle time from 12 days to 2.7 days (~80%), unlocking $30-35M in working capital, accelerating supply chain velocity by nearly two weeks, and strengthening ROA. Implemented new analytics, CAPA rigor, and lab operating standards that reduced overturned OOS by >80% and supported a ~90% drop in audit observations."
 
+## Deep Dive: Coty Manufacturing Consolidation & Capability Transfer
+
+Led Quality and Compliance through multi-site consolidation, managing the highest-risk parts of moving a manufacturing operation while sustaining compliance and supply.
+
+### The Challenge
+Coty was consolidating manufacturing operations from Phoenix, AZ to Sanford, NC. Significant risk was tied to validation, regulatory posture, external qualification expectations (QVC, e-commerce), and the introduction of new product technology from the Del Laboratories acquisition.
+
+### What I Did
+- Owned the end-to-end quality workstream for both sending and receiving sites
+- Built ramp-up and ramp-down plans across staffing, equipment, documents, tools, and standards
+- Led IQ, OQ, PQ execution and directed equipment and process validation
+- Transitioned quality management systems into SAP QM at the receiving site during the consolidation
+- Maintained QVC and e-commerce quality certifications while absorbing heavy program demand
+- Ran targeted corrective actions for QVC kitting issues using RCPS methodology with sustained performance after changes (zero additional rejects)
+- Led the Del Laboratories nail lacquer integration, planning for technology not previously manufactured at Sanford
+- Modernized Sanford pre-transfer: upgraded fragrance operation, retail security clamshell packaging, and seasonal kitting to create space and capacity
+
+### The Philosophy
+I treated this as a capability transfer, not just a site move. That meant transferring formulas, management systems (QMS and SAP QM), and the human operating model (skills, standards, routines) so the receiving site could sustain qualification requirements and regulated compliance from day one. The playbook ensured the receiving teams had the right people, processes, and tools to remain qualified before the sending site stood down.
+
+### Results
+- $39M in first-year savings with no service or compliance disruption
+- QVC and e-commerce certifications maintained through the transition
+- OTC product manufacturing validated at the receiving site
+- Zero additional rejects on QVC kitting after corrective actions
+- Foundation laid for ongoing capability, not just a one-time move
+
+### Earlier Coty Accomplishments (Pre-Consolidation)
+- 60% reduction in supplier quality incidents through GMP and QMS implementation
+- Non-moving inventory reduced from $1.5M to under $200K
+- Days on hand reduced from 260 to under 30 through lean controls and daily management
+- Leading Bold Change (Kotter) facilitator, driving employee-led savings of several million dollars with improved morale
+- These baseline improvements established the credibility and operational maturity that enabled the consolidation to succeed
+
 ## Deep Dive: 20+ AI Use Cases in Manufacturing
 
 Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufacturing, quality, engineering, supply chain, and operations, forming one of the most diverse AI adoption pipelines at ELC.
@@ -229,7 +277,7 @@ Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufact
 - ELLA Workshop: "We have 20 different things we're inputting" into agentic-AI workflows
 `;
 
-export const systemPrompt = `You are Chris Ullmann's digital twin - an AI that answers questions about his career and experience.
+export const systemPrompt = `You are Chris Ullmann's AI, a digital representation that answers questions about his career, experience, and leadership philosophy. You are accessed via the "Meet My AI" feature on his portfolio site.
 
 STYLE: Be brief. Key facts only. 1-2 short paragraphs max.
 
@@ -238,6 +286,8 @@ RULES:
 - If not in the bio, say "I don't have info on that"
 - No em dashes (use commas or colons)
 - Lead with the answer, skip the preamble
+- When discussing accomplishments, be specific with numbers and outcomes
+- Convey warmth and directness, not corporate stiffness
 
 VERIFIED BIOGRAPHY:
 ${bioContent}
