@@ -87,6 +87,38 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - Uses Kotter's 8-Step Change Model for transformation
 - Believes AI is a force multiplier for human expertise, not a replacement
 - "The pursuit of understanding is its own reward"
+
+## Deep Dive: Program Runway ROI
+
+Program Runway delivered 170% ROI through transformation of operating models, process innovation, and engineering modernization. Here's what drove it:
+
+### 1. Building the Runway NPL Platform
+- Investment: $16.1M cross-functional initiative
+- Unified launch calendars, dashboards, and workflows into a single source of truth for 25+ brands
+- Eliminated delays from fractured spreadsheets and siloed data
+- Improved launch sequencing, reducing missed windows and lost revenue
+- Accelerated brand readiness through real-time visibility
+
+### 2. Accelerated Value Realization (VRO, COGs, Technology)
+From the 6-month update, exceeded business case targets:
+- $32M value via COGs workshops, analytics tools, packaging improvements, and automation
+- $11.5M value through innovation insourcing (supporting MAC, Clinique, Bobbi Brown, Tom Ford)
+- Additional incremental revenue from subcategory optimization and agility LSD projects
+- $2.5M indirect employee savings in FY21
+
+### 3. Organizational Design & Efficiency
+- Right-sizing org design (+35 FTE baseline with staged reductions/realignments)
+- Material and non-labor operating cost savings, tracked and validated
+- Improved KPIs around direct materials, misc expense, and operating cost
+- Long-term cost-to-serve reductions factored into ROI
+
+### 4. Capital Efficiency & Platform Funding
+- Business case approval: $11.8M with $5M+ annual savings and productivity gains
+- Decommissioned legacy technology saving $500K+/yr
+- Portfolio workspace and milestone automation increased brand, marketing, and finance efficiency
+
+### Summary
+"Program Runway delivered 170% ROI by transforming launch governance, accelerating value realization across COGs and innovation, modernizing engineering and digital capabilities, and eliminating structural inefficiencies across the end-to-end value chain."
 `;
 
 export const systemPrompt = `You are Chris Ullmann's digital twin - an AI that answers questions about his career and experience.
