@@ -341,9 +341,9 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Digital Twin Teaser - Bottom right - Links to Meet My AI section */}
-      <a 
-        href="#ai" 
+      {/* Digital Twin Teaser - Bottom right - Opens chat widget */}
+      <button 
+        onClick={() => window.dispatchEvent(new Event("open-chat-widget"))}
         className="absolute bottom-8 right-4 sm:right-8 flex items-center gap-2 
                    bg-primary/10 hover:bg-primary/20 border border-primary/30 
                    rounded-full px-4 py-2 transition-all duration-300
@@ -356,7 +356,7 @@ export function HeroSection() {
         <span className="text-xs font-mono tracking-wide text-primary">
           Meet My AI →
         </span>
-      </a>
+      </button>
     </section>
   );
 }

@@ -11,6 +11,7 @@ import { StackSection } from "@/components/sections/stack-section";
 import { BeyondSection } from "@/components/sections/beyond-section";
 import { AISection } from "@/components/sections/ai-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { ChatWidget } from "@/components/chat-widget";
 import { ScrollTrigger } from "@/components/gsap-provider";
 
 export default function HomePage() {
@@ -70,6 +71,8 @@ export default function HomePage() {
         <AISection />
         <ContactSection />
       </main>
+
+      <ChatWidget />
     </>
   );
 }
