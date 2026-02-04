@@ -152,15 +152,15 @@ export function AISection() {
               {agentDemos.map((agent) => (
                 <div
                   key={agent.id}
-                  className={`agent-card relative p-5 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20`}
+                  className={`agent-card relative p-5 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20 overflow-hidden`}
                 >
-                  <div className="flex items-start justify-between mb-2">
+                  <div className="flex items-center justify-between mb-2 gap-2">
                     <h4 className="font-semibold text-foreground">{agent.name}</h4>
                     <a
                       href={agent.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30 transition-colors"
+                      className="text-xs px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30 transition-colors flex-shrink-0"
                     >
                       Live
                     </a>
