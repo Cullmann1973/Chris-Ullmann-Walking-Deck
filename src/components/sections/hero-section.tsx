@@ -341,22 +341,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Digital Twin Teaser - Bottom right - Opens chat widget */}
-      <button 
-        onClick={() => window.dispatchEvent(new Event("open-chat-widget"))}
-        className="absolute bottom-8 right-4 sm:right-8 flex items-center gap-2 
-                   bg-primary/10 hover:bg-primary/20 border border-primary/30 
-                   rounded-full px-4 py-2 transition-all duration-300
-                   hover:scale-105 hover:shadow-[0_0_20px_rgba(0,188,212,0.3)]"
-      >
-        <span className="relative flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-        </span>
-        <span className="text-xs font-mono tracking-wide text-primary">
-          Meet My AI →
-        </span>
-      </button>
+      {/* Meet My AI trigger moved to ChatWidget (floating, always visible) */}
     </section>
   );
 }

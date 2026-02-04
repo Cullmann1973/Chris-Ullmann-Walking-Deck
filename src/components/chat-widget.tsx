@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Bot, Send, User, Sparkles, X, MessageCircle } from "lucide-react";
+import { Bot, Send, User, Sparkles, X } from "lucide-react";
 
 interface Message {
   id: string;
@@ -169,15 +169,24 @@ export function ChatWidget() {
 
   return (
     <>
-      {/* Floating trigger button */}
+      {/* Floating trigger button - styled like hero teaser */}
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:scale-105 transition-all duration-300"
+          className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center gap-2
+                     bg-primary/10 hover:bg-primary/20 border border-primary/30
+                     rounded-2xl px-4 py-2.5 transition-all duration-300
+                     hover:scale-105 hover:shadow-[0_0_20px_rgba(0,188,212,0.3)]
+                     backdrop-blur-sm"
           aria-label="Open Meet My AI chat"
         >
-          <MessageCircle className="w-5 h-5" />
-          <span className="text-sm font-medium hidden sm:inline">Meet My AI</span>
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <span className="text-xs font-mono tracking-wide text-primary">
+            Meet My AI →
+          </span>
         </button>
       )}
 
