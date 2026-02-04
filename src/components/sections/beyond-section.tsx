@@ -29,7 +29,7 @@ const sections: BeyondSection[] = [
     id: "hawaii",
     title: "The Hawaii Chapter",
     photoLabel: "Photo: Hawaii",
-    image: "", // Add Hawaii photo path here
+    image: "/images/hawaii-sunset.jpg",
     content: [
       "In late 2024, Leslie and I made a decision that surprised some people: we bought a home on Oahu. Not as a vacation property. As a sanctuary.",
       "After decades of high-velocity work, rebuilding systems while they're running, managing hundreds of millions in capital, driving transformations that never slow down... having a place designed for stillness feels less like luxury and more like necessary infrastructure.",
@@ -283,7 +283,7 @@ export function BeyondSection() {
                     <img 
                       src={section.image} 
                       alt={section.title}
-                      className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                      className="absolute inset-0 w-full h-full object-cover rounded-xl photo-treatment"
                     />
                   ) : (
                     <div className="absolute inset-0 bg-[#1a1a1a] border border-primary/30 rounded-xl flex items-center justify-center">
