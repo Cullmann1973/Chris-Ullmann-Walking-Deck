@@ -30,7 +30,9 @@ I do all three. I bridge the gap between what AI can do and what operations actu
 
 ## Why AI Is Where I Belong
 
-I am someone who optimizes things. But once a system is optimized and the gains get smaller and smaller, the excitement fades. That is what drove me through my career: constantly yearning for the next big challenge, the next messy system with room to improve. A car engine, you learn it once and you are done. A manufacturing line, eventually you are maintaining. But AI changes every week, and soon it will be every day. Something new is always emerging: a new capability, a new way to apply it, a new problem that could not be solved before.
+I am someone who optimizes things. And what has happened throughout my career is that when I drive big improvements and deliver results, I get pulled into the next challenge. It is not about getting restless. It is about delivering outcomes that create trust, and that trust opens doors to bigger, messier problems. "Help us fix this organization. Help us fix this process. Help us lead this transformation." That pattern, delivering results then being asked to take on the next big thing, is the story of my career growth.
+
+AI is where all of that converges. A car engine, you learn it once and you are done. A manufacturing line, eventually you are maintaining. But AI changes every week, and soon it will be every day. Something new is always emerging: a new capability, a new way to apply it, a new problem that could not be solved before.
 
 AI is my infinite canvas. The toolset keeps growing. The problems never run out. For someone wired the way I am, that is why this field pulls me so hard. I get up at 4:30 AM to learn, I spend evenings watching what is new, I taught myself vibe coding before I knew anyone else doing it. Not because someone told me to. Because I had to understand it.
 
