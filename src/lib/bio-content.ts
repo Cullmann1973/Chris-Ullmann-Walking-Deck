@@ -4,9 +4,17 @@
 export const bioContent = `
 # Christopher C. Ullmann - Verified Biography
 
+## Background & Early Life
+
+- Grew up in the Southeast US, moved around frequently as a kid. My mom was climbing the corporate ladder, which meant new schools, new towns, new faces regularly.
+- That constant change taught me adaptability early. I had to remake friends over and over, which built the social skills and ability to connect with people that later became one of my biggest professional strengths.
+- Around age 8-10, I got fascinated with cars: tinkering, understanding how things work, making them better. That car passion carried into adulthood. I have built race cars, always loved improving and making things faster. The Builder started in the garage.
+- I went into the Air Force young instead of going straight to college.
+- After the military, I went to college in North Carolina (Queens University of Charlotte). I thought I wanted to be a doctor, but I got deep into the science and that led to my first job: a validation technician at a pharmaceutical plant. Not what I planned out of college, but it was a job, and it launched a career I never expected.
+
 ## Core Identity: "The Builder"
 
-The central theme of my career is the concept of building. It is not just a job description but a framework I apply to everything: optimizing global supply chains, leading AI transformation, navigating complex organizational change, or calibrating a racing sim rig at home. The underlying mechanism is always engineering: identify the desired state, analyze the current variables, and construct the most efficient path to optimization.
+The central theme of my career is the concept of building. It started as a kid tinkering with cars and has never stopped. It is not just a job description but a framework I apply to everything: optimizing global supply chains, leading AI transformation, navigating complex organizational change, building race cars, or calibrating a racing sim rig at home. The underlying mechanism is always engineering: identify the desired state, analyze the current variables, and construct the most efficient path to optimization.
 
 I have been described as "The Integrated Man," a rare convergence of industrial-era discipline and information-age agility. I combine 25+ years of manufacturing, quality, and supply chain operations with deep, hands-on AI expertise.
 
@@ -97,16 +105,18 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 ## Military Service
 - **United States Air Force** (Feb 1992 - Mar 1996)
-- **Aerospace Ground Equipment (AGE) Technician** at Incirlik Air Base, Turkey
+- **Aerospace Ground Equipment (AGE) Technician**
+- First assignment: **Edwards Air Force Base**, California. For a technical guy, this was incredible: surrounded by emerging aircraft technology, cutting-edge programs, top secret clearance. Edwards is where the future of flight gets tested.
+- Final two years: **Incirlik Air Base, Turkey**. Operation Provide Comfort II: enforced no-fly zone over northern Iraq protecting Kurdish refugees, combined humanitarian aid delivery with high-tempo combat support operations.
 - The AGE technician is responsible for the invisible infrastructure of airpower. Without the generators, hydraulic test stands, and nitrogen carts maintained by AGE, modern fighter aircraft remain grounded.
 - Key equipment: A/M32A-60 Generators, Hydraulic Test Stands
-- Gulf War Veteran, Operation Provide Comfort II: enforced no-fly zone over northern Iraq protecting Kurdish refugees, combined humanitarian aid delivery with high-tempo combat support operations
+- **Cultural immersion in Turkey:** Took college courses in Turkish language. Most of my friends were Turkish. I spent every afternoon, evening, and weekend immersed in the local culture and lifestyle. This was early proof of the Translator in me: I did not just work alongside a different culture, I lived in it.
 - Two Air Force Achievement Medals (exceeded expectations)
 - Honorable Discharge, Disabled Veteran of the Gulf War, Protected Veteran
 - This role required mechanical precision with zero error tolerance in a high-stakes environment. It established the foundational rigor I now apply to quality assurance, governance, and transformation leadership. I was the airman superiors turned to when hardware failed and the mission was at risk.
 
 ## Education & Certifications
-- B.S. Biology, Queens University of Charlotte, 2002
+- B.S. Biology, Queens University of Charlotte, 2002 (went to college after the Air Force, originally thought I would become a doctor, but the science led me into pharmaceutical manufacturing instead)
 - **Stanford University School of Engineering:** Technical Fundamentals of Generative AI (XFM110), August 2025
   - Deep mechanics of Large Language Models (LLMs)
   - "Attention" mechanism of Transformer models
