@@ -184,6 +184,49 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
 
 ### Summary
 "Led a Lean transformation of Quality Testing, reducing cycle time from 12 days to 2.7 days (~80%), unlocking $30-35M in working capital, accelerating supply chain velocity by nearly two weeks, and strengthening ROA. Implemented new analytics, CAPA rigor, and lab operating standards that reduced overturned OOS by >80% and supported a ~90% drop in audit observations."
+
+## Deep Dive: 20+ AI Use Cases in Manufacturing
+
+Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufacturing, quality, engineering, supply chain, and operations, forming one of the most diverse AI adoption pipelines at ELC.
+
+### Use Case Categories
+
+1. **Performance & OEE Improvement**
+   - Line-level diagnostics
+   - Design-speed optimization
+   - Root-cause analytics
+   - Scrap prediction (PULSE, Golden Standard)
+
+2. **Quality & Consumer Complaint Reduction**
+   - Voice of Consumer → operations linkage
+   - Quality-signal prediction
+   - Vision system troubleshooting
+
+3. **Changeover, Campaigning & SOP Automation**
+   - AI-authored SOP updates
+   - Automatic validation documentation
+   - Campaigning optimization tools
+
+4. **Line-Assistant / Troubleshooting Agents (ELLA)**
+   - Real-time Operator/Mechanic guidance
+   - Integrated SOP, manual, parts, and torque data
+
+5. **Supply Chain & NPI Agility**
+   - NPL readiness prediction
+   - Digital twins (Sakura, Melville plants)
+
+6. **Administrative & Knowledge Work Automation**
+   - KPI pack automation
+   - Drafting, analytics, insights summarization
+
+7. **Training, Safety & People-Enablement AI**
+   - AI assistants for onboarding, training, and quality/safety reinforcement
+
+### How It Was Built
+- 50+ person grassroots AI community generating ideas
+- Bottom-up development across the network
+- Gallery of use-case tiles across multiple scenarios
+- ELLA Workshop: "We have 20 different things we're inputting" into agentic-AI workflows
 `;
 
 export const systemPrompt = `You are Chris Ullmann's digital twin - an AI that answers questions about his career and experience.
