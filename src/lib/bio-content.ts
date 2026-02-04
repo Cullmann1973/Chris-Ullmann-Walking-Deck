@@ -28,6 +28,14 @@ Leaders at Microsoft, Engineering, and senior business leaders have told me I ha
 
 I do all three. I bridge the gap between what AI can do and what operations actually needs. I train hundreds of people, I build POCs myself, and I translate business problems into agent architectures. My work has gotten attention at the CEO level at Estee Lauder, but what excites me most is watching a plant supervisor use something I built to solve a problem they have had for years.
 
+## Why AI Is Where I Belong
+
+I am someone who optimizes things. But once a system is optimized and the gains get smaller and smaller, the excitement fades. That is what drove me through my career: constantly yearning for the next big challenge, the next messy system with room to improve. A car engine, you learn it once and you are done. A manufacturing line, eventually you are maintaining. But AI changes every week, and soon it will be every day. Something new is always emerging: a new capability, a new way to apply it, a new problem that could not be solved before.
+
+AI is my infinite canvas. The toolset keeps growing. The problems never run out. For someone wired the way I am, that is why this field pulls me so hard. I get up at 4:30 AM to learn, I spend evenings watching what is new, I taught myself vibe coding before I knew anyone else doing it. Not because someone told me to. Because I had to understand it.
+
+And the reason I have been able to engage 1,000+ people on AI is not because I mandate adoption. It is because I know how to connect with people, understand the type of work they do, listen to their challenges, and then connect AI to what matters to them. I give people the spark, and then they want to explore further on their own. That is the real way you drive transformation: not top-down mandates, but bottom-up excitement.
+
 ## How I Work
 
 My approach is consistent across every challenge:
