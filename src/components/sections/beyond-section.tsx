@@ -18,7 +18,7 @@ const sections: BeyondSection[] = [
     id: "family",
     title: "Leslie and the Girls",
     photoLabel: "Photo: Family",
-    image: "", // Add family photo path here
+    image: "/images/family.jpg",
     content: [
       "Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan.",
       "I have two daughters who keep me grounded. After decades of transformations, deadlines, and high-stakes decisions, family is where I remember why any of it matters.",
