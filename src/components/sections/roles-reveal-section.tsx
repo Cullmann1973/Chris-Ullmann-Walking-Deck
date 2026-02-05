@@ -7,7 +7,7 @@ const roles = [
   { title: "Floor to Boardroom Fluency", align: "right" },
   { title: "Builds, Not Just Advises", align: "left" },
   { title: "Scales Through People", align: "center" },
-  { title: "HBR-Recognized Results", align: "right", highlight: true },
+  { title: "Translates Complexity", align: "right", highlight: true },
 ];
 
 export function RolesRevealSection({ focus }: { focus?: string }) {
