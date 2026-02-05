@@ -117,7 +117,7 @@ export function HeroSection({ focus }: { focus?: string }) {
       introTL.to(".bridge-left", { 
         x: 0, 
         opacity: 1, 
-        duration: 0.6, 
+        duration: 0.8, 
         ease: "power2.out",
         textShadow: "0 0 10px #00bcd4"
       }, 6.2);
@@ -126,7 +126,7 @@ export function HeroSection({ focus }: { focus?: string }) {
       introTL.to(".bridge-right", { 
         x: 0, 
         opacity: 1, 
-        duration: 0.6, 
+        duration: 0.8, 
         ease: "power2.out",
         textShadow: "0 0 10px #00bcd4"
       }, 6.2);
@@ -134,22 +134,22 @@ export function HeroSection({ focus }: { focus?: string }) {
       // Connection flash when they meet - bright glow pulse
       introTL.to(".tagline-bridge", { 
         textShadow: "0 0 30px #00bcd4, 0 0 60px #00bcd4",
-        duration: 0.18,
+        duration: 0.2,
         ease: "power2.in"
-      }, 6.8);
+      }, 7.0);
       
       // Settle to subtle glow
       introTL.to(".tagline-bridge", { 
         textShadow: "none",
-        duration: 0.48,
+        duration: 0.5,
         ease: "power2.out"
-      }, 6.98);
+      }, 7.2);
       
       // Remove individual glows
       introTL.to([".bridge-left", ".bridge-right"], {
         textShadow: "none",
-        duration: 0.36
-      }, 6.98);
+        duration: 0.4
+      }, 7.2);
 
       // ----------------------------------------
       // PHASE 4: Resolution
