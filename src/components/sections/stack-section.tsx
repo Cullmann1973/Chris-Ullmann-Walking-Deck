@@ -38,16 +38,15 @@ const stackLayers: StackLayer[] = [
     period: "2018–2024",
     role: "Executive Director, Program Management, Global Supply Chain, The Estée Lauder Companies",
     context:
-      "Owned the transformation portfolio connecting business process redesign with IT systems delivery. $49M restructuring, $500M+ integrated roadmap. Inherited a fragmented MFG digital transformation and rebuilt it from scratch.",
+      "Led Program Runway: enterprise-wide value chain transformation across MAC, Clinique, EL, Bobbi Brown, Tom Ford. $25.8M capital, $26.3M CAPEX, 6 workstreams, $80M+ committed benefits. Also inherited and rebuilt a fragmented MFG digital transformation from scratch.",
     whatIBuilt: [
-      "Leading Beauty Forward: $49M program, 170% ROI",
-      "Runway: $16.1M enterprise platform integrating business PMO with Agile IT",
-      "Co-authored $500M+ digital and operational excellence roadmap",
-      "MFG Digital Transformation: drove EY vendor selection, aligned senior leadership, authored E2E roadmap across 4 workstreams and 20+ projects",
-      "Cross-functional governance eliminating silos across strategy, manufacturing, and IT",
+      "Program Runway: 170% ROI, $80M+ committed benefits across subcategory strategy, NPL, E2EE, Agility, Packaging, and Value Chain",
+      "$13.3M Engineering Tech Center, Lipstick Agility expansion ($1.8M/yr COGs), digital printing capabilities",
+      "MFG Digital Transformation: drove EY vendor selection, aligned leadership, authored E2E roadmap, 4 workstreams, 20+ projects",
+      "Co-authored $500M+ Integrated Manufacturing Transformation roadmap",
     ],
     whatItUnlocked:
-      "Credibility to lead transformation at enterprise scale. Proved I could walk into organizational chaos, build structure, and deliver at scale.",
+      "Enterprise-scale transformation credibility. Proved I could take a $49M+ portfolio from chaos to 170% ROI, build permanent manufacturing capabilities, and align C-suite sponsors across the biggest beauty brands in the world.",
     keyMetric: "170% ROI",
   },
   {

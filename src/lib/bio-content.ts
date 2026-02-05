@@ -67,9 +67,10 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 ### The Estee Lauder Companies (2015 - Present)
 - **Executive Director, Program Management, Global Supply Chain** (2018-2024)
-  - Managed $49M "Leading Beauty Forward" transformation, delivered 170% ROI
+  - Led Program Runway, an enterprise-wide value chain transformation under Leading Beauty Forward: $25.8M capital, $23.2M restructuring, $26.3M CAPEX across 6 workstreams (Subcategory Strategy, NPL Acceleration, E2EE, Agility, Packaging Design, Value Chain Activation) spanning MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford
+  - Delivered 170% ROI with $80M+ in committed benefits: $32M incremental revenue from subcategory enablement, >$30M COGs from Agility, >$20M COGs from E2EE with 25% Right First Time improvement, and $50M-$100M potential from NPL Fast Fashion track
+  - Built the $13.3M Engineering Tech Center (office + equipment), drove Lipstick Agility expansion ($3.45M, $1.8M/yr COGs), and deployed digital printing and small-batch manufacturing capabilities
   - Co-authored $500M+ Integrated Manufacturing Transformation roadmap
-  - Led "Runway" enterprise New Product Launch platform ($16.1M initiative)
   - Achieved $1.4M run rate savings from automation/cobots
   - $7M destruction cost avoidance
   - Inherited a fragmented Manufacturing and Engineering digital transformation program with misaligned senior leaders, no clear decision framework, no business case, and no ownership structure. Drove the EY vendor selection process (selection criteria, evaluation, final recommendations to leadership), brought them in for a current-state assessment, then aligned the leadership team, built governance structure, defined priorities and sequencing, and authored the end-to-end digital transformation roadmap. Owned digital transformation for Manufacturing: 4 workstreams, 20+ projects ranging from local to enterprise-wide
@@ -177,37 +178,47 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - Build governance before scaling
 - Quality over speed: "When you have run big programs and seen what happens when governance is not in place, you build differently"
 
-## Deep Dive: Program Runway ROI
+## Deep Dive: Program Runway
 
-Program Runway delivered 170% ROI through transformation of operating models, process innovation, and engineering modernization. Here's what drove it:
+Program Runway was an enterprise-wide value chain transformation under Estée Lauder's Leading Beauty Forward initiative. I led this program from FY17 through FY20, delivering 170% ROI by fundamentally reshaping how ELC innovates, manufactures, and brings products to market across its biggest brands: MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford.
 
-### 1. Building the Runway NPL Platform
-- Investment: $16.1M cross-functional initiative
-- Unified launch calendars, dashboards, and workflows into a single source of truth for 25+ brands
-- Eliminated delays from fractured spreadsheets and siloed data
-- Improved launch sequencing, reducing missed windows and lost revenue
-- Accelerated brand readiness through real-time visibility
+### Program Scale
+- $25.8M in approved capital investment
+- $23.2M in one-time restructuring costs ($10.2M consultants, $1.9M change management, $0.85M training, $0.75M program management, $1.85M IT, $0.62M E2E Engineering OD, $1.4M recruitment and upskilling, $1.5M track segmentation)
+- $26.3M in CAPEX projects (Engineering Tech Center, agility equipment, digital printing, NPL IT)
+- $8.1M in ongoing investments ($4.3M incremental FTEs, $2.9M depreciation, $0.9M facilities)
+- ELTA-sponsored: executive committee included the CEO, CFO, and Group Presidents
 
-### 2. Accelerated Value Realization (VRO, COGs, Technology)
-From the 6-month update, exceeded business case targets:
-- $32M value via COGs workshops, analytics tools, packaging improvements, and automation
-- $11.5M value through innovation insourcing (supporting MAC, Clinique, Bobbi Brown, Tom Ford)
-- Additional incremental revenue from subcategory optimization and agility LSD projects
-- $2.5M indirect employee savings in FY21
+### The Six Workstreams
+1. **Subcategory Strategy and Insights**: Category growth lens for where to play and how to win. Defined hero product strategies and must-win missions across makeup and skincare.
+2. **NPL Acceleration**: Designed 5 NPL tracks (Classic, Hero Renovation, Fast Fashion, Turbo, Line Extension) with defined launch windows. Built training curriculum deployed across brands.
+3. **End-to-End Engineering (E2EE)**: $26M investment for breakthrough engineering capabilities. Built the $13.3M Engineering Tech Center (office services + prototyping, molding, formula and process equipment). Targeted 25% Right First Time improvement and >$20M in COGs.
+4. **Agility**: Bank of Assets 2.0, small-batch manufacturing, late-stage differentiation. Lipstick Agility Expansion ($3.45M, $1.8M/yr COGs savings). Digital printing (Atlantic Zeiser, Mimaki).
+5. **Packaging Design**: Consumer, technical, and cost benchmarking vs. Japanese and Couture brands. Industrial Design and luxury materials concierge capabilities.
+6. **Value Chain Activation / War Room**: Real-time data analytics and social listening for rapid market response.
 
-### 3. Organizational Design & Efficiency
-- Right-sizing org design (+35 FTE baseline with staged reductions/realignments)
-- Material and non-labor operating cost savings, tracked and validated
-- Improved KPIs around direct materials, misc expense, and operating cost
-- Long-term cost-to-serve reductions factored into ROI
+### Committed Benefits ($80M+)
+- **Subcategory enablement**: $32M incremental revenue through sub-category strategy
+- **Agility**: >$30M COGs reduction, >20% working capital reduction, >20% supply chain cycle time reduction. FY19 alone: $5.4M incremental revenue + $120K COGs.
+- **E2EE**: 25% RFT improvement, >$20M COGs (FY20-22)
+- **NPL Fast Fashion**: 5-10% incremental revenue ($50M-$100M potential)
+- **Additional pipeline**: $15.7M in identified opportunities
 
-### 4. Capital Efficiency & Platform Funding
-- Business case approval: $11.8M with $5M+ annual savings and productivity gains
-- Decommissioned legacy technology saving $500K+/yr
-- Portfolio workspace and milestone automation increased brand, marketing, and finance efficiency
+### Evolution and Governance
+- **FY16-17 (Foundation)**: Initial guidance on where to play, insource vs. outsource
+- **FY17-18 (Design)**: Subcategory pilots, approach testing, design thinking
+- **FY19 (Operationalization)**: Deploying across brands, scaling what worked, building governance
+- **Phase VI Business Case**: $7.7M Digital Sensory Hub for real-time performance management across the manufacturing landscape, with $4.0M in run-rate benefits
+
+### How the 170% ROI Was Achieved
+1. Accelerated value realization across COGs, innovation insourcing, and subcategory optimization
+2. Built the Engineering Tech Center creating permanent manufacturing capability
+3. Deployed agility technologies enabling low-cost newness and faster market response
+4. Right-sized organizational design with staged restructuring
+5. Decommissioned legacy technology and eliminated structural inefficiencies
 
 ### Summary
-"Program Runway delivered 170% ROI by transforming launch governance, accelerating value realization across COGs and innovation, modernizing engineering and digital capabilities, and eliminating structural inefficiencies across the end-to-end value chain."
+"Program Runway delivered 170% ROI by transforming the end-to-end value chain across ELC's biggest brands: $25.8M capital, $26.3M CAPEX, 6 workstreams, $80M+ in committed benefits. Built permanent manufacturing capabilities (Engineering Tech Center, agility lines, digital printing), accelerated innovation speed, and created the subcategory strategy lens that connected brand growth to supply chain execution."
 
 ## Deep Dive: Lab Cycle Time Transformation
 

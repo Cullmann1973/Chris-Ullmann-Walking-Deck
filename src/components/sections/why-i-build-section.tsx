@@ -23,7 +23,7 @@ const stackLayers: StackLayer[] = [
     period: "2018-2024",
     role: "Program Director, Leading Beauty Forward",
     description:
-      "Delivered 170% ROI on $49M transformation. Inherited a fragmented MFG digital program, brought in EY, authored the end-to-end roadmap across 4 workstreams and 20+ projects.",
+      "Led Program Runway: $25.8M capital, 6 workstreams, $80M+ in committed benefits, 170% ROI. Built the Engineering Tech Center, deployed agility manufacturing, and rebuilt a fragmented digital transformation from scratch.",
   },
   {
     title: "Quality",
