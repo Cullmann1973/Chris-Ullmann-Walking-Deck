@@ -16,7 +16,7 @@ const expertiseWords = [
 const stats = [
   { value: "$3.75M", label: "Annual inventory savings" },
   { value: "170%", label: "ROI on $49M initiative" },
-  { value: "1,000+", label: "People trained in AI" },
+  { value: "1,000+", label: "People engaged and empowered" },
   { value: "20+", label: "GenAI use cases piloted" },
 ];
 

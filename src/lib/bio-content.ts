@@ -145,7 +145,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 ## AI & Digital Transformation
 - Leading AI adoption in Manufacturing at ELC, with significant influence across Supply Chain, Marketing, R&D, and Engineering
 - Piloting 20+ GenAI use cases across manufacturing, quality, engineering, supply chain, and operations
-- Trained 1,000+ people through "AI Core Tech Team" enablement program: working directly with people on making AI useful in day-to-day jobs, not flashy demos but tools they actually use
+- Engaged and empowered 1,000+ people through "AI Core Tech Team" enablement program: working directly with people on making AI useful in day-to-day jobs, not flashy demos but tools they actually use
 - Created AI tools including:
   - "Plant Perfect" - OEE analytics companion
   - "BELLA" - Batch & Equipment Line-Level Assistant

@@ -46,7 +46,7 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
     label: "AI Transformation",
     heroResolution: "I'm the BRIDGE between vision and adoption.",
     metrics: [
-      { value: "1,000+", label: "people trained on AI" },
+      { value: "1,000+", label: "people engaged and empowered" },
       { value: "20+", label: "GenAI use cases deployed" },
       { value: "30%", label: "month-over-month adoption growth" },
       { value: "170% ROI", label: "transformation programs" },
