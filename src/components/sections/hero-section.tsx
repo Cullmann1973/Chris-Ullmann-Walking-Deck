@@ -267,8 +267,8 @@ export function HeroSection({ focus }: { focus?: string }) {
           {/* Tagline */}
           <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl font-serif text-foreground/80 leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line-1 block mb-2">
-              <span className="tagline-business text-foreground">Business</span>{" "}
-              challenges.{" "}
+              Business{" "}
+              <span className="tagline-business text-foreground">challenges</span>.{" "}
               <span className="tagline-ai text-primary">Transformative</span>{" "}
               AI.
             </span>
