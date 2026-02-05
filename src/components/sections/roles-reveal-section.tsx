@@ -4,10 +4,10 @@ import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "../gsap-provider";
 
 const roles = [
-  { title: "Quality Professional", align: "right" },
-  { title: "Program Manager", align: "left" },
-  { title: "Strategist", align: "center" },
-  { title: "AI Transformation Leader", align: "right", highlight: true },
+  { title: "Floor to Boardroom Fluency", align: "right" },
+  { title: "Builds, Not Just Advises", align: "left" },
+  { title: "Scales Through People", align: "center" },
+  { title: "HBR-Recognized Results", align: "right", highlight: true },
 ];
 
 export function RolesRevealSection({ focus }: { focus?: string }) {
@@ -63,7 +63,7 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
       >
         {/* Title */}
         <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-8 md:mb-12">
-          Christopher Ullmann
+          What Sets Me Apart
         </h3>
 
         {/* Roles - staggered positions */}
@@ -92,14 +92,10 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
 
         {/* Full paragraph (reveals last) */}
         <div className="roles-paragraph opacity-0 text-sm md:text-base text-muted-foreground leading-relaxed">
-          I&apos;ve operated as a{" "}
-          <span className="text-foreground font-semibold">quality professional</span>,{" "}
-          <span className="text-foreground font-semibold">program manager</span>,{" "}
-          <span className="text-foreground font-semibold">strategist</span>,
-          and now an{" "}
-          <span className="text-primary font-semibold">AI transformation leader</span>.
-          That range isn&apos;t a winding career: it&apos;s what makes me
-          effective at connecting strategy to execution.
+          Results create trust. Trust opens doors to bigger challenges.
+          That&apos;s not a career philosophy: it&apos;s a pattern you can trace
+          through{" "}
+          <span className="text-primary font-semibold">25 years of outcomes</span>.
         </div>
       </div>
     </section>
