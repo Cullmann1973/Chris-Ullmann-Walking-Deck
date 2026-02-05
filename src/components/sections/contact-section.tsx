@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "../gsap-provider";
-import { Mail, Linkedin, ArrowUp } from "lucide-react";
+import { Mail, Linkedin, ArrowUp, FileDown } from "lucide-react";
 
 export function ContactSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -70,6 +70,14 @@ export function ContactSection({ focus }: { focus?: string }) {
               >
                 <Linkedin className="w-5 h-5" />
                 LinkedIn
+              </a>
+              <a
+                href="/Chris-Ullmann-Resume.pdf"
+                download
+                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl border-2 border-border text-foreground font-medium hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+              >
+                <FileDown className="w-5 h-5" />
+                Resume
               </a>
             </div>
 
