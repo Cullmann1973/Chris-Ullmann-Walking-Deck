@@ -44,7 +44,7 @@ const sections: BeyondSection[] = [
     content: [
       "I've never been satisfied just using tools and technology. I need to understand how they work, then make them work better.",
       "The Air Force gave me hydraulics, pneumatics, and a zero-defect mentality. Queens College gave me biology and chemistry. Everything since then has been self-taught: 3D modeling, hardware integration, AI architecture. At 50+, I enrolled in Stanford's Generative AI program. Not because I had to. Because I wanted to understand the technology I was deploying at enterprise scale.",
-      "My garage has a 3D printer, Shapr3D running on my iPad, and an ever-growing collection of half-finished projects. That's probably the through-line of my whole life:",
+      "My garage isn't just where we park the cars. It's where I design, build, and find my version of stillness. 3D printer running, music on, and always something new taking shape. That's probably the through-line of my whole life:",
     ],
     pullQuote: "I don't consume technology. I master it.",
   },
