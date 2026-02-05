@@ -90,24 +90,24 @@ export function HeroSection({ focus }: { focus?: string }) {
       introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.04 }, 4.93);
       introTL.to(".tagline-business", { ...whiteStayOn, duration: 0.08 }, 5.1);
 
-      // "AI" - starts 0.5s after Business
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.0);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.06 }, 4.02);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.04 }, 4.2);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 4.24);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.4);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.07 }, 4.42);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 4.65);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 4.68);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.05 }, 4.85);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.02 }, 4.9);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 5.1);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.05 }, 5.13);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 5.3);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 5.32);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 5.5);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 5.53);
-      introTL.to(".tagline-ai", { ...cyanStayOn, duration: 0.08 }, 5.7);
+      // "AI" - starts 1.0s after Business
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.5);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.06 }, 4.52);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.04 }, 4.7);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 4.74);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.9);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.07 }, 4.92);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 5.15);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 5.18);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.05 }, 5.35);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.02 }, 5.4);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 5.6);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.05 }, 5.63);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 5.8);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 5.82);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 6.0);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 6.03);
+      introTL.to(".tagline-ai", { ...cyanStayOn, duration: 0.08 }, 6.2);
 
       // "bridge" - bridge construction animation (two sides meet in middle)
       // Make container visible first
