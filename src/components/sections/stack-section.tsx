@@ -42,8 +42,7 @@ const stackLayers: StackLayer[] = [
     whatIBuilt: [
       "Program Runway: 170% ROI, $80M+ committed benefits across subcategory strategy, NPL, E2EE, Agility, Packaging, and Value Chain",
       "$13.3M Engineering Tech Center, Lipstick Agility expansion ($1.8M/yr COGs), digital printing capabilities",
-      "MFG Digital Transformation: drove EY vendor selection, aligned leadership, authored E2E roadmap, 4 workstreams, 20+ projects",
-      "Co-authored $500M+ Integrated Manufacturing Transformation roadmap",
+      "MFG Digital Transformation: assessed current state, aligned leadership, built governance, authored $500M+ E2E roadmap across 4 workstreams and 20+ projects",
     ],
     whatItUnlocked:
       "Enterprise-scale transformation credibility. Proved I could take a $49M+ portfolio from chaos to 170% ROI, build permanent manufacturing capabilities, and align C-suite sponsors across the biggest beauty brands in the world.",
@@ -154,72 +153,99 @@ export function StackSection({ focus }: { focus?: string }) {
     return () => ctx.revert();
   }, []);
 
-  // Handle accordion animation
+  // Track which accordion is being animated (to avoid useEffect double-firing)
+  const isAnimatingRef = useRef(false);
+
+  // Handle accordion animation on initial render only (for defaultOpen)
   useEffect(() => {
+    if (isAnimatingRef.current) return;
     accordionRefs.current.forEach((ref, index) => {
       if (!ref) return;
-
       const content = ref.querySelector(".accordion-content") as HTMLElement;
       if (!content) return;
-
       if (index === openIndex) {
-        // Open animation
-        gsap.to(content, {
-          height: "auto",
-          opacity: 1,
-          duration: 0.4,
-          ease: "power2.out",
-        });
+        gsap.set(content, { height: "auto", opacity: 1 });
       } else {
-        // Close animation
-        gsap.to(content, {
+        gsap.set(content, { height: 0, opacity: 0 });
+      }
+    });
+    setTimeout(() => ScrollTrigger.refresh(), 300);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const toggleAccordion = (index: number) => {
+    const isClosing = openIndex === index;
+    const newIndex = isClosing ? null : index;
+    const clickedRef = accordionRefs.current[index];
+
+    if (!clickedRef) {
+      setOpenIndex(newIndex);
+      return;
+    }
+
+    // Save the clicked header's viewport Y before any animation
+    const savedTop = clickedRef.getBoundingClientRect().top;
+
+    // Compensate scroll on every GSAP tick so the header stays pinned
+    const compensate = () => {
+      const drift = clickedRef.getBoundingClientRect().top - savedTop;
+      if (Math.abs(drift) > 1) {
+        window.scrollTo({ top: window.scrollY + drift, behavior: "instant" as ScrollBehavior });
+      }
+    };
+
+    isAnimatingRef.current = true;
+
+    // Close the previously open accordion (if different from clicked)
+    if (openIndex !== null && openIndex !== index) {
+      const prevRef = accordionRefs.current[openIndex];
+      if (prevRef) {
+        const prevContent = prevRef.querySelector(".accordion-content") as HTMLElement;
+        if (prevContent) {
+          gsap.to(prevContent, {
+            height: 0,
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.in",
+            onUpdate: compensate,
+          });
+        }
+      }
+    }
+
+    // Open or close the clicked accordion
+    const clickedContent = clickedRef.querySelector(".accordion-content") as HTMLElement;
+    if (clickedContent) {
+      if (isClosing) {
+        gsap.to(clickedContent, {
           height: 0,
           opacity: 0,
           duration: 0.3,
           ease: "power2.in",
+          onUpdate: compensate,
+          onComplete: () => {
+            isAnimatingRef.current = false;
+            ScrollTrigger.refresh();
+          },
+        });
+      } else {
+        gsap.to(clickedContent, {
+          height: "auto",
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out",
+          onUpdate: compensate,
+          onComplete: () => {
+            isAnimatingRef.current = false;
+            ScrollTrigger.refresh();
+          },
         });
       }
-    });
-
-    // Refresh ScrollTrigger after accordion change
-    setTimeout(() => ScrollTrigger.refresh(), 500);
-  }, [openIndex]);
-
-  const pinFrameRef = useRef<number | null>(null);
-
-  const toggleAccordion = (index: number) => {
-    const ref = accordionRefs.current[index];
-    if (!ref) {
-      setOpenIndex(openIndex === index ? null : index);
-      return;
+    } else {
+      isAnimatingRef.current = false;
     }
 
-    // Cancel any in-flight scroll pinning
-    if (pinFrameRef.current) cancelAnimationFrame(pinFrameRef.current);
-
-    // Save the clicked header's viewport position
-    const savedTop = ref.getBoundingClientRect().top;
-
-    setOpenIndex(openIndex === index ? null : index);
-
-    // Pin the accordion header at its current viewport position
-    // throughout the open/close animation so scroll doesn't jump
-    const startTime = performance.now();
-    const duration = 500; // covers the longest GSAP tween (400ms) + buffer
-
-    const pinScroll = () => {
-      const drift = ref.getBoundingClientRect().top - savedTop;
-      if (Math.abs(drift) > 1) {
-        window.scrollBy(0, drift);
-      }
-      if (performance.now() - startTime < duration) {
-        pinFrameRef.current = requestAnimationFrame(pinScroll);
-      } else {
-        pinFrameRef.current = null;
-      }
-    };
-
-    pinFrameRef.current = requestAnimationFrame(pinScroll);
+    setOpenIndex(newIndex);
   };
 
   return (
