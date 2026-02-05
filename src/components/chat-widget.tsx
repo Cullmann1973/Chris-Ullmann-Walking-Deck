@@ -43,7 +43,7 @@ const getResponse = (query: string): string => {
   }
 
   if (q.includes("ai") || q.includes("agent") || q.includes("tool") || q.includes("bella") || q.includes("ella") || q.includes("genai")) {
-    return "I'm piloting 20+ GenAI use cases at Estee Lauder across manufacturing, quality, and supply chain. I've created tools like BELLA (Business Enabled Line-Level Assistant), Plant Perfect (OEE analytics), and Gold Nugget (benchmarking). Would you like to hear more about any of these?";
+    return "I'm piloting 20+ GenAI use cases at Estee Lauder across manufacturing, quality, and supply chain. I've created tools like BELLA (Batch & Equipment Line-Level Assistant), Plant Perfect (OEE analytics), and Gold Nugget (benchmarking). Would you like to hear more about any of these?";
   }
 
   return "I've spent 25+ years bridging industrial discipline with digital innovation, from Air Force technician to Fortune 500 AI transformation leader. What specific aspect of my experience would you like to explore?";

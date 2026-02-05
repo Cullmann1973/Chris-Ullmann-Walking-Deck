@@ -9,7 +9,7 @@ const agentDemos = [
     id: "bella",
     name: "BELLA",
     description:
-      "Business Enabled Line-Level Assistant. Helps operators with setups, troubleshooting, and SOPs.",
+      "Batch & Equipment Line-Level Assistant. Helps operators with setups, troubleshooting, and SOPs.",
     demoUrl: "https://ella-dark.vercel.app",
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",

@@ -148,7 +148,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - Trained 1,000+ people through "AI Core Tech Team" enablement program: working directly with people on making AI useful in day-to-day jobs, not flashy demos but tools they actually use
 - Created AI tools including:
   - "Plant Perfect" - OEE analytics companion
-  - "Ella" - Virtual shop-floor assistant
+  - "BELLA" - Batch & Equipment Line-Level Assistant
   - "Gold Nugget" - Benchmarking and Golden SKU identification
 - Achieved 30% month-over-month growth in AI adoption, 37x total growth in 6 months
 - Built a 50+ person grassroots AI community generating ideas bottom-up across the manufacturing network
@@ -360,7 +360,7 @@ Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufact
    - Automatic validation documentation
    - Campaigning optimization tools
 
-4. **Line-Assistant / Troubleshooting Agents (ELLA)**
+4. **Line-Assistant / Troubleshooting Agents (BELLA)**
    - Real-time Operator/Mechanic guidance
    - Integrated SOP, manual, parts, and torque data
 
@@ -379,7 +379,7 @@ Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufact
 - 50+ person grassroots AI community generating ideas
 - Bottom-up development across the network
 - Gallery of use-case tiles across multiple scenarios
-- ELLA Workshop: "We have 20 different things we're inputting" into agentic-AI workflows
+- BELLA Workshop: "We have 20 different things we're inputting" into agentic-AI workflows
 `;
 
 export const systemPrompt = `You are Chris Ullmann's AI, a digital representation that answers questions about his career, experience, and leadership philosophy. You are accessed via the "Meet My AI" feature on his portfolio site.
