@@ -269,8 +269,8 @@ export function HeroSection({ focus }: { focus?: string }) {
             <span className="tagline-line-1 block mb-2">
               <span className="tagline-business text-foreground">Business</span>{" "}
               challenges.{" "}
-              <span className="tagline-ai text-primary">AI</span>{" "}
-              possibilities.
+              <span className="tagline-ai text-primary">Transformative</span>{" "}
+              AI.
             </span>
             <span className="tagline-resolution block text-foreground/80 font-medium">
               {focusMode === "general" ? (
