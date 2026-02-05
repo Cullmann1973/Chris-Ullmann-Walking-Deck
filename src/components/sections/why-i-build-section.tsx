@@ -23,7 +23,7 @@ const stackLayers: StackLayer[] = [
     period: "2018-2024",
     role: "Program Director, Leading Beauty Forward",
     description:
-      "Delivered 170% ROI on enterprise transformation initiative. Translated strategy into scalable frameworks that teams could execute.",
+      "Delivered 170% ROI on $49M transformation. Inherited a fragmented MFG digital program, brought in EY, authored the end-to-end roadmap across 4 workstreams and 20+ projects.",
   },
   {
     title: "Quality",
@@ -37,7 +37,7 @@ const stackLayers: StackLayer[] = [
     period: "2002-2015",
     role: "Manufacturing & Operations Leadership",
     description:
-      "Scaled operations from $16M facility to enterprise-wide impact. Learned the language of the floor, and never forgot it.",
+      "Led a $21.7M manufacturing consolidation delivering $14.5M annual savings. Built a 70-person quality org, took a facility from 10% to full FDA compliance, and managed $300M+ in QVC product quality.",
   },
   {
     title: "Foundation",
@@ -267,11 +267,11 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
           My Approach
         </h3>
         <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
-          I am a versatile professional. I can adapt easily, am open to change
-          and to new ideas. At the same time, I trust my principles and values,
-          follow my path and have performed well under pressure. I am honest and
-          straight forward, enjoy collaboration, and try to bring out the best
-          in everyone I work with.
+          Walk into the mess. Assess it honestly. Align the people. Build the
+          structure. Execute. That pattern has delivered a $21.7M manufacturing
+          consolidation, taken a facility from 10% FDA compliance to audit-ready,
+          and turned a fragmented digital program into a governed portfolio of
+          20+ initiatives. The problems change. The playbook works.
         </p>
       </div>
 

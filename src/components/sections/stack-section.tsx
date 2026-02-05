@@ -38,15 +38,16 @@ const stackLayers: StackLayer[] = [
     period: "2018–2024",
     role: "Executive Director, Program Management, Global Supply Chain, The Estée Lauder Companies",
     context:
-      "Owned the transformation portfolio connecting business process redesign with IT systems delivery. $49M restructuring, $500M+ integrated roadmap.",
+      "Owned the transformation portfolio connecting business process redesign with IT systems delivery. $49M restructuring, $500M+ integrated roadmap. Inherited a fragmented MFG digital transformation and rebuilt it from scratch.",
     whatIBuilt: [
       "Leading Beauty Forward: $49M program, 170% ROI",
       "Runway: $16.1M enterprise platform integrating business PMO with Agile IT",
       "Co-authored $500M+ digital and operational excellence roadmap",
+      "MFG Digital Transformation: drove EY vendor selection, aligned senior leadership, authored E2E roadmap across 4 workstreams and 20+ projects",
       "Cross-functional governance eliminating silos across strategy, manufacturing, and IT",
     ],
     whatItUnlocked:
-      "Credibility to lead transformation at enterprise scale. Proved I could redesign business processes and partner with IT to deliver.",
+      "Credibility to lead transformation at enterprise scale. Proved I could walk into organizational chaos, build structure, and deliver at scale.",
     keyMetric: "170% ROI",
   },
   {
@@ -72,16 +73,17 @@ const stackLayers: StackLayer[] = [
     period: "2002–2015",
     role: "Quality & Operations Leadership at Coty, EI Pharma, Leiner Health Products",
     context:
-      "13 years across cosmetics, pharmaceuticals, and nutraceuticals. Building quality systems, redesigning processes, driving floor-level results.",
+      "13 years across cosmetics, pharmaceuticals, and nutraceuticals. Led a $21.7M North American manufacturing consolidation, built and optimized a 70-person quality organization, and took a facility from 10% FDA compliance to audit-ready.",
     whatIBuilt: [
-      "Coty: multi-site consolidation, 2,000+ employees, $39M first-year savings (HBR-featured)",
+      "Coty consolidation: $21.7M capex, $14.5M annual savings, 70→42 person org (40% reduction, 39% productivity gain)",
+      "FDA readiness: took Sanford facility from ~10% to full 21 CFR 210/211 compliance",
+      "QVC quality: $300M+ channel revenue, drove returns from 9.3% to 7.8%",
       "Supplier management redesign: incidents down 60%",
       "Leiner: quarantine inventory $16M → $200K across 5 plants",
-      "SAP QM implementations and tech transfer validations",
     ],
     whatItUnlocked:
-      "Deep operational credibility and HBR-recognized change leadership.",
-    keyMetric: "$16M → $200K",
+      "Deep operational credibility, HBR-recognized change leadership, and a repeatable playbook: chaos → assessment → alignment → structure → execution.",
+    keyMetric: "$14.5M/yr savings",
   },
   {
     id: "foundation",
