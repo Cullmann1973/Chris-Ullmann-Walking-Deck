@@ -9,16 +9,25 @@ const agentDemos = [
     id: "bella",
     name: "BELLA",
     description:
-      "Batch & Equipment Line-Level Assistant. Helps operators with setups, troubleshooting, and SOPs.",
+      "Batch & Equipment Line-Level Assistant for operator setups, troubleshooting, and SOPs.",
     demoUrl: "https://ella-dark.vercel.app",
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",
   },
   {
+    id: "supplier-intel",
+    name: "Supplier Intel",
+    description:
+      "Real-time supplier risk monitoring using public news, financial signals, and regulatory data.",
+    demoUrl: "https://supplier-intel-bot.vercel.app",
+    color: "from-sky-500/20 to-indigo-500/20",
+    borderColor: "border-sky-500/30",
+  },
+  {
     id: "gold-nugget",
     name: "Gold Nugget",
     description:
-      "Benchmarking engine that identifies Golden SKUs and closes performance gaps using the Gold Standard method.",
+      "Benchmarking engine that identifies Golden SKUs and closes performance gaps.",
     demoUrl: "https://cc-gold-standard.vercel.app",
     color: "from-amber-500/20 to-yellow-500/20",
     borderColor: "border-amber-500/30",
@@ -27,7 +36,7 @@ const agentDemos = [
     id: "plant-perfect",
     name: "Plant Perfect",
     description:
-      "HAL 9000-themed manufacturing KPI dashboard for operational reviews, OEE analysis, and plant strategy planning.",
+      "HAL 9000-themed manufacturing KPI dashboard for OEE analysis and plant strategy.",
     demoUrl: "https://cc-plant-perfect.vercel.app",
     color: "from-red-500/20 to-rose-500/20",
     borderColor: "border-red-500/30",
@@ -36,7 +45,7 @@ const agentDemos = [
     id: "consumer-pulse",
     name: "Consumer Pulse",
     description:
-      "Voice of Customer translator that uncovers product quality signals hidden in consumer feedback.",
+      "Voice of Customer translator that uncovers quality signals in consumer feedback.",
     demoUrl: "https://cc-consumer-pulse.vercel.app",
     color: "from-emerald-500/20 to-green-500/20",
     borderColor: "border-emerald-500/30",
@@ -45,7 +54,7 @@ const agentDemos = [
     id: "cognex-vision",
     name: "Cognex Vision",
     description:
-      "Vision system troubleshooting copilot for camera setup, OCR configuration, and PLC diagnostics.",
+      "Vision system troubleshooting copilot for camera setup, OCR, and PLC diagnostics.",
     demoUrl: "https://cc-cognex-vision.vercel.app",
     color: "from-cyan-500/20 to-blue-500/20",
     borderColor: "border-cyan-500/30",
@@ -152,30 +161,22 @@ export function AISection({ focus }: { focus?: string }) {
               {agentDemos.map((agent) => (
                 <div
                   key={agent.id}
-                  className={`agent-card relative p-5 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20 overflow-hidden`}
+                  className={`agent-card relative p-4 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20 overflow-hidden`}
                 >
-                  <div className="flex items-center justify-between mb-2 gap-2">
-                    <h4 className="font-semibold text-foreground">{agent.name}</h4>
+                  <div className="flex items-center justify-between mb-1.5 gap-2">
+                    <h4 className="font-semibold text-foreground text-sm">{agent.name}</h4>
                     <a
                       href={agent.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/30 transition-colors flex-shrink-0"
+                      className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors flex-shrink-0"
                     >
-                      Live
+                      Try Demo <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     {agent.description}
                   </p>
-                  <a
-                    href={agent.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                  >
-                    Try Demo <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
                 </div>
               ))}
             </div>
