@@ -217,14 +217,18 @@ export function StackSection({ focus }: { focus?: string }) {
                 ref={(el) => {
                   accordionRefs.current[index] = el;
                 }}
-                className={`accordion-item content-card overflow-hidden ${
+                className={`accordion-item content-card ${
                   index === 0 ? "border-primary/30" : ""
                 }`}
               >
-                {/* Accordion header */}
+                {/* Accordion header - sticky when open so content scrolls below it */}
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full p-6 flex items-center justify-between text-left hover:bg-secondary/20 transition-colors"
+                  className={`w-full p-6 flex items-center justify-between text-left hover:bg-secondary/20 transition-colors ${
+                    openIndex === index
+                      ? "sticky top-0 z-20 bg-dark-alt border-b border-border rounded-t-xl"
+                      : ""
+                  }`}
                 >
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-1">
