@@ -185,8 +185,41 @@ export function StackSection({ focus }: { focus?: string }) {
     setTimeout(() => ScrollTrigger.refresh(), 500);
   }, [openIndex]);
 
+  const pinFrameRef = useRef<number | null>(null);
+
   const toggleAccordion = (index: number) => {
+    const ref = accordionRefs.current[index];
+    if (!ref) {
+      setOpenIndex(openIndex === index ? null : index);
+      return;
+    }
+
+    // Cancel any in-flight scroll pinning
+    if (pinFrameRef.current) cancelAnimationFrame(pinFrameRef.current);
+
+    // Save the clicked header's viewport position
+    const savedTop = ref.getBoundingClientRect().top;
+
     setOpenIndex(openIndex === index ? null : index);
+
+    // Pin the accordion header at its current viewport position
+    // throughout the open/close animation so scroll doesn't jump
+    const startTime = performance.now();
+    const duration = 500; // covers the longest GSAP tween (400ms) + buffer
+
+    const pinScroll = () => {
+      const drift = ref.getBoundingClientRect().top - savedTop;
+      if (Math.abs(drift) > 1) {
+        window.scrollBy(0, drift);
+      }
+      if (performance.now() - startTime < duration) {
+        pinFrameRef.current = requestAnimationFrame(pinScroll);
+      } else {
+        pinFrameRef.current = null;
+      }
+    };
+
+    pinFrameRef.current = requestAnimationFrame(pinScroll);
   };
 
   return (
