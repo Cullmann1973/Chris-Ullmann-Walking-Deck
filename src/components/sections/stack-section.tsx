@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "../gsap-provider";
-import { ChevronDown, CheckCircle2, ArrowUp } from "lucide-react";
+import { ChevronDown, CheckCircle2, ArrowUp, MessageCircle } from "lucide-react";
 
 interface StackLayer {
   id: string;
@@ -22,15 +22,15 @@ const stackLayers: StackLayer[] = [
     period: "2024–Present",
     role: "Executive Director, AI Transformation & Manufacturing PMO, The Estée Lauder Companies",
     context:
-      "Leading the integration of Generative AI into North America operations. Not advising from the sidelines: directly piloting and scaling AI capabilities across the supply chain.",
+      "Leading AI integration into North America operations. Not advising from the sidelines: directly piloting and scaling capabilities across the supply chain.",
     whatIBuilt: [
-      "20+ GenAI use cases: SOP automation, real-time KPI dashboards, predictive line diagnostics",
-      "AI enablement program: trained 1,000+ people across global supply chain with adoption networks, role-based training, and change management",
-      "North America Manufacturing Strategy & Transformation Office: 60 projects, ~$100M annually, 5 plants",
-      "External innovation pipeline: Stanford AI program, Microsoft partnership, peer networks and technology benchmarking",
+      "20+ GenAI use cases deployed across manufacturing and supply chain",
+      "AI enablement: 1,000+ people trained with adoption networks and change management",
+      "Transformation Office: 60 projects, ~$100M annually, 5 plants",
+      "Stanford AI program, Microsoft partnership, external innovation pipeline",
     ],
     whatItUnlocked:
-      "Positioned to lead enterprise-wide AI transformation. Can speak both the technical language (model architecture, prompt engineering) and the business language (ROI, change management, stakeholder alignment).",
+      "Enterprise-wide AI transformation leadership. Fluent in both the technical and business languages.",
   },
   {
     id: "program",
@@ -38,16 +38,15 @@ const stackLayers: StackLayer[] = [
     period: "2018–2024",
     role: "Executive Director, Program Management, Global Supply Chain, The Estée Lauder Companies",
     context:
-      "Owned the transformation portfolio connecting business process redesign with IT systems delivery. $49M restructuring program, $500M+ integrated roadmap, and the enterprise platform that eliminated silos between commercial, supply chain, and technology teams.",
+      "Owned the transformation portfolio connecting business process redesign with IT systems delivery. $49M restructuring, $500M+ integrated roadmap.",
     whatIBuilt: [
-      "Leading Beauty Forward ($49M, 170% ROI): operating model redesign, process innovation, Engineering Tech Center",
-      "Runway (Enterprise NPL Platform): $16.1M cross-functional initiative integrating business PMO with Agile IT delivery",
-      "Integrated Manufacturing Transformation: co-authored $500M+ digital and operational excellence roadmap with short, medium, and long-term horizons",
-      "Cross-functional governance model eliminating silos between strategy, manufacturing, supply chain, and IT",
-      "Supply chain resilience playbook during COVID-19 disruptions",
+      "Leading Beauty Forward: $49M program, 170% ROI",
+      "Runway: $16.1M enterprise platform integrating business PMO with Agile IT",
+      "Co-authored $500M+ digital and operational excellence roadmap",
+      "Cross-functional governance eliminating silos across strategy, manufacturing, and IT",
     ],
     whatItUnlocked:
-      "Credibility to lead transformation at enterprise scale. Proved I could reimagine and redesign business processes, manage P&L-level budgets, and partner with IT to deliver systems that drive results.",
+      "Credibility to lead transformation at enterprise scale. Proved I could redesign business processes and partner with IT to deliver.",
     keyMetric: "170% ROI",
   },
   {
@@ -56,15 +55,15 @@ const stackLayers: StackLayer[] = [
     period: "2015–2018",
     role: "Executive Director, Quality Assurance, The Estée Lauder Companies",
     context:
-      "Modernized the largest regulated cosmetic manufacturing facility in ELC's network (Melville, NY). Quality wasn't just compliance: it was a cash flow lever.",
+      "Modernized ELC's largest regulated manufacturing site. Quality wasn't just compliance: it was a cash flow lever.",
     whatIBuilt: [
-      "Lab testing turnaround: 12 days → 2.7 days",
+      "Lab cycle time: 12 days → 2.7 days",
       "$3.75M annual inventory savings",
-      "Kotter's 8-Step Change Model implementation: grassroots CI program",
+      "Kotter change model: grassroots continuous improvement",
       "$1M saved in 90 days through frontline empowerment",
     ],
     whatItUnlocked:
-      "Demonstrated that Quality can be a business driver, not a cost center. Earned the trust to move into Program Management.",
+      "Quality as a business driver, not a cost center. Earned the trust to move into enterprise transformation.",
     keyMetric: "$3.75M savings",
   },
   {
@@ -73,16 +72,15 @@ const stackLayers: StackLayer[] = [
     period: "2002–2015",
     role: "Quality & Operations Leadership at Coty, EI Pharma, Leiner Health Products",
     context:
-      "13 years of progressive leadership across cosmetics, pharmaceuticals, and nutraceuticals. Each role required redesigning business processes, building quality systems from scratch, and driving measurable results on the manufacturing floor.",
+      "13 years across cosmetics, pharmaceuticals, and nutraceuticals. Building quality systems, redesigning processes, driving floor-level results.",
     whatIBuilt: [
-      "Coty: Quality lead for multi-site consolidation (2,000+ employees, $39M first-year savings), HBR-featured Kotter-based change leadership",
-      "Coty: Redesigned supplier management processes: incidents down 60%, non-moving inventory $1.5M → $200K",
-      "EI Pharma: Led cosmetic → pharmaceutical transition, redesigned operations for FDA compliance",
-      "Leiner: Quarantine inventory $16M → $200K across 5 U.S. plants (released $15.8M in working capital)",
-      "SAP QM implementations and tech transfer validations across multiple sites",
+      "Coty: multi-site consolidation, 2,000+ employees, $39M first-year savings (HBR-featured)",
+      "Supplier management redesign: incidents down 60%",
+      "Leiner: quarantine inventory $16M → $200K across 5 plants",
+      "SAP QM implementations and tech transfer validations",
     ],
     whatItUnlocked:
-      "Deep operational credibility. When I talk about 'the floor,' I'm not abstracting: I've run batch records, validated equipment, and negotiated with FDA inspectors. Earned HBR recognition for change leadership.",
+      "Deep operational credibility and HBR-recognized change leadership.",
     keyMetric: "$16M → $200K",
   },
   {
@@ -91,15 +89,14 @@ const stackLayers: StackLayer[] = [
     period: "1992–2002",
     role: "USAF Veteran (AGE Technician) + B.S. Biology, Queens College",
     context:
-      "The foundation that everything else built upon. Military discipline plus scientific literacy created a rare 'technical biologist' profile.",
+      "Military discipline plus scientific literacy. The foundation everything else is built on.",
     whatIBuilt: [
-      "USAF: Aerospace Ground Equipment maintenance: 24/7 ops, zero-defect mentality",
-      "Operation Provide Comfort II: Combat support, earned 2 Achievement Medals",
-      "Queens College: B.S. Biology: bridged electromechanical skills with life sciences",
-      "Dual literacy: Can talk bacterial growth with scientists AND HVAC systems with engineers",
+      "USAF: Aerospace Ground Equipment, 24/7 ops, zero-defect mentality",
+      "Operation Provide Comfort II: two Achievement Medals",
+      "B.S. Biology: bridged electromechanical skills with life sciences",
     ],
     whatItUnlocked:
-      "A permanent operating system: SOPs, preventative maintenance, precision under pressure. The military doesn't tolerate 'good enough': that standard followed me into every civilian role.",
+      "A permanent operating system: precision under pressure, systematic thinking, dual technical literacy.",
   },
 ];
 
@@ -307,6 +304,18 @@ export function StackSection({ focus }: { focus?: string }) {
                         </div>
                       </div>
                     </div>
+
+                    {/* Ask AI CTA */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.dispatchEvent(new Event("open-chat-widget"));
+                      }}
+                      className="w-full flex items-center justify-center gap-2 py-3 rounded-lg border border-primary/20 bg-primary/5 hover:bg-primary/10 transition-colors text-sm text-primary"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      Want details? Ask my AI about this chapter
+                    </button>
                   </div>
                 </div>
               </div>
