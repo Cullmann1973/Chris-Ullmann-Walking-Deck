@@ -16,7 +16,7 @@ const stackLayers: StackLayer[] = [
     period: "2024-Present",
     role: "Executive Director, AI Transformation",
     description:
-      "Leading the integration of Generative AI into North America operations. Not advising from the sidelines: directly piloting and scaling AI capabilities across the supply chain.",
+      "Leading the integration of Generative AI into global operations. Not just advising: serving as the internal AI catalyst, directly piloting and scaling capabilities across the supply chain and beyond.",
   },
   {
     title: "Programs",
