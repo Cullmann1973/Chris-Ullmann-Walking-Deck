@@ -133,7 +133,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 ## Education & Certifications
 - B.S. Biology, Queens University of Charlotte, 2002 (went to college after the Air Force, originally thought I would become a doctor, but the science led me into pharmaceutical manufacturing instead)
-- **Stanford University School of Engineering:** Technical Fundamentals of Generative AI (XFM110), August 2025
+- **Stanford School of Engineering:** Generative AI: Technology, Business and Society Program, August 2025
   - Deep mechanics of Large Language Models (LLMs)
   - "Attention" mechanism of Transformer models
   - Chain-of-Thought (CoT) reasoning
