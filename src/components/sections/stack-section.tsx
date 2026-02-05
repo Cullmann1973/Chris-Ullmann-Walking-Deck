@@ -92,7 +92,7 @@ const stackLayers: StackLayer[] = [
       "Military discipline plus scientific literacy. The foundation everything else is built on.",
     whatIBuilt: [
       "USAF: Aerospace Ground Equipment, 24/7 ops, zero-defect mentality",
-      "Operation Provide Comfort II: two Achievement Medals",
+      "Operation Provide Comfort: two Achievement Medals",
       "B.S. Biology: bridged electromechanical skills with life sciences",
     ],
     whatItUnlocked:
