@@ -125,8 +125,8 @@ export function AISection({ focus }: { focus?: string }) {
               Digital Twin
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl">
-              AI-powered agents I&apos;ve built for manufacturing operations.
-              Have a question? Chat with my digital twin.
+              AI agents I&apos;ve conceived and developed for manufacturing operations.
+              Some deployed, others in active development. Have a question? Chat with my digital twin.
             </p>
             <button
               onClick={openChat}
@@ -144,7 +144,7 @@ export function AISection({ focus }: { focus?: string }) {
                 <Cpu className="w-5 h-5 text-primary" />
               </div>
               <h3 className="text-xl font-serif text-foreground">
-                AI Agents I&apos;ve Built
+                AI Agents I&apos;ve Created
               </h3>
             </div>
 
