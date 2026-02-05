@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "../gsap-provider";
 import { Mail, Linkedin, ArrowUp } from "lucide-react";
 
-export function ContactSection() {
+export function ContactSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

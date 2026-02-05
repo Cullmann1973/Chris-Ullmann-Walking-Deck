@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger } from "../gsap-provider";
+import { FOCUS_CONFIGS, type FocusMode } from "@/lib/focus-config";
 
 const expertiseWords = [
   "STRATEGY",
@@ -19,7 +20,9 @@ const stats = [
   { value: "20+", label: "GenAI use cases piloted" },
 ];
 
-export function AboutSection() {
+export function AboutSection({ focus }: { focus?: string }) {
+  const focusMode = (focus as FocusMode) || "general";
+  const focusConfig = FOCUS_CONFIGS[focusMode] || FOCUS_CONFIGS.general;
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const wordsRef = useRef<HTMLDivElement>(null);
@@ -194,7 +197,7 @@ export function AboutSection() {
                   </p>
 
                   <p>
-                    When I lead AI transformation, I&apos;m not guessing what the floor
+                    When I lead transformation, I&apos;m not guessing what the floor
                     needs. <span className="text-primary">I&apos;ve been on the floor.</span>
                   </p>
 
@@ -204,6 +207,12 @@ export function AboutSection() {
                       I&apos;m translating from systems I&apos;ve personally built.
                     </span>
                   </p>
+
+                  {focusMode !== "general" && (
+                    <p className="text-foreground/90 font-medium mt-2">
+                      {focusConfig.positioningLine}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -222,12 +231,34 @@ export function AboutSection() {
                     </p>
                   </div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
-                      GenAI Strategy
-                    </span>
-                    <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
-                      Stanford AI
-                    </span>
+                    {focusMode === "supply-chain" ? (
+                      <>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
+                          Digital Transformation
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
+                          $500M+ Roadmap
+                        </span>
+                      </>
+                    ) : focusMode === "quality" ? (
+                      <>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
+                          Quality Systems
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
+                          FDA / GMP
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
+                          GenAI Strategy
+                        </span>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
+                          Stanford AI
+                        </span>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

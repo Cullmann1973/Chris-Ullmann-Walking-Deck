@@ -61,7 +61,7 @@ const agentDemos = [
   },
 ];
 
-export function AISection() {
+export function AISection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {

@@ -25,27 +25,29 @@ const stackLayers: StackLayer[] = [
       "Leading the integration of Generative AI into North America operations. Not advising from the sidelines: directly piloting and scaling AI capabilities across the supply chain.",
     whatIBuilt: [
       "20+ GenAI use cases: SOP automation, real-time KPI dashboards, predictive line diagnostics",
-      "AI Core Tech Team enablement program: trained 1,000+ people",
-      "Stanford AI certification (XFM110): Transformers, LLMs, Chain-of-Thought, HELM framework",
+      "AI enablement program: trained 1,000+ people across global supply chain with adoption networks, role-based training, and change management",
+      "North America Manufacturing Strategy & Transformation Office: 60 projects, ~$100M annually, 5 plants",
+      "External innovation pipeline: Stanford AI program, Microsoft partnership, peer networks and technology benchmarking",
     ],
     whatItUnlocked:
-      "Positioned to lead enterprise-wide AI transformation. Can speak both the technical language (model architecture, prompt engineering) and the business language (ROI, change management).",
+      "Positioned to lead enterprise-wide AI transformation. Can speak both the technical language (model architecture, prompt engineering) and the business language (ROI, change management, stakeholder alignment).",
   },
   {
     id: "program",
-    title: "Program Management",
+    title: "Supply Chain Digitalization & Programs",
     period: "2018–2024",
-    role: "Program Director, Leading Beauty Forward Initiative",
+    role: "Executive Director, Program Management, Global Supply Chain, The Estée Lauder Companies",
     context:
-      "Managed a $49M budget within ELC's global restructuring initiative. Responsible for 'Runway Transformation' and the Integrated Manufacturing Transformation roadmap ($500M+).",
+      "Owned the transformation portfolio connecting business process redesign with IT systems delivery. $49M restructuring program, $500M+ integrated roadmap, and the enterprise platform that eliminated silos between commercial, supply chain, and technology teams.",
     whatIBuilt: [
-      "Delivered 170% ROI on committed benefits ($29M committed vs. significantly higher realized)",
-      "Engineering Tech Center: a sandbox for testing new manufacturing technologies",
+      "Leading Beauty Forward ($49M, 170% ROI): operating model redesign, process innovation, Engineering Tech Center",
+      "Runway (Enterprise NPL Platform): $16.1M cross-functional initiative integrating business PMO with Agile IT delivery",
+      "Integrated Manufacturing Transformation: co-authored $500M+ digital and operational excellence roadmap with short, medium, and long-term horizons",
+      "Cross-functional governance model eliminating silos between strategy, manufacturing, supply chain, and IT",
       "Supply chain resilience playbook during COVID-19 disruptions",
-      "Cross-functional governance model connecting strategy to floor execution",
     ],
     whatItUnlocked:
-      "Credibility to lead transformation at enterprise scale. Proved I could manage P&L-level budgets while maintaining operational excellence.",
+      "Credibility to lead transformation at enterprise scale. Proved I could reimagine and redesign business processes, manage P&L-level budgets, and partner with IT to deliver systems that drive results.",
     keyMetric: "170% ROI",
   },
   {
@@ -67,19 +69,20 @@ const stackLayers: StackLayer[] = [
   },
   {
     id: "manufacturing",
-    title: "Manufacturing Floor",
+    title: "Manufacturing & Operations",
     period: "2002–2015",
-    role: "Quality & Operations Leadership at Leiner, EI Pharma, Coty",
+    role: "Quality & Operations Leadership at Coty, EI Pharma, Leiner Health Products",
     context:
-      "13 years of progressive leadership across nutraceuticals, pharmaceuticals, and cosmetics. Each role required building systems that directly touched production.",
+      "13 years of progressive leadership across cosmetics, pharmaceuticals, and nutraceuticals. Each role required redesigning business processes, building quality systems from scratch, and driving measurable results on the manufacturing floor.",
     whatIBuilt: [
-      "Leiner: Quarantine inventory $16M → $200K (released $15.8M in working capital)",
-      "EI Pharma: Led cosmetic → pharmaceutical transition, primary FDA liaison",
-      "Coty: Non-moving inventory $1.5M → $200K, supplier incidents down 60%",
+      "Coty: Quality lead for multi-site consolidation (2,000+ employees, $39M first-year savings), HBR-featured Kotter-based change leadership",
+      "Coty: Redesigned supplier management processes: incidents down 60%, non-moving inventory $1.5M → $200K",
+      "EI Pharma: Led cosmetic → pharmaceutical transition, redesigned operations for FDA compliance",
+      "Leiner: Quarantine inventory $16M → $200K across 5 U.S. plants (released $15.8M in working capital)",
       "SAP QM implementations and tech transfer validations across multiple sites",
     ],
     whatItUnlocked:
-      "Deep operational credibility. When I talk about 'the floor,' I'm not abstracting: I've run batch records, validated equipment, and negotiated with FDA inspectors.",
+      "Deep operational credibility. When I talk about 'the floor,' I'm not abstracting: I've run batch records, validated equipment, and negotiated with FDA inspectors. Earned HBR recognition for change leadership.",
     keyMetric: "$16M → $200K",
   },
   {
@@ -100,9 +103,14 @@ const stackLayers: StackLayer[] = [
   },
 ];
 
-export function StackSection() {
+export function StackSection({ focus }: { focus?: string }) {
+  // Auto-expand the most relevant accordion item based on focus mode
+  const defaultOpen = focus === "ai" ? 0
+    : focus === "supply-chain" ? 1
+    : focus === "quality" ? 2
+    : null;
   const sectionRef = useRef<HTMLElement>(null);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(defaultOpen);
   const accordionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {

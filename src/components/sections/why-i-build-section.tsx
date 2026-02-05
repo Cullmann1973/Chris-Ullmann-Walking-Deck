@@ -48,7 +48,7 @@ const stackLayers: StackLayer[] = [
   },
 ];
 
-export function WhyIBuildSection() {
+export function WhyIBuildSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
   const boxContentRef = useRef<HTMLDivElement>(null);

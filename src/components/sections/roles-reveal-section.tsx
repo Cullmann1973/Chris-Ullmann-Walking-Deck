@@ -11,7 +11,7 @@ const roles = [
   { title: "AI Strategist", align: "left", highlight: true },
 ];
 
-export function RolesRevealSection() {
+export function RolesRevealSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
 

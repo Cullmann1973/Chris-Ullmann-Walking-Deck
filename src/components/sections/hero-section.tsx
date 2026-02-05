@@ -2,16 +2,20 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "../gsap-provider";
+import { FOCUS_CONFIGS, parseFocusMode, type FocusMode } from "@/lib/focus-config";
 
-// Transformation metrics for the ticker
-const metrics = [
+// Default metrics (used if no focus prop)
+const defaultMetrics = [
   { value: "$16M → $200K", label: "inventory turnaround" },
   { value: "12 → 2.7 days", label: "cycle time reduction" },
   { value: "170% ROI", label: "$49M initiative" },
   { value: "1,000+ engaged", label: "AI enablement" },
 ];
 
-export function HeroSection() {
+export function HeroSection({ focus }: { focus?: string }) {
+  const focusMode = (focus as FocusMode) || "general";
+  const focusConfig = FOCUS_CONFIGS[focusMode] || FOCUS_CONFIGS.general;
+  const metrics = focusConfig.metrics || defaultMetrics;
   const sectionRef = useRef<HTMLElement>(null);
   const [currentMetric, setCurrentMetric] = useState(0);
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -269,12 +273,25 @@ export function HeroSection() {
               possibilities.
             </span>
             <span className="tagline-resolution block text-foreground/80 font-medium">
-              I'm the{" "}
-              <span className="tagline-bridge text-primary inline-flex">
-                <span className="bridge-left">BRI</span>
-                <span className="bridge-right">DGE</span>
-              </span>{" "}
-              between.
+              {focusMode === "general" ? (
+                <>
+                  I&apos;m the{" "}
+                  <span className="tagline-bridge text-primary inline-flex">
+                    <span className="bridge-left">BRI</span>
+                    <span className="bridge-right">DGE</span>
+                  </span>{" "}
+                  between.
+                </>
+              ) : (
+                <>
+                  I&apos;m the{" "}
+                  <span className="tagline-bridge text-primary inline-flex">
+                    <span className="bridge-left">BRI</span>
+                    <span className="bridge-right">DGE</span>
+                  </span>{" "}
+                  {focusConfig.heroResolution.replace("I'm the BRIDGE ", "")}
+                </>
+              )}
             </span>
           </h1>
 

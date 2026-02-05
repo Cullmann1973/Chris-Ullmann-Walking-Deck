@@ -50,7 +50,7 @@ const sections: BeyondSection[] = [
   },
 ];
 
-export function BeyondSection() {
+export function BeyondSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const photoRefs = useRef<(HTMLDivElement | null)[]>([]);
 
