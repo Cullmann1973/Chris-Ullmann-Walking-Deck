@@ -37,7 +37,7 @@ const stackLayers: StackLayer[] = [
     period: "2002-2015",
     role: "Manufacturing & Operations Leadership",
     description:
-      "Co-led a $21.7M manufacturing consolidation delivering $14.5M annual savings. Built a 70-person quality org, took a facility from 10% to full FDA compliance, and managed $300M+ in QVC product quality.",
+      "Co-led a $21.7M manufacturing consolidation delivering $14.5M annual savings. Built a 70-person quality org, established full FDA audit readiness, and managed $300M+ in QVC product quality.",
   },
   {
     title: "Foundation",
@@ -269,7 +269,7 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
         <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
           Walk into the mess. Assess it honestly. Align the people. Build the
           structure. Execute. That pattern has delivered a $21.7M manufacturing
-          consolidation, taken a facility from 10% FDA compliance to audit-ready,
+          consolidation, built full FDA audit readiness from the ground up,
           and turned a fragmented digital program into a governed portfolio of
           20+ initiatives. The problems change. The playbook works.
         </p>

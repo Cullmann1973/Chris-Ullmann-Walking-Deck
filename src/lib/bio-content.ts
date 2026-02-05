@@ -91,7 +91,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - Workstream owner for both sending and receiving sites: built and executed ramp-down and ramp-up plans spanning staffing, equipment, documents, tools, and standards
 - Directed equipment and process validation including IQ, OQ, and PQ execution
 - Led transition of quality management systems into SAP QM at the receiving site, maintaining regulatory readiness throughout the change
-- Led FDA readiness initiative at Sanford, taking the facility from approximately 10% compliance with 21 CFR 210/211 OTC requirements to full audit readiness through gap assessment, action planning, culture change, and an 18-30 month execution roadmap
+- Built a complete FDA compliance program at Sanford: systematic gap assessment across 21 CFR 210/211 OTC requirements, action planning, culture change, and an 18-30 month execution roadmap to full audit readiness
 - Maintained QVC and e-commerce quality certifications ($300M+ in Philosophy brand revenue through the QVC channel) and validated OTC product manufacturing in receiving facilities during heavy program cycles
 - Drove QVC customer returns from 9.3% to 7.8% (16% improvement) through quality tracking, complaint analysis, and process improvements
 - Led QVC kitting corrective actions and process improvements using RCPS, closing labeling gaps with zero additional rejects after changes
@@ -301,7 +301,7 @@ Coty was consolidating the entire Philosophy brand manufacturing from Phoenix, A
 - Ran targeted corrective actions for QVC kitting issues using RCPS methodology with sustained performance after changes (zero additional rejects)
 - Led the Del Laboratories nail lacquer integration, planning for technology not previously manufactured at Sanford
 - Modernized Sanford pre-transfer: upgraded fragrance operation, retail security clamshell packaging, and seasonal kitting to create space and capacity
-- Led FDA readiness at Sanford from approximately 10% compliance with 21 CFR 210/211 to full audit readiness: gap assessment across validation, test methods, CAPA, training, IT controls, batch records, stability, and regulatory programs, then built and executed the remediation roadmap
+- Built FDA audit readiness at Sanford through systematic gap assessment across validation, test methods, CAPA, training, IT controls, batch records, stability, and regulatory programs, then designed and executed the full remediation roadmap to 21 CFR 210/211 compliance
 - Drove QVC customer returns from 9.3% to 7.8% (16% improvement) across the Philosophy portfolio ($300M+ channel revenue)
 
 ### The Philosophy
