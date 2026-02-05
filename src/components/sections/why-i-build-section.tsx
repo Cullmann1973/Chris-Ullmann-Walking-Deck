@@ -267,7 +267,7 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
           My Approach
         </h3>
         <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
-          Walk into the mess. Assess it honestly. Align the people. Build the
+          Walk into the complexity. Assess it honestly. Align the people. Build the
           structure. Execute. That pattern has delivered a $21.7M manufacturing
           consolidation, built full FDA audit readiness from the ground up,
           and turned a fragmented digital program into a governed portfolio of
