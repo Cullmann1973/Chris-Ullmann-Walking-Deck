@@ -37,7 +37,7 @@ const stackLayers: StackLayer[] = [
     period: "2002-2015",
     role: "Manufacturing & Operations Leadership",
     description:
-      "Led a $21.7M manufacturing consolidation delivering $14.5M annual savings. Built a 70-person quality org, took a facility from 10% to full FDA compliance, and managed $300M+ in QVC product quality.",
+      "Co-led a $21.7M manufacturing consolidation delivering $14.5M annual savings. Built a 70-person quality org, took a facility from 10% to full FDA compliance, and managed $300M+ in QVC product quality.",
   },
   {
     title: "Foundation",
