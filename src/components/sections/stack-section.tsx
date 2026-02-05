@@ -38,7 +38,7 @@ const stackLayers: StackLayer[] = [
     period: "2018–2024",
     role: "Executive Director, Program Management, Global Supply Chain, The Estée Lauder Companies",
     context:
-      "Led Program Runway: enterprise-wide value chain transformation across MAC, Clinique, EL, Bobbi Brown, Tom Ford. $25.8M capital, $26.3M CAPEX, 6 workstreams, $80M+ committed benefits. Also inherited and rebuilt a fragmented MFG digital transformation from scratch.",
+      "Managed Program Runway: enterprise-wide value chain transformation across MAC, Clinique, EL, Bobbi Brown, Tom Ford. $25.8M capital, $26.3M CAPEX, 6 workstreams, $80M+ committed benefits. Also inherited and rebuilt a fragmented MFG digital transformation from scratch.",
     whatIBuilt: [
       "Program Runway: 170% ROI, $80M+ committed benefits across subcategory strategy, NPL, E2EE, Agility, Packaging, and Value Chain",
       "$13.3M Engineering Tech Center, Lipstick Agility expansion ($1.8M/yr COGs), digital printing capabilities",

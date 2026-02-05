@@ -67,7 +67,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 ### The Estee Lauder Companies (2015 - Present)
 - **Executive Director, Program Management, Global Supply Chain** (2018-2024)
-  - Led Program Runway, an enterprise-wide value chain transformation under Leading Beauty Forward: $25.8M capital, $23.2M restructuring, $26.3M CAPEX across 6 workstreams (Subcategory Strategy, NPL Acceleration, E2EE, Agility, Packaging Design, Value Chain Activation) spanning MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford
+  - Managed Program Runway, an enterprise-wide value chain transformation under Leading Beauty Forward: $25.8M capital, $23.2M restructuring, $26.3M CAPEX across 6 workstreams (Subcategory Strategy, NPL Acceleration, E2EE, Agility, Packaging Design, Value Chain Activation) spanning MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford
   - Delivered 170% ROI with $80M+ in committed benefits: $32M incremental revenue from subcategory enablement, >$30M COGs from Agility, >$20M COGs from E2EE with 25% Right First Time improvement, and $50M-$100M potential from NPL Fast Fashion track
   - Built the $13.3M Engineering Tech Center (office + equipment), drove Lipstick Agility expansion ($3.45M, $1.8M/yr COGs), and deployed digital printing and small-batch manufacturing capabilities
   - Co-authored $500M+ Integrated Manufacturing Transformation roadmap
@@ -180,7 +180,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 ## Deep Dive: Program Runway
 
-Program Runway was an enterprise-wide value chain transformation under Estée Lauder's Leading Beauty Forward initiative. I led this program from FY17 through FY20, delivering 170% ROI by fundamentally reshaping how ELC innovates, manufactures, and brings products to market across its biggest brands: MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford.
+Program Runway was an enterprise-wide value chain transformation under Estée Lauder's Leading Beauty Forward initiative. I managed this program from FY17 through FY20, delivering 170% ROI by fundamentally reshaping how ELC innovates, manufactures, and brings products to market across its biggest brands: MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford.
 
 ### Program Scale
 - $25.8M in approved capital investment

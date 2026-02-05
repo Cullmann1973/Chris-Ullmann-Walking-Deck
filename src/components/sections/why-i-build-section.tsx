@@ -23,7 +23,7 @@ const stackLayers: StackLayer[] = [
     period: "2018-2024",
     role: "Program Director, Leading Beauty Forward",
     description:
-      "Led Program Runway: $25.8M capital, 6 workstreams, $80M+ in committed benefits, 170% ROI. Built the Engineering Tech Center, deployed agility manufacturing, and rebuilt a fragmented digital transformation from scratch.",
+      "Managed Program Runway: $25.8M capital, 6 workstreams, $80M+ in committed benefits, 170% ROI. Built the Engineering Tech Center, deployed agility manufacturing, and rebuilt a fragmented digital transformation from scratch.",
   },
   {
     title: "Quality",
