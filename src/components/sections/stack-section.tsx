@@ -24,10 +24,10 @@ const stackLayers: StackLayer[] = [
     context:
       "Leading the integration of Generative AI into global operations. Internal AI catalyst: directly piloting and scaling capabilities across the supply chain and beyond.",
     whatIBuilt: [
-      "20+ GenAI use cases deployed across manufacturing and supply chain",
-      "AI enablement: 1,000+ people trained with adoption networks and change management",
+      "20+ GenAI use cases piloted across manufacturing, quality, and supply chain",
+      "AI enablement: 1,000+ people engaged with adoption networks and change management",
       "Transformation Office: 60 projects, ~$100M annually, 5 plants",
-      "Stanford AI program, Microsoft partnership, external innovation pipeline",
+      "Stanford AI program, Microsoft partnership, continuous learning pipeline",
     ],
     whatItUnlocked:
       "Enterprise-wide AI transformation leadership. Fluent in both the technical and business languages.",
