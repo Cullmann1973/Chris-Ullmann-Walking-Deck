@@ -72,6 +72,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
   - Led "Runway" enterprise New Product Launch platform ($16.1M initiative)
   - Achieved $1.4M run rate savings from automation/cobots
   - $7M destruction cost avoidance
+  - Inherited a fragmented Manufacturing and Engineering digital transformation program with misaligned senior leaders, no clear decision framework, no business case, and no ownership structure. Drove the EY vendor selection process (selection criteria, evaluation, final recommendations to leadership), brought them in for a current-state assessment, then aligned the leadership team, built governance structure, defined priorities and sequencing, and authored the end-to-end digital transformation roadmap. Owned digital transformation for Manufacturing: 4 workstreams, 20+ projects ranging from local to enterprise-wide
 
 - **Executive Director, Quality Assurance** (2015-2018)
   - Reduced lab testing turnaround from 12 days to 2.7 days (~80% reduction)
@@ -84,11 +85,14 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 ### Coty Inc. (2011-2015)
 
 **Director, Quality Assurance | Phoenix, AZ and Sanford, NC (2013-2015)**
-- Quality and compliance lead for the Phoenix to Sanford manufacturing consolidation, delivering $39M in first-year savings while maintaining service and full regulatory compliance
+- Quality and compliance lead for a $21.7M North American manufacturing consolidation (Project CONSUS), relocating the entire Philosophy brand from Phoenix, AZ to Sanford, NC, delivering $14.5M in annual savings with a 10-year NPV exceeding $12.4M
+- Optimized a 70-person quality organization down to 42 (40% reduction) while achieving a 39% productivity gain at steady state
 - Workstream owner for both sending and receiving sites: built and executed ramp-down and ramp-up plans spanning staffing, equipment, documents, tools, and standards
 - Directed equipment and process validation including IQ, OQ, and PQ execution
 - Led transition of quality management systems into SAP QM at the receiving site, maintaining regulatory readiness throughout the change
-- Maintained QVC and e-commerce quality certifications and validated OTC product manufacturing in receiving facilities during heavy program cycles
+- Led FDA readiness initiative at Sanford, taking the facility from approximately 10% compliance with 21 CFR 210/211 OTC requirements to full audit readiness through gap assessment, action planning, culture change, and an 18-30 month execution roadmap
+- Maintained QVC and e-commerce quality certifications ($300M+ in Philosophy brand revenue through the QVC channel) and validated OTC product manufacturing in receiving facilities during heavy program cycles
+- Drove QVC customer returns from 9.3% to 7.8% (16% improvement) through quality tracking, complaint analysis, and process improvements
 - Led QVC kitting corrective actions and process improvements using RCPS, closing labeling gaps with zero additional rejects after changes
 - Led Quality workstream for the Del Laboratories nail lacquer integration, planning for new technology introduction and absorbing significant additional volume
 - Treated consolidation as a capability transfer: moving formulas, management systems (QMS and SAP QM), and the human operating model (skills, standards, routines) so the receiving site could sustain qualification requirements and regulated compliance from day one
@@ -272,10 +276,10 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
 
 ## Deep Dive: Coty Manufacturing Consolidation & Capability Transfer
 
-Led Quality and Compliance through multi-site consolidation, managing the highest-risk parts of moving a manufacturing operation while sustaining compliance and supply.
+Led Quality and Compliance through a $21.7M multi-site consolidation (Project CONSUS), managing the highest-risk parts of moving a manufacturing operation while sustaining compliance and supply. Optimized a 70-person quality organization to 42 (40% headcount reduction, 39% productivity gain at steady state).
 
 ### The Challenge
-Coty was consolidating manufacturing operations from Phoenix, AZ to Sanford, NC. Significant risk was tied to validation, regulatory posture, external qualification expectations (QVC, e-commerce), and the introduction of new product technology from the Del Laboratories acquisition.
+Coty was consolidating the entire Philosophy brand manufacturing from Phoenix, AZ to Sanford, NC in a three-phase program: fragrance in-sourcing, skincare and shower gels transfer, and logistics/distribution (FIT-P). The program targeted $14.5M in annual savings with a 10-year NPV exceeding $12.4M. Significant risk was tied to validation, regulatory posture, external qualification expectations (QVC with $300M+ in Philosophy brand revenue, e-commerce), and the introduction of new product technology from the Del Laboratories acquisition.
 
 ### What I Did
 - Owned the end-to-end quality workstream for both sending and receiving sites
@@ -286,12 +290,14 @@ Coty was consolidating manufacturing operations from Phoenix, AZ to Sanford, NC.
 - Ran targeted corrective actions for QVC kitting issues using RCPS methodology with sustained performance after changes (zero additional rejects)
 - Led the Del Laboratories nail lacquer integration, planning for technology not previously manufactured at Sanford
 - Modernized Sanford pre-transfer: upgraded fragrance operation, retail security clamshell packaging, and seasonal kitting to create space and capacity
+- Led FDA readiness at Sanford from approximately 10% compliance with 21 CFR 210/211 to full audit readiness: gap assessment across validation, test methods, CAPA, training, IT controls, batch records, stability, and regulatory programs, then built and executed the remediation roadmap
+- Drove QVC customer returns from 9.3% to 7.8% (16% improvement) across the Philosophy portfolio ($300M+ channel revenue)
 
 ### The Philosophy
 I treated this as a capability transfer, not just a site move. That meant transferring formulas, management systems (QMS and SAP QM), and the human operating model (skills, standards, routines) so the receiving site could sustain qualification requirements and regulated compliance from day one. The playbook ensured the receiving teams had the right people, processes, and tools to remain qualified before the sending site stood down.
 
 ### Results
-- $39M in first-year savings with no service or compliance disruption
+- $14.5M in targeted annual savings ($39M realized in first year) with no service or compliance disruption
 - QVC and e-commerce certifications maintained through the transition
 - OTC product manufacturing validated at the receiving site
 - Zero additional rejects on QVC kitting after corrective actions
@@ -303,6 +309,23 @@ I treated this as a capability transfer, not just a site move. That meant transf
 - Days on hand reduced from 260 to under 30 through lean controls and daily management
 - Leading Bold Change (Kotter) facilitator, driving employee-led savings of several million dollars with improved morale
 - These baseline improvements established the credibility and operational maturity that enabled the consolidation to succeed
+
+## Deep Dive: Manufacturing Digital Transformation
+
+Inherited a fragmented digital transformation program for Manufacturing and Engineering and rebuilt it from the ground up into a structured, outcome-driven portfolio.
+
+### The Challenge
+The program had no clear direction. Senior leaders were pulling in different directions with no alignment on priorities, no decision framework, no ownership model, and no business case. Projects existed but lacked cohesion, governance, and a path to value.
+
+### What I Did
+1. **Drove the EY engagement:** Personally led the vendor selection process, defined selection criteria, ran the evaluation, and presented final recommendations to senior leadership. Brought EY in for an objective current-state assessment to depoliticize the conversation and establish a factual baseline.
+2. **Aligned leadership:** Used the assessment as the foundation to align senior stakeholders on current state, gaps, and what "good" looks like. Built consensus where there was previously fragmentation.
+3. **Built governance and structure:** Established decision frameworks, ownership models, and clear accountability so projects could move forward without constant escalation.
+4. **Authored the end-to-end roadmap:** Defined priorities, sequencing, and rationale across the full portfolio. Made it clear what we were doing, when, and why.
+5. **Owned execution:** 4 workstreams, 20+ projects ranging from local plant improvements to enterprise-wide initiatives. Owned digital transformation for Manufacturing.
+
+### Why It Matters
+This is the same playbook that worked at Coty: walk into chaos, assess objectively, align people, build structure, execute. The difference in scale was significant, but the pattern is consistent. It also directly bridges the gap between traditional operational leadership and the AI transformation work that followed. You cannot lead AI in manufacturing if you have not first built the digital foundation.
 
 ## Deep Dive: 20+ AI Use Cases in Manufacturing
 
