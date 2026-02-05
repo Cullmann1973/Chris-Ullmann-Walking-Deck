@@ -21,7 +21,7 @@ const sections: BeyondSection[] = [
     image: "/images/family.jpg",
     content: [
       "Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan.",
-      "I have two daughters who keep me grounded. After decades of transformations, deadlines, and high-stakes decisions, family is where I remember why any of it matters.",
+      "I have two daughters who keep me grounded. Between the transformations, deadlines, and high-stakes decisions, family is where I remember why any of it matters.",
     ],
     pullQuote: "Balance isn't a goal. It's a practice.",
   },
@@ -32,7 +32,7 @@ const sections: BeyondSection[] = [
     image: "/images/hawaii-sunset.jpg",
     content: [
       "In late 2024, Leslie and I made a decision that surprised some people: we bought a home on Oahu. Not as a vacation property. As a sanctuary.",
-      "After decades of high-velocity work, rebuilding systems while they're running, managing hundreds of millions in capital, driving transformations that never slow down... having a place designed for stillness feels less like luxury and more like necessary infrastructure.",
+      "When your days are spent rebuilding systems while they're running, managing hundreds of millions in capital, driving transformations that never slow down... having a place designed for stillness feels less like luxury and more like necessary infrastructure.",
       "Turns out even the Translator needs a place where nothing needs translating.",
     ],
   },
