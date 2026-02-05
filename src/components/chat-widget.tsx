@@ -42,8 +42,8 @@ const getResponse = (query: string): string => {
     return "I led Quality and Compliance through Coty's Phoenix-to-Sanford manufacturing consolidation, delivering $39M in first-year savings with zero compliance disruption. The work was featured in Harvard Business Review. Would you like to hear more about the approach?";
   }
 
-  if (q.includes("ai") || q.includes("agent") || q.includes("tool") || q.includes("ella") || q.includes("genai")) {
-    return "I'm leading 20+ GenAI use cases at Estee Lauder across manufacturing, quality, and supply chain. I've built tools like ELLA (line assistant), Plant Perfect (OEE analytics), and Gold Nugget (benchmarking). Would you like to hear more about any of these?";
+  if (q.includes("ai") || q.includes("agent") || q.includes("tool") || q.includes("bella") || q.includes("ella") || q.includes("genai")) {
+    return "I'm piloting 20+ GenAI use cases at Estee Lauder across manufacturing, quality, and supply chain. I've created tools like BELLA (Business Enabled Line-Level Assistant), Plant Perfect (OEE analytics), and Gold Nugget (benchmarking). Would you like to hear more about any of these?";
   }
 
   return "I've spent 25+ years bridging industrial discipline with digital innovation, from Air Force technician to Fortune 500 AI transformation leader. What specific aspect of my experience would you like to explore?";

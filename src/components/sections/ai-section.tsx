@@ -6,10 +6,10 @@ import { ExternalLink, Cpu, MessageCircle } from "lucide-react";
 
 const agentDemos = [
   {
-    id: "ella",
-    name: "ELLA",
+    id: "bella",
+    name: "BELLA",
     description:
-      "Line assistant for manufacturing operations. Helps operators with setups, troubleshooting, and SOPs.",
+      "Business Enabled Line-Level Assistant. Helps operators with setups, troubleshooting, and SOPs.",
     demoUrl: "https://ella-dark.vercel.app",
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",
