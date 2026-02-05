@@ -190,10 +190,10 @@ export function AboutSection({ focus }: { focus?: string }) {
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    I&apos;ve operated as a technician, scientist, quality leader,
-                    program manager, and now AI strategist. That range isn&apos;t a
-                    winding career: it&apos;s what makes me effective at connecting
-                    strategy to execution.
+                    I&apos;ve operated as a quality professional, program manager,
+                    strategist, and now an AI transformation leader. That range
+                    isn&apos;t a winding career: it&apos;s what makes me effective at
+                    connecting strategy to execution.
                   </p>
 
                   <p>

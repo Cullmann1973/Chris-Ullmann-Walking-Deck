@@ -4,11 +4,10 @@ import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "../gsap-provider";
 
 const roles = [
-  { title: "Technician", align: "right" },
-  { title: "Scientist", align: "left" },
-  { title: "Quality Leader", align: "center" },
-  { title: "Program Manager", align: "right" },
-  { title: "AI Strategist", align: "left", highlight: true },
+  { title: "Quality Professional", align: "right" },
+  { title: "Program Manager", align: "left" },
+  { title: "Strategist", align: "center" },
+  { title: "AI Transformation Leader", align: "right", highlight: true },
 ];
 
 export function RolesRevealSection({ focus }: { focus?: string }) {
@@ -94,12 +93,11 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
         {/* Full paragraph (reveals last) */}
         <div className="roles-paragraph opacity-0 text-sm md:text-base text-muted-foreground leading-relaxed">
           I&apos;ve operated as a{" "}
-          <span className="text-foreground font-semibold">technician</span>,{" "}
-          <span className="text-foreground font-semibold">scientist</span>,{" "}
-          <span className="text-foreground font-semibold">quality leader</span>,{" "}
-          <span className="text-foreground font-semibold">program manager</span>,
-          and now{" "}
-          <span className="text-primary font-semibold">AI strategist</span>.
+          <span className="text-foreground font-semibold">quality professional</span>,{" "}
+          <span className="text-foreground font-semibold">program manager</span>,{" "}
+          <span className="text-foreground font-semibold">strategist</span>,
+          and now an{" "}
+          <span className="text-primary font-semibold">AI transformation leader</span>.
           That range isn&apos;t a winding career: it&apos;s what makes me
           effective at connecting strategy to execution.
         </div>
