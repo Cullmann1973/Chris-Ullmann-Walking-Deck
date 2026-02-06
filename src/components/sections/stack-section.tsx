@@ -87,7 +87,7 @@ const stackLayers: StackLayer[] = [
     id: "foundation",
     title: "Technical Foundation",
     period: "1992–2002",
-    role: "USAF Veteran (AGE Technician) + B.S. Biology, Queens College",
+    role: "USAF Veteran (AGE Technician) + B.S. Biology, Queens University of Charlotte",
     context:
       "Military discipline plus scientific literacy. The foundation everything else is built on.",
     whatIBuilt: [
