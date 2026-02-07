@@ -11,7 +11,7 @@ const agentDemos = [
     description:
       "Batch & Equipment Line-Level Assistant for operator setups, troubleshooting, and SOPs.",
     preview: "Ask BELLA about batch setup procedures or equipment troubleshooting steps.",
-    demoUrl: "https://ella-dark.vercel.app",
+    demoUrl: "https://ella-demo-app.vercel.app",
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",
   },
