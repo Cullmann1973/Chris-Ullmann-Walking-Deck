@@ -72,13 +72,13 @@ export function UnifiedCULogo() {
 
       // ========================================
       // SCROLL ANIMATION: Center → Header position
-      // Starts immediately on any scroll, completes in ~40vh
+      // Starts on FIRST pixel of scroll, no smoothing delay
       // ========================================
       ScrollTrigger.create({
         trigger: "#hero",
         start: "top top",
-        end: "+=40%",
-        scrub: 0.3,
+        end: "+=20%",
+        scrub: true,
         onUpdate: (self) => {
           const progress = self.progress;
           const isMobile = window.innerWidth < 768;
