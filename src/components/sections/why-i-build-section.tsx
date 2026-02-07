@@ -302,33 +302,34 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
       {/* Content text - positioned on right side, or below title on mobile */}
       <div
         className="absolute z-30 
-                   bottom-[22%] left-4 right-4 max-w-[320px]
+                   bottom-[22%] left-4 right-4
                    sm:bottom-auto sm:left-auto sm:top-1/2 sm:-translate-y-1/2 
-                   sm:right-[5%] sm:max-w-[280px]
-                   md:right-[8%] md:max-w-[320px]
-                   lg:right-[10%] lg:max-w-[380px]
-                   xl:right-[12%] xl:max-w-[420px]"
+                   sm:right-[5%] sm:w-[280px]
+                   md:right-[8%] md:w-[320px]
+                   lg:right-[10%] lg:w-[380px]
+                   xl:right-[12%] xl:w-[420px]"
       >
-        {stackLayers.map((item, index) => (
-          <div
-            key={`content-${item.title}`}
-            ref={(el) => {
-              contentRefs.current[index] = el;
-            }}
-            className="absolute inset-0"
-            style={{ transform: "translateY(-50%)" }}
-          >
-            <p className="text-xs md:text-sm text-primary mb-1 sm:mb-2 uppercase tracking-wider font-mono">
-              {item.period}
-            </p>
-            <h4 className="text-sm md:text-base lg:text-lg font-medium text-foreground mb-1.5 sm:mb-2 md:mb-3 leading-snug">
-              {item.role}
-            </h4>
-            <p className="text-xs md:text-sm lg:text-base text-foreground/70 leading-relaxed">
-              {item.description}
-            </p>
-          </div>
-        ))}
+        <div className="relative w-full">
+          {stackLayers.map((item, index) => (
+            <div
+              key={`content-${item.title}`}
+              ref={(el) => {
+                contentRefs.current[index] = el;
+              }}
+              className={index === 0 ? "relative" : "absolute inset-x-0 top-0"}
+            >
+              <p className="text-xs md:text-sm text-primary mb-1 sm:mb-2 uppercase tracking-wider font-mono">
+                {item.period}
+              </p>
+              <h4 className="text-sm md:text-base lg:text-lg font-medium text-foreground mb-1.5 sm:mb-2 md:mb-3 leading-snug">
+                {item.role}
+              </h4>
+              <p className="text-xs md:text-sm lg:text-base text-foreground/70 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
