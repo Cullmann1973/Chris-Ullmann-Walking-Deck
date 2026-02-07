@@ -157,8 +157,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 ## Personal
 - **Wife:** Leslie, partner in life, career, and family
 - **Daughters:** Two daughters who inspire curiosity and remind him why he builds
-- **Hawaii:** Has a home in Oahu, Hawaii
-- **Self-Taught Everything:** I have a deep drive to learn how to do things myself, not because I do not trust others, but because understanding how things work is core to who I am. Self-taught 3D modeling (Shapr3D), 3D printing (before it was easy), electronics, Python scripting, vibe coding (building with AI assistance), and currently teaching myself home renovation (redoing a kitchen in the Hawaii house). The same instinct that had me tinkering with cars at 8 is the same one that has me building AI agents at work.
+- **Self-Taught Everything:** I have a deep drive to learn how to do things myself, not because I do not trust others, but because understanding how things work is core to who I am. Self-taught 3D modeling (Shapr3D), 3D printing (before it was easy), electronics, Python scripting, vibe coding (building with AI assistance), and currently teaching myself home renovation. The same instinct that had me tinkering with cars at 8 is the same one that has me building AI agents at work.
 - **Entrepreneurial:** Runs RSR Sim Racing (rsrsimracing.com), designing and selling custom carbon fiber telemetry dashboards. Manages the entire product lifecycle: CAD design, prototyping, supply chain (Shenzhen GDC Tech), 3D printing enclosures, customer service. YouTube channel with 87,000+ watch minutes.
 
 ## Community Involvement

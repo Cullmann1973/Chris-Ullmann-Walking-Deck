@@ -26,13 +26,13 @@ const sections: BeyondSection[] = [
     pullQuote: "Balance isn't a goal. It's a practice.",
   },
   {
-    id: "hawaii",
-    title: "The Hawaii Chapter",
-    photoLabel: "Photo: Hawaii",
+    id: "reset",
+    title: "The Reset Button",
+    photoLabel: "Photo: Sunset",
     image: "/images/hawaii-sunset.jpg",
     content: [
-      "In late 2024, Leslie and I made a decision that surprised some people: we bought a home on Oahu. Not as a vacation property. As a sanctuary.",
-      "When your days are spent rebuilding systems while they're running, managing hundreds of millions in capital, driving transformations that never slow down... having a place designed for stillness feels less like luxury and more like necessary infrastructure.",
+      "People who do this kind of work, the 4:30 AM mornings, the transformations that never pause, the constant translation between worlds, they burn out. I've watched it happen to some of the best people I've worked with.",
+      "Leslie and I figured out early that sustainability isn't just a supply chain concept. You have to build recovery into your own operating rhythm. For us, that means protecting time for stillness: ocean, sunsets, no Slack notifications.",
       "Turns out even the Translator needs a place where nothing needs translating.",
     ],
   },
