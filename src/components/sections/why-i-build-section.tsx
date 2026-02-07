@@ -303,8 +303,11 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
       <div
         className="absolute z-30 
                    bottom-[22%] left-4 right-4 max-w-[320px]
-                   sm:bottom-auto sm:left-auto sm:top-1/2 sm:-translate-y-1/2 sm:right-8 md:right-12
-                   lg:right-auto lg:left-[42%] lg:max-w-[420px] xl:left-[45%] xl:max-w-[480px] 2xl:max-w-[520px]"
+                   sm:bottom-auto sm:left-auto sm:top-1/2 sm:-translate-y-1/2 
+                   sm:right-[5%] sm:max-w-[280px]
+                   md:right-[8%] md:max-w-[320px]
+                   lg:right-[10%] lg:max-w-[380px]
+                   xl:right-[12%] xl:max-w-[420px]"
       >
         {stackLayers.map((item, index) => (
           <div
