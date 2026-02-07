@@ -9,6 +9,29 @@ interface Message {
   content: string;
 }
 
+const UNTRAINED_PHRASE = "I haven't been trained on that data yet";
+
+// Log unanswered questions for review
+const logUnansweredQuestion = async (question: string) => {
+  try {
+    // Save to localStorage for easy local review
+    const stored = JSON.parse(localStorage.getItem("unanswered_questions") || "[]");
+    stored.push({ question, timestamp: new Date().toISOString() });
+    // Keep last 100
+    if (stored.length > 100) stored.splice(0, stored.length - 100);
+    localStorage.setItem("unanswered_questions", JSON.stringify(stored));
+
+    // Also log server-side (visible in Vercel dashboard logs)
+    fetch("/api/log-question", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question, timestamp: new Date().toISOString() }),
+    }).catch(() => {});
+  } catch {
+    // Silent fail
+  }
+};
+
 const suggestedQueries = [
   "What's your background?",
   "How did you save $16M at Leiner?",
@@ -46,7 +69,7 @@ const getResponse = (query: string): string => {
     return "I ideated and developed AI solutions that gained support from the shop floor to the C-suite to external partners including Microsoft: BELLA (Batch & Equipment Line-Level Assistant) and Plant Perfect (OEE analytics). I'm piloting 20+ GenAI use cases across manufacturing, quality, and supply chain. Would you like to hear more about either of these?";
   }
 
-  return "I've spent 25 years doing the same thing in different wrappers: walking into complex systems, recognizing the opportunity, building the solution, and getting people to run with it. What specific aspect of my experience would you like to explore?";
+  return "I haven't been trained on that data yet. Try asking about my career, AI work, military service, or leadership approach.";
 };
 
 export function ChatWidget() {
@@ -145,14 +168,20 @@ export function ChatWidget() {
         }
       }
 
+      const finalContent = fullContent || "I could not generate a response. Please try again.";
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: "assistant",
-        content: fullContent || "I could not generate a response. Please try again.",
+        content: finalContent,
       };
       setMessages((prev) => [...prev, assistantMessage]);
       setStreamingContent("");
       setIsTyping(false);
+
+      // Log unanswered questions
+      if (finalContent.includes(UNTRAINED_PHRASE)) {
+        logUnansweredQuestion(query);
+      }
     } catch {
       setTimeout(() => {
         const response = getResponse(query);
@@ -163,6 +192,11 @@ export function ChatWidget() {
         };
         setMessages((prev) => [...prev, assistantMessage]);
         setIsTyping(false);
+
+        // Log unanswered questions
+        if (response.includes(UNTRAINED_PHRASE)) {
+          logUnansweredQuestion(query);
+        }
       }, 800);
     }
   };
