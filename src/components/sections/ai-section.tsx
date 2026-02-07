@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap, ScrollTrigger } from "../gsap-provider";
-import { ExternalLink, Cpu, MessageCircle } from "lucide-react";
+import { ExternalLink, Cpu, MessageCircle, Play } from "lucide-react";
 
 const agentDemos = [
   {
@@ -10,6 +10,7 @@ const agentDemos = [
     name: "BELLA",
     description:
       "Batch & Equipment Line-Level Assistant for operator setups, troubleshooting, and SOPs.",
+    preview: "Ask BELLA about batch setup procedures or equipment troubleshooting steps.",
     demoUrl: "https://ella-dark.vercel.app",
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",
@@ -19,6 +20,7 @@ const agentDemos = [
     name: "Supplier Intel",
     description:
       "Real-time supplier risk monitoring using public news, financial signals, and regulatory data.",
+    preview: "Monitor supplier risk scores, news alerts, and financial health in real time.",
     demoUrl: "https://supplier-intel-bot.vercel.app",
     color: "from-sky-500/20 to-indigo-500/20",
     borderColor: "border-sky-500/30",
@@ -28,6 +30,7 @@ const agentDemos = [
     name: "Gold Nugget",
     description:
       "Benchmarking engine that identifies Golden SKUs and closes performance gaps.",
+    preview: "Discover your top-performing SKUs and benchmark against the best.",
     demoUrl: "https://cc-gold-standard.vercel.app",
     color: "from-amber-500/20 to-yellow-500/20",
     borderColor: "border-amber-500/30",
@@ -37,6 +40,7 @@ const agentDemos = [
     name: "Plant Perfect",
     description:
       "HAL 9000-themed manufacturing KPI dashboard for OEE analysis and plant strategy.",
+    preview: "Explore OEE metrics, downtime analysis, and plant performance dashboards.",
     demoUrl: "https://cc-plant-perfect.vercel.app",
     color: "from-red-500/20 to-rose-500/20",
     borderColor: "border-red-500/30",
@@ -46,6 +50,7 @@ const agentDemos = [
     name: "Consumer Pulse",
     description:
       "Voice of Customer translator that uncovers quality signals in consumer feedback.",
+    preview: "Analyze consumer sentiment and surface hidden quality signals from reviews.",
     demoUrl: "https://cc-consumer-pulse.vercel.app",
     color: "from-emerald-500/20 to-green-500/20",
     borderColor: "border-emerald-500/30",
@@ -55,6 +60,7 @@ const agentDemos = [
     name: "Cognex Vision",
     description:
       "Vision system troubleshooting copilot for camera setup, OCR, and PLC diagnostics.",
+    preview: "Troubleshoot vision cameras, OCR configurations, and PLC integration issues.",
     demoUrl: "https://cc-cognex-vision.vercel.app",
     color: "from-cyan-500/20 to-blue-500/20",
     borderColor: "border-cyan-500/30",
@@ -64,11 +70,60 @@ const agentDemos = [
     name: "Slide Maestro",
     description:
       "AI presentation co-pilot that transforms ideas into polished slides in minutes.",
+    preview: "Turn rough ideas into polished presentation decks with AI assistance.",
     demoUrl: "https://cc-slide-maestro.vercel.app",
     color: "from-purple-500/20 to-violet-500/20",
     borderColor: "border-purple-500/30",
   },
 ];
+
+function AgentCard({ agent }: { agent: typeof agentDemos[number] }) {
+  const [showPreview, setShowPreview] = useState(false);
+
+  return (
+    <div
+      className={`agent-card group relative p-4 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20 overflow-hidden`}
+      onMouseEnter={() => setShowPreview(true)}
+      onMouseLeave={() => setShowPreview(false)}
+      onClick={() => setShowPreview((prev) => !prev)}
+    >
+      <div className="flex items-center justify-between mb-1.5 gap-2">
+        <h4 className="font-semibold text-foreground text-sm">{agent.name}</h4>
+      </div>
+      <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+        {agent.description}
+      </p>
+
+      {/* Preview tooltip - shows on hover (desktop) or tap (mobile) */}
+      <div
+        className={`overflow-hidden transition-all duration-300 ease-out ${
+          showPreview ? "max-h-20 opacity-100 mb-3" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="px-3 py-2 rounded-lg bg-black/30 border border-white/5">
+          <p className="text-xs text-foreground/70 italic leading-relaxed">
+            💡 {agent.preview}
+          </p>
+        </div>
+      </div>
+
+      {/* Prominent Try Demo button */}
+      <a
+        href={agent.demoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg
+                   bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/40
+                   text-xs font-medium text-primary hover:text-primary/90
+                   transition-all duration-200 group/btn"
+      >
+        <Play className="w-3 h-3 transition-transform duration-200 group-hover/btn:scale-110" />
+        Try Demo
+        <ExternalLink className="w-3 h-3 opacity-50" />
+      </a>
+    </div>
+  );
+}
 
 export function AISection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -159,25 +214,7 @@ export function AISection({ focus }: { focus?: string }) {
 
             <div className="agents-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {agentDemos.map((agent) => (
-                <div
-                  key={agent.id}
-                  className={`agent-card relative p-4 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20 overflow-hidden`}
-                >
-                  <div className="flex items-center justify-between mb-1.5 gap-2">
-                    <h4 className="font-semibold text-foreground text-sm">{agent.name}</h4>
-                    <a
-                      href={agent.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary/80 transition-colors flex-shrink-0"
-                    >
-                      Try Demo <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </div>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    {agent.description}
-                  </p>
-                </div>
+                <AgentCard key={agent.id} agent={agent} />
               ))}
             </div>
           </div>

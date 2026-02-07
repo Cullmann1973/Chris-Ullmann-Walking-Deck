@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { Sparkles } from "lucide-react";
 import { MenuOverlay } from "./menu-overlay";
 
 export function Header() {
@@ -28,6 +29,10 @@ export function Header() {
     };
   }, [isMenuOpen]);
 
+  const openChat = () => {
+    window.dispatchEvent(new Event("open-chat-widget"));
+  };
+
   return (
     <>
       <header
@@ -46,14 +51,30 @@ export function Header() {
             Christopher <span className="text-primary">U</span>llmann
           </a>
 
-          {/* Menu button */}
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            className="text-sm font-mono tracking-wider text-foreground hover:text-primary transition-colors uppercase"
-            aria-label="Open menu"
-          >
-            Menu
-          </button>
+          {/* Right side: Ask My AI pill + Menu */}
+          <div className="flex items-center gap-3 md:gap-4">
+            {/* Ask My AI pill */}
+            <button
+              onClick={openChat}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 rounded-full
+                         bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary/50
+                         text-primary text-xs font-mono tracking-wider uppercase
+                         transition-all duration-300 hover:shadow-[0_0_12px_rgba(0,188,212,0.2)]"
+              aria-label="Ask My AI"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Ask My AI</span>
+            </button>
+
+            {/* Menu button */}
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              className="text-sm font-mono tracking-wider text-foreground hover:text-primary transition-colors uppercase"
+              aria-label="Open menu"
+            >
+              Menu
+            </button>
+          </div>
         </div>
       </header>
 

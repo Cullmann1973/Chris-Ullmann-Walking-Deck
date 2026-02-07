@@ -12,6 +12,8 @@ import { BeyondSection } from "@/components/sections/beyond-section";
 import { AISection } from "@/components/sections/ai-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { ChatWidget } from "@/components/chat-widget";
+import { ScrollNudge } from "@/components/scroll-nudge";
+import { ProofCallout } from "@/components/proof-callout";
 import { ScrollTrigger } from "@/components/gsap-provider";
 import { useFocus } from "@/hooks/use-focus";
 
@@ -75,11 +77,15 @@ function HomeContent() {
     };
   }, []);
 
-  // Render sections in focus-determined order
-  const sections = config.sectionOrder.map((id) => {
+  // Render sections in focus-determined order, with ProofCallout after About
+  const sections: React.ReactNode[] = [];
+  config.sectionOrder.forEach((id) => {
     const Component = SECTION_MAP[id];
-    if (!Component) return null;
-    return <Component key={id} focus={mode} />;
+    if (!Component) return;
+    sections.push(<Component key={id} focus={mode} />);
+    if (id === "about") {
+      sections.push(<ProofCallout key="proof-callout" />);
+    }
   });
 
   return (
@@ -88,6 +94,7 @@ function HomeContent() {
       <UnifiedCULogo />
       <main>{sections}</main>
       <ChatWidget />
+      <ScrollNudge />
     </>
   );
 }
