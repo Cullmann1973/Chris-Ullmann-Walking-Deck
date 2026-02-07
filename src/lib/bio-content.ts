@@ -47,7 +47,7 @@ My approach is consistent across every challenge:
 4. Build governance and sustainability into the solution from day one
 5. Transfer capability so teams can sustain it without me
 
-I use Kotter's 8-Step Change Model as my transformation framework, applied at both Coty (as a certified Leading Bold Change facilitator) and at Estee Lauder. I bring Legal, Privacy, and Compliance in early, not as an afterthought. I build governance before scaling.
+I use Kotter's 8-Step Change Model as my transformation framework, applied at both Coty (as a certified Leading Bold Change facilitator) and at Estee Lauder. I partnered with Legal, Privacy, and Compliance to develop governance framework before scaling. I build governance before scaling.
 
 I am a practitioner, not just a strategist. I build real things: POCs, pilots, working tools. I am in the weeds with teams, not just presenting slide decks.
 
@@ -58,7 +58,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - Pioneering GenAI integration into manufacturing operations
 - Created "Strategy to Action" operating rhythm
 - Replaced static presentations with AI-generated narrative packs, freeing 250+ leadership hours per quarter
-- Built governance before scaling: brought Legal, Privacy, and Compliance in early, set up governance framework before expanding AI tools
+- Built governance before scaling: partnered with Legal, Privacy, and Compliance to develop governance framework before scaling AI tools across the organization
 - Ideated and developed AI solutions that gained support from the shop floor to the C-suite to external partners including Microsoft
 - Every AI project ties back to a real business outcome, not flashy demos but tools people actually use
 - Work directly with people on making AI useful in day-to-day jobs
@@ -67,11 +67,11 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 ### The Estee Lauder Companies (2015 - Present)
 - **Executive Director, Program Management, Global Supply Chain** (2018-2024)
-  - Managed Program Runway, an enterprise-wide value chain transformation under Leading Beauty Forward: $25.8M capital, $23.2M restructuring, $26.3M CAPEX across 6 workstreams (Subcategory Strategy, NPL Acceleration, E2EE, Agility, Packaging Design, Value Chain Activation) spanning MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford
+  - Managed Program Runway: $49M+ enterprise value chain transformation under Leading Beauty Forward, 170% ROI, 6 workstreams across MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford, with $80M+ in committed benefits
   - Delivered 170% ROI with $80M+ in committed benefits: $32M incremental revenue from subcategory enablement, >$30M COGs from Agility, >$20M COGs from E2EE with 25% Right First Time improvement, and $50M-$100M potential from NPL Fast Fashion track
   - Program managed the $13.3M Engineering Tech Center build (office + equipment), drove Lipstick Agility expansion ($3.45M, $1.8M/yr COGs), and deployed digital printing and small-batch manufacturing capabilities
-  - Authored and sponsored $500M+ Integrated Manufacturing Transformation roadmap
-  - Delivered $1.4M run-rate savings from automation/cobots
+  - Authored and sponsored $500M+ Integrated Manufacturing Transformation roadmap: 4 workstreams, 20+ projects
+  - Delivered $1.4M run-rate savings from automation and cobots; $7M destruction cost avoidance
   - $7M destruction cost avoidance
   - Inherited a fragmented Manufacturing and Engineering digital transformation program with misaligned senior leaders, no clear decision framework, no business case, and no ownership structure. Drove the EY vendor selection process (selection criteria, evaluation, final recommendations to leadership), brought them in for a current-state assessment, then aligned the leadership team, built governance structure, defined priorities and sequencing, and authored the end-to-end digital transformation roadmap. Owned digital transformation for Manufacturing: 4 workstreams, 20+ projects ranging from local to enterprise-wide
 
@@ -86,7 +86,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 ### Coty Inc. (2011-2015)
 
 **Director, Quality Assurance | Phoenix, AZ and Sanford, NC (2013-2015)**
-- Quality and compliance lead for a $21.7M North American manufacturing consolidation (Project CONSUS), relocating the entire Philosophy brand from Phoenix, AZ to Sanford, NC, delivering $14.5M in annual savings with a 10-year NPV exceeding $12.4M
+- Owned quality and compliance workstream for $21.7M multi-site consolidation (Project CONSUS): $39M first-year savings, full operation transfer from Phoenix to Sanford
 - Optimized a 70-person quality organization down to 42 (40% reduction) while achieving a 39% productivity gain at steady state
 - Workstream owner for both sending and receiving sites: built and executed ramp-down and ramp-up plans spanning staffing, equipment, documents, tools, and standards
 - Directed equipment and process validation including IQ, OQ, and PQ execution
@@ -145,13 +145,13 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 ## AI & Digital Transformation
 - Leading AI adoption in Manufacturing at ELC, with significant influence across Supply Chain, Marketing, R&D, and Engineering
 - Piloting 20+ GenAI use cases across manufacturing, quality, engineering, supply chain, and operations
-- Engaged and empowered 1,000+ people through "AI Core Tech Team" enablement program: working directly with people on making AI useful in day-to-day jobs, not flashy demos but tools they actually use
+- Engaged and empowered 1,000+ people on practical AI use across audiences from 10 to 600+, with guardrails and governance built in from the start
 - Created AI tools including:
   - "Plant Perfect" - OEE analytics companion
   - "BELLA" - Batch & Equipment Line-Level Assistant
-- Achieved 30% month-over-month growth in AI adoption, 37x total growth in 6 months
-- Built a 100+ member AI Community of Practice generating ideas bottom-up across the manufacturing network
-- Partnered with Legal, Privacy, and Compliance to develop governance framework before scaling
+- Drove 30% month-over-month growth in active AI users (37x total growth in 6 months) through enablement networks, role-based training, and change management
+- Built and grew a 100+ member AI Community of Practice; drove 30% month-over-month growth in active AI users (37x total growth in 6 months) through enablement networks, role-based training, and change management
+- Partnered with Legal, Privacy, and Compliance to develop governance framework before scaling AI tools across the organization
 - Every project ties back to a real business outcome
 
 ## Personal
@@ -179,7 +179,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 ## Deep Dive: Program Runway
 
-Program Runway was an enterprise-wide value chain transformation under Estée Lauder's Leading Beauty Forward initiative. I managed this program from FY17 through FY20, delivering 170% ROI by fundamentally reshaping how ELC innovates, manufactures, and brings products to market across its biggest brands: MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford.
+Program Runway was a $49M+ enterprise value chain transformation under Estée Lauder's Leading Beauty Forward initiative. I managed this program from FY17 through FY20, delivering 170% ROI by fundamentally reshaping how ELC innovates, manufactures, and brings products to market across its biggest brands: MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford.
 
 ### Program Scale
 - $25.8M in approved capital investment
@@ -217,7 +217,7 @@ Program Runway was an enterprise-wide value chain transformation under Estée La
 5. Decommissioned legacy technology and eliminated structural inefficiencies
 
 ### Summary
-"Program Runway delivered 170% ROI by transforming the end-to-end value chain across ELC's biggest brands: $25.8M capital, $26.3M CAPEX, 6 workstreams, $80M+ in committed benefits. Built permanent manufacturing capabilities (Engineering Tech Center, agility lines, digital printing), accelerated innovation speed, and created the subcategory strategy lens that connected brand growth to supply chain execution."
+"Program Runway delivered 170% ROI by transforming the end-to-end value chain across ELC's biggest brands: $49M+ enterprise value chain transformation, 6 workstreams, $80M+ in committed benefits. Built permanent manufacturing capabilities (Engineering Tech Center, agility lines, digital printing), accelerated innovation speed, and created the subcategory strategy lens that connected brand growth to supply chain execution."
 
 ## Deep Dive: Lab Cycle Time Transformation
 
@@ -286,10 +286,10 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
 
 ## Deep Dive: Coty Manufacturing Consolidation & Capability Transfer
 
-Led Quality and Compliance through a $21.7M multi-site consolidation (Project CONSUS), managing the highest-risk parts of moving a manufacturing operation while sustaining compliance and supply. Optimized a 70-person quality organization to 42 (40% headcount reduction, 39% productivity gain at steady state).
+Owned quality and compliance workstream for $21.7M multi-site consolidation (Project CONSUS), managing the highest-risk parts of moving a manufacturing operation while sustaining compliance and supply. Optimized a 70-person quality organization to 42 (40% headcount reduction, 39% productivity gain at steady state).
 
 ### The Challenge
-Coty was consolidating the entire Philosophy brand manufacturing from Phoenix, AZ to Sanford, NC in a three-phase program: fragrance in-sourcing, skincare and shower gels transfer, and logistics/distribution (FIT-P). The program targeted $14.5M in annual savings with a 10-year NPV exceeding $12.4M. Significant risk was tied to validation, regulatory posture, external qualification expectations (QVC with $300M+ in Philosophy brand revenue, e-commerce), and the introduction of new product technology from the Del Laboratories acquisition.
+Coty was consolidating the entire Philosophy brand manufacturing from Phoenix, AZ to Sanford, NC in a three-phase program: fragrance in-sourcing, skincare and shower gels transfer, and logistics/distribution (FIT-P). The program delivered $39M in first-year savings. Significant risk was tied to validation, regulatory posture, external qualification expectations (QVC with $300M+ in Philosophy brand revenue, e-commerce), and the introduction of new product technology from the Del Laboratories acquisition.
 
 ### What I Did
 - Owned the end-to-end quality workstream for both sending and receiving sites
@@ -307,7 +307,7 @@ Coty was consolidating the entire Philosophy brand manufacturing from Phoenix, A
 I treated this as a capability transfer, not just a site move. That meant transferring formulas, management systems (QMS and SAP QM), and the human operating model (skills, standards, routines) so the receiving site could sustain qualification requirements and regulated compliance from day one. The playbook ensured the receiving teams had the right people, processes, and tools to remain qualified before the sending site stood down.
 
 ### Results
-- $14.5M in targeted annual savings ($39M realized in first year) with no service or compliance disruption
+- $39M first-year savings with no service or compliance disruption
 - QVC and e-commerce certifications maintained through the transition
 - OTC product manufacturing validated at the receiving site
 - Zero additional rejects on QVC kitting after corrective actions
@@ -375,8 +375,7 @@ Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufact
    - AI assistants for onboarding, training, and quality/safety reinforcement
 
 ### How It Was Built
-- 100+ member AI Community of Practice generating ideas
-- Bottom-up development across the network
+- 100+ member AI Community of Practice generating ideas bottom-up across the manufacturing network
 - Gallery of use-case tiles across multiple scenarios
 - BELLA Workshop: "We have 20 different things we're inputting" into agentic-AI workflows
 `;

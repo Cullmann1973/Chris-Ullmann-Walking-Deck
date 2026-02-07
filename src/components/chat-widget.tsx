@@ -39,14 +39,14 @@ const getResponse = (query: string): string => {
   }
 
   if (q.includes("coty") || q.includes("consolidat") || q.includes("phoenix") || q.includes("sanford")) {
-    return "I led Quality and Compliance through Coty's Phoenix-to-Sanford manufacturing consolidation, delivering $39M in first-year savings with zero compliance disruption. The work was featured in Harvard Business Review. Would you like to hear more about the approach?";
+    return "I owned the quality and compliance workstream for Coty's $21.7M Phoenix-to-Sanford manufacturing consolidation, delivering $39M in first-year savings with zero compliance disruption. The work was featured in Harvard Business Review. Would you like to hear more about the approach?";
   }
 
   if (q.includes("ai") || q.includes("agent") || q.includes("tool") || q.includes("bella") || q.includes("ella") || q.includes("genai")) {
-    return "I'm piloting 20+ GenAI use cases at Estee Lauder across manufacturing, quality, and supply chain. I've created tools like BELLA (Batch & Equipment Line-Level Assistant) and Plant Perfect (OEE analytics). Would you like to hear more about either of these?";
+    return "I ideated and developed AI solutions that gained support from the shop floor to the C-suite to external partners including Microsoft: BELLA (Batch & Equipment Line-Level Assistant) and Plant Perfect (OEE analytics). I'm piloting 20+ GenAI use cases across manufacturing, quality, and supply chain. Would you like to hear more about either of these?";
   }
 
-  return "I've spent 25+ years bridging industrial discipline with digital innovation, from Air Force technician to Fortune 500 AI transformation leader. What specific aspect of my experience would you like to explore?";
+  return "I've spent 25 years doing the same thing in different wrappers: walking into complex systems, recognizing the opportunity, building the solution, and getting people to run with it. What specific aspect of my experience would you like to explore?";
 };
 
 export function ChatWidget() {
