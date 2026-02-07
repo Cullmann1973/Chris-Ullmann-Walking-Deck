@@ -42,7 +42,7 @@ export function UnifiedCULogo() {
       gsap.set(".unified-letter-u", { opacity: 0, scale: 0.95 });
 
       // ========================================
-      // INTRO ANIMATION: Letters construct
+      // INTRO ANIMATION: Letters construct (faster)
       // ========================================
       const introTL = gsap.timeline();
 
@@ -50,38 +50,35 @@ export function UnifiedCULogo() {
       introTL.to(logo, {
         opacity: 1,
         scale: 1,
-        duration: 0.5,
+        duration: 0.4,
         ease: "power2.out",
-      }, 0.2);
+      }, 0.1);
 
       // C constructs
       introTL.to(".unified-letter-c", {
         opacity: 1,
         scale: 1,
-        duration: 1.8,
+        duration: 0.8,
         ease: "power3.out",
-      }, 0.2);
+      }, 0.1);
 
       // U constructs (overlapping)
       introTL.to(".unified-letter-u", {
         opacity: 1,
         scale: 1,
-        duration: 1.8,
+        duration: 0.8,
         ease: "power3.out",
-      }, 1.5);
+      }, 0.5);
 
       // ========================================
       // SCROLL ANIMATION: Center → Header position
-      // Desktop: stays centered
-      // Mobile: moves to RIGHT to avoid overlapping name
+      // Starts immediately on any scroll, completes in ~40vh
       // ========================================
-      // CU starts moving on FIRST scroll, completes quickly
-      // Responsive to even small scroll gestures on mobile
       ScrollTrigger.create({
         trigger: "#hero",
         start: "top top",
-        end: "+=60%",
-        scrub: 0.5,
+        end: "+=40%",
+        scrub: 0.3,
         onUpdate: (self) => {
           const progress = self.progress;
           const isMobile = window.innerWidth < 768;
