@@ -28,44 +28,42 @@ export function UnifiedCULogo() {
     const ctx = gsap.context(() => {
       // ========================================
       // INITIAL STATE: Upper-center on screen, large
+      // No scale animation — avoids visual "drift down" on intro
       // ========================================
       gsap.set(logo, {
         opacity: 0,
-        scale: 0.95,
+        scale: 1,
         xPercent: -50,
         yPercent: -50,
         left: "50%",
         top: "33%",
       });
 
-      gsap.set(".unified-letter-c", { opacity: 0, scale: 0.95 });
-      gsap.set(".unified-letter-u", { opacity: 0, scale: 0.95 });
+      gsap.set(".unified-letter-c", { opacity: 0 });
+      gsap.set(".unified-letter-u", { opacity: 0 });
 
       // ========================================
-      // INTRO ANIMATION: Letters construct (faster)
+      // INTRO ANIMATION: Letters fade in (no scale, no drift)
       // ========================================
       const introTL = gsap.timeline();
 
       // Container fades in
       introTL.to(logo, {
         opacity: 1,
-        scale: 1,
         duration: 0.4,
         ease: "power2.out",
       }, 0.1);
 
-      // C constructs
+      // C fades in
       introTL.to(".unified-letter-c", {
         opacity: 1,
-        scale: 1,
         duration: 0.8,
         ease: "power3.out",
       }, 0.1);
 
-      // U constructs (overlapping)
+      // U fades in (overlapping)
       introTL.to(".unified-letter-u", {
         opacity: 1,
-        scale: 1,
         duration: 0.8,
         ease: "power3.out",
       }, 0.5);
@@ -77,8 +75,8 @@ export function UnifiedCULogo() {
       ScrollTrigger.create({
         trigger: "#hero",
         start: "top top",
-        end: "+=20%",
-        scrub: true,
+        end: "+=40%",
+        scrub: 0.3,
         onUpdate: (self) => {
           const progress = self.progress;
           const isMobile = window.innerWidth < 768;
