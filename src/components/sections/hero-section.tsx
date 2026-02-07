@@ -48,18 +48,18 @@ export function HeroSection({ focus }: { focus?: string }) {
 
       // ----------------------------------------
       // PHASE 1: Tagline with Tension
-      // Starts after CU letters are visible (~3s)
+      // Starts shortly after CU letters fade in (~1.5s)
       // ----------------------------------------
-      // "Most leaders speak" fades in
+      // "Business challenges" line fades in
       introTL.to(
         ".tagline-line-1",
         {
           opacity: 1,
           y: 0,
-          duration: 0.9,
+          duration: 0.7,
           ease: "power2.out",
         },
-        3.2
+        1.5
       );
 
       // Flash effect styles
@@ -71,100 +71,84 @@ export function HeroSection({ focus }: { focus?: string }) {
       const cyanFlashOff = { opacity: 0, color: "#00bcd4", textShadow: "none" };
       const cyanStayOn = { opacity: 1, color: "#00bcd4", textShadow: "none" };
 
-      // "Business" - varied photographer flashes over ~2 secs
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 3.5);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.05 }, 3.53);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 3.7);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.08 }, 3.72);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.04 }, 3.95);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.03 }, 3.99);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 4.15);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.06 }, 4.17);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 4.35);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.04 }, 4.38);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 4.55);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.03 }, 4.57);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.05 }, 4.7);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.02 }, 4.75);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 4.9);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.04 }, 4.93);
-      introTL.to(".tagline-business", { ...whiteStayOn, duration: 0.08 }, 5.1);
+      // "Business" - compressed flashes over ~1s
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 1.7);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.05 }, 1.73);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 1.85);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.06 }, 1.87);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 2.0);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.04 }, 2.03);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 2.15);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.05 }, 2.17);
+      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 2.3);
+      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.03 }, 2.33);
+      introTL.to(".tagline-business", { ...whiteStayOn, duration: 0.08 }, 2.5);
 
-      // "AI" - starts 1.0s after Business
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.5);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.06 }, 4.52);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.04 }, 4.7);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 4.74);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.9);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.07 }, 4.92);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 5.15);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 5.18);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.05 }, 5.35);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.02 }, 5.4);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 5.6);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.05 }, 5.63);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 5.8);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 5.82);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 6.0);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 6.03);
-      introTL.to(".tagline-ai", { ...cyanStayOn, duration: 0.08 }, 6.2);
+      // "AI" - starts 0.5s after Business begins
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 2.2);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.05 }, 2.22);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 2.4);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 2.43);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 2.6);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.05 }, 2.62);
+      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 2.8);
+      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 2.83);
+      introTL.to(".tagline-ai", { ...cyanStayOn, duration: 0.08 }, 3.0);
 
-      // "bridge" - bridge construction animation (two sides meet in middle)
-      // Make container visible first
-      introTL.to(".tagline-bridge", { opacity: 1, duration: 0.01 }, 6.2);
+      // "bridge" - bridge construction animation
+      introTL.to(".tagline-bridge", { opacity: 1, duration: 0.01 }, 3.0);
       
       // Left side (BRI) slides in from left with glow
       introTL.to(".bridge-left", { 
         x: 0, 
         opacity: 1, 
-        duration: 0.8, 
+        duration: 0.6, 
         ease: "power2.out",
         textShadow: "0 0 10px #00bcd4"
-      }, 6.2);
+      }, 3.0);
       
       // Right side (DGE) slides in from right with glow
       introTL.to(".bridge-right", { 
         x: 0, 
         opacity: 1, 
-        duration: 0.8, 
+        duration: 0.6, 
         ease: "power2.out",
         textShadow: "0 0 10px #00bcd4"
-      }, 6.2);
+      }, 3.0);
       
-      // Connection flash when they meet - bright glow pulse
+      // Connection flash when they meet
       introTL.to(".tagline-bridge", { 
         textShadow: "0 0 30px #00bcd4, 0 0 60px #00bcd4",
-        duration: 0.2,
+        duration: 0.15,
         ease: "power2.in"
-      }, 7.0);
+      }, 3.6);
       
       // Settle to subtle glow
       introTL.to(".tagline-bridge", { 
         textShadow: "none",
-        duration: 0.5,
+        duration: 0.4,
         ease: "power2.out"
-      }, 7.2);
+      }, 3.75);
       
       // Remove individual glows
       introTL.to([".bridge-left", ".bridge-right"], {
         textShadow: "none",
-        duration: 0.4
-      }, 7.2);
+        duration: 0.3
+      }, 3.75);
 
       // ----------------------------------------
       // PHASE 4: Resolution
       // ----------------------------------------
-      // "I translate between both" fades in
-      // "I'm the bridge between" line fades in (bridge flashes separately)
+      // "I'm the bridge between" fades in (overlaps with bridge animation)
       introTL.to(
         ".tagline-resolution",
         {
           opacity: 1,
           y: 0,
-          duration: 0.9,
+          duration: 0.7,
           ease: "power2.out",
         },
-        6.0
+        2.8
       );
 
       // ----------------------------------------
@@ -176,10 +160,10 @@ export function HeroSection({ focus }: { focus?: string }) {
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.6,
           ease: "power2.out",
         },
-        7.8
+        4.2
       );
 
       // Scroll indicator fades in
@@ -187,10 +171,10 @@ export function HeroSection({ focus }: { focus?: string }) {
         ".scroll-indicator",
         {
           opacity: 1,
-          duration: 0.8,
+          duration: 0.6,
           ease: "power2.out",
         },
-        8.3
+        4.6
       );
 
       // ========================================
