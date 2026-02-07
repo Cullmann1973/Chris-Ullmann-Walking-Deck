@@ -91,8 +91,8 @@ export function UnifiedCULogo() {
 
           // Horizontal position
           const startLeft = 50;
-          // On mobile: end at 52% (right of name, clear of sparkle pill), on desktop: stay centered at 50%
-          const endLeft = isMobile ? 52 : 50;
+          // On mobile: end at 58% (right of name, clear of sparkle pill), on desktop: stay centered at 50%
+          const endLeft = isMobile ? 58 : 50;
           const currentLeft = startLeft + progress * (endLeft - startLeft);
 
           // xPercent: -50 (centered on position)
