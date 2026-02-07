@@ -66,10 +66,10 @@ export function Header() {
               <span className="hidden sm:inline">Ask My AI</span>
             </button>
 
-            {/* Menu button */}
+            {/* Menu button — hidden on mobile, visible on md+ */}
             <button
               onClick={() => setIsMenuOpen(true)}
-              className="text-sm font-mono tracking-wider text-foreground hover:text-primary transition-colors uppercase"
+              className="hidden md:block text-sm font-mono tracking-wider text-foreground hover:text-primary transition-colors uppercase"
               aria-label="Open menu"
             >
               Menu
