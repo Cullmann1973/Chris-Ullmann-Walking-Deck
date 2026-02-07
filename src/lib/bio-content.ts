@@ -59,7 +59,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - Created "Strategy to Action" operating rhythm
 - Replaced static presentations with AI-generated narrative packs, freeing 250+ leadership hours per quarter
 - Built governance before scaling: brought Legal, Privacy, and Compliance in early, set up governance framework before expanding AI tools
-- Solutions getting attention from the CEO of Estee Lauder and from Microsoft
+- Ideated and developed AI solutions that gained support from the shop floor to the C-suite to external partners including Microsoft
 - Every AI project ties back to a real business outcome, not flashy demos but tools people actually use
 - Work directly with people on making AI useful in day-to-day jobs
 
@@ -69,9 +69,9 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - **Executive Director, Program Management, Global Supply Chain** (2018-2024)
   - Managed Program Runway, an enterprise-wide value chain transformation under Leading Beauty Forward: $25.8M capital, $23.2M restructuring, $26.3M CAPEX across 6 workstreams (Subcategory Strategy, NPL Acceleration, E2EE, Agility, Packaging Design, Value Chain Activation) spanning MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford
   - Delivered 170% ROI with $80M+ in committed benefits: $32M incremental revenue from subcategory enablement, >$30M COGs from Agility, >$20M COGs from E2EE with 25% Right First Time improvement, and $50M-$100M potential from NPL Fast Fashion track
-  - Built the $13.3M Engineering Tech Center (office + equipment), drove Lipstick Agility expansion ($3.45M, $1.8M/yr COGs), and deployed digital printing and small-batch manufacturing capabilities
-  - Co-authored $500M+ Integrated Manufacturing Transformation roadmap
-  - Achieved $1.4M run rate savings from automation/cobots
+  - Program managed the $13.3M Engineering Tech Center build (office + equipment), drove Lipstick Agility expansion ($3.45M, $1.8M/yr COGs), and deployed digital printing and small-batch manufacturing capabilities
+  - Authored and sponsored $500M+ Integrated Manufacturing Transformation roadmap
+  - Delivered $1.4M run-rate savings from automation/cobots
   - $7M destruction cost avoidance
   - Inherited a fragmented Manufacturing and Engineering digital transformation program with misaligned senior leaders, no clear decision framework, no business case, and no ownership structure. Drove the EY vendor selection process (selection criteria, evaluation, final recommendations to leadership), brought them in for a current-state assessment, then aligned the leadership team, built governance structure, defined priorities and sequencing, and authored the end-to-end digital transformation roadmap. Owned digital transformation for Manufacturing: 4 workstreams, 20+ projects ranging from local to enterprise-wide
 
@@ -151,8 +151,8 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
   - "BELLA" - Batch & Equipment Line-Level Assistant
   - "Gold Nugget" - Benchmarking and Golden SKU identification
 - Achieved 30% month-over-month growth in AI adoption, 37x total growth in 6 months
-- Built a 50+ person grassroots AI community generating ideas bottom-up across the manufacturing network
-- Brought Legal, Privacy, and Compliance in early; set up governance before scaling
+- Built a 100+ member AI Community of Practice generating ideas bottom-up across the manufacturing network
+- Partnered with Legal, Privacy, and Compliance to develop governance framework before scaling
 - Every project ties back to a real business outcome
 
 ## Personal
@@ -192,7 +192,7 @@ Program Runway was an enterprise-wide value chain transformation under Estée La
 ### The Six Workstreams
 1. **Subcategory Strategy and Insights**: Category growth lens for where to play and how to win. Defined hero product strategies and must-win missions across makeup and skincare.
 2. **NPL Acceleration**: Designed 5 NPL tracks (Classic, Hero Renovation, Fast Fashion, Turbo, Line Extension) with defined launch windows. Built training curriculum deployed across brands.
-3. **End-to-End Engineering (E2EE)**: $26M investment for breakthrough engineering capabilities. Built the $13.3M Engineering Tech Center (office services + prototyping, molding, formula and process equipment). Targeted 25% Right First Time improvement and >$20M in COGs.
+3. **End-to-End Engineering (E2EE)**: $26M investment for breakthrough engineering capabilities. Program managed the $13.3M Engineering Tech Center build (office services + prototyping, molding, formula and process equipment). Targeted 25% Right First Time improvement and >$20M in COGs.
 4. **Agility**: Bank of Assets 2.0, small-batch manufacturing, late-stage differentiation. Lipstick Agility Expansion ($3.45M, $1.8M/yr COGs savings). Digital printing (Atlantic Zeiser, Mimaki).
 5. **Packaging Design**: Consumer, technical, and cost benchmarking vs. Japanese and Couture brands. Industrial Design and luxury materials concierge capabilities.
 6. **Value Chain Activation / War Room**: Real-time data analytics and social listening for rapid market response.
@@ -376,7 +376,7 @@ Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufact
    - AI assistants for onboarding, training, and quality/safety reinforcement
 
 ### How It Was Built
-- 50+ person grassroots AI community generating ideas
+- 100+ member AI Community of Practice generating ideas
 - Bottom-up development across the network
 - Gallery of use-case tiles across multiple scenarios
 - BELLA Workshop: "We have 20 different things we're inputting" into agentic-AI workflows

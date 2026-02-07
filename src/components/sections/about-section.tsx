@@ -190,22 +190,27 @@ export function AboutSection({ focus }: { focus?: string }) {
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    I&apos;ve operated as a quality professional, program manager,
-                    strategist, and now an AI transformation leader. That range
-                    isn&apos;t a winding career: it&apos;s what makes me effective at
-                    connecting strategy to execution.
+                    I&apos;ve spent 25 years doing the same thing in different wrappers:
+                    walking into systems that aren&apos;t working, engineering the fix,
+                    and getting people to actually use it. That&apos;s looked like FDA
+                    compliance turnarounds, $49M enterprise transformations, and now
+                    hands-on AI development. The range is the point.
                   </p>
 
                   <p>
-                    When I lead transformation, I&apos;m not guessing what the floor
-                    needs. <span className="text-primary">I&apos;ve been on the floor.</span>
+                    I&apos;ve released $30-35M in working capital through operational
+                    redesign, delivered 170% ROI on an enterprise value chain program,
+                    and built AI solutions at Estee Lauder that gained traction from
+                    the shop floor to the C-suite to external partners like Microsoft.
                   </p>
 
                   <p>
-                    When I present to the board, I&apos;m not abstracting:{" "}
+                    Most AI leaders come from pure tech. Most operations leaders never
+                    touch AI.{" "}
                     <span className="text-primary">
-                      I&apos;m translating from systems I&apos;ve personally built.
-                    </span>
+                      I do both, and that&apos;s what makes the work stick.
+                    </span>{" "}
+                    Air Force veteran.
                   </p>
 
                   {focusMode !== "general" && (

@@ -71,7 +71,7 @@ const stackLayers: StackLayer[] = [
     period: "2002–2015",
     role: "Quality & Operations Leadership at Coty, EI Pharma, Leiner Health Products",
     context:
-      "13 years across cosmetics, pharmaceuticals, and nutraceuticals. Co-led a $21.7M North American manufacturing consolidation, built and optimized a 70-person quality organization, and established full FDA audit readiness through systematic compliance buildout.",
+      "13 years across cosmetics, pharmaceuticals, and nutraceuticals. Owned quality and compliance workstream for $21.7M multi-site consolidation, built and optimized a 70-person quality organization, and established full FDA audit readiness through systematic compliance buildout.",
     whatIBuilt: [
       "Coty consolidation: $21.7M capex, $14.5M annual savings, 70→42 person org (40% reduction, 39% productivity gain)",
       "FDA readiness: built a complete 21 CFR 210/211 compliance program, from gap assessment through culture change to full audit readiness",
