@@ -28,8 +28,8 @@ const sections: BeyondSection[] = [
   {
     id: "early-riser",
     title: "The 4:30 Club",
-    photoLabel: "Photo: Morning",
-    image: "/images/hawaii-sunset.jpg",
+    photoLabel: "Air Force Achievement Medal, ~1994",
+    image: "/images/air-force-award.jpg",
     content: [
       "My alarm goes off at 4:30 AM. Not because someone told me to. Because the two hours before the world wakes up are the most productive hours I have.",
       "That's when I learn. New models, new frameworks, new ways to connect AI to problems nobody's solved yet. I taught myself vibe coding in those hours. Built agents. Read papers. Enrolled in Stanford's Generative AI program at 50+ because I couldn't deploy technology I didn't deeply understand.",
