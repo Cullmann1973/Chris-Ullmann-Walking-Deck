@@ -26,7 +26,7 @@ Leaders at Microsoft, Engineering, and senior business leaders have told me I ha
 - Business-savvy but cannot go deep on the technology
 - Can talk both languages but cannot actually build anything
 
-I do all three. I bridge the gap between what AI can do and what operations actually needs. I train hundreds of people, I build POCs myself, and I translate business problems into agent architectures. My work has gotten attention at the CEO level at Estee Lauder, but what excites me most is watching a plant supervisor use something I built to solve a problem they have had for years.
+I do all three. I bridge the gap between what AI can do and what operations actually needs. I engage and empower people on practical AI use, I build POCs myself, and I translate business problems into agent architectures. My work has gotten attention at the CEO level at Estee Lauder, but what excites me most is watching a plant supervisor use something I built to solve a problem they have had for years.
 
 ## Why AI Is Where I Belong
 
@@ -79,7 +79,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
   - Reduced lab testing turnaround from 12 days to 2.7 days (~80% reduction)
   - Achieved $3.75M annual inventory savings
   - Achieved 90% reduction in audit observations
-  - Launched grassroots CI program generating $1M savings in 90 days
+  - Launched continuous improvement program generating $1M savings in 90 days
   - Released $30-35M in annual inventory working capital by shrinking Quality Hold window
   - Products reached distribution centers nearly two weeks faster
 
@@ -182,7 +182,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 Program Runway was a $49M+ enterprise value chain transformation under Estée Lauder's Leading Beauty Forward initiative. I managed this program from FY17 through FY20, delivering 170% ROI by fundamentally reshaping how ELC innovates, manufactures, and brings products to market across its biggest brands: MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford.
 
 ### Program Scale
-- $25.8M in approved capital investment
+- $49M+ total program investment
 - $23.2M in one-time restructuring costs ($10.2M consultants, $1.9M change management, $0.85M training, $0.75M program management, $1.85M IT, $0.62M E2E Engineering OD, $1.4M recruitment and upskilling, $1.5M track segmentation)
 - $26.3M in CAPEX projects (Engineering Tech Center, agility equipment, digital printing, NPL IT)
 - $8.1M in ongoing investments ($4.3M incremental FTEs, $2.9M depreciation, $0.9M facilities)
@@ -211,8 +211,8 @@ Program Runway was a $49M+ enterprise value chain transformation under Estée La
 
 ### How the 170% ROI Was Achieved
 1. Accelerated value realization across COGs, innovation insourcing, and subcategory optimization
-2. Built the Engineering Tech Center creating permanent manufacturing capability
-3. Deployed agility technologies enabling low-cost newness and faster market response
+2. Program managed the $13.3M Engineering Tech Center build creating permanent manufacturing capability
+3. Drove Lipstick Agility expansion ($3.45M, $1.8M/yr savings) enabling low-cost newness and faster market response
 4. Right-sized organizational design with staged restructuring
 5. Decommissioned legacy technology and eliminated structural inefficiencies
 
@@ -322,7 +322,7 @@ I treated this as a capability transfer, not just a site move. That meant transf
 
 ## Deep Dive: Manufacturing Digital Transformation
 
-Inherited a fragmented digital transformation program for Manufacturing and Engineering and rebuilt it from the ground up into a structured, outcome-driven portfolio.
+Inherited a Manufacturing and Engineering digital transformation program with misaligned leaders and no clear direction, and rebuilt it from the ground up into a structured, outcome-driven portfolio.
 
 ### The Challenge
 The program had no clear direction. Senior leaders were pulling in different directions with no alignment on priorities, no decision framework, no ownership model, and no business case. Projects existed but lacked cohesion, governance, and a path to value.

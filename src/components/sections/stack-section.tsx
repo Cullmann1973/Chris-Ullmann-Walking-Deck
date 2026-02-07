@@ -38,10 +38,10 @@ const stackLayers: StackLayer[] = [
     period: "2018–2024",
     role: "Executive Director, Program Management, Global Supply Chain, The Estée Lauder Companies",
     context:
-      "Managed Program Runway: enterprise-wide value chain transformation across MAC, Clinique, EL, Bobbi Brown, Tom Ford. $25.8M capital, $26.3M CAPEX, 6 workstreams, $80M+ committed benefits. Also inherited and rebuilt a fragmented MFG digital transformation from scratch.",
+      "Managed Program Runway: $49M+ enterprise value chain transformation, 170% ROI, 6 workstreams across MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford, with $80M+ in committed benefits.",
     whatIBuilt: [
       "Program Runway: 170% ROI, $80M+ committed benefits across subcategory strategy, NPL, E2EE, Agility, Packaging, and Value Chain",
-      "$13.3M Engineering Tech Center, Lipstick Agility expansion ($1.8M/yr COGs), digital printing capabilities",
+      "Program managed the $13.3M Engineering Tech Center build, drove Lipstick Agility expansion ($3.45M, $1.8M/yr savings), deployed digital printing and small-batch manufacturing",
       "MFG Digital Transformation: assessed current state, aligned leadership, built governance, authored $500M+ E2E roadmap across 4 workstreams and 20+ projects",
     ],
     whatItUnlocked:
@@ -58,7 +58,7 @@ const stackLayers: StackLayer[] = [
     whatIBuilt: [
       "Lab cycle time: 12 days → 2.7 days",
       "$3.75M annual inventory savings",
-      "Kotter change model: grassroots continuous improvement",
+      "Kotter change model: launched continuous improvement program",
       "$1M saved in 90 days through frontline empowerment",
     ],
     whatItUnlocked:
@@ -73,7 +73,7 @@ const stackLayers: StackLayer[] = [
     context:
       "13 years across cosmetics, pharmaceuticals, and nutraceuticals. Owned quality and compliance workstream for $21.7M multi-site consolidation, built and optimized a 70-person quality organization, and established full FDA audit readiness through systematic compliance buildout.",
     whatIBuilt: [
-      "Coty consolidation: $21.7M capex, $14.5M annual savings, 70→42 person org (40% reduction, 39% productivity gain)",
+      "Coty consolidation: $21.7M capex, $39M first-year savings, 70→42 person org (40% reduction, 39% productivity gain)",
       "FDA readiness: built a complete 21 CFR 210/211 compliance program, from gap assessment through culture change to full audit readiness",
       "QVC quality: $300M+ channel revenue, drove returns from 9.3% to 7.8%",
       "Supplier management redesign: incidents down 60%",
@@ -81,7 +81,7 @@ const stackLayers: StackLayer[] = [
     ],
     whatItUnlocked:
       "Deep operational credibility, HBR-recognized change leadership, and a repeatable playbook: chaos → assessment → alignment → structure → execution.",
-    keyMetric: "$14.5M/yr savings",
+    keyMetric: "$39M 1st-yr savings",
   },
   {
     id: "foundation",

@@ -179,7 +179,7 @@ export function AISection({ focus }: { focus?: string }) {
               Digital Twin
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl">
-              AI agents I&apos;ve conceived and developed for manufacturing operations.
+              AI agents I&apos;ve ideated and developed for manufacturing operations.
               Some deployed, others in active development. Have a question? Chat with my digital twin.
             </p>
             <button

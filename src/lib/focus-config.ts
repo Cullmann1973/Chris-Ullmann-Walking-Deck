@@ -62,7 +62,7 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
       "contact",
     ],
     positioningLine:
-      "I don't just strategize about AI. I build POCs, train thousands, and scale adoption from the plant floor to the CEO.",
+      "I don't just strategize about AI. I build POCs, engage and empower thousands, and scale adoption from the plant floor to the CEO.",
   },
   "supply-chain": {
     label: "Supply Chain Transformation",

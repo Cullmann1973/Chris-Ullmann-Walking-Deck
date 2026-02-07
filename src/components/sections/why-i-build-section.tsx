@@ -21,9 +21,9 @@ const stackLayers: StackLayer[] = [
   {
     title: "Programs",
     period: "2018-2024",
-    role: "Program Director, Leading Beauty Forward",
+    role: "Executive Director, PMO, Supply Chain and Digital Transformation",
     description:
-      "Managed Program Runway: $25.8M capital, 6 workstreams, $80M+ in committed benefits, 170% ROI. Built the Engineering Tech Center, deployed agility manufacturing, and rebuilt a fragmented digital transformation from scratch.",
+      "Managed Program Runway: $49M+ enterprise value chain transformation, 170% ROI, 6 workstreams, $80M+ in committed benefits. Program managed the $13.3M Engineering Tech Center build, drove Lipstick Agility expansion ($3.45M, $1.8M/yr savings).",
   },
   {
     title: "Quality",
@@ -37,7 +37,7 @@ const stackLayers: StackLayer[] = [
     period: "2002-2015",
     role: "Manufacturing & Operations Leadership",
     description:
-      "Owned quality and compliance workstream for $21.7M multi-site consolidation delivering $14.5M annual savings. Built a 70-person quality org, established full FDA audit readiness, and managed $300M+ in QVC product quality.",
+      "Owned quality and compliance workstream for $21.7M multi-site consolidation delivering $39M first-year savings. Optimized 70-person quality org to 42, established full FDA audit readiness, and managed $300M+ in QVC product quality.",
   },
   {
     title: "Foundation",
@@ -270,8 +270,9 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
           Walk into the complexity. Assess it honestly. Align the people. Build the
           structure. Execute. That pattern has delivered a $21.7M manufacturing
           consolidation, built full FDA audit readiness from the ground up,
-          and turned a fragmented digital program into a governed portfolio of
-          20+ initiatives. The problems change. The playbook works.
+
+          and authored a $500M+ transformation roadmap across 4 workstreams and
+          20+ projects. The problems change. The playbook works.
         </p>
       </div>
 
