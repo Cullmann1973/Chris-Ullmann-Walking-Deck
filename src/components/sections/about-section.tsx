@@ -210,7 +210,9 @@ export function AboutSection({ focus }: { focus?: string }) {
                     <span className="text-primary">
                       I do both, and that&apos;s what makes the work stick.
                     </span>{" "}
-                    Air Force veteran.
+                    It started on the flight lines in the Air Force, where the standard
+                    was zero-error and the consequences were real. Everything since has
+                    been the same discipline applied to bigger systems.
                   </p>
 
                   {focusMode !== "general" && (
