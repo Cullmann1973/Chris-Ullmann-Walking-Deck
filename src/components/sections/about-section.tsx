@@ -191,8 +191,9 @@ export function AboutSection({ focus }: { focus?: string }) {
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     I&apos;ve spent 25 years doing the same thing in different
-                    wrappers: walking into systems that aren&apos;t working,
-                    engineering the fix, and getting people to actually use it.
+                    wrappers: walking into complex systems, recognizing the
+                    opportunity, building the solution, and getting people to
+                    run with it.
                     That started as an Air Force aerospace technician learning
                     discipline, systems thinking, and how to keep mission-critical
                     equipment running. It evolved into FDA compliance turnarounds,

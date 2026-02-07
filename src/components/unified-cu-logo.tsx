@@ -75,19 +75,15 @@ export function UnifiedCULogo() {
       // Desktop: stays centered
       // Mobile: moves to RIGHT to avoid overlapping name
       // ========================================
-      // Sync with hero section's pinned ScrollTrigger (end: +=150%)
-      // Hero content fades via: opacity = 1 - progress * 2.5
-      // So content is fully gone at progress ~0.4 (40% of 150vh = 60vh)
-      // Map CU motion to that same 0→0.4 window so they move together
+      // CU starts moving on FIRST scroll, completes quickly
+      // Responsive to even small scroll gestures on mobile
       ScrollTrigger.create({
         trigger: "#hero",
         start: "top top",
-        end: "+=150%",
-        scrub: 2,
+        end: "+=60%",
+        scrub: 0.5,
         onUpdate: (self) => {
-          // Remap: CU completes its full journey in the first 40% of scroll
-          // (same window where hero content fades out)
-          const progress = Math.min(self.progress / 0.4, 1);
+          const progress = self.progress;
           const isMobile = window.innerWidth < 768;
 
           // Scale: 1 → 0.2 (shrink to fit in header)
