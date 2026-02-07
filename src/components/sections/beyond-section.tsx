@@ -26,15 +26,16 @@ const sections: BeyondSection[] = [
     pullQuote: "Balance isn't a goal. It's a practice.",
   },
   {
-    id: "reset",
-    title: "The Reset Button",
-    photoLabel: "Photo: Sunset",
+    id: "early-riser",
+    title: "The 4:30 Club",
+    photoLabel: "Photo: Morning",
     image: "/images/hawaii-sunset.jpg",
     content: [
-      "People who do this kind of work, the 4:30 AM mornings, the transformations that never pause, the constant translation between worlds, they burn out. I've watched it happen to some of the best people I've worked with.",
-      "Leslie and I figured out early that sustainability isn't just a supply chain concept. You have to build recovery into your own operating rhythm. For us, that means protecting time for stillness: ocean, sunsets, no Slack notifications.",
-      "Turns out even the Translator needs a place where nothing needs translating.",
+      "My alarm goes off at 4:30 AM. Not because someone told me to. Because the two hours before the world wakes up are the most productive hours I have.",
+      "That's when I learn. New models, new frameworks, new ways to connect AI to problems nobody's solved yet. I taught myself vibe coding in those hours. Built agents. Read papers. Enrolled in Stanford's Generative AI program at 50+ because I couldn't deploy technology I didn't deeply understand.",
+      "The Air Force taught me that discipline isn't a personality trait. It's infrastructure. You build the routine, and the routine builds everything else.",
     ],
+    pullQuote: "The routine builds everything else.",
   },
   {
     id: "why-i-build",
