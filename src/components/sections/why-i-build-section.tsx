@@ -276,7 +276,7 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
       </div>
 
       {/* Rotating titles - positioned to avoid persistent CU logo */}
-      <div className="absolute left-4 sm:left-[90px] md:left-[140px] lg:left-[180px] top-1/2 -translate-y-1/2 z-30">
+      <div className="absolute left-4 sm:left-[90px] md:left-[140px] lg:left-[180px] top-1/2 -translate-y-1/2 z-30 min-h-[50px] min-w-[120px] lg:min-h-[100px] lg:min-w-[300px]">
         {stackLayers.map((item, index) => (
           <div
             key={item.title}
@@ -288,6 +288,8 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
               transformOrigin: "left center",
               top: "50%",
               transform: "translateY(-50%)",
+              // First title visible by default as fallback if GSAP doesn't load
+              ...(index === 0 ? { opacity: 1 } : {}),
             }}
           >
             <span className="text-[36px] sm:text-[48px] md:text-[64px] lg:text-[88px] xl:text-[110px] font-serif text-foreground leading-none">
@@ -300,12 +302,9 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
       {/* Content text - positioned on right side, or below title on mobile */}
       <div
         className="absolute z-30 
-                   bottom-[22%] left-4 right-4
-                   sm:bottom-auto sm:left-auto sm:top-1/2 sm:-translate-y-1/2 sm:right-4 md:right-8 lg:right-12"
-        style={{
-          width: "auto",
-          maxWidth: "320px",
-        }}
+                   bottom-[22%] left-4 right-4 max-w-[320px]
+                   sm:bottom-auto sm:left-auto sm:top-1/2 sm:-translate-y-1/2 sm:right-4 md:right-8
+                   lg:right-auto lg:left-[55%] lg:max-w-[480px] xl:max-w-[520px]"
       >
         {stackLayers.map((item, index) => (
           <div

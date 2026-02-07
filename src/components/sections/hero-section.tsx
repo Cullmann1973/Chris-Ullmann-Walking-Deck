@@ -265,7 +265,7 @@ export function HeroSection({ focus }: { focus?: string }) {
         {/* Hero Content - Below the letters with proper spacing */}
         <div className="hero-content text-center max-w-3xl">
           {/* Tagline */}
-          <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl font-serif text-foreground/80 leading-relaxed mb-6 md:mb-12">
+          <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-serif text-foreground/80 leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line-1 block mb-2">
               Business{" "}
               <span className="tagline-business text-foreground">challenges</span>.{" "}
