@@ -26,16 +26,6 @@ const agentDemos = [
     borderColor: "border-sky-500/30",
   },
   {
-    id: "gold-nugget",
-    name: "Gold Nugget",
-    description:
-      "Benchmarking engine that identifies Golden SKUs and closes performance gaps.",
-    preview: "Discover your top-performing SKUs and benchmark against the best.",
-    demoUrl: "https://cc-gold-standard.vercel.app",
-    color: "from-amber-500/20 to-yellow-500/20",
-    borderColor: "border-amber-500/30",
-  },
-  {
     id: "plant-perfect",
     name: "Plant Perfect",
     description:

@@ -149,7 +149,6 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - Created AI tools including:
   - "Plant Perfect" - OEE analytics companion
   - "BELLA" - Batch & Equipment Line-Level Assistant
-  - "Gold Nugget" - Benchmarking and Golden SKU identification
 - Achieved 30% month-over-month growth in AI adoption, 37x total growth in 6 months
 - Built a 100+ member AI Community of Practice generating ideas bottom-up across the manufacturing network
 - Partnered with Legal, Privacy, and Compliance to develop governance framework before scaling
@@ -348,7 +347,7 @@ Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufact
    - Line-level diagnostics
    - Design-speed optimization
    - Root-cause analytics
-   - Scrap prediction (PULSE, Golden Standard)
+   - Scrap prediction (PULSE)
 
 2. **Quality & Consumer Complaint Reduction**
    - Voice of Consumer → operations linkage
