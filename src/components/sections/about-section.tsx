@@ -190,29 +190,30 @@ export function AboutSection({ focus }: { focus?: string }) {
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    I&apos;ve spent 25 years doing the same thing in different wrappers:
-                    walking into systems that aren&apos;t working, engineering the fix,
-                    and getting people to actually use it. That&apos;s looked like FDA
-                    compliance turnarounds, $49M enterprise transformations, and now
-                    hands-on AI development. The range is the point.
+                    I&apos;ve spent 25 years doing the same thing in different
+                    wrappers: walking into systems that aren&apos;t working,
+                    engineering the fix, and getting people to actually use it.
+                    That started as an Air Force aerospace technician learning
+                    discipline, systems thinking, and how to keep mission-critical
+                    equipment running. It evolved into FDA compliance turnarounds,
+                    a $49M enterprise transformation, and now hands-on AI
+                    development. The throughline is the point.
                   </p>
 
                   <p>
-                    I&apos;ve released $30-35M in working capital through operational
-                    redesign, delivered 170% ROI on an enterprise value chain program,
-                    and built AI solutions at Estee Lauder that gained traction from
-                    the shop floor to the C-suite to external partners like Microsoft.
+                    The numbers tell the story. $30-35M in working capital released
+                    through operational redesign. 170% ROI on an enterprise value
+                    chain program. AI solutions at Estée Lauder that gained
+                    traction from the shop floor to the C-suite to external
+                    partners like Microsoft.
                   </p>
 
                   <p>
-                    Most AI leaders come from pure tech. Most operations leaders never
-                    touch AI.{" "}
+                    Most AI leaders come from pure tech. Most operations leaders
+                    never touch AI.{" "}
                     <span className="text-primary">
                       I do both, and that&apos;s what makes the work stick.
-                    </span>{" "}
-                    It started on the flight lines in the Air Force, where the standard
-                    was zero-error and the consequences were real. Everything since has
-                    been the same discipline applied to bigger systems.
+                    </span>
                   </p>
 
                   {focusMode !== "general" && (
