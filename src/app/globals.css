@@ -298,6 +298,12 @@ body {
   }
 }
 
+@media (min-width: 1600px) {
+  .section-padding {
+    padding: 120px calc((100vw - 1440px) / 2);
+  }
+}
+
 /* Premium button hover effects */
 .btn-primary {
   position: relative;

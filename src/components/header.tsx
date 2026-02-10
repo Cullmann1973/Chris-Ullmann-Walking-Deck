@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
-import { MenuOverlay } from "./menu-overlay";
 
 export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -16,18 +14,6 @@ export function Header() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // Prevent body scroll when menu is open
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isMenuOpen]);
 
   const openChat = () => {
     window.dispatchEvent(new Event("open-chat-widget"));
@@ -51,8 +37,26 @@ export function Header() {
             Christopher <span className="text-primary">U</span>llmann
           </a>
 
-          {/* Right side: Ask My AI pill + Menu */}
-          <div className="flex items-center gap-3 md:gap-4">
+          {/* Right side: Inline nav (md+) + Ask My AI pill */}
+          <div className="flex items-center gap-3 md:gap-6">
+            {/* Inline nav links — hidden on mobile, visible on md+ */}
+            <nav className="hidden md:flex items-center gap-6">
+              {[
+                { label: "About", href: "#about" },
+                { label: "The Stack", href: "#stack" },
+                { label: "Beyond", href: "#beyond" },
+                { label: "AI", href: "#ai" },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-mono tracking-wider text-foreground hover:text-primary transition-colors uppercase"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
             {/* Ask My AI pill */}
             <button
               onClick={openChat}
@@ -65,20 +69,10 @@ export function Header() {
               <Sparkles className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Ask My AI</span>
             </button>
-
-            {/* Menu button — hidden on mobile, visible on md+ */}
-            <button
-              onClick={() => setIsMenuOpen(true)}
-              className="hidden md:block text-sm font-mono tracking-wider text-foreground hover:text-primary transition-colors uppercase"
-              aria-label="Open menu"
-            >
-              Menu
-            </button>
           </div>
         </div>
       </header>
 
-      <MenuOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
     </>
   );
 }

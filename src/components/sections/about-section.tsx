@@ -135,7 +135,7 @@ export function AboutSection({ focus }: { focus?: string }) {
       {/* Large "About" title - flies in from right */}
       <h2
         ref={titleRef}
-        className="absolute top-16 md:top-20 lg:top-24 right-4 md:right-16 lg:right-24 text-4xl md:text-7xl lg:text-8xl font-serif text-foreground/40 pointer-events-none select-none"
+        className="absolute top-16 md:top-20 lg:top-24 right-4 md:right-16 lg:right-24 z-10 text-4xl md:text-7xl lg:text-8xl font-serif text-foreground/40 pointer-events-none select-none"
       >
         About
       </h2>
