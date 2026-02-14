@@ -32,6 +32,9 @@
 /* Dark theme inspired by marchanslin.com */
 :root {
   --radius: 0.5rem;
+  --font-geist-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --font-cormorant: Baskerville, "Times New Roman", Times, serif;
 
   /* Dark backgrounds - alternating */
   --background: #0a0a0a;

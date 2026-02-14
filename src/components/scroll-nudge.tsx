@@ -5,14 +5,13 @@ import { MessageCircle, X } from "lucide-react";
 
 export function ScrollNudge() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return sessionStorage.getItem("scroll-nudge-shown") === "true";
+  });
 
   useEffect(() => {
-    // Check if already shown this session
-    if (sessionStorage.getItem("scroll-nudge-shown")) {
-      setIsDismissed(true);
-      return;
-    }
+    if (isDismissed) return;
 
     const handleScroll = () => {
       const aboutSection = document.getElementById("about");
@@ -20,8 +19,9 @@ export function ScrollNudge() {
 
       const rect = aboutSection.getBoundingClientRect();
       // Trigger when user has scrolled past the about section
-      if (rect.bottom < 0 && !isDismissed) {
+      if (rect.bottom < 0) {
         setIsVisible(true);
+        setIsDismissed(true);
         sessionStorage.setItem("scroll-nudge-shown", "true");
         // Remove scroll listener once triggered
         window.removeEventListener("scroll", handleScroll);
@@ -50,6 +50,7 @@ export function ScrollNudge() {
     e.stopPropagation();
     setIsVisible(false);
     setIsDismissed(true);
+    sessionStorage.setItem("scroll-nudge-shown", "true");
   };
 
   if (!isVisible || isDismissed) return null;
