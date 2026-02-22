@@ -66,7 +66,7 @@ const getResponse = (query: string): string => {
   }
 
   if (q.includes("ai") || q.includes("agent") || q.includes("tool") || q.includes("bella") || q.includes("ella") || q.includes("genai")) {
-    return "I ideated and developed AI solutions that gained support from the shop floor to the C-suite to external partners including Microsoft: BELLA (Batch & Equipment Line-Level Assistant) and Plant Perfect (OEE analytics). I'm piloting 20+ GenAI use cases across manufacturing, quality, and supply chain. Would you like to hear more about either of these?";
+    return "Partnering with IT and Microsoft, I built AI solutions that gained support from the shop floor to the C-suite: ELLA (presented at Microsoft Ignite) and Plant Perfect (OEE analytics). I'm piloting 20+ GenAI use cases across manufacturing, quality, and supply chain. Would you like to hear more about either of these?";
   }
 
   return "I haven't been trained on that data yet. Try asking about my career, AI work, military service, or leadership approach.";

@@ -25,7 +25,7 @@ const stackLayers: StackLayer[] = [
       "Leading the integration of Generative AI into global operations. Internal AI catalyst: directly piloting and scaling capabilities across the supply chain and beyond.",
     whatIBuilt: [
       "20+ GenAI use cases piloted across manufacturing, quality, and supply chain",
-      "AI enablement: 1,000+ people engaged with adoption networks and change management",
+      "AI enablement: activated 1,000+ people on AI, taking them from first exposure to daily use",
       "Transformation Office: 60 projects, ~$100M annually, 5 plants",
       "Stanford AI program, Microsoft partnership, continuous learning pipeline",
     ],
@@ -42,6 +42,7 @@ const stackLayers: StackLayer[] = [
     whatIBuilt: [
       "Program Runway: 170% ROI, $80M+ committed benefits across subcategory strategy, NPL, E2EE, Agility, Packaging, and Value Chain",
       "Program managed the $13.3M Engineering Tech Center build, drove Lipstick Agility expansion ($3.45M, $1.8M/yr savings), deployed digital printing and small-batch manufacturing",
+      "$16.1M Runway Platform with EPAM: custom NPL system consolidating 30+ brand launch processes, used company-wide by Marketing, NPL teams, and R&D",
       "MFG Digital Transformation: assessed current state, aligned leadership, built governance, authored $500M+ E2E roadmap across 4 workstreams and 20+ projects",
     ],
     whatItUnlocked:
@@ -57,13 +58,13 @@ const stackLayers: StackLayer[] = [
       "Modernized ELC's largest regulated manufacturing site. Quality wasn't just compliance: it was a cash flow lever.",
     whatIBuilt: [
       "Lab cycle time: 12 days → 2.7 days",
-      "$3.75M annual inventory savings",
+      "$45M/year working capital released through quality systems redesign",
       "Kotter change model: launched continuous improvement program",
       "$1M saved in 90 days through frontline empowerment",
     ],
     whatItUnlocked:
       "Quality as a business driver, not a cost center. Earned the trust to move into enterprise transformation.",
-    keyMetric: "$3.75M savings",
+    keyMetric: "$45M/yr released",
   },
   {
     id: "manufacturing",

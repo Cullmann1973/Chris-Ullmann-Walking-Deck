@@ -7,10 +7,10 @@ import { ExternalLink, Cpu, MessageCircle, Play } from "lucide-react";
 const agentDemos = [
   {
     id: "bella",
-    name: "BELLA",
+    name: "ELLA",
     description:
-      "Batch & Equipment Line-Level Assistant for operator setups, troubleshooting, and SOPs.",
-    preview: "Ask BELLA about batch setup procedures or equipment troubleshooting steps.",
+      "Equipment Line-Level Assistant for operator setups, troubleshooting, and SOPs. Presented at Microsoft Ignite.",
+    preview: "Ask ELLA about batch setup procedures or equipment troubleshooting steps.",
     demoUrl: "https://ella-demo-app.vercel.app",
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",
@@ -64,6 +64,16 @@ const agentDemos = [
     demoUrl: "https://cc-slide-maestro.vercel.app",
     color: "from-purple-500/20 to-violet-500/20",
     borderColor: "border-purple-500/30",
+  },
+  {
+    id: "inlite-designer",
+    name: "in-lite AI Designer",
+    description:
+      "Upload a yard photo and get a complete outdoor lighting plan: AI vision analysis, product recommendations, electrical calculations, and a dusk render preview.",
+    preview: "Try it live: upload any yard photo and get an instant professional lighting design.",
+    demoUrl: "https://inlite-designer.vercel.app",
+    color: "from-amber-500/20 to-yellow-500/20",
+    borderColor: "border-amber-500/30",
   },
 ];
 
@@ -179,7 +189,7 @@ export function AISection({ focus }: { focus?: string }) {
               Digital Twin
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl">
-              AI agents I&apos;ve ideated and developed for manufacturing operations.
+              AI agents I&apos;ve built partnering with IT and Microsoft for manufacturing operations.
               Some deployed, others in active development. Have a question? Chat with my digital twin.
             </p>
             <button

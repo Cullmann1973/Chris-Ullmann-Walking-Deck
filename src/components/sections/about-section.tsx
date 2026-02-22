@@ -14,9 +14,9 @@ const expertiseWords = [
 ];
 
 const stats = [
-  { value: "$3.75M", label: "Annual inventory savings" },
+  { value: "$45M/yr", label: "Working capital released" },
   { value: "170%", label: "ROI on $49M initiative" },
-  { value: "1,000+", label: "People engaged and empowered" },
+  { value: "1,000+", label: "People activated on AI" },
   { value: "20+", label: "GenAI use cases piloted" },
 ];
 
@@ -202,11 +202,11 @@ export function AboutSection({ focus }: { focus?: string }) {
                   </p>
 
                   <p>
-                    The numbers tell the story. $30-35M in working capital released
+                    The numbers tell the story. $45M/year in working capital released
                     through operational redesign. 170% ROI on an enterprise value
-                    chain program. AI solutions at Estée Lauder that gained
-                    traction from the shop floor to the C-suite to external
-                    partners like Microsoft.
+                    chain program. AI solutions at Estée Lauder, partnering with
+                    IT and Microsoft, that gained traction from the shop floor
+                    to the C-suite.
                   </p>
 
                   <p>
@@ -261,7 +261,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                     ) : (
                       <>
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
-                          GenAI Strategy
+                          AI Strategy, Development and Delivery
                         </span>
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
                           Stanford AI

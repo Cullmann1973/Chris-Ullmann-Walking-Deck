@@ -26,7 +26,7 @@ Leaders at Microsoft, Engineering, and senior business leaders have told me I ha
 - Business-savvy but cannot go deep on the technology
 - Can talk both languages but cannot actually build anything
 
-I do all three. I bridge the gap between what AI can do and what operations actually needs. I engage and empower people on practical AI use, I build POCs myself, and I translate business problems into agent architectures. My work has gotten attention at the CEO level at Estee Lauder, but what excites me most is watching a plant supervisor use something I built to solve a problem they have had for years.
+I do all three. I bridge the gap between what AI can do and what operations actually needs. I activate people on AI, taking them from first exposure to daily use, I build POCs myself, and I translate business problems into agent architectures. I'm driving AI product development from concept through deployment, partnering with IT and providers like Microsoft to deliver tools people actually use. My work has gotten attention at the CEO level at Estee Lauder, but what excites me most is watching a plant supervisor use something I built to solve a problem they have had for years.
 
 ## Why AI Is Where I Belong
 
@@ -36,7 +36,7 @@ AI is where all of that converges. A car engine, you learn it once and you are d
 
 AI is my infinite canvas. The toolset keeps growing. The problems never run out. For someone wired the way I am, that is why this field pulls me so hard. I get up at 4:30 AM to learn, I spend evenings watching what is new, I taught myself vibe coding before I knew anyone else doing it. Not because someone told me to. Because I had to understand it.
 
-And the reason I have been able to engage 1,000+ people on AI is not because I mandate adoption. It is because I know how to connect with people, understand the type of work they do, listen to their challenges, and then connect AI to what matters to them. I give people the spark, and then they want to explore further on their own. That is the real way you drive transformation: not top-down mandates, but bottom-up excitement.
+And the reason I have been able to activate 1,000+ people on AI, taking them from first exposure to daily use, is not because I mandate adoption. It is because I know how to connect with people, understand the type of work they do, listen to their challenges, and then connect AI to what matters to them. I give people the spark, and then they want to explore further on their own. That is the real way you drive transformation: not top-down mandates, but bottom-up excitement.
 
 ## How I Work
 
@@ -47,7 +47,7 @@ My approach is consistent across every challenge:
 4. Build governance and sustainability into the solution from day one
 5. Transfer capability so teams can sustain it without me
 
-I use Kotter's 8-Step Change Model as my transformation framework, applied at both Coty (as a certified Leading Bold Change facilitator) and at Estee Lauder. I partnered with Legal, Privacy, and Compliance to develop governance framework before scaling. I build governance before scaling.
+I use Kotter's 8-Step Change Model as my transformation framework, applied at both Coty (as a certified Leading Bold Change facilitator) and at Estee Lauder, where I built a ground-up adoption program rooted in Kotter's Leading Bold Change. I co-developed governance frameworks with Legal, Compliance, and value streams before scaling. I build governance before scaling.
 
 I am a practitioner, not just a strategist. I build real things: POCs, pilots, working tools. I am in the weeds with teams, not just presenting slide decks.
 
@@ -58,9 +58,9 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 - Pioneering GenAI integration into manufacturing operations
 - Created "Strategy to Action" operating rhythm
 - Replaced static presentations with AI-generated narrative packs, freeing 250+ leadership hours per quarter
-- Built governance before scaling: partnered with Legal, Privacy, and Compliance to develop governance framework before scaling AI tools across the organization
-- Ideated and developed AI solutions that gained support from the shop floor to the C-suite to external partners including Microsoft
-- Every AI project ties back to a real business outcome, not flashy demos but tools people actually use
+- Co-developed governance frameworks with Legal, Compliance, and value streams before scaling AI tools across the organization
+- Partnering with IT and Microsoft, built AI solutions that gained support from the shop floor to the C-suite; presented the ELLA use case at Microsoft Ignite
+- Driving AI product development from concept through deployment, partnering with IT and providers like Microsoft to deliver tools people actually use
 - Work directly with people on making AI useful in day-to-day jobs
 
 ## Career History
@@ -70,6 +70,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
   - Managed Program Runway: $49M+ enterprise value chain transformation under Leading Beauty Forward, 170% ROI, 6 workstreams across MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford, with $80M+ in committed benefits
   - Delivered 170% ROI with $80M+ in committed benefits: $32M incremental revenue from subcategory enablement, >$30M COGs from Agility, >$20M COGs from E2EE with 25% Right First Time improvement, and $50M-$100M potential from NPL Fast Fashion track
   - Program managed the $13.3M Engineering Tech Center build (office + equipment), drove Lipstick Agility expansion ($3.45M, $1.8M/yr COGs), and deployed digital printing and small-batch manufacturing capabilities
+  - $16.1M Runway Platform with EPAM: custom NPL system consolidating 30+ brand launch processes, used company-wide by Marketing, NPL teams, and R&D
   - Authored and sponsored $500M+ Integrated Manufacturing Transformation roadmap: 4 workstreams, 20+ projects
   - Delivered $1.4M run-rate savings from automation and cobots; $7M destruction cost avoidance
   - $7M destruction cost avoidance
@@ -77,10 +78,9 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 
 - **Executive Director, Quality Assurance** (2015-2018)
   - Reduced lab testing turnaround from 12 days to 2.7 days (~80% reduction)
-  - Achieved $3.75M annual inventory savings
+  - Released $45M/year in working capital by shrinking Quality Hold window
   - Achieved 90% reduction in audit observations
   - Launched continuous improvement program generating $1M savings in 90 days
-  - Released $30-35M in annual inventory working capital by shrinking Quality Hold window
   - Products reached distribution centers nearly two weeks faster
 
 ### Coty Inc. (2011-2015)
@@ -145,13 +145,14 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
 ## AI & Digital Transformation
 - Leading AI adoption in Manufacturing at ELC, with significant influence across Supply Chain, Marketing, R&D, and Engineering
 - Piloting 20+ GenAI use cases across manufacturing, quality, engineering, supply chain, and operations
-- Engaged and empowered 1,000+ people on practical AI use across audiences from 10 to 600+, with guardrails and governance built in from the start
+- Activated 1,000+ people on AI, taking them from first exposure to daily use, across audiences from 10 to 600+, with guardrails and governance built in from the start
 - Created AI tools including:
   - "Plant Perfect" - OEE analytics companion
-  - "BELLA" - Batch & Equipment Line-Level Assistant
-- Drove 30% month-over-month growth in active AI users (37x total growth in 6 months) through enablement networks, role-based training, and change management
-- Built and grew a 100+ member AI Community of Practice; drove 30% month-over-month growth in active AI users (37x total growth in 6 months) through enablement networks, role-based training, and change management
-- Partnered with Legal, Privacy, and Compliance to develop governance framework before scaling AI tools across the organization
+  - "ELLA" - Equipment Line-Level Assistant (presented at Microsoft Ignite)
+- Drove 30% month-over-month growth in active AI users (37x total growth in 9 months) through a ground-up adoption program rooted in Kotter's Leading Bold Change
+- Built and grew a 100+ member AI Community of Practice; drove 30% month-over-month growth in active AI users (37x total growth in 9 months) through enablement networks, role-based training, and change management
+- Co-developed governance frameworks with Legal, Compliance, and value streams before scaling AI tools across the organization
+- Presented the ELLA use case at Microsoft Ignite
 - Every project ties back to a real business outcome
 
 ## Personal
@@ -225,7 +226,7 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
 ### Business Impact
 
 1. **Massive Working Capital Release**
-   - Released $30-35M in annual inventory working capital
+   - Released $45M/year in working capital
    - Products spent far less time waiting on testing in Quality Hold
 
 2. **Accelerated Supply Chain Velocity**
@@ -237,7 +238,7 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
    - Materially improved ROA by shrinking the Quality Hold window
 
 4. **Lean Operating Model Shift**
-   - $3.75M annual inventory savings
+   - $45M/year working capital released
    - Reduced overturned lab OOS by >80%
    - Contributed to ~90% reduction in audit observations at the site
 
@@ -257,7 +258,7 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
    - Standardized digital recordkeeping
    - Sustained lab cycle-time velocity improvements
 
-### How the $3.75M Annual Savings Were Generated
+### How the $45M/Year Working Capital Release Was Achieved
 
 1. **Eliminated Excess Inventory Carry Costs**
    - Products sat dramatically less time in Quality Hold
@@ -281,7 +282,7 @@ Reduced Quality Testing cycle time from 12 days to 2.7 days (~80% reduction).
    - Gained "speed capacity" without new investment
 
 ### Summary
-"Led a Lean transformation of Quality Testing, reducing cycle time from 12 days to 2.7 days (~80%), unlocking $30-35M in working capital, accelerating supply chain velocity by nearly two weeks, and strengthening ROA. Implemented new analytics, CAPA rigor, and lab operating standards that reduced overturned OOS by >80% and supported a ~90% drop in audit observations."
+"Led a Lean transformation of Quality Testing, reducing cycle time from 12 days to 2.7 days (~80%), unlocking $45M/year in working capital, accelerating supply chain velocity by nearly two weeks, and strengthening ROA. Implemented new analytics, CAPA rigor, and lab operating standards that reduced overturned OOS by >80% and supported a ~90% drop in audit observations."
 
 ## Deep Dive: Coty Manufacturing Consolidation & Capability Transfer
 
@@ -358,7 +359,7 @@ Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufact
    - Automatic validation documentation
    - Campaigning optimization tools
 
-4. **Line-Assistant / Troubleshooting Agents (BELLA)**
+4. **Line-Assistant / Troubleshooting Agents (ELLA)**
    - Real-time Operator/Mechanic guidance
    - Integrated SOP, manual, parts, and torque data
 
@@ -376,7 +377,7 @@ Architected, piloted, and scaled a portfolio of 20+ AI use cases across manufact
 ### How It Was Built
 - 100+ member AI Community of Practice generating ideas bottom-up across the manufacturing network
 - Gallery of use-case tiles across multiple scenarios
-- BELLA Workshop: "We have 20 different things we're inputting" into agentic-AI workflows
+- ELLA Workshop: "We have 20 different things we're inputting" into agentic-AI workflows
 `;
 
 export const systemPrompt = `You are Chris Ullmann's AI, a digital representation that answers questions about his career, experience, and leadership philosophy. You are accessed via the "Meet My AI" feature on his portfolio site.

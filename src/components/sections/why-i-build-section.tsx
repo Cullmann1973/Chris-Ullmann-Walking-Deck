@@ -23,14 +23,14 @@ const stackLayers: StackLayer[] = [
     period: "2018-2024",
     role: "Executive Director, PMO, Supply Chain and Digital Transformation",
     description:
-      "Managed Program Runway: $49M+ enterprise value chain transformation, 170% ROI, 6 workstreams, $80M+ in committed benefits. Program managed the $13.3M Engineering Tech Center build, drove Lipstick Agility expansion ($3.45M, $1.8M/yr savings).",
+      "Managed Program Runway: $49M+ enterprise value chain transformation, 170% ROI, 6 workstreams, $80M+ in committed benefits. Built the $16.1M Runway Platform with EPAM, consolidating 30+ brand launch processes company-wide.",
   },
   {
     title: "Quality",
     period: "2015-2018",
     role: "Executive Director, Quality Assurance",
     description:
-      "$3.75M annual savings through quality systems transformation. Transformed quality from cost center to competitive advantage.",
+      "$45M/year working capital released through quality systems transformation. Transformed quality from cost center to competitive advantage.",
   },
   {
     title: "Operations",

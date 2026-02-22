@@ -27,7 +27,7 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
       { value: "$16M → $200K", label: "inventory turnaround" },
       { value: "12 → 2.7 days", label: "cycle time reduction" },
       { value: "170% ROI", label: "$49M initiative" },
-      { value: "1,000+ engaged", label: "AI enablement" },
+      { value: "1,000+ activated", label: "AI enablement" },
     ],
     sectionOrder: [
       "hero",
@@ -46,7 +46,7 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
     label: "AI Transformation",
     heroResolution: "I'm the BRIDGE between vision and adoption.",
     metrics: [
-      { value: "1,000+", label: "people engaged and empowered" },
+      { value: "1,000+", label: "people activated on AI" },
       { value: "20+", label: "GenAI use cases deployed" },
       { value: "30%", label: "month-over-month adoption growth" },
       { value: "170% ROI", label: "transformation programs" },
@@ -62,7 +62,7 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
       "contact",
     ],
     positioningLine:
-      "I don't just strategize about AI. I build POCs, engage and empower thousands, and scale adoption from the plant floor to the CEO.",
+      "I don't just strategize about AI. I build POCs, activate thousands, and scale adoption from the plant floor to the CEO.",
   },
   "supply-chain": {
     label: "Supply Chain Transformation",
@@ -93,7 +93,7 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
     metrics: [
       { value: "90%", label: "audit observation reduction" },
       { value: "12 → 2.7 days", label: "lab cycle time" },
-      { value: "$3.75M", label: "annual inventory savings" },
+      { value: "$45M/yr", label: "working capital released" },
       { value: "$16M → $200K", label: "quarantine recovery" },
     ],
     sectionOrder: [

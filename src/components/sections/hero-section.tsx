@@ -9,7 +9,7 @@ const defaultMetrics = [
   { value: "$16M → $200K", label: "inventory turnaround" },
   { value: "12 → 2.7 days", label: "cycle time reduction" },
   { value: "170% ROI", label: "$49M initiative" },
-  { value: "1,000+ engaged", label: "AI enablement" },
+  { value: "1,000+ activated", label: "AI enablement" },
 ];
 
 export function HeroSection({ focus }: { focus?: string }) {
