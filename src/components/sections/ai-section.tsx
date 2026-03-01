@@ -201,23 +201,6 @@ export function AISection({ focus }: { focus?: string }) {
             </button>
           </div>
 
-          {/* Agent demos grid */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-primary" />
-              </div>
-              <h3 className="text-xl font-serif text-foreground">
-                AI Agents I&apos;ve Created
-              </h3>
-            </div>
-
-            <div className="agents-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {agentDemos.map((agent) => (
-                <AgentCard key={agent.id} agent={agent} />
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
