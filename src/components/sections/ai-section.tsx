@@ -42,11 +42,11 @@ const agentDemos: AgentDemo[] = [
     id: "plant-perfect",
     name: "Plant Perfect",
     description:
-      "HAL 9000-themed manufacturing KPI dashboard for OEE analysis and plant strategy.",
-    preview: "Explore OEE metrics, downtime analysis, and plant performance dashboards.",
+      "Global manufacturing command center. Select plants worldwide to access facility-specific analytics and strategic intelligence.",
+    preview: "Navigate global facilities, compare KPI performance, and open plant intelligence dashboards.",
     demoUrl: "/plant-perfect",
-    color: "from-red-500/20 to-rose-500/20",
-    borderColor: "border-red-500/30",
+    color: "from-cyan-500/20 to-sky-500/20",
+    borderColor: "border-cyan-500/30",
   },
   {
     id: "consumer-pulse",
