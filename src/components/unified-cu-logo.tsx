@@ -146,13 +146,13 @@ export function UnifiedCULogo() {
     >
       <div className="flex items-end">
         <span
-          className="unified-letter-c font-serif text-foreground leading-none select-none"
+          className="unified-letter-c cu-logo-font text-foreground leading-none select-none"
           style={{ fontSize: "clamp(110px, 24.2vh, 198px)" }}
         >
           C
         </span>
         <span
-          className="unified-letter-u font-serif text-primary leading-none select-none"
+          className="unified-letter-u cu-logo-font text-primary leading-none select-none"
           style={{ fontSize: "clamp(110px, 24.2vh, 198px)" }}
         >
           U

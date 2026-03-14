@@ -16,35 +16,35 @@ const stackLayers: StackLayer[] = [
     period: "2024-Present",
     role: "Executive Director, AI Transformation",
     description:
-      "Leading the integration of Generative AI into global operations. Not just advising: serving as the internal AI catalyst, directly piloting and scaling capabilities across the supply chain and beyond.",
+      "Leading AI transformation across global manufacturing. 60 projects, ~$100M annually, 5 plants. Built governance frameworks with Legal and Compliance before scaling. Established a 100+ member AI Community of Practice. ELLA, our line-level manufacturing assistant, presented at Microsoft Ignite.",
   },
   {
     title: "Programs",
     period: "2018-2024",
     role: "Executive Director, PMO, Supply Chain and Digital Transformation",
     description:
-      "Managed Program Runway: $49M+ enterprise value chain transformation, 170% ROI, 6 workstreams, $80M+ in committed benefits. Built the $16.1M Runway Platform with EPAM, consolidating 30+ brand launch processes company-wide.",
+      "Managed Program Runway: $49M+ enterprise value chain transformation at 170% ROI across MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford. Authored the $500M+ Integrated Manufacturing Transformation roadmap. Program managed $13.3M Engineering Tech Center build.",
   },
   {
     title: "Quality",
     period: "2015-2018",
     role: "Executive Director, Quality Assurance",
     description:
-      "$45M/year working capital released through quality systems transformation. Transformed quality from cost center to competitive advantage.",
+      "Initiated and drove a global Quality organization restructure. Transformed reactive quality control into proactive quality assurance across the largest regulated manufacturing site in North America. Built continuous improvement programs using Kotter and Lean methodologies. Released $45M/year in working capital through systems redesign.",
   },
   {
     title: "Operations",
     period: "2002-2015",
     role: "Manufacturing & Operations Leadership",
     description:
-      "Owned quality and compliance workstream for $21.7M multi-site consolidation delivering $39M first-year savings. Optimized 70-person quality org to 42, established full FDA audit readiness, and managed $300M+ in QVC product quality.",
+      "Built quality systems from scratch across pharmaceutical, OTC, cosmetic, and nutraceutical manufacturing. Led $21.7M multi-site plant consolidation delivering $39M first-year savings. Restructured 70-person quality organization. Work featured in Harvard Business Review. Lean Six Sigma, Kaizen, PDCA daily management.",
   },
   {
     title: "Foundation",
     period: "1992-2002",
     role: "USAF Veteran + B.S. Biology",
     description:
-      "Technical precision and systematic thinking. The foundation everything else is built on.",
+      "USAF Aerospace Ground Equipment technician. Operation Provide Comfort II. Two Achievement Medals. Then B.S. Biology while working full-time. The zero-defect mentality and systematic thinking that everything else is built on.",
   },
 ];
 
@@ -63,8 +63,7 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
 
     const ctx = gsap.context(() => {
       // Total scroll distance for entire animation
-      // Reduced to 600% for better pacing - still premium but not tedious
-      const totalScrollLength = "600%";
+      const totalScrollLength = "400%";
 
       // Pin the section
       ScrollTrigger.create({
@@ -72,7 +71,7 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
         start: "top top",
         end: `+=${totalScrollLength}`,
         pin: true,
-        scrub: 2.5, // Higher scrub for very smooth feel
+        scrub: 1.5,
       });
 
       // Create a single master timeline for all animations
@@ -81,7 +80,7 @@ export function WhyIBuildSection({ focus }: { focus?: string }) {
           trigger: section,
           start: "top top",
           end: `+=${totalScrollLength}`,
-          scrub: 3, // Very high scrub value for slow, deliberate response
+          scrub: 1.5,
         },
       });
 

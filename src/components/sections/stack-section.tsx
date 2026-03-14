@@ -22,12 +22,13 @@ const stackLayers: StackLayer[] = [
     period: "2024–Present",
     role: "Executive Director, AI Transformation & Manufacturing PMO, The Estée Lauder Companies",
     context:
-      "Leading the integration of Generative AI into global operations. Internal AI catalyst: directly piloting and scaling capabilities across the supply chain and beyond.",
+      "Leading AI transformation across global manufacturing with governance, capability building, and enterprise execution.",
     whatIBuilt: [
-      "20+ GenAI use cases piloted across manufacturing, quality, and supply chain",
-      "AI enablement: activated 1,000+ people on AI, taking them from first exposure to daily use",
       "Transformation Office: 60 projects, ~$100M annually, 5 plants",
-      "Stanford AI program, Microsoft partnership, continuous learning pipeline",
+      "Governance frameworks built with Legal and Compliance before scaling",
+      "Activated 1,000+ people on AI through structured adoption programs",
+      "100+ member AI Community of Practice established for peer-led capability growth",
+      "ELLA (line-level manufacturing assistant) presented at Microsoft Ignite as enterprise AI adoption case study",
     ],
     whatItUnlocked:
       "Enterprise-wide AI transformation leadership. Fluent in both the technical and business languages.",
@@ -38,12 +39,12 @@ const stackLayers: StackLayer[] = [
     period: "2018–2024",
     role: "Executive Director, Program Management, Global Supply Chain, The Estée Lauder Companies",
     context:
-      "Managed Program Runway: $49M+ enterprise value chain transformation, 170% ROI, 6 workstreams across MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford, with $80M+ in committed benefits.",
+      "Managed Program Runway across global brands and functions, connecting portfolio strategy to measurable enterprise value.",
     whatIBuilt: [
-      "Program Runway: 170% ROI, $80M+ committed benefits across subcategory strategy, NPL, E2EE, Agility, Packaging, and Value Chain",
-      "Program managed the $13.3M Engineering Tech Center build, drove Lipstick Agility expansion ($3.45M, $1.8M/yr savings), deployed digital printing and small-batch manufacturing",
-      "$16.1M Runway Platform with EPAM: custom NPL system consolidating 30+ brand launch processes, used company-wide by Marketing, NPL teams, and R&D",
-      "MFG Digital Transformation: assessed current state, aligned leadership, built governance, authored $500M+ E2E roadmap across 4 workstreams and 20+ projects",
+      "Program Runway delivered $49M+ enterprise value chain transformation at 170% ROI",
+      "Authored the $500M+ Integrated Manufacturing Transformation roadmap across four workstreams",
+      "Program managed the $13.3M Engineering Tech Center build",
+      "Aligned MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford teams around shared digital operating models",
     ],
     whatItUnlocked:
       "Enterprise-scale transformation credibility. Proved I could take a $49M+ portfolio from chaos to 170% ROI, build permanent manufacturing capabilities, and align C-suite sponsors across the biggest beauty brands in the world.",
@@ -55,12 +56,12 @@ const stackLayers: StackLayer[] = [
     period: "2015–2018",
     role: "Executive Director, Quality Assurance, The Estée Lauder Companies",
     context:
-      "Modernized ELC's largest regulated manufacturing site. Quality wasn't just compliance: it was a cash flow lever.",
+      "Initiated and led a global Quality organization restructure, shifting quality from reactive control to proactive assurance.",
     whatIBuilt: [
-      "Lab cycle time: 12 days → 2.7 days",
+      "Global quality organization restructure aligned teams to risk, compliance, and business priorities",
+      "Regulatory compliance buildout across FDA and GMP expectations at enterprise scale",
+      "Continuous improvement program built with Kotter change management and Lean methodologies",
       "$45M/year working capital released through quality systems redesign",
-      "Kotter change model: launched continuous improvement program",
-      "$1M saved in 90 days through frontline empowerment",
     ],
     whatItUnlocked:
       "Quality as a business driver, not a cost center. Earned the trust to move into enterprise transformation.",
@@ -72,13 +73,13 @@ const stackLayers: StackLayer[] = [
     period: "2002–2015",
     role: "Quality & Operations Leadership at Coty, EI Pharma, Leiner Health Products",
     context:
-      "13 years across cosmetics, pharmaceuticals, and nutraceuticals. Owned quality and compliance workstream for $21.7M multi-site consolidation, built and optimized a 70-person quality organization, and established full FDA audit readiness through systematic compliance buildout.",
+      "Built and led manufacturing quality systems across pharmaceutical, OTC, cosmetic, and nutraceutical operations.",
     whatIBuilt: [
-      "Coty consolidation: $21.7M capex, $39M first-year savings, 70→42 person org (40% reduction, 39% productivity gain)",
-      "FDA readiness: built a complete 21 CFR 210/211 compliance program, from gap assessment through culture change to full audit readiness",
-      "QVC quality: $300M+ channel revenue, drove returns from 9.3% to 7.8%",
-      "Supplier management redesign: incidents down 60%",
-      "Leiner: quarantine inventory $16M → $200K across 5 plants",
+      "$21.7M multi-site consolidation and plant closure program delivered $39M first-year savings",
+      "Quality management systems built from scratch across regulated manufacturing environments",
+      "Lean and Kaizen practices embedded into day-to-day operating rhythms",
+      "Supplier quality program redesigned to improve reliability and risk visibility",
+      "Transformation work featured in Harvard Business Review",
     ],
     whatItUnlocked:
       "Deep operational credibility, HBR-recognized change leadership, and a repeatable playbook: chaos → assessment → alignment → structure → execution.",
@@ -90,11 +91,11 @@ const stackLayers: StackLayer[] = [
     period: "1992–2002",
     role: "USAF Veteran (AGE Technician) + B.S. Biology, Queens University of Charlotte",
     context:
-      "Military discipline plus scientific literacy. The foundation everything else is built on.",
+      "USAF service and scientific training established the zero-defect mentality and systems thinking behind every later transformation.",
     whatIBuilt: [
-      "USAF: Aerospace Ground Equipment, 24/7 ops, zero-defect mentality",
-      "Operation Provide Comfort: two Achievement Medals",
-      "B.S. Biology: bridged electromechanical skills with life sciences",
+      "USAF Aerospace Ground Equipment technician in 24/7 mission-critical operations",
+      "Operation Provide Comfort II service with two Achievement Medals",
+      "Completed B.S. Biology while working full-time, blending technical and life-science rigor",
     ],
     whatItUnlocked:
       "A permanent operating system: precision under pressure, systematic thinking, dual technical literacy.",
@@ -118,16 +119,16 @@ export function StackSection({ focus }: { focus?: string }) {
       // Section title animation
       gsap.fromTo(
         ".stack-title",
-        { y: 40, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
@@ -135,17 +136,17 @@ export function StackSection({ focus }: { focus?: string }) {
       // Accordion items stagger
       gsap.fromTo(
         ".accordion-item",
-        { y: 30, opacity: 0 },
+        { y: 25, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power2.out",
+          stagger: 0.08,
+          ease: "none",
           scrollTrigger: {
             trigger: ".accordion-container",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );

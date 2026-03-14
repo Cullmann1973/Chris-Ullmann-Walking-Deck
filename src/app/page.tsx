@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { UnifiedCULogo } from "@/components/unified-cu-logo";
 import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
+import { WhatIDeliverSection } from "@/components/sections/what-i-deliver-section";
 import { RolesRevealSection } from "@/components/sections/roles-reveal-section";
 import { WhyIBuildSection } from "@/components/sections/why-i-build-section";
 import { StackSection } from "@/components/sections/stack-section";
@@ -85,6 +86,7 @@ function HomeContent() {
     sections.push(<Component key={id} focus={mode} />);
     if (id === "about") {
       sections.push(<ProofCallout key="proof-callout" />);
+      sections.push(<WhatIDeliverSection key="what-i-deliver" focus={mode} />);
     }
   });
 

@@ -62,16 +62,16 @@ export function BeyondSection({ focus }: { focus?: string }) {
       // Section title animation with underline draw
       gsap.fromTo(
         ".beyond-main-title",
-        { y: 40, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
@@ -82,12 +82,12 @@ export function BeyondSection({ focus }: { focus?: string }) {
         { scaleX: 0 },
         {
           scaleX: 1,
-          duration: 0.8,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: ".beyond-main-title",
-            start: "top 80%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
@@ -100,16 +100,16 @@ export function BeyondSection({ focus }: { focus?: string }) {
         // Subsection header with underline
         gsap.fromTo(
           `${sectionEl} .subsection-title`,
-          { y: 30, opacity: 0 },
+          { y: 25, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            duration: 0.6,
-            ease: "power2.out",
+            ease: "none",
             scrollTrigger: {
               trigger: sectionEl,
               start: "top 85%",
-              toggleActions: "play none none reverse",
+              end: "top 60%",
+              scrub: 1.5,
             },
           }
         );
@@ -120,12 +120,12 @@ export function BeyondSection({ focus }: { focus?: string }) {
           { scaleX: 0, transformOrigin: "left center" },
           {
             scaleX: 1,
-            duration: 0.8,
-            ease: "power2.out",
+            ease: "none",
             scrollTrigger: {
               trigger: sectionEl,
               start: "top 85%",
-              toggleActions: "play none none reverse",
+              end: "top 60%",
+              scrub: 1.5,
             },
           }
         );
@@ -133,17 +133,17 @@ export function BeyondSection({ focus }: { focus?: string }) {
         // Staggered paragraph fade-ins
         gsap.fromTo(
           `${sectionEl} .content-paragraph`,
-          { y: 25, opacity: 0 },
+          { y: 20, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            duration: 0.6,
-            stagger: 0.2,
-            ease: "power2.out",
+            stagger: 0.15,
+            ease: "none",
             scrollTrigger: {
               trigger: sectionEl,
               start: "top 80%",
-              toggleActions: "play none none reverse",
+              end: "top 50%",
+              scrub: 1.5,
             },
           }
         );
@@ -153,17 +153,16 @@ export function BeyondSection({ focus }: { focus?: string }) {
         if (pullQuoteEl) {
           gsap.fromTo(
             pullQuoteEl,
-            { y: 20, opacity: 0, scale: 0.98 },
+            { y: 15, opacity: 0 },
             {
               y: 0,
               opacity: 1,
-              scale: 1,
-              duration: 0.8,
-              ease: "power2.out",
+              ease: "none",
               scrollTrigger: {
                 trigger: pullQuoteEl,
-                start: "top 90%",
-                toggleActions: "play none none reverse",
+                start: "top 85%",
+                end: "top 60%",
+                scrub: 1.5,
               },
             }
           );
@@ -174,50 +173,49 @@ export function BeyondSection({ focus }: { focus?: string }) {
         if (afterQuoteEl) {
           gsap.fromTo(
             afterQuoteEl,
-            { y: 20, opacity: 0 },
+            { y: 15, opacity: 0 },
             {
               y: 0,
               opacity: 1,
-              duration: 0.6,
-              ease: "power2.out",
+              ease: "none",
               scrollTrigger: {
                 trigger: afterQuoteEl,
-                start: "top 90%",
-                toggleActions: "play none none reverse",
+                start: "top 85%",
+                end: "top 60%",
+                scrub: 1.5,
               },
             }
           );
         }
 
-        // Photo placeholder animation - Apple-style scale + fade
+        // Photo reveal — subtle scale + fade tied to scroll
         if (photoEl) {
-          // Initial photo reveal with subtle animation
           gsap.fromTo(
             photoEl,
-            { scale: 0.92, opacity: 0, y: 30 },
+            { scale: 0.95, opacity: 0, y: 20 },
             {
               scale: 1,
               opacity: 1,
               y: 0,
-              duration: 1.2,
-              ease: "power3.out",
+              ease: "none",
               scrollTrigger: {
                 trigger: photoEl,
                 start: "top 85%",
-                toggleActions: "play none none reverse",
+                end: "top 55%",
+                scrub: 1.5,
               },
             }
           );
 
           // Gentle parallax scroll effect
           gsap.to(photoEl, {
-            yPercent: 8,
+            yPercent: 6,
             ease: "none",
             scrollTrigger: {
               trigger: photoEl,
               start: "top bottom",
               end: "bottom top",
-              scrub: 2,
+              scrub: 1.5,
             },
           });
         }
@@ -226,16 +224,16 @@ export function BeyondSection({ focus }: { focus?: string }) {
       // Final quote animation
       gsap.fromTo(
         ".beyond-final-quote",
-        { scale: 0.95, opacity: 0 },
+        { opacity: 0, y: 20 },
         {
-          scale: 1,
           opacity: 1,
-          duration: 1,
-          ease: "power2.out",
+          y: 0,
+          ease: "none",
           scrollTrigger: {
             trigger: ".beyond-final-quote",
             start: "top 85%",
-            toggleActions: "play none none reverse",
+            end: "top 60%",
+            scrub: 1.5,
           },
         }
       );
@@ -264,7 +262,7 @@ export function BeyondSection({ focus }: { focus?: string }) {
           </div>
 
           {/* Subsections with photos */}
-          <div className="space-y-32">
+          <div className="space-y-20 md:space-y-24">
             {sections.map((section, index) => (
               <div
                 key={section.id}

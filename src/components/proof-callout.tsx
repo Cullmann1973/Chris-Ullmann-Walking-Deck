@@ -13,16 +13,16 @@ export function ProofCallout() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         calloutRef.current,
-        { y: 20, opacity: 0 },
+        { y: 15, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: calloutRef.current,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
+            end: "top 60%",
+            scrub: 1.5,
           },
         }
       );

@@ -1,19 +1,32 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
+import Link from "next/link";
 import { gsap, ScrollTrigger } from "../gsap-provider";
-import { ExternalLink, Cpu, MessageCircle, Play } from "lucide-react";
+import { ExternalLink, Cpu, MessageCircle } from "lucide-react";
 
-const agentDemos = [
+interface AgentDemo {
+  id: string;
+  name: string;
+  description: string;
+  preview: string;
+  demoUrl: string;
+  color: string;
+  borderColor: string;
+  badge?: string;
+}
+
+const agentDemos: AgentDemo[] = [
   {
     id: "bella",
     name: "ELLA",
     description:
       "Equipment Line-Level Assistant for operator setups, troubleshooting, and SOPs. Presented at Microsoft Ignite.",
     preview: "Ask ELLA about batch setup procedures or equipment troubleshooting steps.",
-    demoUrl: "https://ella-demo-app.vercel.app",
+    demoUrl: "/ella",
     color: "from-pink-500/20 to-rose-500/20",
     borderColor: "border-pink-500/30",
+    badge: "Featured at Microsoft Ignite",
   },
   {
     id: "supplier-intel",
@@ -31,7 +44,7 @@ const agentDemos = [
     description:
       "HAL 9000-themed manufacturing KPI dashboard for OEE analysis and plant strategy.",
     preview: "Explore OEE metrics, downtime analysis, and plant performance dashboards.",
-    demoUrl: "https://cc-plant-perfect.vercel.app",
+    demoUrl: "/plant-perfect",
     color: "from-red-500/20 to-rose-500/20",
     borderColor: "border-red-500/30",
   },
@@ -77,51 +90,63 @@ const agentDemos = [
   },
 ];
 
-function AgentCard({ agent }: { agent: typeof agentDemos[number] }) {
-  const [showPreview, setShowPreview] = useState(false);
-
-  return (
-    <div
-      className={`agent-card group relative p-4 rounded-xl border ${agent.borderColor} bg-gradient-to-br ${agent.color} transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-black/20 overflow-hidden`}
-      onMouseEnter={() => setShowPreview(true)}
-      onMouseLeave={() => setShowPreview(false)}
-      onClick={() => setShowPreview((prev) => !prev)}
-    >
-      <div className="flex items-center justify-between mb-1.5 gap-2">
-        <h4 className="font-semibold text-foreground text-sm">{agent.name}</h4>
+function AgentCard({ agent }: { agent: AgentDemo }) {
+  const isInternal = agent.demoUrl.startsWith("/");
+  const cardContent = (
+    <>
+      {/* Icon + Name */}
+      <div className="mb-3">
+        <div className="flex items-center gap-3">
+          <div
+            className={`w-8 h-8 rounded-lg bg-gradient-to-br ${agent.color} flex items-center justify-center border ${agent.borderColor}`}
+          >
+            <Cpu className="w-4 h-4 text-foreground/80" />
+          </div>
+          <h4 className="font-medium text-foreground text-sm tracking-tight">
+            {agent.name}
+          </h4>
+          {!isInternal && (
+            <ExternalLink className="w-3 h-3 text-muted-foreground/50 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />
+          )}
+        </div>
+        {agent.badge && (
+          <span className="mt-2 inline-flex px-2 py-0.5 rounded-full text-[10px] font-mono tracking-wide uppercase border border-primary/30 bg-primary/10 text-primary">
+            {agent.badge}
+          </span>
+        )}
       </div>
-      <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+
+      {/* Description */}
+      <p className="text-xs text-muted-foreground leading-relaxed">
         {agent.description}
       </p>
+    </>
+  );
 
-      {/* Preview tooltip - shows on hover (desktop) or tap (mobile) */}
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-out ${
-          showPreview ? "max-h-20 opacity-100 mb-3" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="px-3 py-2 rounded-lg bg-black/30 border border-white/5">
-          <p className="text-xs text-foreground/70 italic leading-relaxed">
-            💡 {agent.preview}
-          </p>
-        </div>
-      </div>
-
-      {/* Prominent Try Demo button */}
-      <a
+  if (isInternal) {
+    return (
+      <Link
         href={agent.demoUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg
-                   bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/40
-                   text-xs font-medium text-primary hover:text-primary/90
-                   transition-all duration-200 group/btn"
+        className="agent-card group relative p-5 rounded-xl border border-white/10 bg-white/[0.03] 
+                   hover:bg-white/[0.06] hover:border-primary/30 
+                   transition-all duration-300 block"
       >
-        <Play className="w-3 h-3 transition-transform duration-200 group-hover/btn:scale-110" />
-        Try Demo
-        <ExternalLink className="w-3 h-3 opacity-50" />
-      </a>
-    </div>
+        {cardContent}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={agent.demoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="agent-card group relative p-5 rounded-xl border border-white/10 bg-white/[0.03] 
+                 hover:bg-white/[0.06] hover:border-primary/30 
+                 transition-all duration-300 block"
+    >
+      {cardContent}
+    </a>
   );
 }
 
@@ -135,16 +160,16 @@ export function AISection({ focus }: { focus?: string }) {
       // Section title animation
       gsap.fromTo(
         ".ai-title",
-        { y: 40, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
@@ -152,17 +177,17 @@ export function AISection({ focus }: { focus?: string }) {
       // Agent cards stagger
       gsap.fromTo(
         ".agent-card",
-        { y: 30, opacity: 0 },
+        { y: 25, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power2.out",
+          stagger: 0.08,
+          ease: "none",
           scrollTrigger: {
             trigger: ".agents-grid",
             start: "top 85%",
-            toggleActions: "play none none reverse",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
@@ -183,14 +208,16 @@ export function AISection({ focus }: { focus?: string }) {
           {/* Section header */}
           <div className="ai-title mb-12">
             <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
-              Meet My AI
+              From Idea to Production
             </span>
             <h2 className="text-section font-serif text-foreground mt-4">
-              Digital Twin
+              Built from Scratch
             </h2>
             <p className="text-muted-foreground mt-4 max-w-2xl">
-              AI agents I&apos;ve built partnering with IT and Microsoft for manufacturing operations.
-              Some deployed, others in active development. Have a question? Chat with my digital twin.
+              Every solution here started as an idea I had, designed,
+              prototyped, and piloted. The ones that proved value earned
+              enterprise sponsorship. Some are in production. Others are proofs
+              of concept. All of them solve real problems.
             </p>
             <button
               onClick={openChat}
@@ -199,6 +226,13 @@ export function AISection({ focus }: { focus?: string }) {
               <MessageCircle className="w-4 h-4" />
               Chat with My AI
             </button>
+          </div>
+
+          {/* Agent tiles grid */}
+          <div className="agents-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {agentDemos.map((agent) => (
+              <AgentCard key={agent.id} agent={agent} />
+            ))}
           </div>
 
         </div>

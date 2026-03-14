@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap, ScrollTrigger } from "../gsap-provider";
-import { FOCUS_CONFIGS, parseFocusMode, type FocusMode } from "@/lib/focus-config";
+import { FOCUS_CONFIGS, type FocusMode } from "@/lib/focus-config";
 
 // Default metrics (used if no focus prop)
 const defaultMetrics = [
-  { value: "$16M → $200K", label: "inventory turnaround" },
-  { value: "12 → 2.7 days", label: "cycle time reduction" },
-  { value: "170% ROI", label: "$49M initiative" },
-  { value: "1,000+ activated", label: "AI enablement" },
+  { value: "$49M+", label: "program, 170% ROI" },
+  { value: "$500M+", label: "transformation roadmap" },
+  { value: "1,000+", label: "people activated on AI" },
+  { value: "$45M/year", label: "working capital released" },
 ];
 
 export function HeroSection({ focus }: { focus?: string }) {
@@ -28,13 +28,10 @@ export function HeroSection({ focus }: { focus?: string }) {
       // INITIAL STATES - Everything hidden
       // CU letters are now handled by UnifiedCULogo
       // ========================================
-      gsap.set(".tagline-line-1", { opacity: 0, y: 20 });
-      gsap.set(".tagline-business", { opacity: 0 });
-      gsap.set(".tagline-ai", { opacity: 0 });
-      gsap.set(".tagline-bridge", { opacity: 0 });
-      gsap.set(".bridge-left", { x: -20, opacity: 0 });
-      gsap.set(".bridge-right", { x: 20, opacity: 0 });
-      gsap.set(".tagline-resolution", { opacity: 0, y: 20 });
+      gsap.set(".tagline-line", { opacity: 0, y: 20 });
+      gsap.set(".tagline-flash-strategy", { opacity: 0 });
+      gsap.set(".tagline-flash-execution", { opacity: 0 });
+      gsap.set(".tagline-flash-ai", { opacity: 0 });
       gsap.set(".metrics-ticker", { opacity: 0, y: 15 });
       gsap.set(".scroll-indicator", { opacity: 0 });
 
@@ -46,118 +43,86 @@ export function HeroSection({ focus }: { focus?: string }) {
         onComplete: () => setAnimationComplete(true),
       });
 
-      // ----------------------------------------
-      // PHASE 1: Tagline with Tension
-      // Starts after CU letters settle (~2.3s)
-      // ----------------------------------------
-      // "Business challenges" line fades in
+      // Staggered three-line tagline reveal
       introTL.to(
         ".tagline-line-1",
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.7,
           ease: "power2.out",
         },
         2.3
       );
 
-      // Flash effect styles
-      const whiteFlashOn = { opacity: 1, color: "#ffffff", textShadow: "0 0 20px #fff, 0 0 40px #fff" };
-      const whiteFlashOff = { opacity: 0, color: "#ffffff", textShadow: "none" };
-      const whiteStayOn = { opacity: 1, color: "#ffffff", textShadow: "none" };
-      
-      const cyanFlashOn = { opacity: 1, color: "#00bcd4", textShadow: "0 0 20px #00bcd4, 0 0 40px #00bcd4" };
+      const cyanFlashOn = {
+        opacity: 1,
+        color: "#00bcd4",
+        textShadow: "0 0 20px #00bcd4, 0 0 40px #00bcd4",
+      };
       const cyanFlashOff = { opacity: 0, color: "#00bcd4", textShadow: "none" };
       const cyanStayOn = { opacity: 1, color: "#00bcd4", textShadow: "none" };
 
-      // "Business" - flashes over ~1.3s
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 2.6);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.05 }, 2.63);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 2.8);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.07 }, 2.82);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 3.0);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.04 }, 3.03);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 3.2);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.05 }, 3.22);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.03 }, 3.4);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.04 }, 3.43);
-      introTL.to(".tagline-business", { ...whiteFlashOn, duration: 0.02 }, 3.6);
-      introTL.to(".tagline-business", { ...whiteFlashOff, duration: 0.03 }, 3.62);
-      introTL.to(".tagline-business", { ...whiteStayOn, duration: 0.08 }, 3.8);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOn, duration: 0.03 }, 2.6);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOff, duration: 0.05 }, 2.63);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOn, duration: 0.02 }, 2.8);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOff, duration: 0.07 }, 2.82);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOn, duration: 0.03 }, 3.0);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOff, duration: 0.04 }, 3.03);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOn, duration: 0.02 }, 3.2);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOff, duration: 0.05 }, 3.22);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOn, duration: 0.03 }, 3.4);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOff, duration: 0.04 }, 3.43);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOn, duration: 0.02 }, 3.6);
+      introTL.to(".tagline-flash-strategy", { ...cyanFlashOff, duration: 0.03 }, 3.62);
+      introTL.to(".tagline-flash-strategy", { ...cyanStayOn, duration: 0.08 }, 3.8);
 
-      // "AI" - starts 0.7s after Business begins
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 3.3);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.05 }, 3.32);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 3.5);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 3.53);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 3.7);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.06 }, 3.72);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.03 }, 3.95);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.04 }, 3.98);
-      introTL.to(".tagline-ai", { ...cyanFlashOn, duration: 0.02 }, 4.15);
-      introTL.to(".tagline-ai", { ...cyanFlashOff, duration: 0.03 }, 4.17);
-      introTL.to(".tagline-ai", { ...cyanStayOn, duration: 0.08 }, 4.4);
-
-      // "bridge" - bridge construction animation
-      introTL.to(".tagline-bridge", { opacity: 1, duration: 0.01 }, 4.4);
-      
-      // Left side (BRI) slides in from left with glow
-      introTL.to(".bridge-left", { 
-        x: 0, 
-        opacity: 1, 
-        duration: 0.7, 
-        ease: "power2.out",
-        textShadow: "0 0 10px #00bcd4"
-      }, 4.4);
-      
-      // Right side (DGE) slides in from right with glow
-      introTL.to(".bridge-right", { 
-        x: 0, 
-        opacity: 1, 
-        duration: 0.7, 
-        ease: "power2.out",
-        textShadow: "0 0 10px #00bcd4"
-      }, 4.4);
-      
-      // Connection flash when they meet
-      introTL.to(".tagline-bridge", { 
-        textShadow: "0 0 30px #00bcd4, 0 0 60px #00bcd4",
-        duration: 0.18,
-        ease: "power2.in"
-      }, 5.1);
-      
-      // Settle to subtle glow
-      introTL.to(".tagline-bridge", { 
-        textShadow: "none",
-        duration: 0.4,
-        ease: "power2.out"
-      }, 5.28);
-      
-      // Remove individual glows
-      introTL.to([".bridge-left", ".bridge-right"], {
-        textShadow: "none",
-        duration: 0.35
-      }, 5.28);
-
-      // ----------------------------------------
-      // PHASE 4: Resolution
-      // ----------------------------------------
-      // "I'm the bridge between" fades in
       introTL.to(
-        ".tagline-resolution",
+        ".tagline-line-2",
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.7,
           ease: "power2.out",
         },
-        4.2
+        2.75
       );
 
-      // ----------------------------------------
-      // PHASE 5: Ticker & Scroll Indicator
-      // ----------------------------------------
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOn, duration: 0.02 }, 3.3);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOff, duration: 0.05 }, 3.32);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOn, duration: 0.03 }, 3.5);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOff, duration: 0.04 }, 3.53);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOn, duration: 0.02 }, 3.7);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOff, duration: 0.06 }, 3.72);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOn, duration: 0.03 }, 3.95);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOff, duration: 0.04 }, 3.98);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOn, duration: 0.02 }, 4.15);
+      introTL.to(".tagline-flash-execution", { ...cyanFlashOff, duration: 0.03 }, 4.17);
+      introTL.to(".tagline-flash-execution", { ...cyanStayOn, duration: 0.08 }, 4.4);
+
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOn, duration: 0.02 }, 3.8);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOff, duration: 0.05 }, 3.82);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOn, duration: 0.03 }, 4.0);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOff, duration: 0.04 }, 4.03);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOn, duration: 0.02 }, 4.2);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOff, duration: 0.06 }, 4.22);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOn, duration: 0.03 }, 4.45);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOff, duration: 0.04 }, 4.48);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOn, duration: 0.02 }, 4.65);
+      introTL.to(".tagline-flash-ai", { ...cyanFlashOff, duration: 0.03 }, 4.67);
+      introTL.to(".tagline-flash-ai", { ...cyanStayOn, duration: 0.08 }, 4.8);
+
+      introTL.to(
+        ".tagline-line-3",
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          ease: "power2.out",
+        },
+        3.2
+      );
+
       // Metrics ticker fades in
       introTL.to(
         ".metrics-ticker",
@@ -167,7 +132,7 @@ export function HeroSection({ focus }: { focus?: string }) {
           duration: 0.7,
           ease: "power2.out",
         },
-        5.8
+        5.0
       );
 
       // Scroll indicator fades in
@@ -178,7 +143,7 @@ export function HeroSection({ focus }: { focus?: string }) {
           duration: 0.7,
           ease: "power2.out",
         },
-        6.2
+        5.3
       );
 
       // ========================================
@@ -205,9 +170,9 @@ export function HeroSection({ focus }: { focus?: string }) {
       ScrollTrigger.create({
         trigger: sectionRef.current,
         start: "top top",
-        end: "+=150%",
+        end: "+=80%",
         pin: true,
-        scrub: 2,
+        scrub: 1.5,
         onUpdate: (self) => {
           const progress = self.progress;
 
@@ -215,7 +180,7 @@ export function HeroSection({ focus }: { focus?: string }) {
             // Fade out hero content as user scrolls
             gsap.to(".hero-content", {
               opacity: Math.max(0, 1 - progress * 2.5),
-              y: -progress * 80,
+              y: -progress * 60,
               duration: 0.1,
             });
           }
@@ -235,7 +200,7 @@ export function HeroSection({ focus }: { focus?: string }) {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [animationComplete]);
+  }, [animationComplete, metrics.length]);
 
   return (
     <section
@@ -254,32 +219,14 @@ export function HeroSection({ focus }: { focus?: string }) {
         <div className="hero-content text-center max-w-3xl">
           {/* Tagline */}
           <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-serif text-foreground/80 leading-relaxed mb-6 md:mb-12">
-            <span className="tagline-line-1 block mb-2">
-              Business{" "}
-              <span className="tagline-business text-foreground">challenges</span>.{" "}
-              <span className="tagline-ai text-primary">Transformative</span>{" "}
-              AI.
+            <span className="tagline-line tagline-line-1 block mb-2">
+              From Vision to <span className="tagline-flash-strategy">Strategy.</span>
             </span>
-            <span className="tagline-resolution block text-foreground/80 font-medium">
-              {focusMode === "general" ? (
-                <>
-                  I&apos;m the{" "}
-                  <span className="tagline-bridge text-primary inline-flex">
-                    <span className="bridge-left">BRI</span>
-                    <span className="bridge-right">DGE</span>
-                  </span>{" "}
-                  between.
-                </>
-              ) : (
-                <>
-                  I&apos;m the{" "}
-                  <span className="tagline-bridge text-primary inline-flex">
-                    <span className="bridge-left">BRI</span>
-                    <span className="bridge-right">DGE</span>
-                  </span>{" "}
-                  {focusConfig.heroResolution.replace("I'm the BRIDGE ", "")}
-                </>
-              )}
+            <span className="tagline-line tagline-line-2 block mb-2">
+              <span className="tagline-flash-execution">Execution</span> with Discipline.
+            </span>
+            <span className="tagline-line tagline-line-3 block mb-2">
+              Scaling <span className="tagline-flash-ai">AI.</span>
             </span>
           </h1>
 

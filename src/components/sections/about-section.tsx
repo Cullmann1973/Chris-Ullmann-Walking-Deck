@@ -2,22 +2,22 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { gsap, ScrollTrigger } from "../gsap-provider";
+import { gsap } from "../gsap-provider";
 import { FOCUS_CONFIGS, type FocusMode } from "@/lib/focus-config";
 
 const expertiseWords = [
-  "STRATEGY",
-  "OPERATIONS",
-  "QUALITY",
-  "TRANSFORMATION",
-  "AI",
+  "SUPPLY CHAIN DIGITALIZATION",
+  "PROCESS REDESIGN",
+  "CHANGE LEADERSHIP",
+  "QUALITY SYSTEMS",
+  "AI INTEGRATION",
 ];
 
 const stats = [
-  { value: "$45M/yr", label: "Working capital released" },
-  { value: "170%", label: "ROI on $49M initiative" },
+  { value: "$49M+", label: "Enterprise transformation, 170% ROI" },
+  { value: "$500M+", label: "Roadmap authored" },
   { value: "1,000+", label: "People activated on AI" },
-  { value: "20+", label: "GenAI use cases piloted" },
+  { value: "25+", label: "Years across regulated industries" },
 ];
 
 export function AboutSection({ focus }: { focus?: string }) {
@@ -34,19 +34,19 @@ export function AboutSection({ focus }: { focus?: string }) {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      // Large "About" title flies in from right (scrubbed to scroll)
+      // Large "About" title flies in from right
       gsap.fromTo(
         titleRef.current,
-        { x: "100vw", opacity: 0 },
+        { x: "60vw", opacity: 0 },
         {
           x: 0,
           opacity: 1,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 80%",
-            end: "top 20%",
-            scrub: 1,
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
@@ -54,7 +54,7 @@ export function AboutSection({ focus }: { focus?: string }) {
       // Photo reveal
       gsap.fromTo(
         photoRef.current,
-        { scale: 1.1, opacity: 0 },
+        { scale: 1.05, opacity: 0 },
         {
           scale: 1,
           opacity: 1,
@@ -62,26 +62,26 @@ export function AboutSection({ focus }: { focus?: string }) {
           scrollTrigger: {
             trigger: photoRef.current,
             start: "top 85%",
-            end: "top 50%",
-            scrub: 1,
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
 
-      // Expertise words fly in from right, staggered
-      expertiseWords.forEach((_, index) => {
+      // Expertise words fly in with separated scroll windows
+      gsap.utils.toArray<HTMLElement>(".expertise-word").forEach((word, index) => {
         gsap.fromTo(
-          `.expertise-word-${index}`,
-          { x: "50vw", opacity: 0 },
+          word,
+          { x: "100vw", opacity: 0 },
           {
             x: 0,
             opacity: 1,
-            ease: "none",
+            ease: "power2.out",
             scrollTrigger: {
               trigger: wordsRef.current,
-              start: `top ${85 - index * 5}%`,
-              end: `top ${55 - index * 5}%`,
-              scrub: 1,
+              start: `top ${90 - index * 3}%`,
+              end: `top ${70 - index * 3}%`,
+              scrub: 0.8,
             },
           }
         );
@@ -90,16 +90,16 @@ export function AboutSection({ focus }: { focus?: string }) {
       // Content reveal
       gsap.fromTo(
         contentRef.current,
-        { y: 60, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           ease: "none",
           scrollTrigger: {
             trigger: contentRef.current,
-            start: "top 90%",
-            end: "top 60%",
-            scrub: 1,
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
@@ -107,17 +107,17 @@ export function AboutSection({ focus }: { focus?: string }) {
       // Stats animation
       gsap.fromTo(
         ".stat-item",
-        { y: 40, opacity: 0 },
+        { y: 30, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          stagger: 0.1,
+          stagger: 0.08,
           ease: "none",
           scrollTrigger: {
             trigger: statsRef.current,
-            start: "top 90%",
-            end: "top 60%",
-            scrub: 1,
+            start: "top 85%",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
@@ -169,7 +169,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                 {expertiseWords.map((word, index) => (
                   <div
                     key={word}
-                    className={`expertise-word-${index} text-2xl md:text-4xl lg:text-5xl font-serif ${
+                    className={`expertise-word text-2xl md:text-4xl lg:text-5xl font-serif ${
                       index === expertiseWords.length - 1
                         ? "text-primary"
                         : "text-foreground"
@@ -185,30 +185,33 @@ export function AboutSection({ focus }: { focus?: string }) {
             <div ref={contentRef} className="space-y-8 lg:pt-12">
               <div className="content-card p-8">
                 <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
-                  From Air Force flight lines to Fortune 500 boardrooms
+                  From regulated manufacturing floors to enterprise AI transformation
                 </h3>
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    I&apos;ve spent 25 years doing the same thing in different
-                    wrappers: walking into complex systems, recognizing the
-                    opportunity, building the solution, and getting people to
-                    run with it.
-                    That started as an Air Force aerospace technician learning
-                    discipline, systems thinking, and how to keep mission-critical
-                    equipment running. It evolved into FDA compliance turnarounds,
-                    a $49M enterprise transformation, and now hands-on AI
-                    development. The throughline is the point.
+                    I&apos;ve spent 25 years building and fixing complex systems
+                    in regulated manufacturing environments.
                   </p>
-
                   <p>
-                    The numbers tell the story. $45M/year in working capital released
-                    through operational redesign. 170% ROI on an enterprise value
-                    chain program. AI solutions at Estée Lauder, partnering with
-                    IT and Microsoft, that gained traction from the shop floor
-                    to the C-suite.
+                    I built quality systems from scratch across pharmaceutical,
+                    OTC, cosmetic, and nutraceutical manufacturing, then led
+                    multi-site plant consolidations and full organization
+                    restructures.
                   </p>
-
+                  <p>
+                    I&apos;ve navigated FDA, GMP, and evolving regulatory landscapes
+                    while driving performance with Lean Six Sigma discipline and
+                    Kotter change leadership.
+                  </p>
+                  <p>
+                    Lean Six Sigma certified. Kotter Change Management facilitator.
+                    Work featured in Harvard Business Review.
+                  </p>
+                  <p>
+                    Today I lead AI transformation at enterprise scale, bringing
+                    that same rigor to emerging technology.
+                  </p>
                   <p>
                     Most AI leaders come from pure tech. Most operations leaders
                     never touch AI.{" "}

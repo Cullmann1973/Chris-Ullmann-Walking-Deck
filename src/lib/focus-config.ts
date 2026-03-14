@@ -24,10 +24,10 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
     label: "General",
     heroResolution: "I'm the BRIDGE between.",
     metrics: [
-      { value: "$16M → $200K", label: "inventory turnaround" },
-      { value: "12 → 2.7 days", label: "cycle time reduction" },
-      { value: "170% ROI", label: "$49M initiative" },
-      { value: "1,000+ activated", label: "AI enablement" },
+      { value: "$49M+", label: "program, 170% ROI" },
+      { value: "$500M+", label: "transformation roadmap" },
+      { value: "1,000+", label: "people activated on AI" },
+      { value: "$45M/year", label: "working capital released" },
     ],
     sectionOrder: [
       "hero",

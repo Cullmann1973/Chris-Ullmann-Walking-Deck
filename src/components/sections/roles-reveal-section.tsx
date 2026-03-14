@@ -23,8 +23,8 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=200%",
-          scrub: 1,
+          end: "+=150%",
+          scrub: 1.5,
           pin: true,
         },
       });
@@ -35,7 +35,7 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
           `.role-${index}`,
           { opacity: 0, y: 20 },
           { opacity: 1, y: 0, duration: 0.15, ease: "none" },
-          index * 0.12
+          index * 0.15
         );
       });
 
@@ -44,7 +44,7 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
         ".roles-paragraph",
         { opacity: 0 },
         { opacity: 1, duration: 0.2, ease: "none" },
-        0.7
+        0.75
       );
     }, sectionRef);
 
@@ -92,9 +92,10 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
 
         {/* Full paragraph (reveals last) */}
         <div className="roles-paragraph opacity-0 text-sm md:text-base text-muted-foreground leading-relaxed">
-          Results create trust. Trust opens doors to bigger challenges.
-          That&apos;s not a career philosophy: it&apos;s a pattern you can trace
-          through{" "}
+          Results create trust. Trust opens doors to bigger challenges. From
+          Kaizen events on the floor to $500M transformation roadmaps in the
+          boardroom, that&apos;s not a career philosophy: it&apos;s a pattern you
+          can trace through{" "}
           <span className="text-primary font-semibold">25 years of outcomes</span>.
         </div>
       </div>

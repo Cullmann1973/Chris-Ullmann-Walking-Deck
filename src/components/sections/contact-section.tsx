@@ -13,16 +13,16 @@ export function ContactSection({ focus }: { focus?: string }) {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".contact-content",
-        { y: 30, opacity: 0 },
+        { y: 25, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
+          ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 85%",
-            toggleActions: "play none none reverse",
+            end: "top 55%",
+            scrub: 1.5,
           },
         }
       );
