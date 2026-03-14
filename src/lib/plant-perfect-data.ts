@@ -1,601 +1,257 @@
-export type PlantId =
-  | "beacon-hill"
-  | "milano-operations"
-  | "singapore-hub"
-  | "sao-paulo-plant";
+// Plant Perfect - AI Strategic Planning Assistant Data
+// Single plant focus: Beacon Hill Manufacturing (Boston, MA)
+// Core capabilities: Retrospective analysis, strategic planning, schedule optimization, golden standard analysis
 
-export interface GlobalKpi {
-  label: string;
-  value: string;
-  trend: string;
-}
-
-export interface PlantMetric {
-  label: string;
-  value: string;
-  context: string;
-}
-
-export interface StrategicInitiative {
+export interface StrategicScenario {
+  id: string;
   title: string;
-  details: string;
-  target: string;
-}
-
-export interface SkuPerformance {
-  name: string;
-  sku: string;
-  oee: string;
-  quality: string;
-  note: string;
-}
-
-export interface GoldenStandardComparison {
-  best: SkuPerformance;
-  worst: SkuPerformance;
-  summary: string;
-  opportunities: string[];
-}
-
-export interface GlobalPlant {
-  id: PlantId;
-  name: string;
-  mapLabel: string;
-  location: string;
-  region: string;
-  timezone: string;
-  currentShift: string;
-  capacity: string;
-  capacityUtilization: string;
-  primaryFocus: string;
-  currentStatus: string;
-  keyProducts: string[];
-  productionLines: number;
-  skus: number;
-  monthlyOutput: string;
-  map: {
-    lat: number;
-    lng: number;
-  };
-  liveMetrics: PlantMetric[];
-  strategicInitiatives: StrategicInitiative[];
-  goldenStandard: GoldenStandardComparison;
-}
-
-export interface DashboardTab {
-  id: "opreviews" | "strategy" | "schedule" | "golden-standard";
-  label: string;
   description: string;
+  sampleQuestions: string[];
+  keyInsights: string[];
 }
 
-export interface StrategyRecommendation {
-  title: string;
-  details: string;
+export interface PlantContext {
+  name: string;
+  location: string;
+  productionLines: {
+    filling: number;
+    packaging: number;
+    compounding: number;
+  };
+  keyProducts: string[];
+  operationalFocus: string[];
+  performanceMetrics: {
+    avgOEE: number;
+    qualityScore: number;
+    onTimeDelivery: number;
+  };
 }
 
-export interface ImpactMetric {
-  label: string;
-  value: string;
-}
-
-export interface OperationalMetric {
-  label: string;
-  value: string;
-  benchmark: string;
-}
-
-export interface ScheduleOptimizationRow {
-  line: string;
-  sku: string;
-  window: string;
-  recommendation: string;
-  projectedGain: string;
-}
-
-export interface GoldenStandardRow {
-  attribute: string;
-  bestSku: string;
-  worstSku: string;
-  impact: string;
-}
-
-export const plantPerfectHero = {
-  company: "Lumière Cosmetics",
-  title: "Plant Perfect Global Command",
-  subtitle: "Manufacturing Intelligence Across Four Continents",
-  tagline:
-    "Real-time insights from Beacon Hill to São Paulo. Select any facility to dive into plant-specific analytics, strategy integration, and golden standard benchmarking.",
-  networkSummary: "4 Plants • 12 Production Lines • 47 SKUs • 24/7 Monitoring",
+export const plantContext: PlantContext = {
+  name: "Beacon Hill Manufacturing",
+  location: "Boston, MA",
+  productionLines: {
+    filling: 3,
+    packaging: 2,
+    compounding: 1
+  },
+  keyProducts: [
+    "Premium Skincare",
+    "Color Cosmetics", 
+    "Anti-Aging Serums",
+    "Luxury Foundation Lines"
+  ],
+  operationalFocus: [
+    "Quality Excellence",
+    "Manufacturing Efficiency", 
+    "Process Innovation",
+    "Lean Operations"
+  ],
+  performanceMetrics: {
+    avgOEE: 84.8,
+    qualityScore: 97.2,
+    onTimeDelivery: 94.1
+  }
 };
 
-export const globalKpis: GlobalKpi[] = [
+export const strategicScenarios: StrategicScenario[] = [
   {
-    label: "Global OEE",
-    value: "82.4%",
-    trend: "+2.3% YoY",
+    id: "retrospective",
+    title: "Retrospective Analysis",
+    description: "Review past performance for operational reviews and lessons learned",
+    sampleQuestions: [
+      "What were our top 3 downtime events last quarter and how can we prevent them?",
+      "Which initiatives from last year had the biggest impact on OEE?",
+      "What patterns do you see in our quality holds over the past 6 months?",
+      "How did our changeover times improve after the Lean implementation?"
+    ],
+    keyInsights: [
+      "Filler Line 3 sensor calibration issues caused 47 hours downtime in Q3",
+      "Packaging Line 1 humidity control during changeovers reduced efficiency by 12%", 
+      "Steam valve actuator replacements should move to 18-month vs 24-month cycles",
+      "Visual inspection automation reduced quality holds by 23% year-over-year"
+    ]
   },
   {
-    label: "Total Production",
-    value: "2.8M units",
-    trend: "This month",
-  },
-  {
-    label: "Quality Score",
-    value: "97.2%",
-    trend: "First-pass yield",
-  },
-  {
-    label: "Active Initiatives",
-    value: "23",
-    trend: "Across 4 plants",
-  },
-];
-
-export const globalPlants: GlobalPlant[] = [
-  {
-    id: "beacon-hill",
-    name: "Beacon Hill",
-    mapLabel: "Boston, USA",
-    location: "Boston Metro, Massachusetts USA",
-    region: "North America",
-    timezone: "America/New_York (UTC-5)",
-    currentShift: "Shift 2 active",
-    capacity: "1.2M units/month",
-    capacityUtilization: "94%",
-    primaryFocus: "Premium skincare, anti-aging formulations",
-    currentStatus: "94% capacity, Shift 2 active",
-    keyProducts: [
-      "LUXE BOTANICALS Daily Moisture Cream",
-      "LUXE BOTANICALS Vitamin C Serum",
+    id: "strategic",
+    title: "Strategic Planning", 
+    description: "Integrate plant data into next fiscal year initiatives and capital planning",
+    sampleQuestions: [
+      "How should next year's automation investment be prioritized based on performance data?",
+      "Which production lines are best positioned for capacity expansion?",
+      "What's the ROI case for upgrading our packaging automation?",
+      "How do we align FY26 capital projects with Plant Excellence goals?"
     ],
-    productionLines: 3,
-    skus: 11,
-    monthlyOutput: "1.13M units",
-    map: {
-      lat: 42.3,
-      lng: -71,
-    },
-    liveMetrics: [
-      {
-        label: "OEE",
-        value: "84.8%",
-        context: "+1.6 pts vs last month",
-      },
-      {
-        label: "Current Production",
-        value: "39.1K units/day",
-        context: "Line 5 and 8 fully staffed",
-      },
-      {
-        label: "Quality",
-        value: "98.1% FPY",
-        context: "Pump failures down 11%",
-      },
-    ],
-    strategicInitiatives: [
-      {
-        title: "Pump mechanism optimization",
-        details:
-          "Redesign pump housing tolerance and standardize torque settings on premium serum runs.",
-        target: "8% OEE improvement",
-      },
-      {
-        title: "Changeover playbook",
-        details:
-          "Apply pre-staged component kits on Line 5 for serum-to-cream transitions.",
-        target: "-16 minutes per changeover",
-      },
-    ],
-    goldenStandard: {
-      best: {
-        name: "LUXE BOTANICALS Daily Moisture Cream",
-        sku: "LB-DMC-50",
-        oee: "91.4%",
-        quality: "99.1% FPY",
-        note: "Stable jar format with low changeover loss.",
-      },
-      worst: {
-        name: "LUXE BOTANICALS Vitamin C Serum",
-        sku: "LB-VCS-30",
-        oee: "72.8%",
-        quality: "95.4% FPY",
-        note: "Pump alignment and multi-label application drive loss.",
-      },
-      summary:
-        "The premium serum underperforms due to pump setup variability and label complexity during short campaigns.",
-      opportunities: [
-        "Standardize pump threading and inline torque validation",
-        "Shift to a single wraparound label format",
-        "Pre-qualify fill-head settings for 30ml transitions",
-      ],
-    },
-  },
-  {
-    id: "milano-operations",
-    name: "Milano Operations",
-    mapLabel: "Milan, Italy",
-    location: "Milan, Lombardy, Italy",
-    region: "Europe",
-    timezone: "Europe/Rome (UTC+1)",
-    currentShift: "Night shift active",
-    capacity: "800K units/month",
-    capacityUtilization: "87%",
-    primaryFocus: "European luxury market, limited editions",
-    currentStatus: "87% capacity, Night shift active",
-    keyProducts: [
-      "Prestige collection",
-      "Seasonal limited releases",
-    ],
-    productionLines: 2,
-    skus: 10,
-    monthlyOutput: "696K units",
-    map: {
-      lat: 45.4,
-      lng: 9.2,
-    },
-    liveMetrics: [
-      {
-        label: "OEE",
-        value: "79.6%",
-        context: "Limited edition setup loss",
-      },
-      {
-        label: "Current Production",
-        value: "24.8K units/day",
-        context: "Campaign-based scheduling",
-      },
-      {
-        label: "Quality",
-        value: "97.7% FPY",
-        context: "Artwork inspection improvements",
-      },
-    ],
-    strategicInitiatives: [
-      {
-        title: "Multi-label reduction project",
-        details:
-          "Unify regional label variants and reduce manual adjustments during campaign swaps.",
-        target: "Golden standard optimization",
-      },
-      {
-        title: "Luxury line balance",
-        details:
-          "Shift high-variability SKUs to protected windows to stabilize nighttime throughput.",
-        target: "+4.2 pts OEE",
-      },
-    ],
-    goldenStandard: {
-      best: {
-        name: "Prestige Repair Essence",
-        sku: "MO-PRE-40",
-        oee: "88.9%",
-        quality: "98.8% FPY",
-        note: "Consistent bill of materials and low inspection fallout.",
-      },
-      worst: {
-        name: "Seasonal Velvet Elixir",
-        sku: "MO-SVE-30",
-        oee: "68.1%",
-        quality: "94.6% FPY",
-        note: "Frequent format swaps and artisanal packaging checks.",
-      },
-      summary:
-        "Short seasonal campaigns create setup volatility, especially on custom label and cap combinations.",
-      opportunities: [
-        "Consolidate three cap variants into one standard",
-        "Stage artwork verification before line release",
-        "Batch seasonal SKUs in fewer, longer runs",
-      ],
-    },
-  },
-  {
-    id: "singapore-hub",
-    name: "Singapore Hub",
-    mapLabel: "Singapore",
-    location: "Singapore, Southeast Asia",
-    region: "Asia-Pacific",
-    timezone: "Asia/Singapore (UTC+8)",
-    currentShift: "24/7 operation",
-    capacity: "3.2M units/month",
-    capacityUtilization: "98%",
-    primaryFocus: "High-volume production, cost optimization",
-    currentStatus: "98% capacity, 24/7 operation",
-    keyProducts: [
-      "Mass market skincare",
-      "High-volume cleansers",
-    ],
-    productionLines: 4,
-    skus: 16,
-    monthlyOutput: "3.14M units",
-    map: {
-      lat: 1.3,
-      lng: 103.8,
-    },
-    liveMetrics: [
-      {
-        label: "OEE",
-        value: "86.3%",
-        context: "High-volume lines running at target",
-      },
-      {
-        label: "Current Production",
-        value: "114K units/day",
-        context: "Weekend demand surge support",
-      },
-      {
-        label: "Quality",
-        value: "96.8% FPY",
-        context: "Foam cleanser viscosity tuning",
-      },
-    ],
-    strategicInitiatives: [
-      {
-        title: "Automated changeover deployment",
-        details:
-          "Roll out recipe-driven format adjustments across Lines 1-4.",
-        target: "-22% changeover duration",
-      },
-      {
-        title: "Energy intensity reduction",
-        details:
-          "Coordinate CIP cycles with production windows to cut utility overlap.",
-        target: "-9% energy per unit",
-      },
-    ],
-    goldenStandard: {
-      best: {
-        name: "Hydra Daily Cleanser",
-        sku: "SG-HDC-150",
-        oee: "92.1%",
-        quality: "98.3% FPY",
-        note: "High repeatability on bottle and cap geometry.",
-      },
-      worst: {
-        name: "Glow Boost Scrub",
-        sku: "SG-GBS-120",
-        oee: "74.5%",
-        quality: "95.1% FPY",
-        note: "Abrasive dosing and nozzle wear increase downtime.",
-      },
-      summary:
-        "Automated transitions reduce losses, but abrasive products still cause repeat micro-stops.",
-      opportunities: [
-        "Install wear monitoring on abrasive dosing heads",
-        "Adjust preventative maintenance cadence",
-        "Convert scrub SKU to extended campaign sequencing",
-      ],
-    },
-  },
-  {
-    id: "sao-paulo-plant",
-    name: "São Paulo Plant",
-    mapLabel: "São Paulo, Brazil",
-    location: "São Paulo, Brazil",
-    region: "Latin America",
-    timezone: "America/Sao_Paulo (UTC-3)",
-    currentShift: "Day shift active",
-    capacity: "650K units/month",
-    capacityUtilization: "76%",
-    primaryFocus: "Latin America market, local formulations",
-    currentStatus: "76% capacity, Day shift active",
-    keyProducts: [
-      "Climate-adapted formulations",
-      "Local ingredient skincare",
-    ],
-    productionLines: 3,
-    skus: 10,
-    monthlyOutput: "494K units",
-    map: {
-      lat: -23.5,
-      lng: -46.6,
-    },
-    liveMetrics: [
-      {
-        label: "OEE",
-        value: "73.9%",
-        context: "Material availability constraints",
-      },
-      {
-        label: "Current Production",
-        value: "18.2K units/day",
-        context: "Local demand spike preparations",
-      },
-      {
-        label: "Quality",
-        value: "95.9% FPY",
-        context: "Stability tests on humid-weather SKUs",
-      },
-    ],
-    strategicInitiatives: [
-      {
-        title: "Supply chain localization",
-        details:
-          "Increase regional component sourcing for bottles and closures.",
-        target: "-14 days inbound lead time",
-      },
-      {
-        title: "Climate formula resilience",
-        details:
-          "Tune viscosity setpoints for warm-weather transport and storage conditions.",
-        target: "+1.8 pts FPY",
-      },
-    ],
-    goldenStandard: {
-      best: {
-        name: "Hydra Tropical Lotion",
-        sku: "SP-HTL-180",
-        oee: "84.2%",
-        quality: "97.4% FPY",
-        note: "Strong local sourcing and stable process windows.",
-      },
-      worst: {
-        name: "Urban Shield Gel",
-        sku: "SP-USG-120",
-        oee: "63.7%",
-        quality: "92.8% FPY",
-        note: "Imported pump assemblies create frequent delays.",
-      },
-      summary:
-        "The worst-performing SKU is limited by imported component variability and extended lead times.",
-      opportunities: [
-        "Dual-source pump suppliers within Mercosur",
-        "Introduce inbound quality checks for closures",
-        "Use campaign planning around port lead-time risk",
-      ],
-    },
-  },
-];
-
-export const beaconDashboardTabs: DashboardTab[] = [
-  {
-    id: "opreviews",
-    label: "OpReviews",
-    description: "Performance review of active Beacon Hill lines.",
-  },
-  {
-    id: "strategy",
-    label: "Strategy Integration",
-    description: "Translate strategic goals into line-level initiatives.",
+    keyInsights: [
+      "Packaging Line 1 auto-reject system shows 18-month payback based on quality costs",
+      "Filler Line 2 vision inspection could eliminate 3.2% manual holds",
+      "Material handling conveyor upgrade enables lights-out night shift operation",
+      "Strategic alignment with sustainability goals requires energy monitoring upgrades"
+    ]
   },
   {
     id: "schedule",
-    label: "Schedule Optimization",
-    description: "Optimize upcoming runs and reduce changeover loss.",
+    title: "Schedule Optimization",
+    description: "Look-ahead analysis for next week's production schedule and resource allocation", 
+    sampleQuestions: [
+      "Which production lines should we schedule for high-complexity jobs next week?",
+      "How should we sequence changeovers to minimize total downtime?",
+      "What's the optimal batch sizing for the anti-aging serum campaign?",
+      "Which maintenance windows create the least production impact?"
+    ],
+    keyInsights: [
+      "Line 3 shows 15% better performance on complex SKUs vs. Line 1",
+      "Grouping similar color families reduces changeover time by 40 minutes average",
+      "Tuesday-Thursday windows minimize impact on weekly delivery commitments",
+      "Batch sizes above 2,500 units show diminishing efficiency returns"
+    ]
   },
   {
-    id: "golden-standard",
-    label: "Golden Standard",
-    description: "Compare top and low performing Beacon Hill SKUs.",
-  },
+    id: "golden",
+    title: "Golden Standard Analysis",
+    description: "Compare best vs worst performers and identify improvement opportunities",
+    sampleQuestions: [
+      "What separates our best OEE days from our worst, and how do we replicate the best?",
+      "Which operators consistently achieve the highest quality scores?",
+      "What setup conditions lead to the fastest changeover times?", 
+      "How do environmental factors affect our premium product quality?"
+    ],
+    keyInsights: [
+      "Best OEE days correlate with pre-shift equipment warm-up protocols",
+      "Top-performing operators use consistent visual inspection patterns",
+      "Changeovers under 45 minutes require specific tool staging procedures",
+      "Humidity below 45% during filling improves consistency by 8%"
+    ]
+  }
 ];
 
-export const strategyInputPlaceholder =
-  "Paste Beacon Hill strategic priorities for next quarter...";
-
-export const strategyInputExample =
-  "Increase premium skincare throughput by 8%, reduce pump-related quality incidents by 30%, and cut changeover loss between LB-DMC-50 and LB-VCS-30.";
-
-export const strategyResponseIntro =
-  "Command center analysis complete. Beacon Hill priorities mapped to current line constraints and quality risk signals.";
-
-export const beaconStrategyInitiatives: StrategyRecommendation[] = [
-  {
-    title: "Pump mechanism optimization",
-    details:
-      "Focus on LB-VCS-30 on Line 5. Add inline torque verification and standardize pump preload setup.",
-  },
-  {
-    title: "Changeover compression",
-    details:
-      "Deploy pre-staged conversion kits for LB-DMC-50 to LB-VCS-30 transitions to remove manual prep delays.",
-  },
-  {
-    title: "Quality containment sprint",
-    details:
-      "Run a 30-day defect pareto with quality engineering to isolate recurring pump leak and label skew causes.",
-  },
+export const exampleQuestions = [
+  "What were our top 3 downtime events last quarter and how can we prevent them?",
+  "How should next year's automation investment be prioritized based on performance data?",
+  "Which production lines should we schedule for high-complexity jobs next week?", 
+  "What separates our best OEE days from our worst, and how do we replicate the best?"
 ];
 
-export const beaconStrategyImpact: ImpactMetric[] = [
-  {
-    label: "Projected OEE uplift",
-    value: "+8.1% over 2 quarters",
-  },
-  {
-    label: "Quality incident reduction",
-    value: "-31% pump-related defects",
-  },
-  {
-    label: "Annualized savings",
-    value: "$2.4M from scrap and downtime recovery",
-  },
-];
+// Sample AI responses for demo purposes
+export const sampleResponses = {
+  retrospective: {
+    question: "What were our top 3 downtime events last quarter and how can we prevent them?",
+    response: `Based on Q3 performance data, the top 3 downtime events were:
 
-export const beaconOperationalMetrics: OperationalMetric[] = [
-  {
-    label: "Line 5 OEE",
-    value: "82.2%",
-    benchmark: "+3.4 pts vs Q4 baseline",
-  },
-  {
-    label: "Premium fill rate",
-    value: "98.7%",
-    benchmark: "Within target band",
-  },
-  {
-    label: "Downtime loss",
-    value: "6.1 hours/week",
-    benchmark: "-1.9 hours vs prior month",
-  },
-  {
-    label: "Scrap",
-    value: "1.8%",
-    benchmark: "0.4 pts above best-in-class",
-  },
-];
+**1. Filler Line 3 - Sensor Calibration Issues (47 hours total)**
+- Root cause: Inadequate preventive maintenance schedule
+- Prevention: Implement weekly sensor calibration protocol
+- Est. savings: $94K annually in downtime costs
 
-export const beaconOperationalActions = [
-  "Expand autonomous maintenance on pump stations during Shift 2 handoff.",
-  "Protect premium serum campaigns with dedicated quality technician coverage.",
-  "Increase spare pump kit inventory to absorb supplier variance.",
-];
+**2. Packaging Line 1 - Label Web Breaks (31 hours total)**
+- Root cause: Humidity control during changeovers  
+- Prevention: Climate conditioning 30min before changeover
+- Est. savings: $62K annually in lost throughput
 
-export const beaconScheduleRows: ScheduleOptimizationRow[] = [
-  {
-    line: "Line 5",
-    sku: "LB-VCS-30",
-    window: "Mon 06:00-14:00",
-    recommendation: "Move preheat and pump calibration to prior shift staging.",
-    projectedGain: "+45 mins runtime",
-  },
-  {
-    line: "Line 8",
-    sku: "LB-DMC-50",
-    window: "Tue 14:00-22:00",
-    recommendation: "Combine two short campaigns into one continuous run.",
-    projectedGain: "-12% setup loss",
-  },
-  {
-    line: "Line 12",
-    sku: "LB-CLO-100",
-    window: "Thu 22:00-06:00",
-    recommendation: "Shift to Line 5 where historical speed is consistently higher.",
-    projectedGain: "+2.1K units/week",
-  },
-];
+**3. Mixing Tank B - Temperature Control Failures (28 hours total)**
+- Root cause: Steam valve actuator wear
+- Prevention: Replace actuators on 18-month cycle vs current 24-month
+- Est. savings: $56K annually plus quality improvement
 
-export const beaconGoldenRows: GoldenStandardRow[] = [
-  {
-    attribute: "Package Format",
-    bestSku: "Frosted jar with screw cap",
-    worstSku: "Pump bottle with multi-part assembly",
-    impact: "Higher mechanical setup risk",
+*Sources: Maximo work orders Q3, OEE logs, maintenance reports*`
   },
-  {
-    attribute: "Label Architecture",
-    bestSku: "Single wraparound",
-    worstSku: "Front + back + pump labels",
-    impact: "+9 min average changeover",
-  },
-  {
-    attribute: "Quality Checks",
-    bestSku: "Visual + weight verification",
-    worstSku: "Leak, torque, and actuation tests",
-    impact: "+14% inspection time",
-  },
-  {
-    attribute: "Complexity Score",
-    bestSku: "3/10",
-    worstSku: "8/10",
-    impact: "18.6 point OEE spread",
-  },
-];
+  strategic: {
+    question: "How should next year's automation investment be prioritized based on performance data?",
+    response: `FY26 automation investment priority ranking:
 
-export const beaconGoldenSummary =
-  "Beacon Hill's strongest SKU remains LB-DMC-50, while LB-VCS-30 drives most stop events due to pump complexity and label variance.";
+**Priority 1: Packaging Line 1 Auto-Reject System ($280K)**
+- ROI: 18 months based on quality cost reduction
+- Impact: Eliminate 3.2% manual quality holds
+- Strategic alignment: Plant Excellence initiative
 
-export const beaconGoldenActions = [
-  "Adopt standardized pump threading and torque windows.",
-  "Consolidate three labels into one wrap format.",
-  "Pre-stage 30ml setup kits to reduce startup drift.",
+**Priority 2: Filler Line 2 Vision Inspection ($195K)**
+- ROI: 24 months based on reduced customer complaints
+- Impact: Catch fill-level variations before shipping  
+- Strategic alignment: Zero defect manufacturing
+
+**Priority 3: Material Handling Conveyor Upgrade ($150K)**
+- ROI: 36 months based on labor reduction
+- Impact: Enable lights-out operation during night shift
+- Strategic alignment: Operational efficiency goals
+
+*Analysis includes payback calculations, risk assessment, and strategic alignment with Plant Excellence initiative.*`
+  },
+  schedule: {
+    question: "Which production lines should we schedule for high-complexity jobs next week?",
+    response: `Next week scheduling recommendations:
+
+**Line 3: Complex Color Cosmetics (Recommended)**
+- 15% better yield on multi-color products vs Line 1
+- Operator team has advanced training on precision filling
+- Equipment calibrated for tight tolerance work
+
+**Line 1: Standard SKUs Only (Avoid Complex Jobs)**
+- Recent sensor drift requires recalibration
+- New operator training in progress
+- Better suited for high-volume, simple formulations
+
+**Optimal Sequencing:**
+- Monday: Line 3 warm-up with medium complexity
+- Tue-Thu: High complexity campaigns on Line 3
+- Friday: Line 1 for weekend production buffer
+
+*Based on historical yield data, operator skill matrix, and equipment status*`
+  },
+  golden: {
+    question: "What separates our best OEE days from our worst, and how do we replicate the best?",
+    response: `Golden standard analysis (top 10% vs bottom 10% OEE days):
+
+**Key Differentiators:**
+
+**Equipment Preparation**
+- Best days: 30-min pre-shift warm-up completed
+- Worst days: Cold start-ups or rushed preparations
+- Impact: 12% difference in first-hour efficiency
+
+**Environmental Conditions** 
+- Best days: Humidity 40-45%, Temperature 68-72°F
+- Worst days: Humidity >50% or temperature variation >3°F
+- Impact: 8% difference in quality metrics
+
+**Operator Behaviors**
+- Best days: Standard visual inspection checklist followed
+- Worst days: Abbreviated or inconsistent inspections  
+- Impact: 6% difference in catch-rate for quality issues
+
+**Replication Strategy:**
+1. Mandate 30-minute equipment warm-up (Est. +7% OEE)
+2. Install environmental monitoring alerts (Est. +5% OEE) 
+3. Digitize inspection checklists with compliance tracking (Est. +4% OEE)
+
+*Analysis of 90-day performance window, 247 production days*`
+  }
+};
+
+// Tour stops for the guided experience
+export const tourStops = [
+  {
+    id: "hero",
+    title: "AI Strategic Planning Assistant",
+    description: "Plant Perfect analyzes performance data and provides strategic insights for manufacturing optimization"
+  },
+  {
+    id: "scenarios", 
+    title: "Four Core Capabilities",
+    description: "Retrospective analysis, strategic planning, schedule optimization, and golden standard benchmarking"
+  },
+  {
+    id: "chat",
+    title: "Intelligent Conversations", 
+    description: "Ask strategic questions and get data-driven insights with citations from your plant's performance history"
+  },
+  {
+    id: "examples",
+    title: "Example Questions",
+    description: "Start with these common strategic planning questions or ask anything about plant performance"
+  },
+  {
+    id: "context",
+    title: "Plant Context Aware",
+    description: "All insights are tailored to Beacon Hill facility's specific equipment, processes, and performance patterns"
+  }
 ];

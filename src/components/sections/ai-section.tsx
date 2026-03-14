@@ -42,8 +42,8 @@ const agentDemos: AgentDemo[] = [
     id: "plant-perfect",
     name: "Plant Perfect",
     description:
-      "Global manufacturing command center. Select plants worldwide to access facility-specific analytics and strategic intelligence.",
-    preview: "Navigate global facilities, compare KPI performance, and open plant intelligence dashboards.",
+      "AI strategic planning assistant for manufacturing intelligence. Chat interface for retrospective analysis, strategic planning, schedule optimization, and performance benchmarking.",
+    preview: "Ask strategic questions and get data-driven insights for operational reviews, fiscal planning, and performance improvement.",
     demoUrl: "/plant-perfect",
     color: "from-cyan-500/20 to-sky-500/20",
     borderColor: "border-cyan-500/30",
