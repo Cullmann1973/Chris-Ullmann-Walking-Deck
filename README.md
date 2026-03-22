@@ -1,162 +1,97 @@
 # The Ullmann Blueprint
 
-An interactive portfolio app showcasing Christopher Ullmann's career journey, achievements, and expertise. Built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+An interactive portfolio site showcasing Christopher Ullmann's career in AI transformation, quality leadership, and operational excellence. Built with Next.js, TypeScript, Tailwind CSS, GSAP, and Framer Motion.
 
-## Features
+**Live:** [ullmann-blueprint.vercel.app](https://ullmann-blueprint.vercel.app)
 
-- **Cockpit (Home):** HUD-style hero section with animated performance metrics
-- **Mission Log:** Interactive timeline of career milestones
-- **Builder's Lab:** Technical showcase with sim rig specs and code samples
-- **AI Co-Pilot:** Chat interface (ready for AI integration)
+## Sections
+
+- **Hero:** Animated tagline ("From Vision to Strategy. Execution with Discipline. Scaling AI.") with cycling metrics ticker
+- **About:** Headshot, expertise keywords, bio, current role, and stats
+- **What I Deliver:** Capability cards (Transformation, Regulatory, Adoption, Digital/AI, Change Leadership)
+- **Roles / What Sets Me Apart:** Pinned scroll revealing 4 qualities
+- **Why I Build / My Approach:** Rotating discipline words with career descriptions
+- **The Journey (Stack):** Accordion timeline with 5 career eras
+- **Beyond Work:** Family, 4:30 Club, The Drive sections with images and quotes
+- **AI Projects:** ELLA, Supplier Intel, Plant Perfect, Cognex Vision, QC Copilot, in-lite Designer
+- **Contact:** Email, LinkedIn, resume download
+
+## Interactive Features
+
+- **CU Logo:** Floating animated logo with GSAP entrance
+- **Custom Cursor:** SVG arrow with 10-dot glowing trail (desktop)
+- **Chat Widget:** AI copilot for Q&A about Chris's background
+- **ELLA Demo:** Interactive tour at `/ella`
+- **Plant Perfect Demo:** AI strategic planning assistant at `/plant-perfect`
+- **Scroll Nudge:** Animated prompt to scroll
+- **Focus Mode:** URL params to highlight specific sections
 
 ## Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS v4
-- **UI Components:** shadcn/ui
-- **Animations:** Framer Motion
+- **Animations:** GSAP + ScrollTrigger, Framer Motion
 - **Icons:** Lucide React
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+ (installed via fnm)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd ullmann-blueprint
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-## Deployment to Vercel
-
-### Option 1: Vercel CLI
-
-1. Install Vercel CLI (already installed):
-```bash
-npm install -g vercel
-```
-
-2. Login to Vercel:
-```bash
-vercel login
-```
-
-3. Deploy:
-```bash
-vercel
-```
-
-4. For production deployment:
-```bash
-vercel --prod
-```
-
-### Option 2: GitHub Integration
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Click "New Project"
-4. Import your GitHub repository
-5. Vercel will auto-detect Next.js settings
-6. Click "Deploy"
-
-## Adding AI Integration (Optional)
-
-To enable the AI Co-Pilot with real responses:
-
-1. Create a `.env.local` file:
-```bash
-OPENAI_API_KEY=your-openai-api-key-here
-```
-
-2. Install the Vercel AI SDK:
-```bash
-npm install ai @ai-sdk/openai
-```
-
-3. Create an API route at `src/app/api/chat/route.ts`:
-```typescript
-import { openai } from '@ai-sdk/openai';
-import { streamText } from 'ai';
-
-export async function POST(req: Request) {
-  const { messages } = await req.json();
-
-  const result = streamText({
-    model: openai('gpt-4-turbo'),
-    system: `You are Chris Ullmann's digital twin. Answer questions based on his biography and achievements...`,
-    messages,
-  });
-
-  return result.toDataStreamResponse();
-}
-```
-
-4. Update the AI Co-Pilot page to use the `useChat` hook from the AI SDK.
-
-### Environment Variables for Vercel
-
-When deploying to Vercel with AI features, add these environment variables in your Vercel dashboard:
-
-- `OPENAI_API_KEY`: Your OpenAI API key
-
-## Customization
-
-### Adding Your Content
-
-1. **Biography:** Update the AI system prompt with your full biography
-2. **Timeline:** Edit `src/app/mission-log/page.tsx` with your career events
-3. **Metrics:** Update the numbers in `src/app/page.tsx`
-4. **Sim Rig Photo:** Replace the placeholder in Builder's Lab with your actual image
-
-### Changing the Theme
-
-The "Industrial Digital" theme colors are defined in `src/app/globals.css`. Key variables:
-
-- `--gauge-amber`: Primary accent (warm amber)
-- `--gauge-blue`: Secondary accent (electric blue)
-- `--gauge-green`: Success/active states
+- **Analytics:** Vercel Analytics + Speed Insights
 
 ## Project Structure
 
 ```
 src/
 ├── app/
-│   ├── page.tsx           # Cockpit (Home)
-│   ├── mission-log/       # Timeline
-│   ├── builder-lab/       # Projects
-│   ├── ai-copilot/        # Chat
-│   ├── layout.tsx         # Root layout
-│   └── globals.css        # Theme & styles
+│   ├── page.tsx              # Main page (all sections)
+│   ├── layout.tsx            # Root layout (Inter, Playfair Display, JetBrains Mono)
+│   ├── globals.css           # Theme variables and base styles
+│   ├── api/chat/             # AI chat API route
+│   ├── ella/                 # ELLA demo page
+│   └── plant-perfect/        # Plant Perfect demo page
 ├── components/
-│   ├── sidebar.tsx        # Navigation
-│   └── animated-counter.tsx
+│   ├── header.tsx            # Fixed nav bar
+│   ├── unified-cu-logo.tsx   # Animated CU logo
+│   ├── chat-widget.tsx       # AI chat interface
+│   ├── gsap-provider.tsx     # GSAP context + ScrollTrigger
+│   ├── menu-overlay.tsx      # Mobile menu
+│   ├── scroll-nudge.tsx      # Scroll prompt animation
+│   ├── proof-callout.tsx     # Proof point callout
+│   └── sections/             # All page sections
+│       ├── hero-section.tsx
+│       ├── about-section.tsx
+│       ├── what-i-deliver-section.tsx
+│       ├── roles-reveal-section.tsx
+│       ├── why-i-build-section.tsx
+│       ├── stack-section.tsx
+│       ├── beyond-section.tsx
+│       ├── ai-section.tsx
+│       └── contact-section.tsx
+├── hooks/
+│   └── use-focus.ts          # Focus mode hook
 └── lib/
-    └── utils.ts           # Utilities
+    └── utils.ts              # Utilities
+```
+
+## Theme
+
+Dark theme with teal accents:
+- Background: `#0a0a0a`
+- Primary: `#00bcd4` (teal)
+- Fonts: Inter (body), Playfair Display (display), JetBrains Mono (code)
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+# Open http://localhost:3000
+```
+
+## Deployment
+
+Deployed to Vercel via CLI:
+```bash
+vercel --prod
 ```
 
 ## License
 
 Private - All rights reserved.
-
----
-
-Built with precision by The Ullmann Blueprint
