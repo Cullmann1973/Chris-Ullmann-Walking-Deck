@@ -14,7 +14,7 @@ const expertiseWords = [
 ];
 
 const stats = [
-  { value: "6", label: "AI tools shipped to production" },
+  { value: "50+", label: "AI use cases sourced and prioritized" },
   { value: "1,000+", label: "People using AI daily" },
   { value: "8", label: "Global plants transformed" },
   { value: "25+", label: "Years in operations leadership" },
