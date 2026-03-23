@@ -76,28 +76,29 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
       );
 
       // Exit animation: morph boxRef to fill viewport
+      // Hold for reading time before exit begins (was 0.80, now 0.88)
       // Step 1: Fade out all box content
       tl.to(
         ".roles-box-content",
-        { opacity: 0, duration: 0.05, ease: "none" },
-        0.80
+        { opacity: 0, duration: 0.04, ease: "none" },
+        0.88
       );
 
       // Step 2–4: Box morphs outward
       tl.to(
         boxRef.current,
-        { rotation: 45, scale: 1.5, borderRadius: "40%", boxShadow: "0 0 100px 50px rgba(0,0,0,0.5)", duration: 0.05, ease: "none" },
-        0.85
+        { rotation: 45, scale: 1.5, borderRadius: "40%", boxShadow: "0 0 100px 50px rgba(0,0,0,0.5)", duration: 0.04, ease: "none" },
+        0.92
       );
       tl.to(
         boxRef.current,
-        { rotation: 30, scale: 4, borderRadius: "30%", duration: 0.05, ease: "none" },
-        0.90
+        { rotation: 30, scale: 4, borderRadius: "30%", duration: 0.04, ease: "none" },
+        0.96
       );
       tl.to(
         boxRef.current,
-        { rotation: 0, scale: 10, borderRadius: "0%", boxShadow: "none", duration: 0.05, ease: "none" },
-        0.95
+        { rotation: 0, scale: 10, borderRadius: "0%", boxShadow: "none", duration: 0.04, ease: "none" },
+        1.0
       );
     }, sectionRef);
 

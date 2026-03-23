@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "../gsap-provider";
 import {
   Boxes,
@@ -53,6 +53,96 @@ const capabilities: Capability[] = [
 
 export function WhatIDeliverSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  
+  // Drag to scroll state
+  const [isDragging, setIsDragging] = useState(false);
+  
+  const stateRef = useRef({
+    isDown: false,
+    startX: 0,
+    scrollLeft: 0,
+    velocity: 0,
+    timestamp: 0,
+    animationFrameId: 0,
+  });
+
+  const stopMomentum = useCallback(() => {
+    if (stateRef.current.animationFrameId) {
+      cancelAnimationFrame(stateRef.current.animationFrameId);
+      stateRef.current.animationFrameId = 0;
+    }
+  }, []);
+
+  const momentumLoop = useCallback(() => {
+    if (!scrollContainerRef.current) return;
+    
+    // Apply friction
+    stateRef.current.velocity *= 0.95; 
+    
+    // Stop if velocity is very low
+    if (Math.abs(stateRef.current.velocity) < 0.5) {
+      stopMomentum();
+      return;
+    }
+    
+    scrollContainerRef.current.scrollLeft -= stateRef.current.velocity;
+    stateRef.current.animationFrameId = requestAnimationFrame(momentumLoop);
+  }, [stopMomentum]);
+
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    
+    stopMomentum();
+    stateRef.current.isDown = true;
+    setIsDragging(true);
+    
+    stateRef.current.startX = e.pageX - scrollContainerRef.current.offsetLeft;
+    stateRef.current.scrollLeft = scrollContainerRef.current.scrollLeft;
+    stateRef.current.velocity = 0;
+    stateRef.current.timestamp = performance.now();
+  }, [stopMomentum]);
+
+  const onMouseLeave = useCallback(() => {
+    if (stateRef.current.isDown) {
+      stateRef.current.isDown = false;
+      setIsDragging(false);
+      stateRef.current.animationFrameId = requestAnimationFrame(momentumLoop);
+    }
+  }, [momentumLoop]);
+
+  const onMouseUp = useCallback(() => {
+    if (stateRef.current.isDown) {
+      stateRef.current.isDown = false;
+      setIsDragging(false);
+      stateRef.current.animationFrameId = requestAnimationFrame(momentumLoop);
+    }
+  }, [momentumLoop]);
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!stateRef.current.isDown || !scrollContainerRef.current) return;
+    e.preventDefault();
+    
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - stateRef.current.startX); // distance moved
+    
+    // Calculate velocity based on delta movement / delta time
+    const now = performance.now();
+    const dt = now - stateRef.current.timestamp;
+    
+    // update position
+    const newScrollLeft = stateRef.current.scrollLeft - walk;
+    const dx = scrollContainerRef.current.scrollLeft - newScrollLeft;
+    
+    if (dt > 0) {
+      // smooth velocity
+      const instantVelocity = dx; 
+      stateRef.current.velocity = 0.8 * stateRef.current.velocity + 0.2 * instantVelocity;
+    }
+    
+    scrollContainerRef.current.scrollLeft = newScrollLeft;
+    stateRef.current.timestamp = now;
+  }, []);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -76,14 +166,14 @@ export function WhatIDeliverSection({ focus }: { focus?: string }) {
 
       gsap.fromTo(
         ".deliver-card",
-        { y: 25, opacity: 0 },
+        { x: 30, opacity: 0 },
         {
-          y: 0,
+          x: 0,
           opacity: 1,
           stagger: 0.08,
           ease: "none",
           scrollTrigger: {
-            trigger: ".deliver-grid",
+            trigger: ".deliver-carousel-wrapper",
             start: "top 85%",
             end: "top 55%",
             scrub: 1.5,
@@ -92,13 +182,16 @@ export function WhatIDeliverSection({ focus }: { focus?: string }) {
       );
     }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+    return () => {
+      ctx.revert();
+      stopMomentum();
+    };
+  }, [stopMomentum]);
 
   return (
     <section ref={sectionRef} id="what-i-deliver" className="bg-dark relative">
-      <div className="section-padding">
-        <div className="max-w-6xl mx-auto">
+      <div className="pt-24 pb-12 md:pt-32 md:pb-16">
+        <div className="max-w-6xl mx-auto px-6 md:px-8 xl:px-0">
           <div className="deliver-title mb-12 max-w-4xl">
             <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
               Capabilities
@@ -110,14 +203,25 @@ export function WhatIDeliverSection({ focus }: { focus?: string }) {
               I build the business case, build the tool, and build the team that adopts it.
             </p>
           </div>
+        </div>
 
-          <div className="deliver-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
+        {/* Full width carousel container */}
+        <div className="deliver-carousel-wrapper w-full overflow-hidden">
+          <div 
+            ref={scrollContainerRef}
+            className={`flex gap-5 px-6 md:px-8 xl:px-[calc((100vw-72rem)/2)] overflow-x-auto select-none no-scrollbar touch-pan-x ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+            onMouseDown={onMouseDown}
+            onMouseLeave={onMouseLeave}
+            onMouseUp={onMouseUp}
+            onMouseMove={onMouseMove}
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             {capabilities.map((item) => {
               const Icon = item.icon;
               return (
                 <article
                   key={item.title}
-                  className="deliver-card rounded-xl border border-white/10 bg-dark-alt/80 p-6"
+                  className="deliver-card shrink-0 w-[320px] md:w-[360px] rounded-xl border border-white/10 bg-dark-alt/80 p-6 pointer-events-none"
                 >
                   <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 border border-primary/25 mb-4">
                     <Icon className="w-4 h-4 text-primary" />
@@ -131,6 +235,9 @@ export function WhatIDeliverSection({ focus }: { focus?: string }) {
                 </article>
               );
             })}
+            
+            {/* Spacer for right padding on scroll */}
+            <div className="shrink-0 w-1 md:w-2 xl:w-[calc((100vw-72rem)/2)]"></div>
           </div>
         </div>
       </div>
