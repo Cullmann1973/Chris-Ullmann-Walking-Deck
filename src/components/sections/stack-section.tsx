@@ -29,6 +29,7 @@ const stackLayers: StackLayer[] = [
       "Activated 1,000+ people on AI through structured adoption programs",
       "100+ member AI Community of Practice established for peer-led capability growth",
       "ELLA (line-level manufacturing assistant) presented at Microsoft Ignite as enterprise AI adoption case study",
+      "Stanford HAI coursework (XFM110 + XFM111): human-centered AI training covering ethics, bias mitigation, legal risk, trust frameworks, and workforce transformation",
     ],
     whatItUnlocked:
       "Enterprise-wide AI transformation leadership. Fluent in both the technical and business languages.",

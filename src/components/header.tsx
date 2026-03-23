@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Menu } from "lucide-react";
+import { MenuOverlay } from "./menu-overlay";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,10 +71,20 @@ export function Header() {
               <Sparkles className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Ask My AI</span>
             </button>
+
+            {/* Hamburger — mobile only */}
+            <button
+              onClick={() => setMenuOpen(true)}
+              className="md:hidden inline-flex items-center justify-center w-10 h-10 text-foreground hover:text-primary transition-colors"
+              aria-label="Open menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </header>
 
+      <MenuOverlay isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );
 }

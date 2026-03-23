@@ -6,18 +6,18 @@ import { gsap } from "../gsap-provider";
 import { FOCUS_CONFIGS, type FocusMode } from "@/lib/focus-config";
 
 const expertiseWords = [
-  "SUPPLY CHAIN DIGITALIZATION",
-  "PROCESS REDESIGN",
-  "CHANGE LEADERSHIP",
-  "QUALITY SYSTEMS",
-  "AI INTEGRATION",
+  "BUSINESS STRATEGY",
+  "AGENTIC AI BUILDER",
+  "ENTERPRISE TRANSLATOR",
+  "ADOPTION AT SCALE",
+  "GOVERNANCE & DELIVERY",
 ];
 
 const stats = [
-  { value: "$49M+", label: "Enterprise transformation, 170% ROI" },
-  { value: "$500M+", label: "Roadmap authored" },
-  { value: "1,000+", label: "People activated on AI" },
-  { value: "25+", label: "Years across regulated industries" },
+  { value: "6", label: "AI tools shipped to production" },
+  { value: "1,000+", label: "People using AI daily" },
+  { value: "8", label: "Global plants transformed" },
+  { value: "25+", label: "Years in operations leadership" },
 ];
 
 export function AboutSection({ focus }: { focus?: string }) {
@@ -153,6 +153,7 @@ export function AboutSection({ focus }: { focus?: string }) {
               >
                 <div className="absolute -inset-4 rounded-2xl border border-primary/20" />
                 <div className="relative w-full h-full rounded-xl overflow-hidden">
+                  {/* TODO: Replace headshot.png with a higher-res source (min 896x896 for 2x retina). Current source is ~191x212px, displayed at 448x448. */}
                   <Image
                     src="/headshot.png"
                     alt="Christopher Ullmann"
@@ -185,39 +186,21 @@ export function AboutSection({ focus }: { focus?: string }) {
             <div ref={contentRef} className="space-y-8 lg:pt-12">
               <div className="content-card p-8">
                 <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
-                  From regulated manufacturing floors to enterprise AI transformation
+                  The translator between the boardroom and the build
                 </h3>
 
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    I&apos;ve spent 25 years building and fixing complex systems
-                    in regulated manufacturing environments.
+                    I spot where AI solves real business problems, build the case to fund it, then build the tool myself.
                   </p>
                   <p>
-                    I built quality systems from scratch across pharmaceutical,
-                    OTC, cosmetic, and nutraceutical manufacturing, then led
-                    multi-site plant consolidations and full organization
-                    restructures.
+                    25 years in manufacturing, supply chain, and quality gave me the operating context. Stanford HAI and hands-on agentic AI development gave me the technical depth. Kotter change leadership training at Harvard gave me the adoption playbook.
                   </p>
                   <p>
-                    I&apos;ve navigated FDA, GMP, and evolving regulatory landscapes
-                    while driving performance with Lean Six Sigma discipline and
-                    Kotter change leadership.
+                    Today I lead AI transformation across 8 global plants at The Estée Lauder Companies. I write business cases that get executive approval, ship working tools (not decks), and run a Community of Practice that grew from 3 to 100+ members organically. 1,000+ people now use AI in their daily work because the tools actually solve their problems.
                   </p>
                   <p>
-                    Lean Six Sigma certified. Kotter Change Management facilitator.
-                    Work featured in Harvard Business Review.
-                  </p>
-                  <p>
-                    Today I lead AI transformation at enterprise scale, bringing
-                    that same rigor to emerging technology.
-                  </p>
-                  <p>
-                    Most AI leaders come from pure tech. Most operations leaders
-                    never touch AI.{" "}
-                    <span className="text-primary">
-                      I do both, and that&apos;s what makes the work stick.
-                    </span>
+                    Microsoft Ignite presenter. M365 Conference panelist (April 2026).
                   </p>
 
                   {focusMode !== "general" && (
@@ -267,7 +250,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                           AI Strategy, Development and Delivery
                         </span>
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
-                          Stanford AI
+                          Stanford HAI
                         </span>
                       </>
                     )}

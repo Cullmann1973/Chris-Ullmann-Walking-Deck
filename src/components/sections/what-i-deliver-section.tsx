@@ -8,6 +8,7 @@ import {
   UsersRound,
   Bot,
   Workflow,
+  TrendingUp,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,33 +20,34 @@ interface Capability {
 
 const capabilities: Capability[] = [
   {
-    title: "Transformation at Scale",
-    description:
-      "Cross-functional operating models that eliminate silos and waste.",
-    icon: Boxes,
+    title: "Business Case to Funding",
+    description: "I identify where AI creates measurable value, build the financial case, and get executive sign-off. Every project ties to a real P&L outcome.",
+    icon: TrendingUp,
   },
   {
-    title: "Regulatory & Quality Systems",
-    description:
-      "Built from scratch across pharma, OTC, cosmetics, nutraceuticals. FDA, GMP, ISO compliance.",
+    title: "Governance That Accelerates",
+    description: "Legal, Privacy, and Compliance engaged before the first line of code. Guardrails that let teams move faster, not slower.",
     icon: ShieldCheck,
   },
   {
-    title: "Adoption at Scale",
-    description: "From 0 to 1,000+ AI users. Building capability, not just tools.",
-    icon: UsersRound,
-  },
-  {
-    title: "Digital & AI Integration",
-    description:
-      "Strategy through deployment. GenAI, RAG, agentic AI in real operations.",
+    title: "Agentic AI, Shipped Daily",
+    description: "ELLA, Plant Perfect, Cognex Vision, QC Copilot. Working tools built for operators and managers. I write the code, not the deck.",
     icon: Bot,
   },
   {
-    title: "Change Leadership",
-    description:
-      "Kotter certified. Lean Six Sigma. Kaizen. HBR-featured transformation work.",
+    title: "Full-Stack AI Architecture",
+    description: "From LLM orchestration and RAG pipelines to production deployment. GitHub, Vercel, Next.js, Python. Hands on keyboard every day.",
     icon: Workflow,
+  },
+  {
+    title: "Community of Practice at Scale",
+    description: "3 members to 100+, one department to company-wide. Organic growth driven by tools worth using. Kotter methodology, real results.",
+    icon: UsersRound,
+  },
+  {
+    title: "1,000+ Trained and Using AI",
+    description: "Not a training program. An adoption engine. Champions teach champions. People use it because it solves their actual problems.",
+    icon: Boxes,
   },
 ];
 
@@ -105,9 +107,7 @@ export function WhatIDeliverSection({ focus }: { focus?: string }) {
               What I Deliver
             </h2>
             <p className="text-muted-foreground mt-4">
-              I design cross-functional operating models, build scalable
-              capabilities, and embed digital and AI into operations that
-              actually adopt them.
+              I build the business case, build the tool, and build the team that adopts it.
             </p>
           </div>
 

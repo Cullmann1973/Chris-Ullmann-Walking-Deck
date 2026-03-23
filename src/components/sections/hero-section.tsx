@@ -6,10 +6,10 @@ import { FOCUS_CONFIGS, type FocusMode } from "@/lib/focus-config";
 
 // Default metrics (used if no focus prop)
 const defaultMetrics = [
-  { value: "$49M+", label: "program, 170% ROI" },
-  { value: "$500M+", label: "transformation roadmap" },
   { value: "1,000+", label: "people activated on AI" },
-  { value: "$45M/year", label: "working capital released" },
+  { value: "100+", label: "AI Community of Practice members" },
+  { value: "37x", label: "growth in active AI users" },
+  { value: "8", label: "global plants transformed" },
 ];
 
 export function HeroSection({ focus }: { focus?: string }) {
@@ -213,20 +213,20 @@ export function HeroSection({ focus }: { focus?: string }) {
 
       <div className="h-full flex flex-col justify-center items-center px-8 md:px-16 lg:px-24">
         {/* Spacer for CU letters (now handled by UnifiedCULogo) */}
-        <div className="mb-4 md:mb-6" style={{ height: "clamp(80px, 18vh, 150px)" }} />
+        <div className="mb-4 md:mb-6" style={{ height: "clamp(120px, 25vh, 200px)" }} />
 
         {/* Hero Content - Below the letters with proper spacing */}
         <div className="hero-content text-center max-w-3xl">
           {/* Tagline */}
           <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-serif text-foreground/80 leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line tagline-line-1 block mb-2">
-              From Vision to <span className="tagline-flash-strategy">Strategy.</span>
+              People Drive <span className="tagline-flash-strategy">Transformation.</span>
             </span>
             <span className="tagline-line tagline-line-2 block mb-2">
-              <span className="tagline-flash-execution">Execution</span> with Discipline.
+              AI <span className="tagline-flash-execution">Accelerates</span> It.
             </span>
             <span className="tagline-line tagline-line-3 block mb-2">
-              Scaling <span className="tagline-flash-ai">AI.</span>
+              Culture Makes It <span className="tagline-flash-ai">Last.</span>
             </span>
           </h1>
 
@@ -259,8 +259,9 @@ export function HeroSection({ focus }: { focus?: string }) {
                       i === currentMetric ? "bg-primary" : "bg-muted-foreground/30"
                     }`}
                     style={{
-                      height: '4px',
-                      width: i === currentMetric ? '14px' : '4px',
+                      height: '8px',
+                      width: i === currentMetric ? '20px' : '8px',
+                      padding: '0',
                     }}
                     aria-label={`View metric ${i + 1}`}
                   />

@@ -248,10 +248,10 @@ export function BeyondSection({ focus }: { focus?: string }) {
         <div className="max-w-5xl mx-auto">
           {/* Section header */}
           <div className="beyond-main-title mb-16 max-w-3xl">
-            <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
+            <span className="block text-xs font-mono tracking-wider text-muted-foreground uppercase">
               Beyond Work
             </span>
-            <h2 className="text-section font-serif text-foreground mt-4 relative inline-block">
+            <h2 className="text-section font-serif text-foreground relative inline-block" style={{ marginTop: '40px' }}>
               The Drive
               <span className="main-title-underline absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left" />
             </h2>

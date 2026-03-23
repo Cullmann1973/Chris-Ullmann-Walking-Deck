@@ -7,13 +7,13 @@ import { HeroSection } from "@/components/sections/hero-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { WhatIDeliverSection } from "@/components/sections/what-i-deliver-section";
 import { RolesRevealSection } from "@/components/sections/roles-reveal-section";
-import { WhyIBuildSection } from "@/components/sections/why-i-build-section";
 import { StackSection } from "@/components/sections/stack-section";
 import { BeyondSection } from "@/components/sections/beyond-section";
 import { AISection } from "@/components/sections/ai-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { ChatWidget } from "@/components/chat-widget";
 import { ScrollNudge } from "@/components/scroll-nudge";
+import { CircularCursor } from "@/components/circular-cursor";
 import { ProofCallout } from "@/components/proof-callout";
 import { ScrollTrigger } from "@/components/gsap-provider";
 import { useFocus } from "@/hooks/use-focus";
@@ -23,7 +23,6 @@ const SECTION_MAP: Record<string, React.FC<{ focus?: string }>> = {
   hero: HeroSection,
   about: AboutSection,
   roles: RolesRevealSection,
-  "why-i-build": WhyIBuildSection,
   stack: StackSection,
   beyond: BeyondSection,
   ai: AISection,
@@ -33,10 +32,25 @@ const SECTION_MAP: Record<string, React.FC<{ focus?: string }>> = {
 function HomeContent() {
   const { mode, config } = useFocus();
 
-  // Force scroll to top on page load/refresh and replay animations
+  // Force scroll to top on page load/refresh — but respect hash anchors (e.g. /#ai from demo back buttons)
   useEffect(() => {
+    const hash = window.location.hash;
+    const hasAnchor = hash && hash.length > 1;
+
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
+    }
+
+    if (hasAnchor) {
+      // Coming back from a demo — scroll to the anchor after a brief delay for render
+      const scrollToAnchor = setTimeout(() => {
+        const el = document.getElementById(hash.slice(1));
+        if (el) {
+          el.scrollIntoView({ behavior: "instant" });
+          ScrollTrigger.refresh();
+        }
+      }, 200);
+      return () => clearTimeout(scrollToAnchor);
     }
 
     window.scrollTo(0, 0);
@@ -50,6 +64,15 @@ function HomeContent() {
 
     const handlePageShow = (e: PageTransitionEvent) => {
       if (e.persisted) {
+        const currentHash = window.location.hash;
+        if (currentHash && currentHash.length > 1) {
+          const el = document.getElementById(currentHash.slice(1));
+          if (el) {
+            el.scrollIntoView({ behavior: "instant" });
+            ScrollTrigger.refresh();
+            return;
+          }
+        }
         window.scrollTo(0, 0);
         ScrollTrigger.refresh();
       }
@@ -60,14 +83,6 @@ function HomeContent() {
       window.scrollTo(0, 0);
     };
     window.addEventListener("beforeunload", handleBeforeUnload);
-
-    if (window.location.hash) {
-      history.replaceState(
-        null,
-        "",
-        window.location.pathname + window.location.search
-      );
-    }
 
     return () => {
       clearTimeout(scrollTimer1);
@@ -97,6 +112,7 @@ function HomeContent() {
       <main>{sections}</main>
       <ChatWidget />
       <ScrollNudge />
+      <CircularCursor />
     </>
   );
 }

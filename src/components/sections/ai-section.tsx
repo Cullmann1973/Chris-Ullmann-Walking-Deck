@@ -34,7 +34,7 @@ const agentDemos: AgentDemo[] = [
     description:
       "Real-time supplier risk monitoring using public news, financial signals, and regulatory data.",
     preview: "Monitor supplier risk scores, news alerts, and financial health in real time.",
-    demoUrl: "https://supplier-intel-bot.vercel.app",
+    demoUrl: "/supplier-intel",
     color: "from-sky-500/20 to-indigo-500/20",
     borderColor: "border-sky-500/30",
   },
@@ -54,7 +54,7 @@ const agentDemos: AgentDemo[] = [
     description:
       "Voice of Customer translator that uncovers quality signals in consumer feedback.",
     preview: "Analyze consumer sentiment and surface hidden quality signals from reviews.",
-    demoUrl: "https://cc-consumer-pulse.vercel.app",
+    demoUrl: "/consumer-pulse",
     color: "from-emerald-500/20 to-green-500/20",
     borderColor: "border-emerald-500/30",
   },
@@ -64,7 +64,7 @@ const agentDemos: AgentDemo[] = [
     description:
       "Vision system troubleshooting copilot for camera setup, OCR, and PLC diagnostics.",
     preview: "Troubleshoot vision cameras, OCR configurations, and PLC integration issues.",
-    demoUrl: "https://cc-cognex-vision.vercel.app",
+    demoUrl: "/cognex-vision",
     color: "from-cyan-500/20 to-blue-500/20",
     borderColor: "border-cyan-500/30",
   },
@@ -74,7 +74,7 @@ const agentDemos: AgentDemo[] = [
     description:
       "AI presentation co-pilot that transforms ideas into polished slides in minutes.",
     preview: "Turn rough ideas into polished presentation decks with AI assistance.",
-    demoUrl: "https://cc-slide-maestro.vercel.app",
+    demoUrl: "/qc-copilot",
     color: "from-purple-500/20 to-violet-500/20",
     borderColor: "border-purple-500/30",
   },
@@ -84,7 +84,7 @@ const agentDemos: AgentDemo[] = [
     description:
       "Upload a yard photo and get a complete outdoor lighting plan: AI vision analysis, product recommendations, electrical calculations, and a dusk render preview.",
     preview: "Try it live: upload any yard photo and get an instant professional lighting design.",
-    demoUrl: "https://inlite-designer.vercel.app",
+    demoUrl: "/inlite-designer",
     color: "from-amber-500/20 to-yellow-500/20",
     borderColor: "border-amber-500/30",
   },

@@ -1,357 +1,334 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Bot, Send, User, Sparkles, X } from "lucide-react";
+import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { MessageCircle, Send, X } from "lucide-react";
 
-interface Message {
-  id: string;
-  role: "user" | "assistant";
+type ChatMessage = {
+  id: number;
+  role: "assistant" | "user";
   content: string;
-}
-
-const UNTRAINED_PHRASE = "I haven't been trained on that data yet";
-
-// Log unanswered questions for review
-const logUnansweredQuestion = async (question: string) => {
-  try {
-    // Save to localStorage for easy local review
-    const stored = JSON.parse(localStorage.getItem("unanswered_questions") || "[]");
-    stored.push({ question, timestamp: new Date().toISOString() });
-    // Keep last 100
-    if (stored.length > 100) stored.splice(0, stored.length - 100);
-    localStorage.setItem("unanswered_questions", JSON.stringify(stored));
-
-    // Also log server-side (visible in Vercel dashboard logs)
-    fetch("/api/log-question", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question, timestamp: new Date().toISOString() }),
-    }).catch(() => {});
-  } catch {
-    // Silent fail
-  }
+  isVerificationExchange?: boolean;
 };
 
-const suggestedQueries = [
-  "What's your background?",
-  "How did you save $16M at Leiner?",
-  "Tell me about your military service.",
-  "What makes you a 'translator'?",
-  "Tell me about the Coty consolidation.",
-  "What AI tools have you built?",
-];
-
-// Fallback responses
-const getResponse = (query: string): string => {
-  const q = query.toLowerCase();
-
-  if (q.includes("16m") || q.includes("leiner") || q.includes("quarantine") || q.includes("inventory")) {
-    return "At Leiner Health Products, I reduced quarantine inventory from $16M to under $200K across 5 U.S. plants by re-engineering the release process. Would you like to hear more about how I did it?";
-  }
-
-  if (q.includes("military") || q.includes("air force") || q.includes("usaf") || q.includes("gulf") || q.includes("veteran") || q.includes("service")) {
-    return "I served in the U.S. Air Force from 1992-1996 as an Aerospace Ground Equipment (AGE) Technician, deployed to Incirlik Air Base, Turkey for Operation Provide Comfort II. Two Air Force Achievement Medals. Would you like to hear more about how that shaped my career?";
-  }
-
-  if (q.includes("family") || q.includes("personal") || q.includes("wife") || q.includes("daughter") || q.includes("leslie")) {
-    return "I keep family details private, but I'm happy to talk about my work and career. My wife Leslie is my partner in everything, and I have two daughters who remind me why I build. What else would you like to know?";
-  }
-
-  if (q.includes("translator") || q.includes("translate") || q.includes("bridge") || q.includes("connect")) {
-    return "I bridge the gap between what AI can do and what operations actually needs. I speak both strategy and shop-floor fluently. Leaders at Microsoft and ELC senior leadership have called this a rare skill. Would you like to hear more about how that works in practice?";
-  }
-
-  if (q.includes("coty") || q.includes("consolidat") || q.includes("phoenix") || q.includes("sanford")) {
-    return "I owned the quality and compliance workstream for Coty's $21.7M Phoenix-to-Sanford manufacturing consolidation, delivering $39M in first-year savings with zero compliance disruption. The work was featured in Harvard Business Review. Would you like to hear more about the approach?";
-  }
-
-  if (q.includes("ai") || q.includes("agent") || q.includes("tool") || q.includes("bella") || q.includes("ella") || q.includes("genai")) {
-    return "Partnering with IT and Microsoft, I built AI solutions that gained support from the shop floor to the C-suite: ELLA (presented at Microsoft Ignite) and Plant Perfect (OEE analytics). I'm piloting 20+ GenAI use cases across manufacturing, quality, and supply chain. Would you like to hear more about either of these?";
-  }
-
-  return "I haven't been trained on that data yet. Try asking about my career, AI work, military service, or leadership approach.";
-};
+const GREETING =
+  "Hi, I am Chris Ullmann AI assistant. Ask me anything about his background, experience, or approach to AI transformation.";
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
-  const [streamingContent, setStreamingContent] = useState("");
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [verified, setVerified] = useState(false);
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    {
+      id: 0,
+      role: "assistant",
+      content: GREETING,
+    },
+  ]);
+
+  const nextIdRef = useRef(1);
   const inputRef = useRef<HTMLInputElement>(null);
+  const streamAbortRef = useRef<AbortController | null>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Close on escape
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsOpen(false);
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+  const isTyping = useMemo(() => {
+    const last = messages[messages.length - 1];
+    return isSending && last?.role === "assistant" && last.content.length === 0;
+  }, [messages, isSending]);
 
-  // Focus input when opened
-  useEffect(() => {
-    if (isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 100);
-    }
-  }, [isOpen]);
-
-  // Listen for custom event to open chat (from other components)
   useEffect(() => {
     const handleOpen = () => setIsOpen(true);
     window.addEventListener("open-chat-widget", handleOpen);
     return () => window.removeEventListener("open-chat-widget", handleOpen);
   }, []);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  useEffect(() => {
+    if (isOpen) {
+      inputRef.current?.focus();
+    }
+  }, [isOpen]);
 
   useEffect(() => {
-    scrollToBottom();
-  }, [messages, streamingContent]);
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages, isOpen]);
 
-  const handleSubmit = async (query: string) => {
-    if (!query.trim()) return;
+  useEffect(() => {
+    return () => {
+      streamAbortRef.current?.abort();
+    };
+  }, []);
 
-    const userMessage: Message = {
-      id: Date.now().toString(),
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const question = input.trim();
+    if (!question || isSending) {
+      return;
+    }
+
+    setError(null);
+    setInput("");
+    setIsOpen(true);
+    setIsSending(true);
+
+    const userMessage: ChatMessage = {
+      id: nextIdRef.current++,
       role: "user",
-      content: query.trim(),
+      content: question,
+    };
+    const assistantMessage: ChatMessage = {
+      id: nextIdRef.current++,
+      role: "assistant",
+      content: "",
     };
 
-    setMessages((prev) => [...prev, userMessage]);
-    setInput("");
-    setIsTyping(true);
-    setStreamingContent("");
+    // Filter out verification exchange messages from LLM history
+    const messageHistory = [...messages, userMessage]
+      .filter((m) => !m.isVerificationExchange)
+      .map((message) => ({
+        role: message.role,
+        content: message.content,
+      }));
+
+    setMessages((current) => [...current, userMessage, assistantMessage]);
 
     try {
-      const response = await fetch("/api/ask-chris", {
+      const abortController = new AbortController();
+      streamAbortRef.current = abortController;
+
+      const response = await fetch("/api/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: [...messages, userMessage].map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
-        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ messages: messageHistory, verified }),
+        signal: abortController.signal,
       });
 
-      if (!response.ok) throw new Error("API request failed");
+      if (!response.ok) {
+        const body = await response.text();
+        let errorMessage = "Unable to reach AI assistant right now.";
 
-      const reader = response.body?.getReader();
-      const decoder = new TextDecoder();
-      let fullContent = "";
-
-      if (reader) {
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          const chunk = decoder.decode(value);
-          const lines = chunk.split("\n");
-
-          for (const line of lines) {
-            if (line.startsWith("data: ") && line !== "data: [DONE]") {
-              try {
-                const data = JSON.parse(line.slice(6));
-                if (data.text) {
-                  fullContent += data.text;
-                  setStreamingContent(fullContent);
-                }
-              } catch {
-                // Skip invalid JSON
-              }
+        if (body) {
+          try {
+            const parsed = JSON.parse(body) as { error?: string };
+            if (parsed.error) {
+              errorMessage = parsed.error;
             }
+          } catch {
+            errorMessage = body;
           }
         }
+
+        throw new Error(errorMessage);
       }
 
-      const finalContent = fullContent || "I could not generate a response. Please try again.";
-      const assistantMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        role: "assistant",
-        content: finalContent,
-      };
-      setMessages((prev) => [...prev, assistantMessage]);
-      setStreamingContent("");
-      setIsTyping(false);
-
-      // Log unanswered questions
-      if (finalContent.includes(UNTRAINED_PHRASE)) {
-        logUnansweredQuestion(query);
+      if (!response.body) {
+        throw new Error("Empty response body from chat API.");
       }
-    } catch {
-      setTimeout(() => {
-        const response = getResponse(query);
-        const assistantMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          role: "assistant",
-          content: response,
-        };
-        setMessages((prev) => [...prev, assistantMessage]);
-        setIsTyping(false);
 
-        // Log unanswered questions
-        if (response.includes(UNTRAINED_PHRASE)) {
-          logUnansweredQuestion(query);
+      // Check if this response is a verification confirmation
+      const isVerificationResponse =
+        response.headers.get("X-Chat-Verified") === "true" && !verified;
+
+      if (isVerificationResponse) {
+        setVerified(true);
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let combined = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) {
+          break;
         }
-      }, 800);
+
+        combined += decoder.decode(value, { stream: true });
+
+        setMessages((current) =>
+          current.map((message) =>
+            message.id === assistantMessage.id
+              ? { ...message, content: combined }
+              : message
+          )
+        );
+      }
+
+      combined += decoder.decode();
+      if (combined) {
+        setMessages((current) =>
+          current.map((message) =>
+            message.id === assistantMessage.id
+              ? { ...message, content: combined }
+              : message
+          )
+        );
+      }
+
+      // Mark verification exchange messages so they are excluded from future LLM history
+      if (isVerificationResponse) {
+        setMessages((current) =>
+          current.map((message) =>
+            message.id === userMessage.id || message.id === assistantMessage.id
+              ? { ...message, isVerificationExchange: true }
+              : message
+          )
+        );
+      }
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Unable to reach AI assistant right now.";
+
+      setError(errorMessage);
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === assistantMessage.id
+            ? {
+                ...message,
+                content:
+                  "I hit a temporary issue and couldn't respond. Please try again in a moment.",
+              }
+            : message
+        )
+      );
+    } finally {
+      streamAbortRef.current = null;
+      setIsSending(false);
     }
-  };
+  }
 
   return (
-    <>
-      {/* Chat overlay */}
+    <div className="fixed bottom-4 right-4 z-[90] flex flex-col items-end gap-3">
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-            onClick={() => setIsOpen(false)}
-          />
-
-          {/* Chat window */}
-          <div className="relative w-full max-w-2xl h-[90vh] max-h-[700px] bg-background rounded-2xl border border-border shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-primary to-primary/80 px-5 py-4 flex items-center gap-3 flex-shrink-0">
-              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                <Bot className="w-5 h-5 text-white" />
+        <section
+          id="chat-widget"
+          aria-label="Chat assistant"
+          className="overflow-hidden rounded-2xl border border-[rgba(212,168,67,0.35)] bg-[rgba(30,36,50,0.75)] text-white shadow-[0_20px_50px_rgba(0,0,0,0.45)] backdrop-blur-xl"
+          style={{
+            width: "min(380px, calc(100vw - 1.5rem))",
+            height: "min(560px, 72vh)",
+          }}
+        >
+          <header className="flex items-center justify-between border-b border-[rgba(212,168,67,0.28)] bg-[linear-gradient(135deg,rgba(30,36,50,0.95),rgba(19,24,34,0.92))] px-4 py-3">
+            <div>
+              <div className="flex items-center gap-2">
+                <p className="font-serif text-[15px] leading-none text-[rgba(212,168,67,0.95)]">
+                  Ask Chris AI
+                </p>
+                {verified && (
+                  <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span className="text-[9px] font-mono uppercase tracking-wider text-emerald-400">
+                      Verified
+                    </span>
+                  </span>
+                )}
               </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-white">Meet My AI</h3>
-                <p className="text-xs text-white/70">Ask me about my career and experience</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-xs text-white/70">Online</span>
-                </span>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                  aria-label="Close chat"
-                >
-                  <X className="w-4 h-4 text-white" />
-                </button>
-              </div>
+              <p className="mt-1 text-[11px] font-mono uppercase tracking-[0.14em] text-white/60">
+                Portfolio Assistant
+              </p>
             </div>
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="rounded-md p-1.5 text-white/70 transition hover:bg-white/10 hover:text-white"
+              aria-label="Close chat"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </header>
 
-            {/* Messages area */}
-            <div className="flex-1 overflow-y-auto p-5 space-y-5">
-              {/* Welcome */}
-              {messages.length === 0 && (
-                <div className="text-center py-6">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-3">
-                    <Sparkles className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-foreground mb-1">
-                    Hi, I&apos;m Chris&apos;s digital twin.
-                  </h4>
-                  <p className="text-sm text-muted-foreground max-w-sm mx-auto mb-5">
-                    Ask me anything about my career, accomplishments, or how I approach transformation.
-                  </p>
-
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {suggestedQueries.map((query, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleSubmit(query)}
-                        className="px-3 py-1.5 rounded-lg text-sm bg-secondary/50 text-foreground border border-border hover:border-primary/50 hover:bg-primary/10 transition-all"
-                      >
-                        {query}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Messages */}
-              {messages.map((message) => (
+          <div
+            ref={scrollRef}
+            className="h-[calc(100%-124px)] space-y-3 overflow-y-auto bg-[rgba(10,13,20,0.35)] px-3.5 py-3"
+          >
+            {messages.map((message) => {
+              const isAssistant = message.role === "assistant";
+              return (
                 <div
                   key={message.id}
-                  className={`flex gap-3 ${
-                    message.role === "user" ? "justify-end" : "justify-start"
-                  }`}
+                  className={`flex ${isAssistant ? "justify-start" : "justify-end"}`}
                 >
-                  {message.role === "assistant" && (
-                    <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Bot className="w-4 h-4 text-primary" />
-                    </div>
-                  )}
                   <div
-                    className={`max-w-[80%] rounded-xl px-4 py-3 ${
-                      message.role === "user"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-secondary border border-border"
+                    className={`max-w-[88%] rounded-2xl border px-3 py-2.5 text-sm leading-relaxed ${
+                      isAssistant
+                        ? "border-[rgba(212,168,67,0.2)] bg-[rgba(16,20,29,0.72)] text-white/90"
+                        : "border-[rgba(212,168,67,0.5)] bg-[rgba(212,168,67,0.16)] text-[#f8e8bc]"
                     }`}
                   >
-                    <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
-                  </div>
-                  {message.role === "user" && (
-                    <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <User className="w-4 h-4 text-muted-foreground" />
-                    </div>
-                  )}
-                </div>
-              ))}
-
-              {/* Typing / Streaming */}
-              {isTyping && (
-                <div className="flex gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Bot className="w-4 h-4 text-primary" />
-                  </div>
-                  <div className="bg-secondary border border-border rounded-xl px-4 py-3 max-w-[80%]">
-                    {streamingContent ? (
-                      <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                        {streamingContent}
-                        <span className="animate-pulse">|</span>
-                      </p>
+                    {isTyping && message.content.length === 0 ? (
+                      <span className="inline-flex items-center gap-1.5">
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#D4A843]" />
+                        <span
+                          className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#D4A843]"
+                          style={{ animationDelay: "140ms" }}
+                        />
+                        <span
+                          className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#D4A843]"
+                          style={{ animationDelay: "280ms" }}
+                        />
+                        <span className="ml-1 text-xs uppercase tracking-wide text-[#d6bf80]">
+                          typing
+                        </span>
+                      </span>
                     ) : (
-                      <div className="flex gap-1 py-1">
-                        <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "0ms" }} />
-                        <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "150ms" }} />
-                        <span className="w-2 h-2 rounded-full bg-muted-foreground animate-bounce" style={{ animationDelay: "300ms" }} />
-                      </div>
+                      message.content
                     )}
                   </div>
                 </div>
-              )}
-
-              <div ref={messagesEndRef} />
-            </div>
-
-            {/* Input area */}
-            <div className="border-t border-border bg-secondary/30 px-5 py-4 flex-shrink-0">
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  handleSubmit(input);
-                }}
-                className="flex gap-3"
-              >
-                <input
-                  ref={inputRef}
-                  type="text"
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask me anything..."
-                  className="flex-1 px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary text-sm"
-                />
-                <button
-                  type="submit"
-                  disabled={!input.trim() || isTyping}
-                  className="px-5 py-3 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                >
-                  <Send className="w-5 h-5" />
-                </button>
-              </form>
-            </div>
+              );
+            })}
           </div>
-        </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="border-t border-[rgba(212,168,67,0.25)] bg-[rgba(14,18,26,0.9)] p-3"
+          >
+            <div className="flex items-center gap-2">
+              <input
+                ref={inputRef}
+                type="text"
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+                placeholder="Ask about impact, leadership, or AI strategy..."
+                className="h-10 w-full rounded-xl border border-[rgba(212,168,67,0.35)] bg-[rgba(8,10,15,0.85)] px-3 text-sm text-white placeholder:text-white/45 outline-none transition focus:border-[#D4A843]"
+                disabled={isSending}
+              />
+              <button
+                type="submit"
+                disabled={isSending || input.trim().length === 0}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#D4A843] text-[#1E2432] transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-50"
+                aria-label="Send message"
+              >
+                <Send className="h-4 w-4" />
+              </button>
+            </div>
+            {error && (
+              <p className="mt-2 text-xs text-[#efc1c1]" role="status" aria-live="polite">
+                {error}
+              </p>
+            )}
+          </form>
+        </section>
       )}
-    </>
+
+      <button
+        type="button"
+        onClick={() => setIsOpen((open) => !open)}
+        aria-expanded={isOpen}
+        aria-controls="chat-widget"
+        className="group relative inline-flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(212,168,67,0.65)] bg-[radial-gradient(circle_at_30%_25%,rgba(212,168,67,0.35),rgba(30,36,50,0.95)_65%)] text-[#f5d680] shadow-[0_12px_30px_rgba(0,0,0,0.55)] transition duration-300 hover:scale-[1.03] hover:border-[#D4A843]"
+      >
+        <span className="pointer-events-none absolute inset-0 rounded-full bg-[conic-gradient(from_200deg,rgba(212,168,67,0.5),transparent,rgba(212,168,67,0.4))] opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100" />
+        {isOpen ? <X className="relative h-5 w-5" /> : <MessageCircle className="relative h-5 w-5" />}
+      </button>
+    </div>
   );
 }
