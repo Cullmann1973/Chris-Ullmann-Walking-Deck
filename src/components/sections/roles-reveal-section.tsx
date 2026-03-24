@@ -39,10 +39,243 @@ const pillars: Pillar[] = [
 const credentials =
   "Stanford HAI · Kotter Change Leadership (Harvard) · Microsoft Ignite · M365 Conference Panelist · Harvard Business Review";
 
+/* ═══ Approach Carousel — portal opening + rotating word carousel ═══ */
+
+interface ApproachItem {
+  word: string;
+  period: string;
+  role: string;
+  description: string;
+}
+
+const APPROACH_ITEMS: ApproachItem[] = [
+  {
+    word: "Foundation",
+    period: "Stanford HAI",
+    role: "Human-Centered AI Training",
+    description:
+      "Trained through Stanford's Human-Centered AI Institute. Generative AI fundamentals, trust frameworks, bias mitigation, workforce transformation. Intelligence augmentation: human + AI, not replacement.",
+  },
+  {
+    word: "Community",
+    period: "3 → 100+ Members",
+    role: "Grassroots Adoption at Scale",
+    description:
+      "AI Community of Practice grown organically across Manufacturing, Marketing, R&D, and Global Supply Chain. Monthly showcases. Peer champions. Prompt libraries built by the people who use them. 37x growth in active AI users.",
+  },
+  {
+    word: "Governance",
+    period: "Before Scaling",
+    role: "Responsible by Design",
+    description:
+      "Legal, Compliance, and Privacy engaged before the first tool was deployed. Built access models, usage guidelines, and adoption tracking. Governance done right accelerates, not blocks.",
+  },
+];
+
+function ApproachCarousel() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const wordsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const descsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    if (!sectionRef.current || !cardRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const N = APPROACH_ITEMS.length;
+      const wordStart = 0.22;
+      const wordEnd = 0.98;
+      const sliceSize = (wordEnd - wordStart) / N;
+
+      // Initialize: hide all words and descriptions
+      wordsRef.current.forEach((el) => {
+        if (el) gsap.set(el, { opacity: 0, rotationZ: 45, y: 50 });
+      });
+      descsRef.current.forEach((el) => {
+        if (el) gsap.set(el, { opacity: 0, y: 20 });
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=400%",
+          scrub: 1.5,
+          pin: true,
+        },
+      });
+
+      // ── Portal opening: center card morphs to fill screen ──
+
+      // Phase 1 (0→0.05): card content fades out
+      tl.to(
+        ".approach-card-content",
+        { opacity: 0, duration: 0.05, ease: "none" },
+        0
+      );
+
+      // Phase 2 (0.06→0.11): card rotates 45°, scales 1.5x
+      tl.to(
+        cardRef.current,
+        {
+          rotation: 45,
+          scale: 1.5,
+          borderRadius: "40%",
+          boxShadow: "0 0 100px 50px rgba(0,0,0,0.5)",
+          duration: 0.05,
+          ease: "none",
+        },
+        0.06
+      );
+
+      // Phase 3 (0.11→0.16): card rotates 30°, scales 4x
+      tl.to(
+        cardRef.current,
+        {
+          rotation: 30,
+          scale: 4,
+          borderRadius: "30%",
+          duration: 0.05,
+          ease: "none",
+        },
+        0.11
+      );
+
+      // Phase 4 (0.16→0.21): card rotates 0°, scales 10x, fills screen
+      tl.to(
+        cardRef.current,
+        {
+          rotation: 0,
+          scale: 10,
+          borderRadius: "0%",
+          boxShadow: "none",
+          duration: 0.05,
+          ease: "none",
+        },
+        0.16
+      );
+
+      // ── Word carousel begins at 0.22 ──
+
+      APPROACH_ITEMS.forEach((_, i) => {
+        const start = wordStart + i * sliceSize;
+        const enterDur = sliceSize * 0.15;
+        const holdDur = sliceSize * 0.70;
+        const exitDur = sliceSize * 0.15;
+
+        const wordEl = wordsRef.current[i];
+        const descEl = descsRef.current[i];
+
+        if (wordEl) {
+          // Word enters: rotationZ 45→0, opacity 0→1, y +50→0
+          tl.to(
+            wordEl,
+            { rotationZ: 0, opacity: 1, y: 0, duration: enterDur, ease: "none" },
+            start
+          );
+
+          // Word exits: rotationZ 0→-45, opacity 1→0, y 0→-100
+          tl.to(
+            wordEl,
+            { rotationZ: -45, opacity: 0, y: -100, duration: exitDur, ease: "none" },
+            start + enterDur + holdDur
+          );
+        }
+
+        if (descEl) {
+          // Description fades in shortly after word enters
+          tl.to(
+            descEl,
+            { opacity: 1, y: 0, duration: enterDur, ease: "none" },
+            start + enterDur * 0.5
+          );
+
+          // Description fades out before word exits
+          tl.to(
+            descEl,
+            { opacity: 0, y: -20, duration: exitDur, ease: "none" },
+            start + enterDur + holdDur - exitDur * 0.5
+          );
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      id="approach"
+      className="min-h-screen bg-dark-alt relative overflow-hidden flex items-center justify-center"
+    >
+      {/* Center card (portal) */}
+      <div
+        ref={cardRef}
+        className="bg-dark border border-primary/30 rounded-lg p-6 md:p-8 lg:p-12 max-w-2xl w-full relative z-10"
+        style={{ transformOrigin: "center center" }}
+      >
+        <div className="approach-card-content">
+          <span className="text-xs font-mono tracking-wider text-[#ced4da] uppercase">
+            Philosophy
+          </span>
+          <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mt-4 mb-6">
+            Human-Centered AI
+          </h3>
+          <p className="text-sm md:text-base text-[#ced4da] leading-relaxed">
+            Technology serves people. Not the other way around. What follows is the framework
+            behind 1,000+ people activated on AI: Stanford training, grassroots community building,
+            and governance that enables instead of blocks.
+          </p>
+        </div>
+      </div>
+
+      {/* Big rotating words — left side */}
+      {APPROACH_ITEMS.map((item, i) => (
+        <div
+          key={`word-${i}`}
+          ref={(el) => { wordsRef.current[i] = el; }}
+          className="absolute left-[5%] sm:left-[8%] md:left-[10%] top-1/2 -translate-y-1/2 z-20 pointer-events-none"
+        >
+          <span className="text-[36px] sm:text-[48px] md:text-[64px] lg:text-[88px] xl:text-[110px] font-serif text-foreground leading-none block">
+            {item.word}
+          </span>
+        </div>
+      ))}
+
+      {/* Description panels — right side */}
+      {APPROACH_ITEMS.map((item, i) => (
+        <div
+          key={`desc-${i}`}
+          ref={(el) => { descsRef.current[i] = el; }}
+          className="absolute top-1/2 -translate-y-1/2 right-[5%] w-[260px] sm:right-[5%] sm:w-[280px] md:right-[8%] md:w-[320px] lg:right-[10%] lg:w-[380px] z-20 pointer-events-none"
+        >
+          <span className="text-xs font-mono text-primary tracking-wider uppercase block mb-2">
+            {item.period}
+          </span>
+          <h4 className="text-base md:text-lg font-serif text-foreground mb-3">
+            {item.role}
+          </h4>
+          <p className="text-sm text-[#ced4da] leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      ))}
+
+      {/* Credentials bar at bottom */}
+      <div className="absolute bottom-8 left-0 right-0 text-center z-20 pointer-events-none">
+        <p className="text-xs font-mono tracking-wider text-[#ced4da]/40">
+          {credentials}
+        </p>
+      </div>
+    </section>
+  );
+}
+
 export function RolesRevealSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
-  const approachRef = useRef<HTMLElement>(null);
+
 
   useEffect(() => {
     if (!sectionRef.current || !boxRef.current) return;
@@ -105,91 +338,8 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
       );
     }, sectionRef);
 
-    // Approach section: rotating word reveal + card animations
-    const ctx2 = gsap.context(() => {
-      // Title reveal
-      gsap.fromTo(
-        ".approach-pillars-title",
-        { y: 30, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".approach-pillars-title",
-            start: "top 85%",
-            end: "top 55%",
-            scrub: 1.5,
-          },
-        }
-      );
-
-      // Rotating word effect: as each card scrolls into view, swap the big word
-      pillars.forEach((_, i) => {
-        const cardSelector = `.approach-card-${i}`;
-
-        // Fade in each card
-        gsap.fromTo(
-          cardSelector,
-          { y: 40, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.6,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: cardSelector,
-              start: "top 80%",
-              end: "top 50%",
-              scrub: 1,
-              onEnter: () => {
-                // Rotate the big word: fade out all, fade in current
-                pillars.forEach((__, j) => {
-                  gsap.to(`.approach-word-${j}`, {
-                    opacity: j === i ? 1 : 0,
-                    y: j === i ? 0 : (j < i ? -30 : 30),
-                    duration: 0.5,
-                    ease: "power2.out",
-                  });
-                });
-              },
-              onEnterBack: () => {
-                // When scrolling back up, show the previous word
-                const prev = Math.max(0, i - 1);
-                pillars.forEach((__, j) => {
-                  gsap.to(`.approach-word-${j}`, {
-                    opacity: j === (i === 0 ? 0 : prev) ? 1 : 0,
-                    y: j === (i === 0 ? 0 : prev) ? 0 : (j < prev ? -30 : 30),
-                    duration: 0.5,
-                    ease: "power2.out",
-                  });
-                });
-              },
-            },
-          }
-        );
-      });
-
-      // Credentials fade
-      gsap.fromTo(
-        ".approach-credentials",
-        { opacity: 0 },
-        {
-          opacity: 1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".approach-credentials",
-            start: "top 90%",
-            end: "top 65%",
-            scrub: 1.5,
-          },
-        }
-      );
-    }, approachRef);
-
     return () => {
       ctx.revert();
-      ctx2.revert();
     };
   }, []);
 
@@ -247,85 +397,8 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
         </div>
       </section>
 
-      {/* Approach pillars — scroll-pinned rotating word reveal */}
-      <section
-        ref={approachRef}
-        id="approach"
-        className="bg-dark-alt relative min-h-screen"
-      >
-        <div className="section-padding">
-          <div className="max-w-7xl mx-auto">
-            {/* Section header */}
-            <div className="approach-pillars-title mb-16 max-w-4xl">
-              <span className="text-xs font-mono tracking-wider text-[#ced4da] uppercase">
-                Philosophy
-              </span>
-              <h2 className="text-section font-serif text-foreground mt-4">
-                Human-Centered AI for People Teams
-              </h2>
-              <p className="text-[#ced4da] mt-4">
-                Technology serves people. People data deserves even higher standards.
-              </p>
-            </div>
-
-            {/* Split layout: big rotating word left, content right */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
-              {/* Left: Large rotating pillar word */}
-              <div className="approach-word-container sticky top-1/3 hidden lg:block">
-                {pillars.map((pillar, i) => (
-                  <div
-                    key={pillar.title}
-                    className={`approach-word-${i} absolute top-0 left-0`}
-                    style={{ opacity: i === 0 ? 1 : 0 }}
-                  >
-                    <span className="text-[4rem] xl:text-[5.5rem] font-serif text-foreground leading-[1.05] block">
-                      {pillar.title.split(",")[0]}
-                    </span>
-                    {pillar.title.includes(",") && (
-                      <span className="text-[2.5rem] xl:text-[3.5rem] font-serif text-primary/60 leading-[1.1] block mt-2">
-                        {pillar.title.split(",").slice(1).join(",").trim()}
-                      </span>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Right: Pillar cards that scroll */}
-              <div className="space-y-8">
-                {pillars.map((pillar, i) => {
-                  const Icon = pillar.icon;
-                  return (
-                    <article
-                      key={pillar.title}
-                      className={`approach-card-${i} rounded-xl border border-white/10 bg-dark/80 p-8 transition-all duration-500`}
-                    >
-                      {/* Mobile: show title inline */}
-                      <h3 className="text-2xl font-serif text-foreground mb-1 lg:hidden">
-                        {pillar.title}
-                      </h3>
-                      <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 border border-primary/25 mb-4">
-                        <Icon className="w-4 h-4 text-primary" />
-                      </div>
-                      <h3 className="text-lg font-serif text-foreground mb-3 hidden lg:block">
-                        {pillar.title}
-                      </h3>
-                      <p className="text-sm text-[#ced4da] leading-relaxed">
-                        {pillar.body}
-                      </p>
-                    </article>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div className="approach-credentials mt-16 py-5 border-t border-white/10 text-center">
-              <p className="text-xs font-mono tracking-wider text-[#ced4da]/70">
-                {credentials}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Approach — full-screen pinned section with portal + rotating word carousel */}
+      <ApproachCarousel />
 
     </>
   );
