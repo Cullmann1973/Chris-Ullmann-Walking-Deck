@@ -47,17 +47,18 @@ const workItems: WorkItem[] = [
     image: "/references/ignite-ella-frame.jpg",
   },
   {
-    id: "orlando",
-    title: "Up & Coming AI Leadership",
-    subtitle: "Orlando Industry Panel",
+    id: "m365-conf",
+    title: "Microsoft 365 Community Conference",
+    subtitle: "Panelist — April 21-23, 2026 · Orlando, FL",
     description:
-      "Selected as a panelist for emerging AI leadership in enterprise transformation. Discussed practical approaches to scaling AI adoption beyond pilot projects.",
-    badge: "Panel",
+      "Selected as a panelist at the Microsoft 365 Community Conference. Presenting on practical approaches to scaling AI adoption in enterprise environments.",
+    badge: "Upcoming",
     badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
-    metric: "Industry",
-    metricLabel: "recognition",
+    metric: "April",
+    metricLabel: "2026",
     icon: Users,
-    link: "#",
+    link: "https://m365conf.com/#!/",
+    image: "/references/m365-conf.jpg",
   },
 ];
 
