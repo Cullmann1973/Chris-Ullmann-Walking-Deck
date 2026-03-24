@@ -62,14 +62,18 @@ export function Header() {
             {/* Ask My AI pill */}
             <button
               onClick={openChat}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 md:px-4 md:py-2 rounded-full
-                         bg-primary/10 hover:bg-primary/20 border border-primary/30 hover:border-primary/50
-                         text-primary text-xs font-mono tracking-wider uppercase
-                         transition-all duration-300 hover:shadow-[0_0_12px_rgba(0,188,212,0.2)]"
+              className="inline-flex items-center gap-2 px-5 py-2.5 md:px-7 md:py-3 rounded-full
+                         bg-cyan-500/15 hover:bg-cyan-500/25
+                         border-2 border-cyan-400/60 hover:border-cyan-300
+                         text-cyan-200 font-semibold text-sm tracking-wide uppercase
+                         transition-all duration-300
+                         shadow-[0_0_0_1px_rgba(0,188,212,0.2)] hover:shadow-[0_0_0_2px_rgba(0,188,212,0.4),_0_0_16px_rgba(0,188,212,0.2)]
+                         hover:scale-[1.02] relative overflow-hidden group/ai"
               aria-label="Ask My AI"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Ask My AI</span>
+              <Sparkles className="w-4 h-4 relative z-10" />
+              <span className="hidden sm:inline relative z-10">Ask My AI</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent -translate-x-full group-hover/ai:translate-x-full transition-transform duration-1000" />
             </button>
 
             {/* Hamburger — mobile only */}
