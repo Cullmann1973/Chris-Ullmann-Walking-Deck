@@ -411,8 +411,7 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
         </div>
       </section>
 
-      {/* Approach — full-screen pinned section with portal + rotating word carousel */}
-      <ApproachCarousel />
+
 
     </>
   );
