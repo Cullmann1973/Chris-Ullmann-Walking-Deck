@@ -20,6 +20,7 @@ interface Voice {
   initials: string;
   gradient: string;
   photo?: string;
+  brandColor: string;
 }
 
 const voices: Voice[] = [
@@ -32,6 +33,7 @@ const voices: Voice[] = [
     gradient: "from-cyan-500 to-blue-600",
     linkedIn: "https://www.linkedin.com/in/humanresourcesexecutive/",
     photo: "/references/denise-kulikowsky.jpg",
+    brandColor: "#000000",
   },
   {
     name: "Saverio Marcario",
@@ -42,6 +44,7 @@ const voices: Voice[] = [
     gradient: "from-indigo-500 to-purple-600",
     linkedIn: "https://www.linkedin.com/in/saverio-marcario-4432794b/",
     photo: "/references/saverio-marcario.jpg",
+    brandColor: "#1B365D",
   },
   {
     name: "Jane Koh",
@@ -52,6 +55,7 @@ const voices: Voice[] = [
     gradient: "from-emerald-500 to-teal-600",
     linkedIn: "https://www.linkedin.com/in/janekohmicrosoft/",
     photo: "/references/jane-koh.jpg",
+    brandColor: "#00A4EF",
   },
   {
     name: "Adriana Uribe",
@@ -62,6 +66,7 @@ const voices: Voice[] = [
     gradient: "from-sky-500 to-indigo-600",
     linkedIn: "https://www.linkedin.com/in/adriana-uribe-pmp-pfmp-mba/",
     photo: "/references/adriana-uribe.jpg",
+    brandColor: "#0ABAB5",
   },
   {
     name: "Kathy Gersch",
@@ -72,6 +77,7 @@ const voices: Voice[] = [
     gradient: "from-rose-500 to-pink-600",
     linkedIn: "https://www.linkedin.com/in/kathy-gersch-639916/",
     photo: "/references/kathy-gersch.jpg",
+    brandColor: "#E8490F",
   },
 ];
 
@@ -206,10 +212,19 @@ export function VoicesSection() {
                   )}
                 </div>
 
-                {/* Company */}
-                <p className="text-xs font-mono text-primary/60 mb-4 tracking-wider uppercase">
-                  {voice.company}
-                </p>
+                {/* Company with brand color */}
+                <div className="flex items-center gap-2 mb-4">
+                  <div
+                    className="w-2 h-2 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: voice.brandColor }}
+                  />
+                  <p
+                    className="text-sm font-semibold tracking-wide"
+                    style={{ color: voice.brandColor }}
+                  >
+                    {voice.company}
+                  </p>
+                </div>
 
                 {/* What they speak to */}
                 <p className="text-sm text-[#ced4da] leading-relaxed">
