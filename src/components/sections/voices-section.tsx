@@ -181,9 +181,12 @@ export function VoicesSection() {
           className="voices-scroll grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-6 md:px-8 xl:px-[calc((100vw-72rem)/2)] pb-6"
         >
           {voices.map((voice, i) => (
-            <div
+            <a
               key={i}
-              className="voice-card"
+              href={voice.linkedIn || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="voice-card block cursor-pointer"
             >
               <div className="group h-full rounded-xl border border-white/10 bg-dark/80 p-6 transition-all duration-500 hover:scale-[1.25] hover:z-50 hover:border-primary/25 hover:shadow-[0_20px_60px_rgba(0,188,212,0.12)] origin-center">
                 {/* Header: Avatar + Name */}
@@ -215,14 +218,9 @@ export function VoicesSection() {
                     </div>
                   </div>
                   {voice.linkedIn && voice.linkedIn !== "#" && (
-                    <a
-                      href={voice.linkedIn}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#0A66C2] hover:text-[#0A66C2]/80 transition-all duration-300 hover:scale-110 mt-1"
-                    >
+                    <div className="text-[#0A66C2] mt-1">
                       <LinkedInLogo className="w-6 h-6" />
-                    </a>
+                    </div>
                   )}
                 </div>
 
@@ -246,7 +244,7 @@ export function VoicesSection() {
                   <span className="text-foreground/90">{voice.speaksTo}</span>
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
