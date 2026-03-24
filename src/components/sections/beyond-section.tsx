@@ -43,8 +43,8 @@ const sections: BeyondSection[] = [
     photoLabel: "Photo: Workshop",
     image: "/images/watch-movement.jpg",
     content: [
-      "I've never been satisfied just using tools. I need to understand how they work, then make them work better.",
-      "My garage is where I design, build, and find my version of stillness. 3D printer running, music on, something new always taking shape. Cars, hardware, AI architecture: the medium changes but the instinct doesn't.",
+      "I've never been satisfied just using tools. I need to understand how they work so I can make them faster, more reliable, more efficient.",
+      "Cars, 3D printing, watch repair, hardware integration, AI agents: the medium changes but the instinct doesn't. My garage is where I take things apart, figure out what makes them tick, and put them back together better.",
     ],
     pullQuote: "I don't consume technology. I master it.",
   },
