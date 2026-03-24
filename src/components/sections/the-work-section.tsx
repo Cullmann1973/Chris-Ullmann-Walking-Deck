@@ -152,7 +152,7 @@ export function TheWorkSection() {
                   className={`work-card group relative ${offsets[i]}`}
                 >
                   {/* Card */}
-                  <div className="relative rounded-2xl border border-white/10 bg-dark-alt/80 overflow-hidden transition-all duration-500 hover:translate-y-[-8px] hover:border-primary/30 hover:shadow-[0_20px_60px_rgba(0,188,212,0.08)]">
+                  <div className="relative rounded-2xl border border-white/10 bg-dark-alt/80 overflow-hidden transition-all duration-500 hover:scale-[1.25] hover:border-primary/30 hover:shadow-[0_20px_60px_rgba(0,188,212,0.12)] hover:z-50 origin-center">
                     {/* Badge */}
                     <div className="work-badge absolute top-4 right-4 z-10">
                       <span
@@ -162,8 +162,9 @@ export function TheWorkSection() {
                       </span>
                     </div>
 
-                    {/* Media */}
-                    <div className="relative h-48 bg-gradient-to-br from-dark-alt to-dark flex items-center justify-center border-b border-white/5 overflow-hidden">
+                    {/* Media — clickable link to supporting material */}
+                    {item.link && item.link !== "#" ? (
+                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="relative block h-48 bg-gradient-to-br from-dark-alt to-dark flex items-center justify-center border-b border-white/5 overflow-hidden cursor-pointer">
                       {item.image ? (
                         <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                       ) : (
@@ -177,7 +178,19 @@ export function TheWorkSection() {
                           {item.metric}
                         </div>
                       </div>
+                    </a>
+                    ) : (
+                    <div className="relative h-48 bg-gradient-to-br from-dark-alt to-dark flex items-center justify-center border-b border-white/5 overflow-hidden">
+                      <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                        <Icon className="w-7 h-7 text-[#ced4da] group-hover:text-primary transition-colors duration-500" />
+                      </div>
+                      <div className="absolute bottom-4 right-4 text-right">
+                        <div className="text-3xl font-bold text-primary/15 font-serif">
+                          {item.metric}
+                        </div>
+                      </div>
                     </div>
+                    )}
 
                     {/* Content */}
                     <div className="p-6">
