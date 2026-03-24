@@ -194,7 +194,7 @@ export function VoicesSection() {
                   <div className="flex items-center gap-3">
                     {/* Avatar — photo with B&W→color hover, or initials fallback */}
                     <div
-                      className={`w-12 h-12 rounded-full flex-shrink-0 overflow-hidden ring-[3px] ring-white shadow-[0_0_0_1.5px_rgba(0,0,0,0.8),0_0_0_4px_rgba(255,255,255,0.9)] ${!voice.photo ? `bg-gradient-to-br ${voice.gradient} flex items-center justify-center` : ""}`}
+                      className={`w-12 h-12 rounded-full flex-shrink-0 overflow-hidden ring-[2px] ring-white/70 shadow-[0_0_0_1px_rgba(0,0,0,0.6),0_0_0_3px_rgba(255,255,255,0.65)] ${!voice.photo ? `bg-gradient-to-br ${voice.gradient} flex items-center justify-center` : ""}`}
                     >
                       {voice.photo ? (
                         <img
