@@ -20,6 +20,7 @@ export function CircularCursor({
   const spinRef = useRef({ velocity: 0, angle: 0 });
   const [visible, setVisible] = useState(false);
   const [focused, setFocused] = useState(false);
+  const [pointing, setPointing] = useState(false);
 
   useEffect(() => {
     if (window.matchMedia("(pointer: coarse)").matches) return;
@@ -35,13 +36,22 @@ export function CircularCursor({
     const interactiveSelector =
       "a, button, [role='button'], input, textarea, select, [onclick], label[for], .cursor-focus";
 
+    const pointerSelector =
+      ".work-card, .voice-card, .deliver-card, .accordion-item, .approach-card";
+
     const handleOverInteractive = () => setFocused(true);
-    const handleOutInteractive = () => setFocused(false);
+    const handleOutInteractive = () => { setFocused(false); setPointing(false); };
+    const handleOverPointer = () => setPointing(true);
+    const handleOutPointer = () => setPointing(false);
 
     const attachListeners = () => {
       document.querySelectorAll(interactiveSelector).forEach((el) => {
         el.addEventListener("mouseenter", handleOverInteractive);
         el.addEventListener("mouseleave", handleOutInteractive);
+      });
+      document.querySelectorAll(pointerSelector).forEach((el) => {
+        el.addEventListener("mouseenter", handleOverPointer);
+        el.addEventListener("mouseleave", handleOutPointer);
       });
     };
 
@@ -110,6 +120,10 @@ export function CircularCursor({
         el.removeEventListener("mouseenter", handleOverInteractive);
         el.removeEventListener("mouseleave", handleOutInteractive);
       });
+      document.querySelectorAll(pointerSelector).forEach((el) => {
+        el.removeEventListener("mouseenter", handleOverPointer);
+        el.removeEventListener("mouseleave", handleOutPointer);
+      });
       document.body.style.cursor = "";
     };
   }, [visible, size, focused]);
@@ -132,13 +146,31 @@ export function CircularCursor({
         willChange: "transform",
       }}
     >
-      {/* Whole cursor scales down on focus */}
+      {/* Pointer arrow (visible on hover cards) */}
+      {pointing && (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 10,
+            transition: "opacity 0.2s ease",
+          }}
+        >
+          <svg width="24" height="28" viewBox="0 0 24 28" fill="none">
+            <path d="M5.5 1L5.5 21.5L10.5 16.5L15.5 25L18.5 23.5L13.5 14.5L20 13.5L5.5 1Z" fill="white" stroke="#0a0a0a" strokeWidth="1.5"/>
+          </svg>
+        </div>
+      )}
+      {/* Whole cursor scales down on focus, hides ring on pointing */}
       <div
         style={{
           width: size,
           height: size,
-          transition: "transform 0.2s ease",
-          transform: focused ? "scale(0.25)" : "scale(1)",
+          transition: "transform 0.2s ease, opacity 0.2s ease",
+          transform: focused && !pointing ? "scale(0.25)" : pointing ? "scale(0.6)" : "scale(1)",
+          opacity: pointing ? 0 : 1,
           transformOrigin: "center center",
         }}
       >
