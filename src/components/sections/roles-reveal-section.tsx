@@ -98,7 +98,7 @@ function ApproachCarousel() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=400%",
+          end: "+=500%",
           scrub: 1.5,
           pin: true,
         },
