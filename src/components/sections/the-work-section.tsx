@@ -30,7 +30,7 @@ const workItems: WorkItem[] = [
     metric: "1,000+",
     metricLabel: "people activated",
     icon: FileText,
-    link: "#",
+    link: "https://www.kotterinc.com/global-consumer-products-company/",
   },
   {
     id: "ignite",
