@@ -175,19 +175,15 @@ export function VoicesSection() {
           </div>
         </div>
 
-        {/* Horizontal Scroll Container */}
+        {/* 3x2 Grid */}
         <div
           ref={scrollRef}
-          className="voices-scroll flex gap-5 overflow-x-auto px-6 md:px-8 xl:px-[calc((100vw-72rem)/2)] pb-6 snap-x snap-mandatory scrollbar-hide"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
+          className="voices-scroll grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-6 md:px-8 xl:px-[calc((100vw-72rem)/2)] pb-6"
         >
           {voices.map((voice, i) => (
             <div
               key={i}
-              className="voice-card flex-shrink-0 w-[300px] md:w-[340px] snap-start"
+              className="voice-card"
             >
               <div className="group h-full rounded-xl border border-white/10 bg-dark/80 p-6 transition-all duration-500 hover:scale-[1.25] hover:z-50 hover:border-primary/25 hover:shadow-[0_20px_60px_rgba(0,188,212,0.12)] origin-center">
                 {/* Header: Avatar + Name */}
