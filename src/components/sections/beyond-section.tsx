@@ -235,12 +235,12 @@ export function BeyondSection({ focus }: { focus?: string }) {
           <div className="space-y-32">
             {/* FAMILY (index 0) */}
             <div className={`beyond-subsection-0`}>
-              <div className="photo-container group relative aspect-[21/9] rounded-xl overflow-hidden w-full mb-8">
+              <div className="photo-container group relative aspect-[16/9] rounded-xl overflow-hidden w-full mb-8">
                 {sections[0].image ? (
                   <img 
                     src={sections[0].image} 
                     alt={sections[0].title}
-                    className="parallax-photo absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+                    className="parallax-photo absolute inset-0 w-full h-full object-cover object-top grayscale transition-all duration-700 group-hover:grayscale-0"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center">
