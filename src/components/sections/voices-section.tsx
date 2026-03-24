@@ -64,6 +64,7 @@ const voices: Voice[] = [
     initials: "KG",
     gradient: "from-rose-500 to-pink-600",
     linkedIn: "https://www.linkedin.com/in/kathy-gersch-639916/",
+    photo: "/references/kathy-gersch.jpg",
   },
 ];
 
