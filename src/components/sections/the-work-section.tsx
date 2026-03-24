@@ -34,15 +34,15 @@ const workItems: WorkItem[] = [
   {
     id: "ignite",
     title: "Microsoft Ignite: ELLA",
-    subtitle: "Enterprise AI Adoption Case Study",
+    subtitle: "Featured Case Study — Session PBRK394",
     description:
-      "Presented ELLA, a line-level manufacturing AI assistant, as a featured case study at Microsoft Ignite. Demonstrated how AI scales from shop floor operators to C-suite decision-making.",
+      "ELLA, the Estée Lauder Line Assistant, was presented by Microsoft as a featured AI adoption case study at Ignite. Built with Copilot Studio, Dataverse, and AI Builder. Chris's demo starts at 37:45.",
     badge: "Presentation",
     badgeColor: "bg-orange-500/20 text-orange-400 border-orange-500/30",
     metric: "Global",
     metricLabel: "audience",
     icon: Play,
-    link: "#",
+    link: "https://ignite.microsoft.com/en-US/sessions/PBRK394",
   },
   {
     id: "orlando",
