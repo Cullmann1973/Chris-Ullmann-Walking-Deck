@@ -7,17 +7,17 @@ import { FOCUS_CONFIGS, type FocusMode } from "@/lib/focus-config";
 
 const expertiseWords = [
   "BUSINESS STRATEGY",
-  "AGENTIC AI BUILDER",
+  "PEOPLE SYSTEMS BRIDGE",
   "ENTERPRISE TRANSLATOR",
   "ADOPTION AT SCALE",
   "GOVERNANCE & DELIVERY",
 ];
 
 const stats = [
-  { value: "50+", label: "AI use cases sourced and prioritized" },
-  { value: "1,000+", label: "People using AI daily" },
-  { value: "8", label: "Global plants transformed" },
-  { value: "25+", label: "Years in operations leadership" },
+  { value: "50+", label: "AI use cases assessed and prioritized" },
+  { value: "1,000+", label: "People activated on AI daily" },
+  { value: "37x", label: "Community growth (3 to 100+ members)" },
+  { value: "25+", label: "Years in transformation leadership" },
 ];
 
 export function AboutSection({ focus }: { focus?: string }) {
@@ -186,21 +186,24 @@ export function AboutSection({ focus }: { focus?: string }) {
             <div ref={contentRef} className="space-y-8 lg:pt-12">
               <div className="content-card p-8">
                 <h3 className="text-2xl md:text-3xl font-serif text-foreground mb-6">
-                  The translator between the boardroom and the build
+                  The strategic bridge between People leaders and People Systems
                 </h3>
 
                 <div className="space-y-4 text-[#ced4da] leading-relaxed">
                   <p>
-                    I spot where AI solves real business problems, build the case to fund it, then build the tool myself.
+                    I identify where AI transforms People processes, build the case with HR stakeholders, then design the adoption strategy that scales. 25 years across operations, quality, and enterprise transformation taught me that successful AI is not about the technology, it is about the people who use it.
                   </p>
                   <p>
-                    25 years in manufacturing, supply chain, and quality gave me the operating context. Stanford HAI and hands-on agentic AI development gave me the technical depth. Kotter change leadership training at Harvard gave me the adoption playbook.
+                    Already serving as primary technical interface between Manufacturing and IT Systems at ELC. Same assessment and integration playbook applies to People Systems: Workday, HRIS platforms, recruiting tools, performance management.
                   </p>
                   <p>
-                    Today I lead AI transformation across 8 global plants at The Estée Lauder Companies. I write business cases that get executive approval, ship working tools (not decks), and run a Community of Practice that grew from 3 to 100+ members organically. 1,000+ people now use AI in their daily work because the tools actually solve their problems.
+                    2-year direct partnership with Kotter Inc. and John Kotter. 1,000+ people activated using the 8-step methodology, from pilot champions to enterprise adoption. Community of Practice grew from 3 to 100+ members organically.
                   </p>
                   <p>
-                    Microsoft Ignite presenter. M365 Conference panelist (April 2026).
+                    Legal, Compliance, and Privacy engaged BEFORE scaling. Built responsible AI frameworks that accelerate, not block. When handling People data, governance is not optional.
+                  </p>
+                  <p>
+                    Stanford HAI training. Microsoft Ignite presenter. M365 Conference panelist (April 2026). Harvard Business Review featured transformation work.
                   </p>
 
                   {focusMode !== "general" && (
@@ -247,11 +250,12 @@ export function AboutSection({ focus }: { focus?: string }) {
                     ) : (
                       <>
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
-                          AI Strategy, Development and Delivery
+                          People Systems Integration & AI Adoption
                         </span>
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-[#ced4da]">
                           Stanford HAI
                         </span>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-[#ced4da]">Kotter Certified</span>
                       </>
                     )}
                   </div>

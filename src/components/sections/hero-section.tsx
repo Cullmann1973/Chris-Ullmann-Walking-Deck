@@ -8,8 +8,8 @@ import { FOCUS_CONFIGS, type FocusMode } from "@/lib/focus-config";
 const defaultMetrics = [
   { value: "1,000+", label: "people activated on AI" },
   { value: "100+", label: "AI Community of Practice members" },
-  { value: "37x", label: "growth in active AI users" },
-  { value: "8", label: "global plants transformed" },
+  { value: "Stanford HAI + Kotter", label: "certified change leader" },
+  { value: "170% ROI", label: "transformation programs" },
 ];
 
 export function HeroSection({ focus }: { focus?: string }) {
@@ -220,13 +220,13 @@ export function HeroSection({ focus }: { focus?: string }) {
           {/* Tagline */}
           <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-serif text-foreground/80 leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line tagline-line-1 block mb-2">
-              People Drive <span className="tagline-flash-strategy">Transformation.</span>
+              People Teams Drive <span className="tagline-flash-strategy">AI Success.</span>
             </span>
             <span className="tagline-line tagline-line-2 block mb-2">
-              AI <span className="tagline-flash-execution">Accelerates</span> It.
+              Technology <span className="tagline-flash-execution">Enables.</span>
             </span>
             <span className="tagline-line tagline-line-3 block mb-2">
-              Culture Makes It <span className="tagline-flash-ai">Last.</span>
+              Process Integration <span className="tagline-flash-ai">Scales.</span>
             </span>
           </h1>
 
@@ -267,6 +267,7 @@ export function HeroSection({ focus }: { focus?: string }) {
                   />
                 ))}
               </div>
+              <p className="text-[10px] font-mono tracking-wider text-[#adb5bd]/70 uppercase mt-3">Microsoft Ignite Featured · Kotter Change Leadership Certified · Stanford HAI</p>
             </div>
           </div>
         </div>

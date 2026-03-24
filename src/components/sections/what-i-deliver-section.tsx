@@ -23,43 +23,43 @@ interface Capability {
 
 const capabilities: Capability[] = [
   {
-    title: "Business Case to Funding",
-    description: "I identify where AI creates measurable value, build the financial case, and get executive sign-off. Every project ties to a real P&L outcome.",
+    title: "People Systems Assessment",
+    description: "I assess HR tech stacks, identify AI integration opportunities, and build roadmaps that bridge business needs and technical reality. Same methodology used for manufacturing systems, applied to People platforms.",
     icon: TrendingUp,
     gradient: "from-blue-600 to-indigo-900",
     image: "/carousel/business-case.png",
   },
   {
-    title: "Governance That Accelerates",
-    description: "Legal, Privacy, and Compliance engaged before the first line of code. Guardrails that let teams move faster, not slower.",
+    title: "Governance That Enables",
+    description: "Legal, Privacy, and Compliance engaged before the first tool deploys. Especially critical for People data: compensation, performance, diversity metrics. Privacy and compliance from day one.",
     icon: ShieldCheck,
     gradient: "from-teal-500 to-emerald-900",
     image: "/carousel/governance.png",
   },
   {
-    title: "Agentic AI, Shipped Daily",
-    description: "ELLA, Plant Perfect, Cognex Vision, QC Copilot. Working tools built for operators and managers. I write the code, not the deck.",
-    icon: Bot,
+    title: "Team Enablement at Scale",
+    description: "Training programs that grow champions, not mandates. Peer-led adoption. Prompt libraries built by HR professionals who use them. 37x growth in active users through structured enablement, not IT rollouts.",
+    icon: UsersRound,
     gradient: "from-cyan-500 to-blue-900",
     image: "/carousel/agentic-ai.png",
   },
   {
-    title: "Full-Stack AI Architecture",
-    description: "From LLM orchestration and RAG pipelines to production deployment. GitHub, Vercel, Next.js, Python. Hands on keyboard every day.",
+    title: "Cross-Functional Program Management",
+    description: "Orchestrating technical programs spanning Legal, Privacy, HRIS, and business stakeholders. Enterprise transformations from concept through delivery. Alignment before execution. Clear ownership, clear outcomes.",
     icon: Workflow,
     gradient: "from-indigo-500 to-purple-900",
     image: "/carousel/architecture.png",
   },
   {
-    title: "Community of Practice at Scale",
-    description: "3 members to 100+, one department to company-wide. Organic growth driven by tools worth using. Kotter methodology, real results.",
+    title: "Community of Practice Architecture",
+    description: "3 members to 100+, one department to company-wide. Organic growth driven by tools worth using. Kotter methodology applied to enterprise AI adoption. Proven model ready for People teams.",
     icon: UsersRound,
     gradient: "from-sky-500 to-indigo-900",
     image: "/carousel/community.png",
   },
   {
-    title: "1,000+ Trained and Using AI",
-    description: "Not a training program. An adoption engine. Champions teach champions. People use it because it solves their actual problems.",
+    title: "Change Management Methodology",
+    description: "Kotter 8-step methodology in practice: Assessment, Urgency, Coalition, Vision, Enablement, Wins, Acceleration, Institutionalization. The actual playbook used to activate 1,000+ people on AI.",
     icon: Boxes,
     gradient: "from-emerald-500 to-teal-900",
     image: "/carousel/training.png",
@@ -311,7 +311,7 @@ export function WhatIDeliverSection({ focus }: { focus?: string }) {
               What I Deliver
             </h2>
             <p className="text-[#ced4da] mt-4">
-              I build the business case, build the tool, and build the team that adopts it.
+              I assess the opportunity, build the case, and scale adoption through people.
             </p>
           </div>
         </div>
