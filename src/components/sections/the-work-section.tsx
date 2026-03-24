@@ -31,6 +31,7 @@ const workItems: WorkItem[] = [
     metricLabel: "people activated",
     icon: FileText,
     link: "https://www.kotterinc.com/global-consumer-products-company/",
+    image: "/references/kotter-case-study.jpg",
   },
   {
     id: "ignite",
@@ -175,7 +176,7 @@ export function TheWorkSection() {
                       )}
                       {/* Ambient metric */}
                       <div className="absolute bottom-4 right-4 text-right">
-                        <div className="text-3xl font-bold text-primary/15 font-serif">
+                        <div className="text-4xl font-bold text-white/20 font-serif drop-shadow-lg">
                           {item.metric}
                         </div>
                       </div>
@@ -186,7 +187,7 @@ export function TheWorkSection() {
                         <Icon className="w-7 h-7 text-[#ced4da] group-hover:text-primary transition-colors duration-500" />
                       </div>
                       <div className="absolute bottom-4 right-4 text-right">
-                        <div className="text-3xl font-bold text-primary/15 font-serif">
+                        <div className="text-4xl font-bold text-white/20 font-serif drop-shadow-lg">
                           {item.metric}
                         </div>
                       </div>
@@ -206,12 +207,12 @@ export function TheWorkSection() {
                       </p>
 
                       {/* Metric bar */}
-                      <div className="flex items-center justify-between pt-4 border-t border-white/5">
-                        <div className="flex items-center gap-2">
-                          <span className="text-lg font-bold text-primary font-mono">
+                      <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-2xl font-bold text-primary font-serif tracking-tight">
                             {item.metric}
                           </span>
-                          <span className="text-xs text-[#ced4da]">
+                          <span className="text-sm text-foreground/70 font-medium">
                             {item.metricLabel}
                           </span>
                         </div>
