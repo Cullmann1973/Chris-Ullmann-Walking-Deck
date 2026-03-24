@@ -36,7 +36,7 @@ export function CircularCursor({
     const interactiveSelector =
       "a, button, [role='button'], input, textarea, select, [onclick], label[for], .cursor-focus";
 
-    const pointerSelector = "";
+    const pointerSelector = ".cursor-pointer-mode";
 
     const handleOverInteractive = () => setFocused(true);
     const handleOutInteractive = () => { setFocused(false); setPointing(false); };
