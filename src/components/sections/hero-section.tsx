@@ -223,7 +223,7 @@ export function HeroSection({ focus }: { focus?: string }) {
               Transformation starts with <span className="tagline-flash-strategy">people.</span>
             </span>
             <span className="tagline-line tagline-line-2 block mb-2">
-              AI makes it <span className="tagline-flash-execution">scalable.</span>
+              <span className="tagline-flash-execution">AI</span> makes it scalable.
             </span>
             <span className="tagline-line tagline-line-3 block mb-2">
               Execution makes it <span className="tagline-flash-ai">real.</span>
