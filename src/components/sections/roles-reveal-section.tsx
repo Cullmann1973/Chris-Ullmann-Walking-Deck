@@ -84,7 +84,7 @@ function ApproachCarousel() {
 
     const ctx = gsap.context(() => {
       const N = APPROACH_ITEMS.length;
-      const sliceSize = 0.76 / N;
+      const sliceSize = 0.78 / N;
 
       // Initialize: hide all words and descriptions
       wordsRef.current.forEach((el) => {
@@ -98,7 +98,7 @@ function ApproachCarousel() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=500%",
+          end: "+=350%",
           scrub: 1.5,
           pin: true,
         },
@@ -161,7 +161,7 @@ function ApproachCarousel() {
         const descEl = descsRef.current[i];
         if (!wordEl || !descEl) return;
 
-        const s = 0.22 + i * sliceSize;
+        const s = 0.20 + i * sliceSize;
         const c = s + 0.15 * sliceSize;       // word fully entered
         const d = s + 0.85 * sliceSize;       // word starts exiting
 
