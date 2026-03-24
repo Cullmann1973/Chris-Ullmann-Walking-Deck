@@ -24,21 +24,21 @@ interface Capability {
 const capabilities: Capability[] = [
   {
     title: "Opportunity Assessment & Roadmapping",
-    description: "I assess where AI creates real value, identify integration points across existing systems, and build roadmaps that connect business needs to technical solutions. Same methodology proven across manufacturing, supply chain, and enterprise platforms.",
+    description: "I assess where AI creates real value, identify integration points across existing systems, and build roadmaps that connect business needs to technical solutions.",
     icon: TrendingUp,
     gradient: "from-blue-600 to-indigo-900",
     image: "/carousel/business-case.png",
   },
   {
-    title: "Governance That Accelerates",
+    title: "Responsible by Design",
     description: "Legal, Privacy, and Compliance engaged before the first tool deploys. I build frameworks that let teams move faster, not slower. When you start with governance, scaling doesn't stall.",
     icon: ShieldCheck,
     gradient: "from-teal-500 to-emerald-900",
     image: "/carousel/governance.png",
   },
   {
-    title: "Adoption at Scale",
-    description: "Training programs that grow champions, not mandates. Peer-led adoption where people use AI because it solves their actual problems. 37x growth in active users through structured enablement, not top-down rollouts.",
+    title: "Community-Driven Adoption",
+    description: "From 3 members to 100+, one department to company-wide. Peer-led adoption where people use AI because it solves their actual problems.",
     icon: UsersRound,
     gradient: "from-cyan-500 to-blue-900",
     image: "/carousel/agentic-ai.png",
@@ -51,13 +51,6 @@ const capabilities: Capability[] = [
     image: "/carousel/architecture.png",
   },
   {
-    title: "Community of Practice at Scale",
-    description: "3 members to 100+, one department to company-wide. Organic growth driven by tools worth using. Kotter methodology applied to enterprise AI adoption. The model scales to any function.",
-    icon: UsersRound,
-    gradient: "from-sky-500 to-indigo-900",
-    image: "/carousel/community.png",
-  },
-  {
     title: "Change Management Methodology",
     description: "Kotter 8-step methodology in practice: Assessment, Urgency, Coalition, Vision, Enablement, Wins, Acceleration, Institutionalization. The actual playbook used to activate 1,000+ people on AI.",
     icon: Boxes,
@@ -66,7 +59,7 @@ const capabilities: Capability[] = [
   },
 ];
 
-const CARD_COUNT = 6;
+const CARD_COUNT = 5;
 const ANGLE_STEP = 360 / CARD_COUNT;
 
 // Normalizes an angle to [-180, 180]
