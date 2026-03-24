@@ -15,6 +15,7 @@ interface WorkItem {
   metricLabel: string;
   icon: typeof Play;
   link?: string;
+  image?: string;
 }
 
 const workItems: WorkItem[] = [
@@ -43,6 +44,7 @@ const workItems: WorkItem[] = [
     metricLabel: "audience",
     icon: Play,
     link: "https://ignite.microsoft.com/en-US/sessions/PBRK394",
+    image: "/references/ignite-ella-frame.jpg",
   },
   {
     id: "orlando",
@@ -160,11 +162,15 @@ export function TheWorkSection() {
                       </span>
                     </div>
 
-                    {/* Media Placeholder */}
-                    <div className="relative h-48 bg-gradient-to-br from-dark-alt to-dark flex items-center justify-center border-b border-white/5">
-                      <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
-                        <Icon className="w-7 h-7 text-[#ced4da] group-hover:text-primary transition-colors duration-500" />
-                      </div>
+                    {/* Media */}
+                    <div className="relative h-48 bg-gradient-to-br from-dark-alt to-dark flex items-center justify-center border-b border-white/5 overflow-hidden">
+                      {item.image ? (
+                        <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+                      ) : (
+                        <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 transition-all duration-500">
+                          <Icon className="w-7 h-7 text-[#ced4da] group-hover:text-primary transition-colors duration-500" />
+                        </div>
+                      )}
                       {/* Ambient metric */}
                       <div className="absolute bottom-4 right-4 text-right">
                         <div className="text-3xl font-bold text-primary/15 font-serif">
