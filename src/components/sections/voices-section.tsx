@@ -170,7 +170,7 @@ export function VoicesSection() {
                         <img
                           src={voice.photo}
                           alt={voice.name}
-                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                          className="w-full h-full object-cover"
                         />
                       ) : (
                         <span className="text-sm font-bold text-white">
@@ -192,7 +192,7 @@ export function VoicesSection() {
                       href={voice.linkedIn}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#ced4da]/40 hover:text-primary transition-colors mt-1"
+                      className="text-[#0A66C2] hover:text-[#0A66C2]/80 transition-colors mt-1"
                     >
                       <Linkedin className="w-4 h-4" />
                     </a>
