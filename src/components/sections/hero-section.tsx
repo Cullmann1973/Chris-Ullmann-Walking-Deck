@@ -220,13 +220,13 @@ export function HeroSection({ focus }: { focus?: string }) {
           {/* Tagline */}
           <h1 className="text-[1.625rem] md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-serif text-foreground/80 leading-relaxed mb-6 md:mb-12">
             <span className="tagline-line tagline-line-1 block mb-2">
-              People Teams Drive <span className="tagline-flash-strategy">AI Success.</span>
+              Transformation starts with <span className="tagline-flash-strategy">people.</span>
             </span>
             <span className="tagline-line tagline-line-2 block mb-2">
-              Technology <span className="tagline-flash-execution">Enables.</span>
+              AI makes it <span className="tagline-flash-execution">scalable.</span>
             </span>
             <span className="tagline-line tagline-line-3 block mb-2">
-              Process Integration <span className="tagline-flash-ai">Scales.</span>
+              Execution makes it <span className="tagline-flash-ai">real.</span>
             </span>
           </h1>
 
