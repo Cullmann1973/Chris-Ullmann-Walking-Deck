@@ -158,7 +158,7 @@ export function VoicesSection() {
               key={i}
               className="voice-card flex-shrink-0 w-[300px] md:w-[340px] snap-start"
             >
-              <div className="group h-full rounded-xl border border-white/10 bg-dark/80 p-6 transition-all duration-500 hover:border-primary/25 hover:shadow-[0_12px_40px_rgba(0,188,212,0.06)]">
+              <div className="group h-full rounded-xl border border-white/10 bg-dark/80 p-6 transition-all duration-500 hover:scale-[1.25] hover:z-50 hover:border-primary/25 hover:shadow-[0_20px_60px_rgba(0,188,212,0.12)] origin-center">
                 {/* Header: Avatar + Name */}
                 <div className="flex items-start justify-between mb-5">
                   <div className="flex items-center gap-3">
