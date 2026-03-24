@@ -75,6 +75,7 @@ const APPROACH_ITEMS: ApproachItem[] = [
 function ApproachCarousel() {
   const sectionRef = useRef<HTMLElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const wordsRef = useRef<(HTMLDivElement | null)[]>([]);
   const descsRef = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -83,13 +84,11 @@ function ApproachCarousel() {
 
     const ctx = gsap.context(() => {
       const N = APPROACH_ITEMS.length;
-      const wordStart = 0.22;
-      const wordEnd = 0.98;
-      const sliceSize = (wordEnd - wordStart) / N;
+      const sliceSize = 0.76 / N;
 
       // Initialize: hide all words and descriptions
       wordsRef.current.forEach((el) => {
-        if (el) gsap.set(el, { opacity: 0, rotationZ: 45, y: 50 });
+        if (el) gsap.set(el, { rotationZ: 45, opacity: 0, y: 50 });
       });
       descsRef.current.forEach((el) => {
         if (el) gsap.set(el, { opacity: 0, y: 20 });
@@ -109,7 +108,7 @@ function ApproachCarousel() {
 
       // Phase 1 (0→0.05): card content fades out
       tl.to(
-        ".approach-card-content",
+        contentRef.current,
         { opacity: 0, duration: 0.05, ease: "none" },
         0
       );
@@ -150,7 +149,7 @@ function ApproachCarousel() {
           borderRadius: "0%",
           boxShadow: "none",
           duration: 0.05,
-          ease: "none",
+          ease: "power2.out",
         },
         0.16
       );
@@ -158,45 +157,48 @@ function ApproachCarousel() {
       // ── Word carousel begins at 0.22 ──
 
       APPROACH_ITEMS.forEach((_, i) => {
-        const start = wordStart + i * sliceSize;
-        const enterDur = sliceSize * 0.15;
-        const holdDur = sliceSize * 0.70;
-        const exitDur = sliceSize * 0.15;
-
         const wordEl = wordsRef.current[i];
         const descEl = descsRef.current[i];
+        if (!wordEl || !descEl) return;
 
-        if (wordEl) {
-          // Word enters: rotationZ 45→0, opacity 0→1, y +50→0
-          tl.to(
-            wordEl,
-            { rotationZ: 0, opacity: 1, y: 0, duration: enterDur, ease: "none" },
-            start
-          );
+        const s = 0.22 + i * sliceSize;
+        const c = s + 0.15 * sliceSize;       // word fully entered
+        const d = s + 0.85 * sliceSize;       // word starts exiting
 
-          // Word exits: rotationZ 0→-45, opacity 1→0, y 0→-100
-          tl.to(
-            wordEl,
-            { rotationZ: -45, opacity: 0, y: -100, duration: exitDur, ease: "none" },
-            start + enterDur + holdDur
-          );
-        }
+        // Word enters: rotationZ 45→0, opacity 0→1, y +50→0
+        tl.to(
+          wordEl,
+          { rotationZ: 0, opacity: 1, y: 0, duration: 0.15 * sliceSize, ease: "power2.out" },
+          s
+        );
 
-        if (descEl) {
-          // Description fades in shortly after word enters
-          tl.to(
-            descEl,
-            { opacity: 1, y: 0, duration: enterDur, ease: "none" },
-            start + enterDur * 0.5
-          );
+        // Word holds: keep visible
+        tl.to(
+          wordEl,
+          { rotationZ: 0, opacity: 1, y: 0, duration: 0.70 * sliceSize, ease: "none" },
+          c
+        );
 
-          // Description fades out before word exits
-          tl.to(
-            descEl,
-            { opacity: 0, y: -20, duration: exitDur, ease: "none" },
-            start + enterDur + holdDur - exitDur * 0.5
-          );
-        }
+        // Word exits: rotationZ 0→-45, opacity 1→0, y 0→-100
+        tl.to(
+          wordEl,
+          { rotationZ: -45, opacity: 0, y: -100, duration: 0.15 * sliceSize, ease: "power2.in" },
+          d
+        );
+
+        // Description enters shortly after word settles
+        tl.to(
+          descEl,
+          { opacity: 1, y: 0, duration: 0.12 * sliceSize, ease: "power2.out" },
+          c + 0.01 * sliceSize
+        );
+
+        // Description exits before word exits
+        tl.to(
+          descEl,
+          { opacity: 0, y: -40, duration: 0.12 * sliceSize, ease: "power2.in" },
+          d - 0.03 * sliceSize
+        );
       });
     }, sectionRef);
 
@@ -207,60 +209,72 @@ function ApproachCarousel() {
     <section
       ref={sectionRef}
       id="approach"
-      className="min-h-screen bg-dark-alt relative overflow-hidden flex items-center justify-center"
+      className="relative min-h-screen bg-dark-alt overflow-hidden"
     >
-      {/* Center card (portal) */}
+      {/* Center card (portal visual) */}
       <div
         ref={cardRef}
-        className="bg-dark border border-primary/30 rounded-lg p-6 md:p-8 lg:p-12 max-w-2xl w-full relative z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[500px] h-[400px] md:h-[500px] bg-dark rounded-2xl z-10 border border-primary/30"
         style={{ transformOrigin: "center center" }}
+      />
+
+      {/* Card content overlay (fades out during portal) */}
+      <div
+        ref={contentRef}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[500px] h-[400px] md:h-[500px] z-[15] flex flex-col justify-start p-6 md:p-10 pointer-events-none"
       >
-        <div className="approach-card-content">
-          <span className="text-xs font-mono tracking-wider text-[#ced4da] uppercase">
-            Philosophy
-          </span>
-          <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mt-4 mb-6">
-            Human-Centered AI
-          </h3>
-          <p className="text-sm md:text-base text-[#ced4da] leading-relaxed">
-            Technology serves people. Not the other way around. What follows is the framework
-            behind 1,000+ people activated on AI: Stanford training, grassroots community building,
-            and governance that enables instead of blocks.
-          </p>
-        </div>
+        <h3 className="text-lg md:text-xl font-semibold text-primary mb-6 md:mb-8">
+          Human-Centered AI
+        </h3>
+        <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
+          Technology serves people. Not the other way around. What follows is the framework
+          behind 1,000+ people activated on AI: Stanford training, grassroots community building,
+          and governance that enables instead of blocks.
+        </p>
       </div>
 
       {/* Big rotating words — left side */}
-      {APPROACH_ITEMS.map((item, i) => (
-        <div
-          key={`word-${i}`}
-          ref={(el) => { wordsRef.current[i] = el; }}
-          className="absolute left-[5%] sm:left-[8%] md:left-[10%] top-1/2 -translate-y-1/2 z-20 pointer-events-none"
-        >
-          <span className="text-[36px] sm:text-[48px] md:text-[64px] lg:text-[88px] xl:text-[110px] font-serif text-foreground leading-none block">
-            {item.word}
-          </span>
-        </div>
-      ))}
+      <div className="absolute left-4 sm:left-[90px] md:left-[140px] lg:left-[180px] top-1/2 -translate-y-1/2 z-30 min-h-[50px] min-w-[120px] lg:min-h-[100px] lg:min-w-[300px]">
+        {APPROACH_ITEMS.map((item, i) => (
+          <div
+            key={`word-${i}`}
+            ref={(el) => { wordsRef.current[i] = el; }}
+            className="absolute left-0 whitespace-nowrap"
+            style={{
+              transformOrigin: "left center",
+              top: "50%",
+              transform: "translateY(-50%)",
+            }}
+          >
+            <span className="text-[36px] sm:text-[48px] md:text-[64px] lg:text-[88px] xl:text-[110px] font-serif text-foreground leading-none">
+              {item.word}
+            </span>
+          </div>
+        ))}
+      </div>
 
       {/* Description panels — right side */}
-      {APPROACH_ITEMS.map((item, i) => (
-        <div
-          key={`desc-${i}`}
-          ref={(el) => { descsRef.current[i] = el; }}
-          className="absolute top-1/2 -translate-y-1/2 right-[5%] w-[260px] sm:right-[5%] sm:w-[280px] md:right-[8%] md:w-[320px] lg:right-[10%] lg:w-[380px] z-20 pointer-events-none"
-        >
-          <span className="text-xs font-mono text-primary tracking-wider uppercase block mb-2">
-            {item.period}
-          </span>
-          <h4 className="text-base md:text-lg font-serif text-foreground mb-3">
-            {item.role}
-          </h4>
-          <p className="text-sm text-[#ced4da] leading-relaxed">
-            {item.description}
-          </p>
+      <div className="absolute z-30 bottom-[22%] left-4 right-4 sm:bottom-auto sm:left-auto sm:top-1/2 sm:-translate-y-1/2 sm:right-[5%] sm:w-[280px] md:right-[8%] md:w-[320px] lg:right-[10%] lg:w-[380px] xl:right-[12%] xl:w-[420px]">
+        <div className="relative w-full">
+          {APPROACH_ITEMS.map((item, i) => (
+            <div
+              key={`desc-${i}`}
+              ref={(el) => { descsRef.current[i] = el; }}
+              className={i === 0 ? "relative" : "absolute inset-x-0 top-0"}
+            >
+              <p className="text-xs md:text-sm text-primary mb-1 sm:mb-2 uppercase tracking-wider font-mono">
+                {item.period}
+              </p>
+              <h4 className="text-sm md:text-base lg:text-lg font-medium text-foreground mb-1.5 sm:mb-2 md:mb-3 leading-snug">
+                {item.role}
+              </h4>
+              <p className="text-xs md:text-sm lg:text-base text-foreground/70 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
 
       {/* Credentials bar at bottom */}
       <div className="absolute bottom-8 left-0 right-0 text-center z-20 pointer-events-none">
