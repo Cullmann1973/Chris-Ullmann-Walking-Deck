@@ -12,6 +12,7 @@ interface Voice {
   linkedIn?: string;
   initials: string;
   gradient: string;
+  photo?: string;
 }
 
 const voices: Voice[] = [
@@ -23,6 +24,7 @@ const voices: Voice[] = [
     initials: "DK",
     gradient: "from-cyan-500 to-blue-600",
     linkedIn: "https://www.linkedin.com/in/humanresourcesexecutive/",
+    photo: "/references/denise-kulikowsky.jpg",
   },
   {
     name: "Saverio Marcario",
@@ -32,6 +34,7 @@ const voices: Voice[] = [
     initials: "SM",
     gradient: "from-indigo-500 to-purple-600",
     linkedIn: "https://www.linkedin.com/in/saverio-marcario-4432794b/",
+    photo: "/references/saverio-marcario.jpg",
   },
   {
     name: "Jane Koh",
@@ -41,6 +44,7 @@ const voices: Voice[] = [
     initials: "JK",
     gradient: "from-emerald-500 to-teal-600",
     linkedIn: "https://www.linkedin.com/in/janekohmicrosoft/",
+    photo: "/references/jane-koh.jpg",
   },
   {
     name: "Adriana Uribe",
@@ -50,6 +54,7 @@ const voices: Voice[] = [
     initials: "AU",
     gradient: "from-sky-500 to-indigo-600",
     linkedIn: "https://www.linkedin.com/in/adriana-uribe-pmp-pfmp-mba/",
+    photo: "/references/adriana-uribe.jpg",
   },
   {
     name: "Kathy Gersch",
@@ -152,17 +157,25 @@ export function VoicesSection() {
               key={i}
               className="voice-card flex-shrink-0 w-[300px] md:w-[340px] snap-start"
             >
-              <div className="h-full rounded-xl border border-white/10 bg-dark/80 p-6 transition-all duration-500 hover:border-primary/25 hover:shadow-[0_12px_40px_rgba(0,188,212,0.06)]">
+              <div className="group h-full rounded-xl border border-white/10 bg-dark/80 p-6 transition-all duration-500 hover:border-primary/25 hover:shadow-[0_12px_40px_rgba(0,188,212,0.06)]">
                 {/* Header: Avatar + Name */}
                 <div className="flex items-start justify-between mb-5">
                   <div className="flex items-center gap-3">
-                    {/* Initials Avatar */}
+                    {/* Avatar — photo with B&W→color hover, or initials fallback */}
                     <div
-                      className={`w-12 h-12 rounded-full bg-gradient-to-br ${voice.gradient} flex items-center justify-center flex-shrink-0`}
+                      className={`w-12 h-12 rounded-full flex-shrink-0 overflow-hidden ${!voice.photo ? `bg-gradient-to-br ${voice.gradient} flex items-center justify-center` : ""}`}
                     >
-                      <span className="text-sm font-bold text-white">
-                        {voice.initials}
-                      </span>
+                      {voice.photo ? (
+                        <img
+                          src={voice.photo}
+                          alt={voice.name}
+                          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        />
+                      ) : (
+                        <span className="text-sm font-bold text-white">
+                          {voice.initials}
+                        </span>
+                      )}
                     </div>
                     <div>
                       <h4 className="text-base font-semibold text-foreground leading-tight">
