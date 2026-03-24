@@ -45,7 +45,7 @@ export const ellaScenarios: EllaScenario[] = [
     icon: "🔧",
     title: "Troubleshooting",
     summary: "Equipment alarm on Line 3",
-    contextLine: "Beacon Hill Facility — Line 3 | Shift 2",
+    contextLine: "Beacon Hill Facility, Line 3 | Shift 2",
     operatorMessage: {
       operator: "Alex",
       shift: "Shift 2",
@@ -70,7 +70,7 @@ export const ellaScenarios: EllaScenario[] = [
     icon: "🔄",
     title: "Changeover",
     summary: "SKU switch on Line 7",
-    contextLine: "Beacon Hill Facility — Line 7 | Shift 1",
+    contextLine: "Beacon Hill Facility, Line 7 | Shift 1",
     operatorMessage: {
       operator: "Maria",
       shift: "Shift 1",
@@ -128,7 +128,7 @@ export const ellaScenarios: EllaScenario[] = [
     icon: "📊",
     title: "Consumer Insight",
     summary: "Top complaints on Velvet Glow",
-    contextLine: "Beacon Hill Facility — Line 3 | Shift 2",
+    contextLine: "Beacon Hill Facility, Line 3 | Shift 2",
     operatorMessage: {
       operator: "Alex",
       shift: "Shift 2",
@@ -153,7 +153,7 @@ export const ellaScenarios: EllaScenario[] = [
     icon: "📋",
     title: "Quality History",
     summary: "Fill weight variance investigation",
-    contextLine: "Beacon Hill Facility — Line 12 | Shift 3",
+    contextLine: "Beacon Hill Facility, Line 12 | Shift 3",
     operatorMessage: {
       operator: "James",
       shift: "Shift 3",

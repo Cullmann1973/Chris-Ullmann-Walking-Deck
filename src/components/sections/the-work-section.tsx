@@ -36,7 +36,7 @@ const workItems: WorkItem[] = [
   {
     id: "ignite",
     title: "Microsoft Ignite: ELLA",
-    subtitle: "Featured Case Study — Session PBRK394",
+    subtitle: "Featured Case Study, Session PBRK394",
     description:
       "ELLA, the Estée Lauder Line Assistant, was presented by Microsoft as a featured AI adoption case study at Ignite. Built with Copilot Studio, Dataverse, and AI Builder. Chris's demo starts at 37:45.",
     badge: "Presentation",
@@ -50,7 +50,7 @@ const workItems: WorkItem[] = [
   {
     id: "m365-conf",
     title: "Microsoft 365 Community Conference",
-    subtitle: "Panelist — April 21-23, 2026 · Orlando, FL",
+    subtitle: "Panelist, April 21-23, 2026 · Orlando, FL",
     description:
       "Selected as a panelist at the Microsoft 365 Community Conference. Presenting on practical approaches to scaling AI adoption in enterprise environments.",
     badge: "Upcoming",

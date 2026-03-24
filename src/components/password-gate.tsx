@@ -109,7 +109,7 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
 
         {/* Subtle footer */}
         <p className="mt-12 text-center text-xs text-[#ced4da]/30 font-mono">
-          Christopher Ullmann — Confidential
+          Christopher Ullmann | Confidential
         </p>
       </div>
 

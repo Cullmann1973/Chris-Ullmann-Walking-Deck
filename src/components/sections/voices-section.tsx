@@ -170,7 +170,7 @@ export function VoicesSection() {
               Voices
             </h2>
             <p className="text-[#ced4da] mt-4 max-w-2xl">
-              People who&apos;ve seen the work firsthand. They&apos;re expecting your call — connect with them directly on LinkedIn.
+              People who&apos;ve seen the work firsthand. They&apos;re expecting your call: connect with them directly on LinkedIn.
             </p>
           </div>
         </div>
