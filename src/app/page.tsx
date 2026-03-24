@@ -15,7 +15,6 @@ import { VoicesSection } from "@/components/sections/voices-section";
 import { ChatWidget } from "@/components/chat-widget";
 import { ScrollNudge } from "@/components/scroll-nudge";
 import { CircularCursor } from "@/components/circular-cursor";
-import { ProofCallout } from "@/components/proof-callout";
 import { PasswordGate } from "@/components/password-gate";
 import { ScrollTrigger } from "@/components/gsap-provider";
 import { useFocus } from "@/hooks/use-focus";
@@ -101,14 +100,11 @@ function HomeContent() {
     if (!Component) return;
     sections.push(<Component key={id} focus={mode} />);
     if (id === "about") {
-      sections.push(<ProofCallout key="proof-callout" />);
+      sections.push(<VoicesSection key="voices" />);
       sections.push(<WhatIDeliverSection key="what-i-deliver" focus={mode} />);
     }
     if (id === "roles") {
       sections.push(<TheWorkSection key="the-work" />);
-    }
-    if (id === "beyond") {
-      sections.push(<VoicesSection key="voices" />);
     }
   });
 
