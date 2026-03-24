@@ -74,6 +74,18 @@ const voices: Voice[] = [
     logo: "/logos/tiffany.png",
   },
   {
+    name: "Ester Jimenez",
+    title: "EVP & CTIO",
+    company: "PVH Corp",
+    speaksTo: "Enterprise technology transformation, SAP implementation, and cross-functional program execution",
+    initials: "EJ",
+    gradient: "from-amber-500 to-orange-600",
+    linkedIn: "https://www.linkedin.com/in/esterjimenez/",
+    photo: "/references/ester-jimenez.jpg",
+    brandColor: "#000000",
+    logo: "/logos/pvh.png",
+  },
+  {
     name: "Kathy Gersch",
     title: "CEO & Co-Founder",
     company: "Kotter",
