@@ -11,6 +11,8 @@ import { StackSection } from "@/components/sections/stack-section";
 import { BeyondSection } from "@/components/sections/beyond-section";
 import { AISection } from "@/components/sections/ai-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { TheWorkSection } from "@/components/sections/the-work-section";
+import { VoicesSection } from "@/components/sections/voices-section";
 import { ChatWidget } from "@/components/chat-widget";
 import { ScrollNudge } from "@/components/scroll-nudge";
 import { CircularCursor } from "@/components/circular-cursor";
@@ -93,7 +95,7 @@ function HomeContent() {
     };
   }, []);
 
-  // Render sections in focus-determined order, with ProofCallout after About
+  // Render sections in focus-determined order, with injected sections
   const sections: React.ReactNode[] = [];
   config.sectionOrder.forEach((id) => {
     const Component = SECTION_MAP[id];
@@ -102,6 +104,12 @@ function HomeContent() {
     if (id === "about") {
       sections.push(<ProofCallout key="proof-callout" />);
       sections.push(<WhatIDeliverSection key="what-i-deliver" focus={mode} />);
+    }
+    if (id === "roles") {
+      sections.push(<TheWorkSection key="the-work" />);
+    }
+    if (id === "ai") {
+      sections.push(<VoicesSection key="voices" />);
     }
   });
 
