@@ -45,9 +45,10 @@ export function Header() {
             <nav className="hidden md:flex items-center gap-6">
               {[
                 { label: "About", href: "#about" },
-                { label: "The Stack", href: "#stack" },
-                { label: "Beyond", href: "#beyond" },
-
+                { label: "The Work", href: "#the-work" },
+                { label: "Journey", href: "#stack" },
+                { label: "Voices", href: "#voices" },
+                { label: "Contact", href: "#contact" },
               ].map((link) => (
                 <a
                   key={link.href}
