@@ -218,16 +218,14 @@ export function VoicesSection() {
                   )}
                 </div>
 
-                {/* Company logo banner */}
-                <div className="mb-4">
+                {/* Company logo */}
+                <div className="mb-4 h-8 flex items-center">
                   {voice.logo ? (
-                    <div className="h-10 w-full rounded-lg overflow-hidden bg-white flex items-center justify-center px-4">
-                      <img
-                        src={voice.logo}
-                        alt={voice.company}
-                        className="h-7 w-auto object-contain max-w-full"
-                      />
-                    </div>
+                    <img
+                      src={voice.logo}
+                      alt={voice.company}
+                      className="h-8 w-auto object-contain"
+                    />
                   ) : (
                     <p
                       className="text-sm font-semibold tracking-wide"
