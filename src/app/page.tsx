@@ -17,6 +17,7 @@ import { ChatWidget } from "@/components/chat-widget";
 import { ScrollNudge } from "@/components/scroll-nudge";
 import { CircularCursor } from "@/components/circular-cursor";
 import { ProofCallout } from "@/components/proof-callout";
+import { PasswordGate } from "@/components/password-gate";
 import { ScrollTrigger } from "@/components/gsap-provider";
 import { useFocus } from "@/hooks/use-focus";
 
@@ -114,14 +115,14 @@ function HomeContent() {
   });
 
   return (
-    <>
+    <PasswordGate>
       <Header />
       <UnifiedCULogo />
       <main>{sections}</main>
       <ChatWidget />
       <ScrollNudge />
       <CircularCursor />
-    </>
+    </PasswordGate>
   );
 }
 
