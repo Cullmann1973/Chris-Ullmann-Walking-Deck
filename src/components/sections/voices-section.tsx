@@ -51,6 +51,15 @@ const voices: Voice[] = [
     gradient: "from-sky-500 to-indigo-600",
     linkedIn: "https://www.linkedin.com/in/adriana-uribe-pmp-pfmp-mba/",
   },
+  {
+    name: "Kathy Gersch",
+    title: "Managing Director",
+    company: "Kotter Inc.",
+    speaksTo: "Change management methodology, enterprise transformation execution, and Kotter partnership",
+    initials: "KG",
+    gradient: "from-rose-500 to-pink-600",
+    linkedIn: "https://www.linkedin.com/in/kathy-gersch-639916/",
+  },
 ];
 
 export function VoicesSection() {

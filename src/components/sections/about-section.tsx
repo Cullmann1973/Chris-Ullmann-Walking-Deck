@@ -191,19 +191,13 @@ export function AboutSection({ focus }: { focus?: string }) {
 
                 <div className="space-y-4 text-[#ced4da] leading-relaxed">
                   <p>
-                    I identify where AI transforms People processes, build the case with HR stakeholders, then design the adoption strategy that scales. 25 years across operations, quality, and enterprise transformation taught me that successful AI is not about the technology, it is about the people who use it.
+                    I have spent my career leading transformation where execution matters most: operations, quality, supply chain, PMO, and enterprise change. Over time, one thing has become clear to me. Technology can enable progress, but people, process, and disciplined execution are what actually deliver it.
                   </p>
                   <p>
-                    Already serving as primary technical interface between Manufacturing and IT Systems at ELC. Same assessment and integration playbook applies to People Systems: Workday, HRIS platforms, recruiting tools, performance management.
+                    Today, much of my work is focused on AI transformation. Not as a theory, and not as a side conversation, but as a practical lever to improve how work gets done. My role is to identify where AI can solve real business problems, align the right stakeholders, build the path to adoption, and make sure it scales in a responsible and useful way.
                   </p>
                   <p>
-                    2-year direct partnership with Kotter Inc. and John Kotter. 1,000+ people activated using the 8-step methodology, from pilot champions to enterprise adoption. Community of Practice grew from 3 to 100+ members organically.
-                  </p>
-                  <p>
-                    Legal, Compliance, and Privacy engaged BEFORE scaling. Built responsible AI frameworks that accelerate, not block. When handling People data, governance is not optional.
-                  </p>
-                  <p>
-                    Stanford HAI training. Microsoft Ignite presenter. M365 Conference panelist (April 2026). Harvard Business Review featured transformation work.
+                    At Estée Lauder, I work across business and IT to turn opportunity into action. The goal is simple: move beyond pilots, create measurable value, and build the kind of capability that sticks.
                   </p>
 
                   {focusMode !== "general" && (
