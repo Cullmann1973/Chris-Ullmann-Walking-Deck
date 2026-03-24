@@ -284,7 +284,7 @@ export function BeyondSection({ focus }: { focus?: string }) {
                 </h3>
                 
                 <div className="clearfix">
-                  <div className="photo-container float-right w-48 h-48 ml-8 mb-6 rounded-xl overflow-hidden relative">
+                  <div className="photo-container group float-right w-48 h-48 ml-8 mb-6 rounded-xl overflow-hidden relative">
                     {sections[1].image ? (
                       <img 
                         src={sections[1].image} 
