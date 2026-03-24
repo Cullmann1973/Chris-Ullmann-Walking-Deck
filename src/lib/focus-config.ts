@@ -35,7 +35,6 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
       "roles",
       "stack",
       "beyond",
-      "ai",
       "contact",
     ],
     positioningLine:
@@ -53,7 +52,6 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
     sectionOrder: [
       "hero",
       "about",
-      "ai",
       "stack",
       "roles",
       "beyond",
@@ -76,7 +74,6 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
       "about",
       "stack",
       "roles",
-      "ai",
       "beyond",
       "contact",
     ],
@@ -99,7 +96,6 @@ export const FOCUS_CONFIGS: Record<FocusMode, FocusConfig> = {
       "stack",
       "roles",
       "beyond",
-      "ai",
       "contact",
     ],
     positioningLine:

@@ -47,7 +47,7 @@ export function Header() {
                 { label: "About", href: "#about" },
                 { label: "The Stack", href: "#stack" },
                 { label: "Beyond", href: "#beyond" },
-                { label: "AI", href: "#ai" },
+
               ].map((link) => (
                 <a
                   key={link.href}

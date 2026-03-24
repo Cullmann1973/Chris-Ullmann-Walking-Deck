@@ -9,7 +9,6 @@ import { WhatIDeliverSection } from "@/components/sections/what-i-deliver-sectio
 import { RolesRevealSection } from "@/components/sections/roles-reveal-section";
 import { StackSection } from "@/components/sections/stack-section";
 import { BeyondSection } from "@/components/sections/beyond-section";
-import { AISection } from "@/components/sections/ai-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { TheWorkSection } from "@/components/sections/the-work-section";
 import { VoicesSection } from "@/components/sections/voices-section";
@@ -28,7 +27,6 @@ const SECTION_MAP: Record<string, React.FC<{ focus?: string }>> = {
   roles: RolesRevealSection,
   stack: StackSection,
   beyond: BeyondSection,
-  ai: AISection,
   contact: ContactSection,
 };
 
@@ -109,7 +107,7 @@ function HomeContent() {
     if (id === "roles") {
       sections.push(<TheWorkSection key="the-work" />);
     }
-    if (id === "ai") {
+    if (id === "beyond") {
       sections.push(<VoicesSection key="voices" />);
     }
   });
