@@ -18,8 +18,8 @@ interface Voice {
 const voices: Voice[] = [
   {
     name: "Denise Kulikowsky",
-    title: "Former CHRO",
-    company: "Tapestry (formerly ELC)",
+    title: "Chief People Officer",
+    company: "Tapestry",
     speaksTo: "Leadership development, cross-functional collaboration, and professional growth",
     initials: "DK",
     gradient: "from-cyan-500 to-blue-600",
@@ -28,7 +28,7 @@ const voices: Voice[] = [
   },
   {
     name: "Saverio Marcario",
-    title: "Manufacturing Leadership",
+    title: "Global EHS Lead",
     company: "The Estée Lauder Companies",
     speaksTo: "Manufacturing operations leadership, transformation execution, and team development",
     initials: "SM",
@@ -38,7 +38,7 @@ const voices: Voice[] = [
   },
   {
     name: "Jane Koh",
-    title: "Business Partner",
+    title: "Principal Product Manager, Copilot Extensibility",
     company: "Microsoft",
     speaksTo: "AI product partnership, enterprise deployment, and the ELLA case study presented at Microsoft Ignite",
     initials: "JK",
@@ -48,8 +48,8 @@ const voices: Voice[] = [
   },
   {
     name: "Adriana Uribe",
-    title: "PMP, PfMP, MBA",
-    company: "The Estée Lauder Companies",
+    title: "VP, Transformation & PMO, IT",
+    company: "Tiffany & Co.",
     speaksTo: "Enterprise program management, supply chain transformation, and PMO development",
     initials: "AU",
     gradient: "from-sky-500 to-indigo-600",
@@ -58,8 +58,8 @@ const voices: Voice[] = [
   },
   {
     name: "Kathy Gersch",
-    title: "Managing Director",
-    company: "Kotter Inc.",
+    title: "CEO & Co-Founder",
+    company: "Kotter",
     speaksTo: "Change management methodology, enterprise transformation execution, and Kotter partnership",
     initials: "KG",
     gradient: "from-rose-500 to-pink-600",
