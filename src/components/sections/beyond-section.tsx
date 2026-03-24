@@ -235,12 +235,12 @@ export function BeyondSection({ focus }: { focus?: string }) {
           <div className="space-y-32">
             {/* FAMILY (index 0) */}
             <div className={`beyond-subsection-0`}>
-              <div className="photo-container relative aspect-[21/9] rounded-xl overflow-hidden w-full mb-8">
+              <div className="photo-container group relative aspect-[21/9] rounded-xl overflow-hidden w-full mb-8">
                 {sections[0].image ? (
                   <img 
                     src={sections[0].image} 
                     alt={sections[0].title}
-                    className="parallax-photo absolute inset-[-14%] w-full h-[128%] object-cover"
+                    className="parallax-photo absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center">
@@ -287,7 +287,7 @@ export function BeyondSection({ focus }: { focus?: string }) {
                       <img 
                         src={sections[1].image} 
                         alt={sections[1].title}
-                        className="parallax-photo absolute inset-[-14%] w-full h-[128%] object-cover"
+                        className="parallax-photo absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
                       />
                     ) : (
                       <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center text-center p-4">
@@ -318,12 +318,12 @@ export function BeyondSection({ focus }: { focus?: string }) {
 
             {/* THE DRIVE (index 2) */}
             <div className={`beyond-subsection-2 grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-start`}>
-              <div className="photo-container relative aspect-[4/3] lg:aspect-square rounded-xl overflow-hidden ring-2 ring-primary/20">
+              <div className="photo-container group relative aspect-[4/3] lg:aspect-square rounded-xl overflow-hidden ring-2 ring-primary/20">
                 {sections[2].image ? (
                   <img 
                     src={sections[2].image} 
                     alt={sections[2].title}
-                    className="parallax-photo absolute inset-[-14%] w-full h-[128%] object-cover"
+                    className="parallax-photo absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center">
