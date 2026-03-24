@@ -43,8 +43,8 @@ const sections: BeyondSection[] = [
     photoLabel: "Photo: Workshop",
     image: "/images/watch-movement.jpg",
     content: [
-      "I've never been satisfied just using tools. I need to understand how they work so I can make them faster, more reliable, more efficient.",
-      "Cars, 3D printing, watch repair, hardware integration, AI agents: the medium changes but the instinct doesn't. My garage is where I take things apart, figure out what makes them tick, and put them back together better.",
+      "I've never been satisfied just using machines. I need to understand how they work so I can make them faster, more reliable, more efficient.",
+      "Cars, 3D printers, watches, the human body: everything is a system. Biology was just another way to learn how things work. My garage is where I take things apart, figure out what makes them tick, and put them back together better. Same instinct that drives how I approach AI.",
     ],
     pullQuote: "I don't consume technology. I master it.",
   },
@@ -284,12 +284,12 @@ export function BeyondSection({ focus }: { focus?: string }) {
                 </h3>
                 
                 <div className="clearfix">
-                  <div className="photo-container group float-right w-48 h-48 ml-8 mb-6 rounded-xl overflow-hidden relative">
+                  <div className="photo-container float-right w-48 h-48 ml-8 mb-6 rounded-xl overflow-hidden relative cursor-pointer">
                     {sections[1].image ? (
                       <img 
                         src={sections[1].image} 
                         alt={sections[1].title}
-                        className="parallax-photo absolute inset-0 w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+                        className="parallax-photo absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                       />
                     ) : (
                       <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center text-center p-4">
