@@ -8,7 +8,8 @@ const roles = [
   { title: "Floor to Boardroom Fluency", align: "right" },
   { title: "Builds, Not Just Advises", align: "left" },
   { title: "Scales Through People", align: "center" },
-  { title: "Translates Complexity", align: "right", highlight: true },
+  { title: "Translates Complexity", align: "right" },
+  { title: "People Systems Bridge", align: "center", highlight: true },
 ];
 
 interface Pillar {
@@ -21,7 +22,7 @@ const pillars: Pillar[] = [
   {
     icon: Brain,
     title: "Stanford HAI Foundation",
-    body: "Trained through Stanford's Human-Centered AI Institute. Technical Fundamentals of Generative AI and Business Applications, covering not just how AI works, but its impact on individuals, communities, and society. Trust frameworks. Legal risks. Workforce transformation. Intelligence augmentation: human + AI, not replacement.",
+    body: "Trained through Stanford's Human-Centered AI Institute. Technical Fundamentals of Generative AI and Business Applications, covering not just how AI works, but its impact on individuals, communities, and society. Trust frameworks. Legal risks. Workforce transformation. Intelligence augmentation: human + AI, not replacement. Trust frameworks and bias mitigation especially critical for HR AI: compensation, hiring, performance, and promotion decisions.",
   },
   {
     icon: Users,
@@ -260,10 +261,10 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
                 Philosophy
               </span>
               <h2 className="text-section font-serif text-foreground mt-4">
-                Human-Centered AI
+                Human-Centered AI for People Teams
               </h2>
               <p className="text-[#ced4da] mt-4">
-                Technology serves people. Not the other way around.
+                Technology serves people. People data deserves even higher standards.
               </p>
             </div>
 

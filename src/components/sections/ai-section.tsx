@@ -23,7 +23,7 @@ const agentDemos: AgentDemo[] = [
     id: "bella",
     name: "ELLA",
     description:
-      "Equipment Line-Level Assistant for operator setups, troubleshooting, and SOPs. Presented at Microsoft Ignite.",
+      "Equipment Line-Level Assistant for operator setups, troubleshooting, and SOPs. Presented at Microsoft Ignite. Adoption strategy: pilot to champion network to supervisor training to enterprise rollout.",
     preview: "Ask ELLA about batch setup procedures or equipment troubleshooting steps.",
     demoUrl: "/ella",
     color: "from-pink-500/15 to-rose-500/15",
@@ -299,16 +299,16 @@ export function AISection({ focus }: { focus?: string }) {
           {/* Section header */}
           <div className="ai-title mb-12">
             <span className="text-xs font-mono tracking-wider text-[#e9ecef] uppercase">
-              From Idea to Production
+              Proof of Technical Depth
             </span>
             <h2 className="text-section font-serif text-[#f8f9fa] mt-4">
-              Built from Scratch
+              From 3 Users to 1,000+ Activated
             </h2>
             <p className="text-[#ced4da] mt-4 max-w-2xl">
-              Every solution here started as an idea I had, designed,
-              prototyped, and piloted. The ones that proved value earned
-              enterprise sponsorship. Some are in production. Others are proofs
-              of concept. All of them solve real problems.
+              These tools started as 3-person pilots. They earned enterprise
+              sponsorship because they solved real problems. Today, 1,000+
+              people use AI daily because the adoption strategy worked, not
+              just the technology.
             </p>
             
             <div className="mt-8 flex flex-col items-start">

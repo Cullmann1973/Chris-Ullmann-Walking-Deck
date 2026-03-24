@@ -30,9 +30,10 @@ const stackLayers: StackLayer[] = [
       "100+ member AI Community of Practice established for peer-led capability growth",
       "ELLA (line-level manufacturing assistant) presented at Microsoft Ignite as enterprise AI adoption case study",
       "Stanford HAI coursework (XFM110 + XFM111): human-centered AI training covering ethics, bias mitigation, legal risk, trust frameworks, and workforce transformation",
+      "Domain transfer methodology: Manufacturing operations to People Systems (same assessment and integration frameworks)",
     ],
     whatItUnlocked:
-      "Enterprise-wide AI transformation leadership. Fluent in both the technical and business languages.",
+      "Primary technical interface between business and technology teams. Proven ability to scale AI adoption from pilot to enterprise through people-first governance and community building.",
   },
   {
     id: "program",
@@ -48,7 +49,7 @@ const stackLayers: StackLayer[] = [
       "Aligned MAC, Clinique, Estée Lauder, Bobbi Brown, and Tom Ford teams around shared digital operating models",
     ],
     whatItUnlocked:
-      "Enterprise-scale transformation credibility. Proved I could take a $49M+ portfolio from chaos to 170% ROI, build permanent manufacturing capabilities, and align C-suite sponsors across the biggest beauty brands in the world.",
+      "Enterprise-scale transformation credibility. Proved I could take a $49M+ portfolio from chaos to 170% ROI, build permanent manufacturing capabilities, and align C-suite sponsors across the biggest beauty brands in the world. Cross-functional alignment skills directly applicable to People org and People Systems integration.",
     keyMetric: "170% ROI",
   },
   {
@@ -65,7 +66,7 @@ const stackLayers: StackLayer[] = [
       "$45M/year working capital released through quality systems redesign",
     ],
     whatItUnlocked:
-      "Quality as a business driver, not a cost center. Earned the trust to move into enterprise transformation.",
+      "Quality as a business driver, not a cost center. Earned the trust to move into enterprise transformation. Governance frameworks applicable to People data compliance and trust.",
     keyMetric: "$45M/yr released",
   },
   {
