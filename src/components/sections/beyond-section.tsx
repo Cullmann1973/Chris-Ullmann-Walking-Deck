@@ -233,43 +233,46 @@ export function BeyondSection({ focus }: { focus?: string }) {
           </div>
 
           <div className="space-y-32">
-            {/* FAMILY (index 0) */}
+            {/* FAMILY (index 0) — side-by-side layout like The Drive */}
             <div className={`beyond-subsection-0`}>
-              <div className="photo-container group relative aspect-[16/9] rounded-xl overflow-hidden w-full mb-8">
-                {sections[0].image ? (
-                  <img 
-                    src={sections[0].image} 
-                    alt={sections[0].title}
-                    className="parallax-photo absolute inset-0 w-full h-full object-cover object-top grayscale transition-all duration-700 group-hover:grayscale-0"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center">
-                    <span className="text-[#adb5bd] text-sm font-mono">
-                      {sections[0].photoLabel}
-                    </span>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8 md:p-12">
-                  <div className="text-container max-w-3xl">
-                    <h3 className="subsection-title text-3xl md:text-4xl font-serif text-[#f8f9fa] mb-6 relative inline-block">
-                      {sections[0].title}
-                      <span className="title-underline absolute -bottom-2 left-0 w-full h-[2px] bg-primary origin-left" />
-                    </h3>
-                    <div className="space-y-4">
-                      {sections[0].content.map((paragraph, i) => (
-                        <p key={i} className="content-paragraph text-[#ced4da] text-lg leading-relaxed">
-                          {paragraph}
-                        </p>
-                      ))}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+                {/* Left: Image — no crop */}
+                <div className="photo-container group relative rounded-xl overflow-hidden border border-primary/20">
+                  {sections[0].image ? (
+                    <img 
+                      src={sections[0].image} 
+                      alt={sections[0].title}
+                      className="parallax-photo w-full h-auto grayscale transition-all duration-700 group-hover:grayscale-0"
+                    />
+                  ) : (
+                    <div className="aspect-[4/3] bg-[#1a1a1a] flex items-center justify-center">
+                      <span className="text-[#adb5bd] text-sm font-mono">
+                        {sections[0].photoLabel}
+                      </span>
                     </div>
+                  )}
+                </div>
+
+                {/* Right: Title + text */}
+                <div className="text-container">
+                  <h3 className="subsection-title text-3xl md:text-4xl font-serif text-[#f8f9fa] mb-6 relative inline-block">
+                    {sections[0].title}
+                    <span className="title-underline absolute -bottom-2 left-0 w-full h-[2px] bg-primary origin-left" />
+                  </h3>
+                  <div className="space-y-4">
+                    {sections[0].content.map((paragraph, i) => (
+                      <p key={i} className="content-paragraph text-[#ced4da] text-lg leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                  {/* Pull quote inline */}
+                  <div className="pull-quote relative mt-8 pt-6 border-t border-white/10">
+                    <p className="text-xl md:text-2xl font-serif text-primary italic">
+                      &ldquo;{sections[0].pullQuote}&rdquo;
+                    </p>
                   </div>
                 </div>
-              </div>
-              <div className="pull-quote relative mt-12 py-8 text-center max-w-3xl mx-auto">
-                <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-4 text-7xl font-serif text-primary/15 leading-none select-none">"</span>
-                <p className="text-2xl md:text-3xl font-serif text-primary relative z-10">
-                  {sections[0].pullQuote}
-                </p>
               </div>
             </div>
 
