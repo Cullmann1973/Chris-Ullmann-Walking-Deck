@@ -16,14 +16,14 @@ interface BeyondSection {
 const sections: BeyondSection[] = [
   {
     id: "family",
-    title: "Leslie and the Girls",
+    title: "Home Base",
     photoLabel: "Photo: Family",
     image: "/images/family.jpg",
     content: [
-      "Leslie is my co-pilot in every sense. We share a love of travel, a tolerance for complexity, and an understanding that life rarely follows a neat plan.",
-      "I have two daughters who keep me grounded. Between the transformations, deadlines, and high-stakes decisions, family is where I remember why any of it matters.",
+      "Everything I build starts and ends here. My wife is my partner in every sense. My family reminds me daily why any of it matters.",
+      "The travel, the deadlines, the transformations: they only work because this is what I come home to.",
     ],
-    pullQuote: "Balance isn't a goal. It's a practice.",
+    pullQuote: "They're the reason it all works.",
   },
   {
     id: "early-riser",
@@ -43,9 +43,8 @@ const sections: BeyondSection[] = [
     photoLabel: "Photo: Workshop",
     image: "/images/watch-movement.jpg",
     content: [
-      "I've never been satisfied just using tools and technology. I need to understand how they work, then make them work better.",
-      "The Air Force gave me hydraulics, pneumatics, and a zero-defect mentality. Queens University of Charlotte gave me biology and chemistry. Everything since then has been self-taught: 3D modeling, hardware integration, AI architecture. At 50+, I enrolled in Stanford's Generative AI program. Not because I had to. Because I wanted to understand the technology I was deploying at enterprise scale.",
-      "My garage isn't just where we park the cars. It's where I design, build, and find my version of stillness. 3D printer running, music on, and always something new taking shape. That's probably the through-line of my whole life:",
+      "I've never been satisfied just using tools. I need to understand how they work, then make them work better.",
+      "My garage is where I design, build, and find my version of stillness. 3D printer running, music on, something new always taking shape. Cars, hardware, AI architecture: the medium changes but the instinct doesn't.",
     ],
     pullQuote: "I don't consume technology. I master it.",
   },
