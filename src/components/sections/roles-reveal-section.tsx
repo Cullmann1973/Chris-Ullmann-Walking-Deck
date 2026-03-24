@@ -41,6 +41,7 @@ const credentials =
 export function RolesRevealSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const boxRef = useRef<HTMLDivElement>(null);
+  const approachRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!sectionRef.current || !boxRef.current) return;
@@ -51,49 +52,50 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: "top top",
-          end: "+=300%",
+          end: "+=375%",
           scrub: 1.5,
           pin: true,
         },
       });
 
-      // Reveal each role one by one
+      // Reveal each role one by one (spread across 0-0.40)
       roles.forEach((_, index) => {
         tl.fromTo(
           `.role-${index}`,
           { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.15, ease: "none" },
-          index * 0.15
+          { opacity: 1, y: 0, duration: 0.08, ease: "none" },
+          index * 0.10
         );
       });
 
-      // Finally reveal the full paragraph
+      // Finally reveal the full paragraph (at 0.45, done by 0.55)
       tl.fromTo(
         ".roles-paragraph",
         { opacity: 0 },
-        { opacity: 1, duration: 0.2, ease: "none" },
-        0.75
+        { opacity: 1, duration: 0.10, ease: "none" },
+        0.45
       );
 
+      // HOLD: 0.55 to 0.92 is pure reading time (37% of 450% = ~166vh of scroll)
+
       // Exit animation: morph boxRef to fill viewport
-      // Hold for reading time before exit begins (was 0.80, now 0.88)
       // Step 1: Fade out all box content
       tl.to(
         ".roles-box-content",
-        { opacity: 0, duration: 0.04, ease: "none" },
-        0.88
+        { opacity: 0, duration: 0.03, ease: "none" },
+        0.92
       );
 
       // Step 2–4: Box morphs outward
       tl.to(
         boxRef.current,
         { rotation: 45, scale: 1.5, borderRadius: "40%", boxShadow: "0 0 100px 50px rgba(0,0,0,0.5)", duration: 0.04, ease: "none" },
-        0.92
+        0.95
       );
       tl.to(
         boxRef.current,
-        { rotation: 30, scale: 4, borderRadius: "30%", duration: 0.04, ease: "none" },
-        0.96
+        { rotation: 30, scale: 4, borderRadius: "30%", duration: 0.03, ease: "none" },
+        0.97
       );
       tl.to(
         boxRef.current,
@@ -102,8 +104,9 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
       );
     }, sectionRef);
 
-    // Approach pillar animations (outside pin, scroll-triggered normally)
+    // Approach section: rotating word reveal + card animations
     const ctx2 = gsap.context(() => {
+      // Title reveal
       gsap.fromTo(
         ".approach-pillars-title",
         { y: 30, opacity: 0 },
@@ -120,23 +123,53 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
         }
       );
 
-      gsap.fromTo(
-        ".approach-card",
-        { y: 25, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          stagger: 0.08,
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".approach-pillars-grid",
-            start: "top 85%",
-            end: "top 55%",
-            scrub: 1.5,
-          },
-        }
-      );
+      // Rotating word effect: as each card scrolls into view, swap the big word
+      pillars.forEach((_, i) => {
+        const cardSelector = `.approach-card-${i}`;
 
+        // Fade in each card
+        gsap.fromTo(
+          cardSelector,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: cardSelector,
+              start: "top 80%",
+              end: "top 50%",
+              scrub: 1,
+              onEnter: () => {
+                // Rotate the big word: fade out all, fade in current
+                pillars.forEach((__, j) => {
+                  gsap.to(`.approach-word-${j}`, {
+                    opacity: j === i ? 1 : 0,
+                    y: j === i ? 0 : (j < i ? -30 : 30),
+                    duration: 0.5,
+                    ease: "power2.out",
+                  });
+                });
+              },
+              onEnterBack: () => {
+                // When scrolling back up, show the previous word
+                const prev = Math.max(0, i - 1);
+                pillars.forEach((__, j) => {
+                  gsap.to(`.approach-word-${j}`, {
+                    opacity: j === (i === 0 ? 0 : prev) ? 1 : 0,
+                    y: j === (i === 0 ? 0 : prev) ? 0 : (j < prev ? -30 : 30),
+                    duration: 0.5,
+                    ease: "power2.out",
+                  });
+                });
+              },
+            },
+          }
+        );
+      });
+
+      // Credentials fade
       gsap.fromTo(
         ".approach-credentials",
         { opacity: 0 },
@@ -151,7 +184,7 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
           },
         }
       );
-    });
+    }, approachRef);
 
     return () => {
       ctx.revert();
@@ -192,7 +225,7 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
                 >
                   <span
                     className={`text-xl md:text-2xl lg:text-3xl font-serif ${
-                      role.highlight ? "text-primary" : "text-muted-foreground"
+                      role.highlight ? "text-primary" : "text-[#ced4da]"
                     }`}
                   >
                     {role.title}
@@ -202,7 +235,7 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
             </div>
 
             {/* Full paragraph (reveals last) */}
-            <div className="roles-paragraph opacity-0 text-sm md:text-base text-muted-foreground leading-relaxed">
+            <div className="roles-paragraph opacity-0 text-sm md:text-base text-[#ced4da] leading-relaxed">
               Results create trust. Trust opens doors to bigger challenges. From
               Kaizen events on the floor to $500M transformation roadmaps in the
               boardroom, that&apos;s not a career philosophy: it&apos;s a pattern you
@@ -213,46 +246,79 @@ export function RolesRevealSection({ focus }: { focus?: string }) {
         </div>
       </section>
 
-      {/* Approach pillars — merged inline after the roles pin section */}
-      <section className="bg-dark-alt relative">
+      {/* Approach pillars — scroll-pinned rotating word reveal */}
+      <section
+        ref={approachRef}
+        id="approach"
+        className="bg-dark-alt relative min-h-screen"
+      >
         <div className="section-padding">
-          <div className="max-w-6xl mx-auto">
-            <div className="approach-pillars-title mb-12 max-w-4xl">
-              <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
+          <div className="max-w-7xl mx-auto">
+            {/* Section header */}
+            <div className="approach-pillars-title mb-16 max-w-4xl">
+              <span className="text-xs font-mono tracking-wider text-[#ced4da] uppercase">
                 Philosophy
               </span>
               <h2 className="text-section font-serif text-foreground mt-4">
                 Human-Centered AI
               </h2>
-              <p className="text-muted-foreground mt-4">
+              <p className="text-[#ced4da] mt-4">
                 Technology serves people. Not the other way around.
               </p>
             </div>
 
-            <div className="approach-pillars-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
-              {pillars.map((pillar) => {
-                const Icon = pillar.icon;
-                return (
-                  <article
+            {/* Split layout: big rotating word left, content right */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+              {/* Left: Large rotating pillar word */}
+              <div className="approach-word-container sticky top-1/3 hidden lg:block">
+                {pillars.map((pillar, i) => (
+                  <div
                     key={pillar.title}
-                    className="approach-card rounded-xl border border-white/10 bg-dark/80 p-6"
+                    className={`approach-word-${i} absolute top-0 left-0`}
+                    style={{ opacity: i === 0 ? 1 : 0 }}
                   >
-                    <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 border border-primary/25 mb-4">
-                      <Icon className="w-4 h-4 text-primary" />
-                    </div>
-                    <h3 className="text-lg font-serif text-foreground mb-2">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {pillar.body}
-                    </p>
-                  </article>
-                );
-              })}
+                    <span className="text-[4rem] xl:text-[5.5rem] font-serif text-foreground leading-[1.05] block">
+                      {pillar.title.split(",")[0]}
+                    </span>
+                    {pillar.title.includes(",") && (
+                      <span className="text-[2.5rem] xl:text-[3.5rem] font-serif text-primary/60 leading-[1.1] block mt-2">
+                        {pillar.title.split(",").slice(1).join(",").trim()}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Right: Pillar cards that scroll */}
+              <div className="space-y-8">
+                {pillars.map((pillar, i) => {
+                  const Icon = pillar.icon;
+                  return (
+                    <article
+                      key={pillar.title}
+                      className={`approach-card-${i} rounded-xl border border-white/10 bg-dark/80 p-8 transition-all duration-500`}
+                    >
+                      {/* Mobile: show title inline */}
+                      <h3 className="text-2xl font-serif text-foreground mb-1 lg:hidden">
+                        {pillar.title}
+                      </h3>
+                      <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 border border-primary/25 mb-4">
+                        <Icon className="w-4 h-4 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-serif text-foreground mb-3 hidden lg:block">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-sm text-[#ced4da] leading-relaxed">
+                        {pillar.body}
+                      </p>
+                    </article>
+                  );
+                })}
+              </div>
             </div>
 
-            <div className="approach-credentials mt-10 py-5 border-t border-white/10 text-center">
-              <p className="text-xs font-mono tracking-wider text-muted-foreground/70">
+            <div className="approach-credentials mt-16 py-5 border-t border-white/10 text-center">
+              <p className="text-xs font-mono tracking-wider text-[#ced4da]/70">
                 {credentials}
               </p>
             </div>

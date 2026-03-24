@@ -46,7 +46,13 @@ export function ChatWidget() {
   useEffect(() => {
     if (isOpen) {
       inputRef.current?.focus();
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
     }
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   useEffect(() => {
@@ -207,14 +213,17 @@ export function ChatWidget() {
   return (
     <div className="fixed bottom-4 right-4 z-[90] flex flex-col items-end gap-3">
       {isOpen && (
+        <>
+        <div
+          className="fixed inset-0 z-[89] bg-black/60 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        />
         <section
           id="chat-widget"
           aria-label="Chat assistant"
-          className="overflow-hidden rounded-2xl border border-[rgba(212,168,67,0.35)] bg-[rgba(30,36,50,0.75)] text-white shadow-[0_20px_50px_rgba(0,0,0,0.45)] backdrop-blur-xl"
-          style={{
-            width: "min(380px, calc(100vw - 1.5rem))",
-            height: "min(560px, 72vh)",
-          }}
+          className="fixed inset-0 z-[91] flex flex-col overflow-hidden border-none bg-[rgba(14,18,26,0.98)] text-white md:inset-auto md:bottom-20 md:right-4 md:h-[min(600px,80vh)] md:w-[420px] md:rounded-2xl md:border md:border-[rgba(212,168,67,0.35)] md:bg-[rgba(30,36,50,0.95)] md:shadow-[0_20px_50px_rgba(0,0,0,0.45)] md:backdrop-blur-xl"
+          style={{}}
+          data-desktop-size="true"
         >
           <header className="flex items-center justify-between border-b border-[rgba(212,168,67,0.28)] bg-[linear-gradient(135deg,rgba(30,36,50,0.95),rgba(19,24,34,0.92))] px-4 py-3">
             <div>
@@ -231,14 +240,14 @@ export function ChatWidget() {
                   </span>
                 )}
               </div>
-              <p className="mt-1 text-[11px] font-mono uppercase tracking-[0.14em] text-white/60">
+              <p className="mt-1 text-[11px] font-mono uppercase tracking-[0.14em] text-[#ced4da]">
                 Portfolio Assistant
               </p>
             </div>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="rounded-md p-1.5 text-white/70 transition hover:bg-white/10 hover:text-white"
+              className="rounded-md p-1.5 text-[#ced4da] transition hover:bg-white/10 hover:text-white"
               aria-label="Close chat"
             >
               <X className="h-4 w-4" />
@@ -247,7 +256,7 @@ export function ChatWidget() {
 
           <div
             ref={scrollRef}
-            className="h-[calc(100%-124px)] space-y-3 overflow-y-auto bg-[rgba(10,13,20,0.35)] px-3.5 py-3"
+            className="flex-1 space-y-3 overflow-y-auto bg-[rgba(10,13,20,0.35)] px-3.5 py-3"
           >
             {messages.map((message) => {
               const isAssistant = message.role === "assistant";
@@ -298,7 +307,7 @@ export function ChatWidget() {
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
                 placeholder="Ask about impact, leadership, or AI strategy..."
-                className="h-10 w-full rounded-xl border border-[rgba(212,168,67,0.35)] bg-[rgba(8,10,15,0.85)] px-3 text-sm text-white placeholder:text-white/45 outline-none transition focus:border-[#D4A843]"
+                className="h-10 w-full rounded-xl border border-[rgba(212,168,67,0.35)] bg-[rgba(8,10,15,0.85)] px-3 text-sm text-white placeholder:text-[#ced4da] outline-none transition focus:border-[#D4A843]"
                 disabled={isSending}
               />
               <button
@@ -317,6 +326,7 @@ export function ChatWidget() {
             )}
           </form>
         </section>
+        </>
       )}
 
       <button

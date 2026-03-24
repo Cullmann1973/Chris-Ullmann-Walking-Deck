@@ -31,6 +31,13 @@
 
 /* Dark theme inspired by marchanslin.com */
 :root {
+
+    --text-primary: #f8f9fa;
+    --text-secondary: #e9ecef;
+    --text-body: #ced4da;
+    --text-muted: #adb5bd;
+    --text-disabled: #868e96;
+
   --radius: 0.5rem;
   --font-geist-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-geist-mono: var(--font-jetbrains), "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
@@ -55,7 +62,7 @@
 
   /* Muted */
   --muted: #1a1a1a;
-  --muted-foreground: #a8a8a8;
+  --muted-foreground: 210 7% 71%;
 
   /* Accent */
   --accent: #00bcd4;

@@ -242,7 +242,7 @@ export function HeroSection({ focus }: { focus?: string }) {
                   {metrics[currentMetric].value}
                 </span>
                 <span 
-                  className="text-xs md:text-base text-muted-foreground"
+                  className="text-xs md:text-base text-[#ced4da]"
                   key={`label-${currentMetric}`}
                   style={{ animation: "fadeSlideIn 0.5s ease-out 0.1s forwards", opacity: 0 }}
                 >

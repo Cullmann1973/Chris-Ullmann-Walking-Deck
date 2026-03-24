@@ -88,7 +88,7 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
     >
       {/* Header */}
       <div className="flex items-center justify-between px-6 md:px-12 h-16">
-        <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
+        <span className="text-xs font-mono tracking-wider text-[#ced4da] uppercase">
           Navigation
         </span>
         <button
@@ -122,7 +122,7 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
 
       {/* Footer */}
       <div className="px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="text-sm text-muted-foreground">
+        <div className="text-sm text-[#ced4da]">
           <span className="font-serif text-lg text-foreground">Christopher Ullmann</span>
           <br />
           Strategy & Transformation Leader
@@ -131,7 +131,7 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
         <div className="flex items-center gap-4">
           <a
             href="mailto:c.ullmann@yahoo.com"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-2 text-sm text-[#ced4da] hover:text-primary transition-colors"
           >
             <Mail className="w-4 h-4" />
             Email
@@ -140,7 +140,7 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
             href="https://www.linkedin.com/in/chrisullmann/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-2 text-sm text-[#ced4da] hover:text-primary transition-colors"
           >
             <Linkedin className="w-4 h-4" />
             LinkedIn

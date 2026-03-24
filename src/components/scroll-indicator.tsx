@@ -19,7 +19,7 @@ export function ScrollIndicator() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-8 right-8 z-30 flex flex-col items-center gap-2 text-muted-foreground">
+    <div className="fixed bottom-8 right-8 z-30 flex flex-col items-center gap-2 text-[#ced4da]">
       <span className="text-xs font-mono tracking-wider uppercase">Scroll</span>
       <ChevronDown className="w-4 h-4 animate-bounce-gentle" />
     </div>

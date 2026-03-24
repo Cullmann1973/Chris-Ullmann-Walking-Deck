@@ -6,26 +6,51 @@ import { Mail, Linkedin, ArrowUp, FileDown } from "lucide-react";
 
 export function ContactSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const words = "I build things that work. Let's build something".split(" ");
 
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".contact-content",
-        { y: 25, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          ease: "none",
+      if (textRef.current) {
+        const wordElements = textRef.current.querySelectorAll(".word");
+        gsap.from(wordElements, {
+          y: 20,
+          stagger: 0.1,
+          ease: "power2.out",
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 85%",
-            end: "top 55%",
-            scrub: 1.5,
+            trigger: textRef.current,
+            start: "top 80%",
           },
-        }
-      );
+        });
+      }
+
+      if (cardRef.current) {
+        gsap.from(cardRef.current, {
+          y: 40,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: "top 85%",
+          },
+        });
+
+        const options = cardRef.current.querySelectorAll(".contact-option");
+        gsap.from(options, {
+          y: 20,
+          stagger: 0.15,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: "top 85%",
+          },
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -39,70 +64,100 @@ export function ContactSection({ focus }: { focus?: string }) {
     <section
       ref={sectionRef}
       id="contact"
-      className="bg-dark-alt border-t border-border"
+      className="relative bg-[#0b0f19] text-[#adb5bd] overflow-hidden"
     >
-      <div className="section-padding">
-        <div className="max-w-4xl mx-auto">
-          <div className="contact-content text-center">
-            {/* Heading */}
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
-              Let&apos;s Connect
-            </h2>
-            <p className="text-muted-foreground mb-10 max-w-md mx-auto">
-              Looking for a transformation leader who understands both the
-              boardroom and the production floor?
-            </p>
+      <div 
+        className="absolute inset-0 z-0 pointer-events-none"
+        style={{
+          background: "radial-gradient(ellipse at 50% 50%, rgba(212,168,67,0.04) 0%, transparent 50%)"
+        }}
+      />
 
-            {/* Contact links */}
-            <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-16">
-              <a
-                href="mailto:c.ullmann@yahoo.com"
-                className="btn-primary inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-medium hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
-              >
-                <Mail className="w-5 h-5" />
-                c.ullmann@yahoo.com
-              </a>
-              <a
-                href="https://www.linkedin.com/in/chrisullmann/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl border-2 border-border text-foreground font-medium hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
-              >
-                <Linkedin className="w-5 h-5" />
-                LinkedIn
-              </a>
-              <a
-                href="/Chris-Ullmann-Resume.pdf"
-                download
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl border-2 border-border text-foreground font-medium hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
-              >
-                <FileDown className="w-5 h-5" />
-                Resume
-              </a>
-            </div>
+      {/* Part 1: Centered Text */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] px-6 text-center">
+        <div ref={textRef} className="max-w-4xl mx-auto">
+          <h2 className="font-serif text-4xl md:text-6xl text-[#f8f9fa] leading-tight">
+            {words.map((word, i) => (
+              <span key={i} className="word inline-block mr-[0.25em]">
+                {word}
+              </span>
+            ))}
+            <span className="word inline-block text-primary">
+              together.
+            </span>
+          </h2>
+        </div>
+      </div>
 
-            {/* Divider */}
-            <div className="section-divider mb-10" />
-
-            {/* Footer */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
-              <div>
-                <span className="font-serif text-foreground">
-                  Christopher Ullmann
+      {/* Part 2: Glassmorphism Card */}
+      <div className="relative z-10 px-6 pb-24">
+        <div 
+          ref={cardRef}
+          className="max-w-2xl mx-auto rounded-2xl border border-primary/25 bg-[rgba(30,36,50,0.6)] backdrop-blur-xl p-8 md:p-12 shadow-2xl"
+        >
+          <div className="w-16 h-[2px] bg-primary mx-auto mb-10" />
+          
+          <div className="space-y-4 flex flex-col items-center">
+            <a
+              href="mailto:c.ullmann@yahoo.com"
+              className="contact-option group flex items-center justify-between w-full max-w-sm gap-4 p-4 rounded-xl hover:bg-white/10 transition-all duration-300 cursor-pointer text-[#f8f9fa]"
+            >
+              <div className="flex items-center gap-4">
+                <Mail className="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
+                <span className="font-medium group-hover:text-primary transition-colors duration-300">
+                  Email Me
                 </span>
-                <span className="mx-2">|</span>
-                Strategy & Transformation
               </div>
-
-              <button
-                onClick={scrollToTop}
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-              >
-                Back to top
-                <ArrowUp className="w-4 h-4" />
-              </button>
-            </div>
+            </a>
+            
+            <a
+              href="https://www.linkedin.com/in/chrisullmann/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-option group flex items-center justify-between w-full max-w-sm gap-4 p-4 rounded-xl hover:bg-white/10 transition-all duration-300 cursor-pointer text-[#f8f9fa]"
+            >
+              <div className="flex items-center gap-4">
+                <Linkedin className="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
+                <span className="font-medium group-hover:text-primary transition-colors duration-300">
+                  LinkedIn
+                </span>
+              </div>
+            </a>
+            
+            <a
+              href="/Chris-Ullmann-Resume.pdf"
+              download
+              className="contact-option group flex items-center justify-between w-full max-w-sm gap-4 p-4 rounded-xl hover:bg-white/10 transition-all duration-300 cursor-pointer text-[#f8f9fa]"
+            >
+              <div className="flex items-center gap-4">
+                <FileDown className="w-5 h-5 group-hover:text-primary transition-colors duration-300" />
+                <span className="font-medium group-hover:text-primary transition-colors duration-300">
+                  Resume
+                </span>
+              </div>
+            </a>
           </div>
+        </div>
+      </div>
+
+      {/* Part 3: Footer */}
+      <div className="relative z-10 pb-12 px-6 text-center">
+        <div className="flex flex-col items-center justify-center gap-6 text-sm text-[#adb5bd]">
+          <div className="font-medium tracking-wide">
+            Christopher Ullmann | Strategy & Transformation
+          </div>
+
+          <button
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-2 hover:text-primary transition-colors duration-300 group font-medium"
+          >
+            Back to top
+            <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-300" />
+          </button>
+        </div>
+        
+        <div className="text-[10px] font-mono text-[#868e96] uppercase tracking-wider mt-16 opacity-70">
+          Built with Next.js, GSAP, and AI
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "../gsap-provider";
 import {
@@ -16,6 +17,8 @@ interface Capability {
   title: string;
   description: string;
   icon: LucideIcon;
+  gradient: string;
+  image: string;
 }
 
 const capabilities: Capability[] = [
@@ -23,130 +26,238 @@ const capabilities: Capability[] = [
     title: "Business Case to Funding",
     description: "I identify where AI creates measurable value, build the financial case, and get executive sign-off. Every project ties to a real P&L outcome.",
     icon: TrendingUp,
+    gradient: "from-blue-600 to-indigo-900",
+    image: "/carousel/business-case.png",
   },
   {
     title: "Governance That Accelerates",
     description: "Legal, Privacy, and Compliance engaged before the first line of code. Guardrails that let teams move faster, not slower.",
     icon: ShieldCheck,
+    gradient: "from-teal-500 to-emerald-900",
+    image: "/carousel/governance.png",
   },
   {
     title: "Agentic AI, Shipped Daily",
     description: "ELLA, Plant Perfect, Cognex Vision, QC Copilot. Working tools built for operators and managers. I write the code, not the deck.",
     icon: Bot,
+    gradient: "from-cyan-500 to-blue-900",
+    image: "/carousel/agentic-ai.png",
   },
   {
     title: "Full-Stack AI Architecture",
     description: "From LLM orchestration and RAG pipelines to production deployment. GitHub, Vercel, Next.js, Python. Hands on keyboard every day.",
     icon: Workflow,
+    gradient: "from-indigo-500 to-purple-900",
+    image: "/carousel/architecture.png",
   },
   {
     title: "Community of Practice at Scale",
     description: "3 members to 100+, one department to company-wide. Organic growth driven by tools worth using. Kotter methodology, real results.",
     icon: UsersRound,
+    gradient: "from-sky-500 to-indigo-900",
+    image: "/carousel/community.png",
   },
   {
     title: "1,000+ Trained and Using AI",
     description: "Not a training program. An adoption engine. Champions teach champions. People use it because it solves their actual problems.",
     icon: Boxes,
+    gradient: "from-emerald-500 to-teal-900",
+    image: "/carousel/training.png",
   },
 ];
 
+const CARD_COUNT = 6;
+const ANGLE_STEP = 360 / CARD_COUNT;
+
+// Normalizes an angle to [-180, 180]
+function normalizeAngle(angle: number) {
+  let a = angle % 360;
+  if (a < -180) a += 360;
+  if (a > 180) a -= 360;
+  return a;
+}
+
 export function WhatIDeliverSection({ focus }: { focus?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  
-  // Drag to scroll state
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  // State
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
-  
-  const stateRef = useRef({
+
+  // Animation & Drag state refs
+  const state = useRef({
+    angle: 0,
+    velocity: 0,
     isDown: false,
     startX: 0,
-    scrollLeft: 0,
-    velocity: 0,
-    timestamp: 0,
-    animationFrameId: 0,
+    lastX: 0,
+    rafId: 0,
+    snapTween: null as gsap.core.Tween | null,
+    radiusX: 0,
+    radiusY: 0,
   });
 
-  const stopMomentum = useCallback(() => {
-    if (stateRef.current.animationFrameId) {
-      cancelAnimationFrame(stateRef.current.animationFrameId);
-      stateRef.current.animationFrameId = 0;
+  // Calculate dynamic radii based on window size
+  const updateRadii = useCallback(() => {
+    if (typeof window !== "undefined") {
+      const vw = window.innerWidth;
+      // Approx 40vw for Rx, 4vw for Ry. Max constraints for ultra-wide.
+      state.current.radiusX = Math.min(vw * 0.4, 600);
+      state.current.radiusY = Math.min(vw * 0.04, 50);
     }
   }, []);
 
-  const momentumLoop = useCallback(() => {
-    if (!scrollContainerRef.current) return;
+  // Update card positions based on current global angle
+  const renderCards = useCallback(() => {
+    const { angle, radiusX, radiusY } = state.current;
     
-    // Apply friction
-    stateRef.current.velocity *= 0.95; 
+    // Determine active index based on current angle
+    const normalizedGlobal = normalizeAngle(angle);
+    // Find the card whose local angle is closest to 0 (top/center)
+    let closestIdx = 0;
+    let minDist = Infinity;
+
+    cardsRef.current.forEach((card, i) => {
+      if (!card) return;
+      
+      const cardBaseAngle = i * ANGLE_STEP;
+      // Subtract global angle so dragging left (positive global angle)
+      // moves cards counter-clockwise
+      const currentAngle = normalizeAngle(cardBaseAngle - angle);
+      
+      if (Math.abs(currentAngle) < minDist) {
+        minDist = Math.abs(currentAngle);
+        closestIdx = i;
+      }
+
+      // Convert angle to radians for math
+      const rad = currentAngle * (Math.PI / 180);
+      
+      // Calculate transforms
+      const tx = radiusX * Math.sin(rad);
+      const ty = radiusY * (1 - Math.cos(rad));
+      
+      // Scale: 1 at center (0 rad), smaller at edges
+      const scale = 0.7 + 0.3 * Math.cos(rad);
+      
+      // Z-index based on scale/position
+      const zIndex = Math.round(scale * 100);
+
+      gsap.set(card, {
+        x: tx,
+        y: ty,
+        xPercent: -50,
+        yPercent: -50,
+        rotationZ: currentAngle * 0.15,
+        scale: scale,
+        zIndex: zIndex,
+        opacity: scale > 0.75 ? 1 : (scale - 0.4) * 2, // Fade out cards far in the back
+      });
+    });
+
+    setActiveCardIndex(closestIdx);
+  }, []);
+
+  // Main animation loop
+  const tick = useCallback(() => {
+    if (!state.current.isDown) {
+      // Apply inertia
+      state.current.angle += state.current.velocity;
+      state.current.velocity *= 0.95; // Friction
+
+      if (Math.abs(state.current.velocity) < 0.1) {
+        state.current.velocity = 0;
+        
+        // Snap to nearest card if not already snapping
+        if (!state.current.snapTween) {
+          const remainder = state.current.angle % ANGLE_STEP;
+          let snapAngle = state.current.angle - remainder;
+          if (remainder > ANGLE_STEP / 2) snapAngle += ANGLE_STEP;
+          else if (remainder < -ANGLE_STEP / 2) snapAngle -= ANGLE_STEP;
+
+          if (Math.abs(state.current.angle - snapAngle) > 0.1) {
+            state.current.snapTween = gsap.to(state.current, {
+              angle: snapAngle,
+              duration: 0.4,
+              ease: "power2.out",
+              onUpdate: renderCards,
+              onComplete: () => {
+                state.current.snapTween = null;
+              }
+            });
+            return; // let tween handle render
+          }
+        }
+      }
+    }
+
+    renderCards();
     
-    // Stop if velocity is very low
-    if (Math.abs(stateRef.current.velocity) < 0.5) {
-      stopMomentum();
-      return;
+    if (state.current.isDown || Math.abs(state.current.velocity) >= 0.1) {
+      state.current.rafId = requestAnimationFrame(tick);
+    }
+  }, [renderCards]);
+
+  // Pointer Events
+  const onPointerDown = useCallback((e: React.PointerEvent) => {
+    if (state.current.snapTween) {
+      state.current.snapTween.kill();
+      state.current.snapTween = null;
+    }
+    if (state.current.rafId) {
+      cancelAnimationFrame(state.current.rafId);
     }
     
-    scrollContainerRef.current.scrollLeft -= stateRef.current.velocity;
-    stateRef.current.animationFrameId = requestAnimationFrame(momentumLoop);
-  }, [stopMomentum]);
-
-  const onMouseDown = useCallback((e: React.MouseEvent) => {
-    if (!scrollContainerRef.current) return;
-    
-    stopMomentum();
-    stateRef.current.isDown = true;
+    state.current.isDown = true;
     setIsDragging(true);
+    state.current.startX = e.clientX;
+    state.current.lastX = e.clientX;
+    state.current.velocity = 0;
     
-    stateRef.current.startX = e.pageX - scrollContainerRef.current.offsetLeft;
-    stateRef.current.scrollLeft = scrollContainerRef.current.scrollLeft;
-    stateRef.current.velocity = 0;
-    stateRef.current.timestamp = performance.now();
-  }, [stopMomentum]);
-
-  const onMouseLeave = useCallback(() => {
-    if (stateRef.current.isDown) {
-      stateRef.current.isDown = false;
-      setIsDragging(false);
-      stateRef.current.animationFrameId = requestAnimationFrame(momentumLoop);
-    }
-  }, [momentumLoop]);
-
-  const onMouseUp = useCallback(() => {
-    if (stateRef.current.isDown) {
-      stateRef.current.isDown = false;
-      setIsDragging(false);
-      stateRef.current.animationFrameId = requestAnimationFrame(momentumLoop);
-    }
-  }, [momentumLoop]);
-
-  const onMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!stateRef.current.isDown || !scrollContainerRef.current) return;
-    e.preventDefault();
-    
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - stateRef.current.startX); // distance moved
-    
-    // Calculate velocity based on delta movement / delta time
-    const now = performance.now();
-    const dt = now - stateRef.current.timestamp;
-    
-    // update position
-    const newScrollLeft = stateRef.current.scrollLeft - walk;
-    const dx = scrollContainerRef.current.scrollLeft - newScrollLeft;
-    
-    if (dt > 0) {
-      // smooth velocity
-      const instantVelocity = dx; 
-      stateRef.current.velocity = 0.8 * stateRef.current.velocity + 0.2 * instantVelocity;
-    }
-    
-    scrollContainerRef.current.scrollLeft = newScrollLeft;
-    stateRef.current.timestamp = now;
+    // Ensure capture
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
   }, []);
 
-  useEffect(() => {
-    if (!sectionRef.current) return;
+  const onPointerMove = useCallback((e: React.PointerEvent) => {
+    if (!state.current.isDown) return;
+    
+    const deltaX = e.clientX - state.current.lastX;
+    state.current.lastX = e.clientX;
+    
+    // Map pixels to degrees (sensitivity factor)
+    const angleDelta = deltaX * 0.2;
+    state.current.angle -= angleDelta; // Drag left -> cards rotate CCW
+    
+    // Estimate velocity for inertia
+    state.current.velocity = -angleDelta;
+    
+    renderCards();
+  }, [renderCards]);
 
+  const onPointerUp = useCallback((e: React.PointerEvent) => {
+    state.current.isDown = false;
+    setIsDragging(false);
+    (e.target as HTMLElement).releasePointerCapture(e.pointerId);
+    
+    // Start inertia loop
+    state.current.rafId = requestAnimationFrame(tick);
+  }, [tick]);
+
+  // Initialization & Resize
+  useEffect(() => {
+    updateRadii();
+    renderCards();
+
+    const handleResize = () => {
+      updateRadii();
+      renderCards();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Initial entrance animation
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".deliver-title",
@@ -163,82 +274,111 @@ export function WhatIDeliverSection({ focus }: { focus?: string }) {
           },
         }
       );
-
+      
       gsap.fromTo(
-        ".deliver-card",
-        { x: 30, opacity: 0 },
+        containerRef.current,
+        { opacity: 0, scale: 0.9 },
         {
-          x: 0,
           opacity: 1,
-          stagger: 0.08,
-          ease: "none",
+          scale: 1,
+          duration: 1,
+          ease: "power3.out",
           scrollTrigger: {
-            trigger: ".deliver-carousel-wrapper",
-            start: "top 85%",
-            end: "top 55%",
-            scrub: 1.5,
-          },
+            trigger: sectionRef.current,
+            start: "top 75%",
+          }
         }
-      );
+      )
     }, sectionRef);
 
     return () => {
+      window.removeEventListener("resize", handleResize);
+      if (state.current.rafId) cancelAnimationFrame(state.current.rafId);
+      if (state.current.snapTween) state.current.snapTween.kill();
       ctx.revert();
-      stopMomentum();
     };
-  }, [stopMomentum]);
+  }, [updateRadii, renderCards]);
 
   return (
-    <section ref={sectionRef} id="what-i-deliver" className="bg-dark relative">
-      <div className="pt-24 pb-12 md:pt-32 md:pb-16">
+    <section ref={sectionRef} id="what-i-deliver" className="bg-dark relative overflow-hidden">
+      <div className="pt-16 pb-4 md:pt-24 md:pb-8">
         <div className="max-w-6xl mx-auto px-6 md:px-8 xl:px-0">
-          <div className="deliver-title mb-12 max-w-4xl">
-            <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
+          <div className="deliver-title mb-8 max-w-4xl relative z-10">
+            <span className="text-xs font-mono tracking-wider text-[#ced4da] uppercase">
               Capabilities
             </span>
             <h2 className="text-section font-serif text-foreground mt-4">
               What I Deliver
             </h2>
-            <p className="text-muted-foreground mt-4">
+            <p className="text-[#ced4da] mt-4">
               I build the business case, build the tool, and build the team that adopts it.
             </p>
           </div>
         </div>
 
-        {/* Full width carousel container */}
-        <div className="deliver-carousel-wrapper w-full overflow-hidden">
+        {/* Carousel Area */}
+        <div className="w-full relative select-none" style={{ touchAction: 'none' }}>
+          
+          {/* Arc Container */}
           <div 
-            ref={scrollContainerRef}
-            className={`flex gap-5 px-6 md:px-8 xl:px-[calc((100vw-72rem)/2)] overflow-x-auto select-none no-scrollbar touch-pan-x ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
-            onMouseDown={onMouseDown}
-            onMouseLeave={onMouseLeave}
-            onMouseUp={onMouseUp}
-            onMouseMove={onMouseMove}
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            ref={containerRef}
+            className={`relative mx-auto w-full h-[350px] md:h-[420px] flex items-center justify-center ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMove}
+            onPointerUp={onPointerUp}
+            onPointerCancel={onPointerUp}
           >
-            {capabilities.map((item) => {
+            {/* Cards */}
+            {capabilities.map((item, i) => {
               const Icon = item.icon;
               return (
-                <article
+                <div
                   key={item.title}
-                  className="deliver-card shrink-0 w-[320px] md:w-[360px] rounded-xl border border-white/10 bg-dark-alt/80 p-6 pointer-events-none"
+                  ref={(el) => { cardsRef.current[i] = el; }}
+                  className="absolute w-[260px] h-[320px] md:w-[300px] md:h-[380px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl origin-bottom"
+                  style={{ 
+                    transformStyle: 'preserve-3d',
+                    left: '50%',
+                    top: '50%',
+                  }}
                 >
-                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 border border-primary/25 mb-4">
-                    <Icon className="w-4 h-4 text-primary" />
+                  
+                  {/* Card Image */}
+                  <Image src={item.image} alt={item.title} fill className={`object-cover transition-all duration-500 ${activeCardIndex === i ? 'opacity-90' : 'text-[#ced4da] mix-blend-overlay'}`} />
+                  <div className={`absolute inset-0 transition-all duration-500 ${activeCardIndex === i ? 'bg-dark-alt/10' : 'bg-dark-alt/40 backdrop-blur-[3px]'}`} />
+                  
+                  {/* Content Overlay */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
+                    <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-lg">
+                      <Icon className="w-6 h-6 text-white" />
+                    </div>
+                    
+                    <div className="mt-auto pt-16 bg-gradient-to-t from-dark-alt via-dark-alt/80 to-transparent -mx-6 -mb-6 p-6">
+                      <h3 className="text-xl md:text-2xl font-serif text-white leading-tight">
+                        {item.title}
+                      </h3>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-serif text-foreground mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </article>
+                </div>
               );
             })}
-            
-            {/* Spacer for right padding on scroll */}
-            <div className="shrink-0 w-1 md:w-2 xl:w-[calc((100vw-72rem)/2)]"></div>
           </div>
+
+          {/* Label Crossfade Area */}
+          <div className="max-w-3xl mx-auto px-6 text-center h-24 relative mt-4 md:mt-8 pointer-events-none">
+            {capabilities.map((item, i) => (
+              <div 
+                key={`label-${i}`}
+                className={`absolute inset-0 transition-opacity duration-300 ease-in-out ${activeCardIndex === i ? 'opacity-100' : 'opacity-0'}`}
+              >
+                <h4 className="text-lg md:text-xl font-medium text-foreground mb-3">{item.title}</h4>
+                <p className="text-sm md:text-base text-[#ced4da] max-w-2xl mx-auto leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>

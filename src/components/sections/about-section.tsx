@@ -189,7 +189,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                   The translator between the boardroom and the build
                 </h3>
 
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <div className="space-y-4 text-[#ced4da] leading-relaxed">
                   <p>
                     I spot where AI solves real business problems, build the case to fund it, then build the tool myself.
                   </p>
@@ -215,13 +215,13 @@ export function AboutSection({ focus }: { focus?: string }) {
               <div className="content-card p-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   <div>
-                    <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-1">
+                    <p className="text-xs font-mono text-[#ced4da] uppercase tracking-wider mb-1">
                       Current Role
                     </p>
                     <p className="text-foreground font-medium">
                       Executive Director, AI Transformation
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-[#ced4da]">
                       Manufacturing PMO • Supply Chain • The Estée Lauder Companies
                     </p>
                   </div>
@@ -231,7 +231,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
                           Digital Transformation
                         </span>
-                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-[#ced4da]">
                           $500M+ Roadmap
                         </span>
                       </>
@@ -240,7 +240,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
                           Quality Systems
                         </span>
-                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-[#ced4da]">
                           FDA / GMP
                         </span>
                       </>
@@ -249,7 +249,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-primary/10 text-primary border border-primary/30">
                           AI Strategy, Development and Delivery
                         </span>
-                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-muted-foreground">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-[#ced4da]">
                           Stanford HAI
                         </span>
                       </>
@@ -265,7 +265,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                     <div className="text-2xl md:text-3xl font-bold text-primary gauge-number mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-xs text-[#ced4da]">
                       {stat.label}
                     </div>
                   </div>

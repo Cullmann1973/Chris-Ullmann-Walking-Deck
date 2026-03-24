@@ -79,7 +79,7 @@ export function ScrollNudge() {
         </div>
         <button
           onClick={dismiss}
-          className="w-6 h-6 rounded-md flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors flex-shrink-0"
+          className="w-6 h-6 rounded-md flex items-center justify-center text-[#ced4da] hover:text-foreground hover:bg-secondary transition-colors flex-shrink-0"
           aria-label="Dismiss"
         >
           <X className="w-3.5 h-3.5" />

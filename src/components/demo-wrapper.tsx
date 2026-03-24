@@ -50,7 +50,7 @@ export function DemoWrapper({ title, badge, description, externalUrl }: DemoWrap
               <h1 className="font-serif text-3xl leading-tight text-foreground sm:text-4xl">
                 {title}
               </h1>
-              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              <p className="max-w-2xl text-sm leading-relaxed text-[#ced4da]">
                 {description}
               </p>
             </div>
@@ -66,7 +66,7 @@ export function DemoWrapper({ title, badge, description, externalUrl }: DemoWrap
             <div className="flex h-[80vh] items-center justify-center">
               <div className="flex flex-col items-center gap-4">
                 <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary/30 border-t-primary" />
-                <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground">
+                <p className="text-xs uppercase tracking-[0.15em] text-[#ced4da]">
                   Loading demo
                 </p>
               </div>

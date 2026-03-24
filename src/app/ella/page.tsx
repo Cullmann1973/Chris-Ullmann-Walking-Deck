@@ -425,7 +425,7 @@ export default function EllaDemoPage() {
               </p>
             </div>
 
-            <p className="max-w-3xl text-sm text-muted-foreground sm:text-base">
+            <p className="max-w-3xl text-sm text-[#ced4da] sm:text-base">
               Institutional memory that talks back. Troubleshooting, changeovers,
               quality history, and consumer insights - all at the point of work.
             </p>
@@ -435,7 +435,7 @@ export default function EllaDemoPage() {
         <section className="space-y-4">
           <div className="flex items-end justify-between gap-3">
             <h2 className="font-serif text-2xl text-foreground">Choose a Scenario</h2>
-            <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground">
+            <p className="text-xs font-mono uppercase tracking-[0.12em] text-[#ced4da]">
               Live demo flow
             </p>
           </div>
@@ -458,7 +458,7 @@ export default function EllaDemoPage() {
                 >
                   <p className="text-lg leading-none">{scenario.icon}</p>
                   <p className="mt-3 text-sm font-semibold text-foreground">{scenario.title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{scenario.summary}</p>
+                  <p className="mt-1 text-sm text-[#ced4da]">{scenario.summary}</p>
                 </button>
               );
             })}
@@ -474,7 +474,7 @@ export default function EllaDemoPage() {
           >
             <div
               data-tour="status-bar"
-              className="flex items-center justify-between border-b border-white/10 bg-[#0f1519] px-4 py-2 font-mono text-[11px] text-muted-foreground sm:px-6 sm:text-xs"
+              className="flex items-center justify-between border-b border-white/10 bg-[#0f1519] px-4 py-2 font-mono text-[11px] text-[#ced4da] sm:px-6 sm:text-xs"
             >
               <div className="inline-flex items-center gap-2">
                 <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
@@ -489,7 +489,7 @@ export default function EllaDemoPage() {
                   data-tour="operator-message"
                   className="ella-message-in w-full max-w-3xl rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-right sm:p-5"
                 >
-                  <div className="mb-2 text-xs font-mono text-muted-foreground">
+                  <div className="mb-2 text-xs font-mono text-[#ced4da]">
                     {activeScenario.operatorMessage.operator}, {activeScenario.operatorMessage.shift} -{" "}
                     {activeScenario.operatorMessage.timestamp}
                   </div>
@@ -523,7 +523,7 @@ export default function EllaDemoPage() {
                   {typingComplete && activeScenario.ellaResponse.setpoints && (
                     <div className="mt-5 overflow-hidden rounded-xl border border-white/10">
                       <table className="w-full border-collapse text-left text-xs sm:text-sm">
-                        <thead className="bg-white/[0.04] text-muted-foreground">
+                        <thead className="bg-white/[0.04] text-[#ced4da]">
                           <tr>
                             <th className="px-3 py-2 font-mono">Parameter</th>
                             <th className="px-3 py-2 font-mono">VGF-2240</th>
@@ -535,7 +535,7 @@ export default function EllaDemoPage() {
                           {activeScenario.ellaResponse.setpoints.map((row) => (
                             <tr key={row.parameter} className="border-t border-white/10">
                               <td className="px-3 py-2 text-foreground">{row.parameter}</td>
-                              <td className="px-3 py-2 font-mono text-muted-foreground">
+                              <td className="px-3 py-2 font-mono text-[#ced4da]">
                                 {row.from}
                               </td>
                               <td className="px-3 py-2 font-mono text-foreground">
@@ -551,7 +551,7 @@ export default function EllaDemoPage() {
 
                   {typingComplete && activeScenario.ellaResponse.changeParts && (
                     <div className="mt-4 space-y-2">
-                      <p className="text-xs font-mono uppercase tracking-[0.12em] text-muted-foreground">
+                      <p className="text-xs font-mono uppercase tracking-[0.12em] text-[#ced4da]">
                         Change parts required
                       </p>
                       <ul className="space-y-1 text-sm text-foreground">
@@ -585,7 +585,7 @@ export default function EllaDemoPage() {
                         ))}
                       </div>
 
-                      <p className="mt-4 text-xs font-mono text-muted-foreground">
+                      <p className="mt-4 text-xs font-mono text-[#ced4da]">
                         Source: {activeScenario.ellaResponse.source}
                       </p>
 
@@ -614,7 +614,7 @@ export default function EllaDemoPage() {
           <div className="grid gap-4 md:grid-cols-3">
             <article className="rounded-2xl border border-white/10 bg-[#0d0f12] p-4">
               <h3 className="text-sm font-semibold text-primary">Grounded in Your Data</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-sm text-[#ced4da]">
                 ELLA connects to SOPs, OEM manuals, quality records, CAPAs,
                 deviation history, consumer complaints, and equipment data. Every
                 answer cites its source.
@@ -623,7 +623,7 @@ export default function EllaDemoPage() {
 
             <article className="rounded-2xl border border-white/10 bg-[#0d0f12] p-4">
               <h3 className="text-sm font-semibold text-primary">Built for the Floor</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-sm text-[#ced4da]">
                 Designed for operators on tablets at the line. No training required.
                 Ask a question in plain language, get an answer with context.
               </p>
@@ -631,7 +631,7 @@ export default function EllaDemoPage() {
 
             <article className="rounded-2xl border border-white/10 bg-[#0d0f12] p-4">
               <h3 className="text-sm font-semibold text-primary">Learns from History</h3>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <p className="mt-2 text-sm text-[#ced4da]">
                 The more events your plant records, the smarter ELLA gets. It
                 surfaces patterns humans miss across shifts, lines, and time.
               </p>

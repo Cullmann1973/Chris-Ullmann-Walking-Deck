@@ -95,13 +95,13 @@ export function ApproachSection() {
       <div className="section-padding">
         <div className="max-w-6xl mx-auto">
           <div className="approach-title mb-12 max-w-4xl">
-            <span className="text-xs font-mono tracking-wider text-muted-foreground uppercase">
+            <span className="text-xs font-mono tracking-wider text-[#ced4da] uppercase">
               Philosophy
             </span>
             <h2 className="text-section font-serif text-foreground mt-4">
               Human-Centered AI
             </h2>
-            <p className="text-muted-foreground mt-4">
+            <p className="text-[#ced4da] mt-4">
               Technology serves people. Not the other way around.
             </p>
           </div>
@@ -120,7 +120,7 @@ export function ApproachSection() {
                   <h3 className="text-lg font-serif text-foreground mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-[#ced4da] leading-relaxed">
                     {pillar.body}
                   </p>
                 </article>
@@ -129,7 +129,7 @@ export function ApproachSection() {
           </div>
 
           <div className="approach-credentials mt-10 py-5 border-t border-white/10 text-center">
-            <p className="text-xs font-mono tracking-wider text-muted-foreground/70">
+            <p className="text-xs font-mono tracking-wider text-[#ced4da]/70">
               {credentials}
             </p>
           </div>
