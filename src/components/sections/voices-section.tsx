@@ -218,26 +218,24 @@ export function VoicesSection() {
                   )}
                 </div>
 
-                {/* Company with logo */}
-                <div className="flex items-center gap-2.5 mb-4">
+                {/* Company logo banner */}
+                <div className="mb-4">
                   {voice.logo ? (
-                    <img
-                      src={voice.logo}
-                      alt={voice.company}
-                      className="h-6 w-auto object-contain flex-shrink-0"
-                    />
+                    <div className="h-10 w-full rounded-lg overflow-hidden bg-white flex items-center justify-center px-4">
+                      <img
+                        src={voice.logo}
+                        alt={voice.company}
+                        className="h-7 w-auto object-contain max-w-full"
+                      />
+                    </div>
                   ) : (
-                    <div
-                      className="w-2 h-2 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: voice.brandColor }}
-                    />
+                    <p
+                      className="text-sm font-semibold tracking-wide"
+                      style={{ color: voice.brandColor }}
+                    >
+                      {voice.company}
+                    </p>
                   )}
-                  <p
-                    className="text-sm font-semibold tracking-wide"
-                    style={{ color: voice.brandColor }}
-                  >
-                    {voice.company}
-                  </p>
                 </div>
 
                 {/* What they speak to */}
