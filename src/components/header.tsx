@@ -73,7 +73,7 @@ export function Header() {
             >
               <Sparkles className="w-4 h-4 relative z-10" />
               <span className="hidden sm:inline relative z-10">Ask My AI</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/10 to-transparent -translate-x-full group-hover/ai:translate-x-full transition-transform duration-1000" />
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/15 to-transparent animate-[shimmer-once_1.5s_ease-in-out_1_forwards] group-hover/ai:animate-[shimmer-once_1s_ease-in-out_1_forwards]" />
             </button>
 
             {/* Hamburger — mobile only */}
