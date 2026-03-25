@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "../gsap-provider";
 
 interface BeyondSection {
@@ -284,12 +284,17 @@ export function BeyondSection({ focus }: { focus?: string }) {
                 </h3>
                 
                 <div className="clearfix">
-                  <div className="photo-container group float-right w-48 h-48 ml-8 mb-6 rounded-xl overflow-hidden relative cursor-pointer">
+                  <div 
+                    className="photo-container float-right w-48 h-48 ml-8 mb-6 rounded-xl overflow-hidden relative cursor-pointer"
+                    onMouseEnter={(e) => { const img = e.currentTarget.querySelector('img'); if (img) img.style.filter = 'grayscale(0)'; }}
+                    onMouseLeave={(e) => { const img = e.currentTarget.querySelector('img'); if (img) img.style.filter = 'grayscale(1)'; }}
+                  >
                     {sections[1].image ? (
                       <img 
                         src={sections[1].image} 
                         alt={sections[1].title}
-                        className="parallax-photo absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                        className="parallax-photo absolute inset-0 w-full h-full object-cover transition-all duration-700"
+                        style={{ filter: 'grayscale(1)' }}
                       />
                     ) : (
                       <div className="absolute inset-0 bg-[#1a1a1a] flex items-center justify-center text-center p-4">
