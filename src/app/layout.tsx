@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { GSAPProvider } from "@/components/gsap-provider";
+import { PostHogProvider } from "@/components/posthog-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -78,7 +79,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} antialiased`}>
-        <GSAPProvider>{children}</GSAPProvider>
+        <PostHogProvider>
+          <GSAPProvider>{children}</GSAPProvider>
+        </PostHogProvider>
         <Analytics />
         <SpeedInsights />
       </body>

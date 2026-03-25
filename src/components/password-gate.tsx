@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Lock } from "lucide-react";
+import posthog from "posthog-js";
 
 const PASSWORD = "purplesquirrel";
 
@@ -36,10 +37,12 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
       sessionStorage.setItem("blueprint-auth", "true");
       setAuthenticated(true);
       setError(false);
+      posthog.capture("password_success");
     } else {
       setError(true);
       setInput("");
       setTimeout(() => setError(false), 2000);
+      posthog.capture("password_failed");
     }
   };
 
