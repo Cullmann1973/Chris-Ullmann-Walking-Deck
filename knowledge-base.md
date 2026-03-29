@@ -202,7 +202,10 @@ Key Accomplishments:
 
 ## Education
 
-1. **Stanford School of Engineering** - Generative AI: Technology, Business and Society Program (August 2025)
+1. **Stanford School of Engineering / Stanford HAI** - Generative AI: Technology, Business and Society Program
+   - XFM110: Technical Fundamentals of Generative AI (Aug 2025) - Foundation models, training, prompt engineering, multimodal systems, AI risks, benchmarking/reasoning, broader implications for individuals, communities, and society
+   - XFM111: Business Opportunities and Applications of Generative AI (Nov 2025) - AI strategy, organizational design for AI-powered teams, generative agents, intelligence augmentation (human+AI), future of work/workforce transformation, AI trust frameworks, legal risks of generative AI, societal impact assessment
+   - Human-centered AI framing across both courses connects directly to governance work with Legal/Compliance and the 1,000+ person training program
 2. **Queens University of Charlotte** - B.S. Biology (1999-2002)
 
 **⚠️ NOT "Queens College" — always "Queens University of Charlotte"**
