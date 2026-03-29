@@ -249,7 +249,7 @@ export function AboutSection({ focus }: { focus?: string }) {
                         <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-[#ced4da]">
                           Stanford HAI
                         </span>
-                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-[#ced4da]">Kotter Certified</span>
+                        <span className="px-3 py-1 rounded-full text-xs font-mono bg-secondary text-[#ced4da]">Kotter Trained</span>
                       </>
                     )}
                   </div>

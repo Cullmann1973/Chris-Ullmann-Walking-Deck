@@ -267,7 +267,7 @@ export function HeroSection({ focus }: { focus?: string }) {
                   />
                 ))}
               </div>
-              <p className="text-[10px] font-mono tracking-wider text-[#adb5bd]/70 uppercase mt-3">Microsoft Ignite Featured · Kotter Change Leadership Certified · Stanford HAI</p>
+              <p className="text-[10px] font-mono tracking-wider text-[#adb5bd]/70 uppercase mt-3">Microsoft Ignite Featured · Kotter Change Leadership · Stanford HAI</p>
             </div>
           </div>
         </div>

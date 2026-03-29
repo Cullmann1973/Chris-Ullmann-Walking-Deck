@@ -140,7 +140,7 @@ Executive Director, AI Transformation and Manufacturing PMO, Supply Chain at The
   - HELM framework (Holistic Evaluation of Language Models)
   - This program shifted my understanding from technology consumer to strategist of neural architecture, enabling me to be a true "Translator" between executive leadership and technical development teams
 - Lean Six Sigma Certified
-- Leading Bold Change (Kotter) Certified Facilitator
+- Leading Bold Change (Kotter) - Trained through direct two-year partnership with Kotter Inc. and John Kotter
 
 ## AI & Digital Transformation
 - Leading AI adoption in Manufacturing at ELC, with significant influence across Supply Chain, Marketing, R&D, and Engineering
